@@ -72,8 +72,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
  - Added menu on insert.html, joke.html, remainder.html.
+ - Intake Markuplint.
+ - Added companion.js
 
 ### Change
 
- - Posting the revised version on an external site.
- - Target clear for table of contents.
+ - Posting the revised version on an external site!
+ - Cleared target to table of contents.
+ - Change to list .
+ - Improved HTML and CSS.
+
+### Removed
+
+ - Removed unused elements on index.html.
