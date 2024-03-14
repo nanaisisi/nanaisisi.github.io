@@ -63,6 +63,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.8] - 2024-03-12
 
-### Change
+### Added
 
  - Add companion control system.
+
+## [1.0.9] - 2024-03-14
+
+### Added
+
+ - Added menu on insert.html, joke.html, remainder.html.
+
+### Change
+
+ - Posting the revised version on an external site.
+ - Target clear for table of contents.
