@@ -100,7 +100,3 @@ th {
   flex-direction: row-reverse;
   flex-direction: column-reverse;
 }
-
-.none_meaning_font a.hover {
-  color: #cff;
-}
