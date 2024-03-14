@@ -20,6 +20,11 @@ body {
   width: 100%;
 }
 
+.menu_hr {
+  width: 100%;
+  size: 1;
+}
+
 .menu {
   box-sizing: border-box;
   top: 0;
