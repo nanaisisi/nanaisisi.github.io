@@ -1,0 +1,50 @@
+<!doctype html>
+
+<!-- Content-Type: application/xhtml+xml -->
+
+<?xml version="1.1" encoding="UTF-8"?>
+<html lang="ja">
+  <head>
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>とある人のサイト</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <script type="text/typescript" src="script/companion.ts"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        let count_disp = document.getElementById("number_display");
+        let count_up_btn = document.getElementById("button1");
+        let count_value = 0;
+        count_up_btn.onclick = function () {
+          count_value += 1;
+          number_display.innerHTML = count_value;
+        };
+      };
+    </script>
+  </head>
+  <body class="theme">
+    <div class="page_structure">
+      <div id="menu_tab" class="menu">
+        <iframe src="src/menu.php" height="100%" title="目次"></iframe>
+      </div>
+      <div class="contents">
+        <iframe src="src/credit.html" name="main" height="100%" title="ページ">
+        </iframe>
+        <div id="companion" class="dom_parts_structure simple_dom_js">
+          <div id="simple_dom_js"></div>
+          <div class="none_meaning_font" href="#" id="gogoty">
+            お困りでしたら、ご連絡ください。
+          </div>
+          <div><a id="number_display">0</a><br /></div>
+          <div><button id="button1">クリッカー</button><br /></div>
+          <div><a id="dynamic_dom_js">疑問について</a></div>
+          <br />
+          <div id="simple_dom_rs_wasm"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
