@@ -7,19 +7,9 @@ body {
   color: #ccc;
 }
 
-iframe {
-  height: 100%;
-}
-
 .center {
   text-align: center;
   min-width: 50vw;
-}
-
-.andromeda_img {
-  background: no-repeat url(ANDROMEDA.JPG) center;
-  background-color: #222;
-  background-size: contain;
 }
 
 .page_structure {
@@ -43,6 +33,7 @@ iframe {
   top: 0;
   left: 0;
   width: 200px;
+  height: 100%;
 }
 
 .contents {
@@ -58,6 +49,7 @@ iframe {
   top: 0;
   right: 0;
   width: calc(100% - 200px);
+  height: 100%;
 }
 
 a:link {
@@ -103,7 +95,6 @@ th {
   box-sizing: border-box;
   right: 0;
   bottom: 0;
-  width: 30px;
   display: flex;
   flex-direction: row-reverse;
   flex-direction: column-reverse;
