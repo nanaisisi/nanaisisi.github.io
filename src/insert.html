@@ -1,0 +1,139 @@
+<!-- Content-Type: application/xhtml+xml -->
+
+<?xml version="1.1" encoding="UTF-8"?>
+<html lang="ja-JP">
+  <head>
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>insert</title>
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+  <body class="theme">
+    <div>
+      <h1>追加情報</h1>
+      <h2 id="Head_1">所感</h2>
+      ダークテーマ一貫になってしまっているのイーロンマスクみてぇ。<br />
+      下の内容と違っていて、Prettierはあんまり使えなくなってしまっていて。<br />
+      書式なんて知らない♪Rising Hopeなのかで。<br />
+      sftpよくわからないので、使えたらいいんだけどな～<br />
+      <a href="https://dengekibunko.jp/novecomi/" target="_blank" rel="noopener"
+        >現在(8/4-12:48)あっPWA<br
+      /></a>
+      デバッガーの言うがままに適当に書きました<br />
+      <h2 id="Head_2">やったこと</h2>
+      Changelog、全然細かいことめんどくくて書いてないけど。俺のgit、githubみれんもんね
+      <h2 id="Head_3">目標</h2>
+      ・指定は保ちつつ、各所改善。レスポンシブデザインとか？
+      ・Menu_pageへの背景の導入。メニュー部分での選択表示。画像自体はsvgで行けそう。上記の文字部分処理をいきなりする必要はなくなる。<br />
+      ・menu.phpへの機能追加。月などの暦の大幅対応。大阪万博までの日時表示。JST、UTC、東部標準時の表示。機器間での時間差の算出<br />
+      ・右下ツールの拡張<br />
+      ・全ページへの目次導入
+      なんとなくXHTMLかもしれません。<br />
+      <h2 id="Head_4">このサイトの作成について</h2>
+      うまく適応させていないので、あまり使用していませんが、<br />
+      エディターの標準機能とかでことたりとるわ。<br />
+      一応リンターとして、<br />
+      JavaScriptとTypescriptのその他の用途でも使用可能なRome(今だと実質的にBiomeか)と、<br />
+      Formatterなど限定的な用途でHTMLなど様々なファイル拡張子に、汎用的に使用できるPrettierを使用しています。<br />
+      パス汚染環境「prettier *
+      --write」、つかいやすいのは「{任意のパッケージマネージャ{例、NPX}}
+      prettier * --write」<br />
+      危ない指定みたいですよ？ワイルドカードなので(マクロみたいな行頭)。PC破壊的コマンドって、こういう指定だったんだなと。<br />
+      配色は、WEB小説投稿サイトのダークモードやブラックモード2を使用。
+      らしいですよ。2023年8月20日時点<br />
+      <h2 id="Head_5">環境設定イメージ</h2>
+      <h3>アップデートさせるやつ</h3>
+      <h4>Windows</h4>
+      <b>Windows Update<br /></b>
+      毎月第2水曜日または第3水曜日周辺に混乱をもたらす。米国時間毎月第2火曜日<br />
+      <b>Microsoft Store<br /></b>
+      自動更新ではあるけど大事。(自動更新になってなかったが)<br />
+      <a
+        href="https://learn.microsoft.com/ja-jp/windows/package-manager/winget/"
+        target="_blank"
+        rel="noopener"
+        >Winget<br
+      /></a>
+      標準。アプリケーションのアップデートはすべきではある。対応ソフトウェアが増えに増えたのはいいが、自社製品の更新すら不安なのはなぜだ。そのせいでこいつは一括で扱いたくない。配布サーバーから直接持ってくるから配布サーバーの帯域だって太くないのに何GBものファイルを遅々として進まずに通信してられるかと。<br />
+      <a href="https://chocolatey.org/" target="_blank" rel="noopener"
+        >chocolatey<br
+      /></a>
+      管理者権限で実行。あんまり使わない。<br />
+      <a href="https://scoop.sh/" target="_blank" rel="noopener">Scoop</a>
+      パッケージマネージャで直接管理されてるので使い勝手はいい。互換性は不安。<br />
+      <h4>WSLディストリビューション</h4>
+      <b>Apt<br /></b>
+      Debian系の標準。OSアップデートのレベルなので言うまでもない。<br />
+      <a href="https://snapcraft.io/" target="_blank" rel="noopener"
+        >Snap<br
+      /></a>
+      Ubuntu系のLinux。Systemdを要求するのがちょっと面倒くさいかも。近いものにFlatpakとAppImageがある。FlatpakはAblaze
+      Floorpで昔動かなかった気がする、AppImageは一応Alireで使ってみた。<br />
+      <a href="https://brew.sh/index_ja" target="_blank" rel="noopener"
+        >LinuxBrew<br
+      /></a>
+      Mac系のやつなのでStandAloneで動こうとして面倒くさいので、あんまり使いたくない。<br />
+      <h3>Rustup</h3>
+      cargo-binstall、cargo-quickinstallとかcargo-updateとかがツール類の管理に楽。
+      <h3>Python</h3>
+      <h4>Rye<br /></h4>
+      全然使ってないけど、Flaskの人が作ったよう。その人のMitsuhikoってなんだよと思ったけど、<a
+        href="http://mitsuhiko.pocoo.org/happiness.pdf"
+        target="_blank"
+        rel="noopener"
+        >名探偵コナンかららしい。</a
+      >もう二重帝国時代のウラル語族のハンガリー語か何かかと。<br />
+      <h2 id="Head_6">このページは以下のプロジェクトを雑に応援しています</h2>
+      #活用できてないです・<br />
+      <a href="https://starship.rs/ja-jp/" target="_blank" rel="noopener"
+        >Starship<br
+      /></a>
+      コマンドラインシェルに表示に変更を加えることができるシェルプロンプトです。PowerShellやBashなどに対応。<br />
+      <a href="https://helix-editor.com/" target="_blank" rel="noopener"
+        >Helix-editor<br
+      /></a>
+      vimライク的なtext
+      editor、プラグインには力を入れていないみたいなので軽く使う程度で。Lispで作るみたいな雰囲気のことを言ってる気もしますが<br />
+      <a href="https://www.nushell.sh/ja/" target="_blank" rel="noopener"
+        >Nushell<br
+      /></a>
+      PowerShellみたいなものなので。特筆するところはないかも。いろいろと扱いかねてる。仕様変更が破壊的でStarshipとの設定ファイルが大変。<br />
+      <h2 id="Head_7">このページは以下のプロジェクトを雑に応援しています</h2>
+      #活用できてないです・<br />
+      <a href="https://starship.rs/ja-jp/" target="_blank" rel="noopener"
+        >Starship<br
+      /></a>
+      コマンドラインシェルに表示に変更を加えることができるシェルプロンプトです。PowerShellやBashなどに対応。<br />
+      <a href="https://helix-editor.com/" target="_blank" rel="noopener"
+        >Helix-editor<br
+      /></a>
+      vimライク的なtext
+      editor、プラグインには力を入れていないみたいなので軽く使う程度で。Lispで作るみたいな雰囲気のことを言ってる気もしますが<br />
+      <a href="https://www.nushell.sh/ja/" target="_blank" rel="noopener"
+        >Nushell<br
+      /></a>
+      PowerShellみたいなものなので。特筆するところはないかも。いろいろと扱いかねてる。仕様変更が破壊的でStarshipとの設定ファイルが大変。<br />
+      <h2 id="Head_8">気になるやつ</h2>
+      <h3>組版処理システム</h3>
+      <h4>Typst</h4>
+      Rust製。海外製なので簡体字が混ざったりだとか明らかに日本語が弱いというのがデメリット。
+      <h4>SATySFi</h4>
+      OCaml製。日本の独立行政法人情報処理推進機構(所管：経産省)、通称IPAの未踏2017に採択されたやつ。日本語はよさそう。
+      <h3>Tauri</h3>
+      Node.jsをバンドルするElectronと違って、ネイティブのWebviewを活用できるので、必要最低限正式版化した基本実装以外は未完成なのとRustという厄介さはあれどこの中だと一番使われてそうなやつ。
+      <h3>Axum</h3>
+      Rustのミドルエンド？Rustで定番な非同期ライブラリtokioのチーム製。
+      <h3>Leptos</h3>
+      Rustのフロントエンド
+      <h3>Shuttle</h3>
+      Rustアプリをホストしてくれる。
+      <h3>Bevy</h3>
+      ゲームエンジン。最新ゲームエンジンで定番化しつつあるかもしれないECSアーキテクチャを採用。WebGPUにも対応。
+      <h3>erg</h3>
+      プログラミング言語。つまりerg-langといったところ。超最大手有名プログラミング言語Pythonと互換性を持つ言語。Rustで書かれてて、文法もそんな感じらしい。IPA未踏2023採択。
+    </div>
+  </body>
+</html>
