@@ -11,9 +11,9 @@
       content="width=device-width, initial-scale=1"
     />
     <title>とある人のサイト</title>
-    <link rel="stylesheet" href="style/style.css" />
-    <script type="text/typescript" src="script/companion.ts"></script>
-    <script type="text/javascript">
+    <link rel="stylesheet" href="./style/style.css" />
+    <script defer src="./script/companion.js"></script>
+    <script>
       window.onload = function () {
         let count_disp = document.getElementById("number_display");
         let count_up_btn = document.getElementById("button1");
@@ -26,23 +26,22 @@
     </script>
   </head>
   <body class="theme">
+    <h1>lazy</h1>
     <div class="page_structure">
       <div id="menu_tab" class="menu">
-        <iframe src="src/menu.php" height="100%" title="目次"></iframe>
+        <iframe loading="lazy" src="./src/menu.html" name="menu" title="目次"></iframe>
       </div>
-      <div class="contents">
-        <iframe src="src/credit.html" name="main" height="100%" title="ページ">
-        </iframe>
+      <div id="top_html" class="contents">
+        <iframe
+          loading="lazy"
+          src="./src/top.html"
+          name="main"
+          title="ページ"
+        ></iframe>
         <div id="companion" class="dom_parts_structure simple_dom_js">
-          <div id="simple_dom_js"></div>
-          <div class="none_meaning_font" href="#" id="gogoty">
-            お困りでしたら、ご連絡ください。
-          </div>
           <div><a id="number_display">0</a><br /></div>
           <div><button id="button1">クリッカー</button><br /></div>
-          <div><a id="dynamic_dom_js">疑問について</a></div>
-          <br />
-          <div id="simple_dom_rs_wasm"></div>
+          <button id="tp_top_btn">^</button>
         </div>
       </div>
     </div>
