@@ -67,19 +67,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
  - Add companion control system.
 
-## [1.0.9] - 2024-03-14
+## [1.0.9] - 2024-03-15
 
 ### Added
 
- - Added menu on insert.html, joke.html, remainder.html.
  - Intake Markuplint.
+ - Added menu on insert.html, joke.html, remainder.html.
  - Added companion.js
 
 ### Change
 
  - Posting the revised version on an external site!
  - Cleared target to table of contents.
- - Change to list .
+ - Change to list.
  - Improved HTML and CSS.
 
 ### Removed
