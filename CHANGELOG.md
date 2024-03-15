@@ -9,15 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add CHANGELOG.md.
+- Added CHANGELOG.md.
 
 ## [1.0.1] - 2024-02-21
 
 ### Added
 
-- Add CHANGELOG.md on menu.php.
-- Add anxious thing on insert.html.
-- Add goals on insert.html, table of contents on all page.
+- Added CHANGELOG.md on menu.php.
+- Added anxious thing on insert.html.
+- Added goals on insert.html, table of contents on all page.
 
 ## [1.0.2] - 2024-02-21
 
@@ -30,8 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Change
 
 - Fix top page background img config.
-- Add searched server info on insert.html.
-- Add img on joke.html.
+- Added searched server info on insert.html.
+- Added img on joke.html.
 
 ## [1.0.4] - 2024-02-26
 
@@ -58,14 +58,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Change
 
  - P.S. remainder.html.
- - Add Tauri on insert.html.
- - Add Gripen on joke.html.
+ - Added Tauri on insert.html.
+ - Added Gripen on joke.html.
 
 ## [1.0.8] - 2024-03-12
 
 ### Added
 
- - Add companion control system.
+ - Added companion control system.
 
 ## [1.0.9] - 2024-03-15
 
@@ -77,6 +77,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Change
 
+ - Changed "Add" to Added.
  - Posting the revised version on an external site!
  - Cleared target to table of contents.
  - Change to list.
