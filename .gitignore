@@ -2,7 +2,7 @@ nanaisisi.github.io.code-workspace
 node_modules
 package-lock.json
 tools
-counter_qua
+etc/counter_qua
 .php-cs-fixer.cache
 kousei_rs/target/
 kousei_rs/Cargo.lock
