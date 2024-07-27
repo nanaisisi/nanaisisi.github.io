@@ -43,58 +43,59 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Change
 
- - Fix counter on menu.php.
+- Fix counter on menu.php.
 
 ## [1.0.6] - 2024-03-11
 
 ### Change
 
- - P.S. remainder.html.
- - Removed simple_dos.js.
- - Change unused link and script index.html.
+- P.S. remainder.html.
+- Removed simple_dos.js.
+- Change unused link and script index.html.
 
 ## [1.0.7] - 2024-03-11
 
 ### Change
 
- - P.S. remainder.html.
- - Added Tauri on insert.html.
- - Added Gripen on joke.html.
+- P.S. remainder.html.
+- Added Tauri on insert.html.
+- Added Gripen on joke.html.
 
 ## [1.0.8] - 2024-03-12
 
 ### Added
 
- - Added companion control system.
+- Added companion control system.
 
 ## [1.0.9] - 2024-03-15
 
 ### Added
 
- - Intake Markuplint.
- - Added menu on insert.html, joke.html, remainder.html.
- - Added companion.js
+- Intake Markuplint.
+- Added menu on insert.html, joke.html, remainder.html.
+- Added companion.js
 
 ### Change
 
- - Changed "Add" to Added.
- - Posting the revised version on an external site!
- - Cleared target to table of contents.
- - Change to list.
- - Improved HTML and CSS.
+- Changed "Add" to Added.
+- Posting the revised version on an external site!
+- Cleared target to table of contents.
+- Change to list.
+- Improved HTML and CSS.
 
 ### Removed
 
- - Removed unused elements on index.html.
+- Removed unused elements on index.html.
 
 ## [1.1.0] - 2024-03-
 
 ### Added
 
- - Intake Jest.
- - Added  on insert.html
+- Intake Jest.
+- Added on insert.html
 
 ### Change
- - Changed External edition, only from now on.discontinued due to end of environment.
- - Changed to BrowserCacheClear on major heading of index.html.
- - Changed menu order on menu.php.(menu.html[External])
+
+- Changed External edition, only from now on.discontinued due to end of environment.
+- Changed to BrowserCacheClear on major heading of index.html.
+- Changed menu order on menu.php.(menu.html[External])
