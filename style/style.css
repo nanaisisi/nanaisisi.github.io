@@ -3,6 +3,7 @@ main {
 }
 
 body {
+  color-scheme: only dark;
   background-color: #222;
   color: #ccc;
 }
@@ -58,14 +59,17 @@ body {
 }
 
 a:link {
+  color-scheme: only dark;
   color: #ffff99;
 }
 
 a:visited {
+  color-scheme: only dark;
   color: #885577;
 }
 
 a:hover {
+  color-scheme: only dark;
   color: #cf0;
 }
 
@@ -77,12 +81,14 @@ td {
 }
 
 th {
+  color-scheme: only dark;
   height: 2.5em;
   background-color: #ccc;
   color: #222;
 }
 
 .back_black {
+  color-scheme: only dark;
   background-color: #222;
 }
 
