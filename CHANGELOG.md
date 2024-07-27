@@ -89,3 +89,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.1.0] - 2024-03-
 
+### Added
+
+ - Intake Jest.
+ - Added  on insert.html
+
+### Change
+ - Changed External edition, only from now on.discontinued due to end of environment.
+ - Changed to BrowserCacheClear on major heading of index.html.
+ - Changed menu order on menu.php.(menu.html[External])
