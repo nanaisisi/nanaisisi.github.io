@@ -92,7 +92,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added xyzzy.html.
-- added menu on xyzzy.html.
+- Added menu on xyzzy.html.
 - Intake Jest.
 - Added on insert.html
 
