@@ -87,15 +87,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed unused elements on index.html.
 
-## [1.1.0] - 2024-03-
+## [1.1.0] - 2024-09-20
 
 ### Added
 
+- Added xyzzy.html.
 - Intake Jest.
 - Added on insert.html
 
 ### Change
 
-- Changed External edition, only from now on.discontinued due to end of environment.
+- Changed External edition, only from now on. Internal edition, discontinued due to end of environment.
 - Changed to BrowserCacheClear on major heading of index.html.
 - Changed menu order on menu.html.
