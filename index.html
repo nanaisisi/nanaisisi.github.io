@@ -14,14 +14,23 @@
     <link rel="stylesheet" href="./style/style.css" />
     <script defer src="./script/companion.js"></script>
     <script>
-      window.onload = function () {
-        let count_disp = document.getElementById("number_display");
-        let count_up_btn = document.getElementById("button1");
+      window.onload = () => {
+        if (tp_top()) {
+          tp_top();
+        }
+        const number_display = document.getElementById("number_display");
+        const count_up_btn = document.getElementById("count_up_btn");
         let count_value = 0;
-        count_up_btn.onclick = function () {
-          count_value += 1;
-          number_display.innerHTML = count_value;
-        };
+        let count_value_str = String(0);
+        if (count_up_btn) {
+          count_up_btn.onclick = () => {
+            count_value += 1;
+            count_value_str = String(count_value);
+            if (number_display) {
+              number_display.innerHTML = count_value_str;
+            }
+          };
+        }
       };
     </script>
   </head>
@@ -29,19 +38,26 @@
     <h1>lazy</h1>
     <div class="page_structure">
       <div id="menu_tab" class="menu">
-        <iframe loading="lazy" src="./src/menu.html" name="menu" title="目次"></iframe>
+        <iframe
+          loading="lazy"
+          src="./src/menu.html"
+          name="menu"
+          title="目次"
+        ></iframe>
       </div>
       <div id="top_html" class="contents">
         <iframe
+          id="menu_iframe"
           loading="lazy"
           src="./src/credit.html"
           name="main"
           title="ページ"
         ></iframe>
         <div id="companion" class="dom_parts_structure simple_dom_js">
-          <div><a id="number_display">0</a><br /></div>
-          <div><button id="button1">クリッカー</button><br /></div>
+          <a id="number_display">0</a><br />
+          <button id="count_up_btn">クリッカー</button><br />
           <button id="tp_top_btn">^</button>
+          <button id="color_scheme_btn">カラースキームボタン</button>
         </div>
       </div>
     </div>
