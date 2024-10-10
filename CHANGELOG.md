@@ -101,3 +101,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed External edition, only from now on. Internal edition, discontinued due to end of environment.
 - Changed to BrowserCacheClear on major heading of index.html.
 - Changed menu order on menu.html.
+
+## [1.1.1] - 2024-09-
+
+### Added
+
+- Added helix.html.
+- Added menu on helix.html.
+- Added todo.md
