@@ -4,5 +4,10 @@
       "path": ".",
     },
   ],
-  "settings": {},
+  "settings": 
+  {
+    "markuplint.nodePath": "./node_modules/markuplint/bin/markuplint.js",
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange"
+  },
 }
