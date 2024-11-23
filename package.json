@@ -2,10 +2,8 @@
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "jest": "^29.7.0",
+    "markuplint": "^4.10.1",
     "prettier": "^3.3.3"
-  },
-  "dependencies": {
-    "markuplint": "^4.9.2"
   },
   "scripts": {
     "test": "jest"

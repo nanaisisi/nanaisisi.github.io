@@ -102,10 +102,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed to BrowserCacheClear on major heading of index.html.
 - Changed menu order on menu.html.
 
-## [1.1.1] - 2024-09-
+## [1.1.1] - 2024-10-20
 
 ### Added
 
-- Added helix.html.
-- Added menu on helix.html.
-- Added todo.md
+- Added many pages!
+
+### Changes
+
+- Changed main_page iframe at index.html.
+- Changed insert.html divide to software.html.
