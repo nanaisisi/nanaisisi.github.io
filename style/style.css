@@ -5,7 +5,7 @@ main {
 body {
   color-scheme: only dark;
   background-color: #222;
-  color: #ccc;
+  color: #aaa;
 }
 
 .center {
@@ -83,8 +83,8 @@ td {
 th {
   color-scheme: only dark;
   height: 2.5em;
-  background-color: #ccc;
-  color: #222;
+  margin: auto;
+  border: solid;
 }
 
 .back_black {
