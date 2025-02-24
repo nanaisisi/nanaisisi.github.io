@@ -14,30 +14,26 @@
     <link rel="stylesheet" href="./style/style.css" />
     <script defer src="./script/companion.js"></script>
     <script>
-      window.onload = () => {
+      window.addEventListener("load", () => {
         if (tp_top()) {
           tp_top();
         }
-        const number_display = document.getElementById("number_display");
-        const count_up_btn = document.getElementById("count_up_btn");
-        let count_value = 0;
-        let count_value_str = String(0);
-        if (count_up_btn) {
-          count_up_btn.onclick = () => {
-            count_value += 1;
-            count_value_str = String(count_value);
-            if (number_display) {
-              number_display.innerHTML = count_value_str;
-            }
-          };
+      });
+
+      window.addEventListener("load", () => {
+        if (menu_button()) {
+          menu_button();
         }
-      };
+      });
     </script>
   </head>
   <body class="theme">
-    <h1>lazy</h1>
+    <div class="fixed-bar">
+      <button id="toggle_menu_btn">メニューの開閉</button>
+    </div>
+    <h1 class="index_h1">XHTML</h1>
     <div class="page_structure">
-      <div id="menu_tab" class="menu">
+      <div id="menu_tab" class="menu" style="display: none">
         <iframe
           loading="lazy"
           src="./src/menu.html"
