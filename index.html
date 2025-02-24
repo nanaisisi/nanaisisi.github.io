@@ -31,13 +31,41 @@
             }
           };
         }
+
+        // メニューの開閉機能
+        const menuTab = document.getElementById("menu_tab");
+        const toggleMenuBtn = document.getElementById("toggle_menu_btn");
+        toggleMenuBtn.onclick = () => {
+          if (menuTab.style.display === "none") {
+            menuTab.style.display = "block";
+          } else {
+            menuTab.style.display = "none";
+          }
+        };
       };
     </script>
+    <style>
+      .fixed-bar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+        z-index: 1000;
+        padding: 10px;
+        text-align: center;
+      }
+      .page_structure {
+        margin-top: 50px; /* 固定バーの高さ分の余白を追加 */
+      }
+    </style>
   </head>
   <body class="theme">
+    <div class="fixed-bar">
+      <button id="toggle_menu_btn">メニューの開閉</button>
+    </div>
     <h1>lazy</h1>
     <div class="page_structure">
-      <div id="menu_tab" class="menu">
+      <div id="menu_tab" class="menu" style="display: none">
         <iframe
           loading="lazy"
           src="./src/menu.html"
