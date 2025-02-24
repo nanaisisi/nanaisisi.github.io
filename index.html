@@ -14,41 +14,18 @@
     <link rel="stylesheet" href="./style/style.css" />
     <script defer src="./script/companion.js"></script>
     <script>
-      window.onload = () => {
+      window.addEventListener("load", () => {
         if (tp_top()) {
           tp_top();
         }
-        const number_display = document.getElementById("number_display");
-        const count_up_btn = document.getElementById("count_up_btn");
-        let count_value = 0;
-        let count_value_str = String(0);
-        if (count_up_btn) {
-          count_up_btn.onclick = () => {
-            count_value += 1;
-            count_value_str = String(count_value);
-            if (number_display) {
-              number_display.innerHTML = count_value_str;
-            }
-          };
-        }
+      });
 
-        // メニューの開閉機能
-        const menuTab = document.getElementById("menu_tab");
-        const toggleMenuBtn = document.getElementById("toggle_menu_btn");
-        toggleMenuBtn.onclick = () => {
-          if (menuTab.style.display === "none") {
-            menuTab.style.display = "block";
-          } else {
-            menuTab.style.display = "none";
-          }
-        };
-      };
+      window.addEventListener("load", () => {
+        if (menu_button()) {
+          menu_button();
+        }
+      });
     </script>
-    <style>
-      .page_structure {
-        margin-top: 50px; /* 固定バーの高さ分の余白を追加 */
-      }
-    </style>
   </head>
   <body class="theme">
     <div class="fixed-bar">
