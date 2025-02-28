@@ -12,7 +12,7 @@ function menu_button() {
 }
 
 // 旧暦の和風月名を表示する関数
-function display_japanese_month_name() {
+function display_now_month_names() {
 	const english_month_names = [
 		"January",
 		"February",
@@ -132,7 +132,7 @@ window.addEventListener("load", () => {
 });
 
 window.addEventListener("load", () => {
-	if (display_japanese_month_name) {
-		display_japanese_month_name();
+	if (display_now_month_names) {
+		display_now_month_names();
 	}
 });
