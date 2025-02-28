@@ -105,9 +105,9 @@ function display_now_month_names() {
 		ukrainian_alphabet_month_names[current_month];
 	const swedish_now_month_name = swedish_month_names[current_month];
 	const suomi_now_month_name = suomi_month_names[current_month];
-	const month_name_element = document.getElementById("month_names");
-	if (month_name_element) {
-		month_name_element.innerHTML = `
+	const month_names_element = document.getElementById("month_names");
+	if (month_names_element) {
+		month_names_element.innerHTML = `
             JP: ${japanese_now_month_name}<br>
             EN: ${english_now_month_name}<br>
             UA: ${ukrainian_now_month_name}<br>
