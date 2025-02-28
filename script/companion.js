@@ -1,19 +1,33 @@
 function menu_button() {
 	// メニューの開閉機能
-	const menuTab = document.getElementById("menu_tab");
-	const toggleMenuBtn = document.getElementById("toggle_menu_btn");
-	toggleMenuBtn.onclick = () => {
-		if (menuTab.style.display === "none") {
-			menuTab.style.display = "block";
+	const menu_tab = document.getElementById("menu_tab");
+	const toggle_menu_btn = document.getElementById("toggle_menu_btn");
+	toggle_menu_btn.onclick = () => {
+		if (menu_tab.style.display === "none") {
+			menu_tab.style.display = "block";
 		} else {
-			menuTab.style.display = "none";
+			menu_tab.style.display = "none";
 		}
 	};
 }
 
 // 旧暦の和風月名を表示する関数
-function displayJapaneseMonthName() {
-	const japaneseMonthNames = [
+function display_japanese_month_name() {
+	const english_month_names = [
+		"January",
+		"February",
+		"March",
+		"April",
+		"May",
+		"June",
+		"July",
+		"August",
+		"September",
+		"October",
+		"November",
+		"December",
+	];
+	const japanese_month_names = [
 		"睦月",
 		"如月",
 		"弥生",
@@ -27,11 +41,40 @@ function displayJapaneseMonthName() {
 		"霜月",
 		"師走",
 	];
-	const currentMonth = new Date().getMonth(); // 0から11の値を返す
-	const japaneseMonthName = japaneseMonthNames[currentMonth];
-	const monthNameElement = document.getElementById("japanese_month_name");
-	if (monthNameElement) {
-		monthNameElement.textContent = japaneseMonthName;
+	const ukrainian_kana_month_names = [
+		"Січень",
+		"Лютий",
+		"Березень",
+		"Квітень",
+		"Травень",
+		"Червень",
+		"Липень",
+		"Серпень",
+		"Вересень",
+		"Жовтень",
+		"Листопад",
+		"Грудень",
+	];
+	const swedish_kana_month_names = [
+		"Januari",
+		"Februari",
+		"Mars",
+		"April",
+		"Maj",
+		"Juni",
+		"Juli",
+		"Augusti",
+		"September",
+		"Oktober",
+		"November",
+		"December",
+	];
+	const suomi_kana_month_names = [];
+	const current_month = new Date().getMonth(); // 0から11の値を返す
+	const japanese_month_name = japanese_month_names[current_month];
+	const month_name_element = document.getElementById("japanese_month_name");
+	if (month_name_element) {
+		month_name_element.textContent = japanese_month_name;
 	}
 }
 
@@ -48,5 +91,5 @@ window.addEventListener("load", () => {
 	}
 });
 window.addEventListener("load", () => {
-	displayJapaneseMonthName();
+	display_japanese_month_name();
 });
