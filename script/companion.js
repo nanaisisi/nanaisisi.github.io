@@ -55,7 +55,7 @@ function display_japanese_month_name() {
 		"Листопад",
 		"Грудень",
 	];
-	const swedish_kana_month_names = [
+	const swed_kanaish_kana_month_names = [
 		"Januari",
 		"Februari",
 		"Mars",
@@ -69,12 +69,35 @@ function display_japanese_month_name() {
 		"November",
 		"December",
 	];
-	const suomi_kana_month_names = [];
+	const suomi_kana_month_names = [
+		"Tammikuu",
+		"Helmikuu",
+		"Maaliskuu",
+		"Huhtikuu",
+		"Toukokuu",
+		"Kesäkuu",
+		"Heinäkuu",
+		"Elokuu",
+		"Syyskuu",
+		"Lokakuu",
+		"Marraskuu",
+		"Joulukuu",
+	];
 	const current_month = new Date().getMonth(); // 0から11の値を返す
-	const japanese_month_name = japanese_month_names[current_month];
-	const month_name_element = document.getElementById("japanese_month_name");
+	const english_now_month_name = english_month_names[current_month];
+	const japanese_now_month_name = japanese_month_names[current_month];
+	const ukrainian_now_month_name = ukrainian_month_names[current_month];
+	const swedish_now_month_name = swedish_month_names[current_month];
+	const suomi_now_month_name = suomi_month_names[current_month];
+	const month_name_element = document.getElementById("month_name");
 	if (month_name_element) {
-		month_name_element.textContent = japanese_month_name;
+		month_name_element.innerHTML = `
+            JP:${japanese_now_month_name}<br>
+            EM:${english_now_month_name}<br>
+            FI:${ukrainian_now_month_name}<br>
+            SE:${swedish_now_month_name}<br>
+            UA:${suomi_now_month_name}
+        `;
 	}
 }
 
