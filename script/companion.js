@@ -56,20 +56,20 @@ function display_japanese_month_name() {
 		"Грудень",
 	];
 	const ukrainian_alphabet_month_names = [
-		si - chen,
-		lu - tyi,
-		be - re - zen,
-		kvi - ten,
-		tra - vehn,
-		cher - vehn,
-		ly - pehn,
-		ser - pehn,
-		ve - re - sehn,
-		zhov - tehn,
-		lys - to - pad,
-		hru - dehn,
+		"si-chen",
+		"lu-tyi",
+		"be-re-zen",
+		"kvi-ten",
+		"tra-vehn",
+		"cher-vehn",
+		"ly-pehn",
+		"ser-pehn",
+		"ve-re-sehn",
+		"zhov-tehn",
+		"lys-to-pad",
+		"hru-dehn",
 	];
-	const swed_kanaish_month_names = [
+	const swedish_month_names = [
 		"Januari",
 		"Februari",
 		"Mars",
@@ -103,36 +103,36 @@ function display_japanese_month_name() {
 	const ukrainian_now_month_name = ukrainian_month_names[current_month];
 	const ukrainian_alphabet_now_month_name =
 		ukrainian_alphabet_month_names[current_month];
-
 	const swedish_now_month_name = swedish_month_names[current_month];
 	const suomi_now_month_name = suomi_month_names[current_month];
 	const month_name_element = document.getElementById("month_names");
 	if (month_name_element) {
 		month_name_element.innerHTML = `
-            JP:${japanese_now_month_name}<br>
-            EM:${english_now_month_name}<br>
-            FI:${ukrainian_now_month_name}<br>
-            SE:${swedish_now_month_name}<br>
-            UA:${suomi_now_month_name}
-			UA_EN?:${ukrainian_alphabet_now_month_name}<br>
+            JP: ${japanese_now_month_name}<br>
+            EN: ${english_now_month_name}<br>
+            UA: ${ukrainian_now_month_name}<br>
+            UA_EN: ${ukrainian_alphabet_now_month_name}<br>
+            SE: ${swedish_now_month_name}<br>
+            FI: ${suomi_now_month_name}
         `;
 	}
 }
 
 // ページロード
 window.addEventListener("load", () => {
-	if (tp_top()) {
+	if (tp_top) {
 		tp_top();
 	}
 });
 
 window.addEventListener("load", () => {
-	if (menu_button()) {
+	if (menu_button) {
 		menu_button();
 	}
 });
+
 window.addEventListener("load", () => {
-	if (display_japanese_month_name()) {
+	if (display_japanese_month_name) {
 		display_japanese_month_name();
 	}
 });
