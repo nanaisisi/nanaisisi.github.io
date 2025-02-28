@@ -132,5 +132,7 @@ window.addEventListener("load", () => {
 	}
 });
 window.addEventListener("load", () => {
-	display_japanese_month_name();
+	if (display_japanese_month_name()) {
+		display_japanese_month_name();
+	}
 });
