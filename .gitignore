@@ -3,3 +3,4 @@ package-lock.json
 etc/counter_qua
 kousei_rs/target/
 kousei_rs/Cargo.lock
+/nanai_wasm_rs/target
