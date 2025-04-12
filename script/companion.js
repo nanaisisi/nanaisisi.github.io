@@ -1,56 +1,156 @@
-function tp_top() {
-	const tp_top_btn = document.getElementById("tp_top_btn");
-	/** @type {HTMLFrameElement} */
-	const top_iframe = document.getElementById("top_iframe");
-	if (top_iframe) {
-		const top_iframe_window = top_iframe.contentWindow;
-		if (tp_top_btn) {
-			tp_top_btn.addEventListener("click", () => {
-				if (top_iframe_window)
-					top_iframe_window.scroll({
-						top: 0,
-						behavior: "smooth",
-					});
-			});
-		}
-	}
-
-	const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-	const darkModeOn = darkModeMediaQuery.matches;
-	const color_scheme_btn = document.getElementById("scheme_toggle");
-	if (color_scheme_btn) {
-		color_scheme_btn.addEventListener("click", () => {
-			if (darkModeOff) {
-				document.documentElement.classList.add("darkmode");
-			} else {
-				document.documentElement.classList.remove("darkmode");
-			}
-		});
-	}
-}
-function menu_button() {
-	const number_display = document.getElementById("number_display");
-	const count_up_btn = document.getElementById("count_up_btn");
-	let count_value = 0;
-	let count_value_str = String(0);
-	if (count_up_btn) {
-		count_up_btn.onclick = () => {
-			count_value += 1;
-			count_value_str = String(count_value);
-			if (number_display) {
-				number_display.innerHTML = count_value_str;
-			}
-		};
-	}
-
+function menu_open_button() {
 	// メニューの開閉機能
-	const menuTab = document.getElementById("menu_tab");
-	const toggleMenuBtn = document.getElementById("toggle_menu_btn");
-	toggleMenuBtn.onclick = () => {
-		if (menuTab.style.display === "none") {
-			menuTab.style.display = "block";
+	const menu_open_tab = document.getElementById("menu_open_tab");
+	const toggle_menu_open_btn = document.getElementById("toggle_menu_btn");
+	toggle_menu_open_btn.onclick = () => {
+		if (menu_open_tab.style.display === "none") {
+			menu_open_tab.style.display = "block";
+		} else if (menu_open_tab.style.display === "block") {
+			menu_open_tab.style.display = "none";
 		} else {
-			menuTab.style.display = "none";
+			console.error("Unexpected menu state");
 		}
 	};
 }
+
+function menu_close_button() {
+	// メニューの開閉機能
+	const menu_close_tab = document.getElementById("menu_tab");
+	const toggle_menu_close_btn = document.getElementById("toggle_menu_btn");
+	toggle_menu_close_btn.onclick = () => {
+		if (menu_close_tab.style.display === "block") {
+			menu_close_tab.style.display = "none";
+		} else if (menu_close_tab.style.display === "none") {
+			menu_close_tab.style.display = "block";
+		} else {
+			console.error("Unexpected menu state");
+		}
+	};
+}
+
+// 旧暦の和風月名を表示する関数
+function display_now_month_names() {
+	const english_month_names = [
+		"January",
+		"February",
+		"March",
+		"April",
+		"May",
+		"June",
+		"July",
+		"August",
+		"September",
+		"October",
+		"November",
+		"December",
+	];
+	const japanese_month_names = [
+		"睦月",
+		"如月",
+		"弥生",
+		"卯月",
+		"皐月",
+		"水無月",
+		"文月",
+		"葉月",
+		"長月",
+		"神無月",
+		"霜月",
+		"師走",
+	];
+	const ukrainian_month_names = [
+		"Січень",
+		"Лютий",
+		"Березень",
+		"Квітень",
+		"Травень",
+		"Червень",
+		"Липень",
+		"Серпень",
+		"Вересень",
+		"Жовтень",
+		"Листопад",
+		"Грудень",
+	];
+	const ukrainian_alphabet_month_names = [
+		"si-chen",
+		"lu-tyi",
+		"be-re-zen",
+		"kvi-ten",
+		"tra-vehn",
+		"cher-vehn",
+		"ly-pehn",
+		"ser-pehn",
+		"ve-re-sehn",
+		"zhov-tehn",
+		"lys-to-pad",
+		"hru-dehn",
+	];
+	const swedish_month_names = [
+		"Januari",
+		"Februari",
+		"Mars",
+		"April",
+		"Maj",
+		"Juni",
+		"Juli",
+		"Augusti",
+		"September",
+		"Oktober",
+		"November",
+		"December",
+	];
+	const suomi_month_names = [
+		"Tammikuu",
+		"Helmikuu",
+		"Maaliskuu",
+		"Huhtikuu",
+		"Toukokuu",
+		"Kesäkuu",
+		"Heinäkuu",
+		"Elokuu",
+		"Syyskuu",
+		"Lokakuu",
+		"Marraskuu",
+		"Joulukuu",
+	];
+	const current_month = new Date().getMonth(); // 0から11の値を返す
+	const english_now_month_name = english_month_names[current_month];
+	const japanese_now_month_name = japanese_month_names[current_month];
+	const ukrainian_now_month_name = ukrainian_month_names[current_month];
+	const ukrainian_alphabet_now_month_name =
+		ukrainian_alphabet_month_names[current_month];
+	const swedish_now_month_name = swedish_month_names[current_month];
+	const suomi_now_month_name = suomi_month_names[current_month];
+	const month_names_element = document.getElementById("month_names");
+	if (month_names_element) {
+		month_names_element.innerHTML = `
+            JP: ${japanese_now_month_name}<br>
+            EN: ${english_now_month_name}<br>
+            UA: ${ukrainian_now_month_name}<br>
+            UA_EN: ${ukrainian_alphabet_now_month_name}<br>
+            SE: ${swedish_now_month_name}<br>
+            FI: ${suomi_now_month_name}
+        `;
+	}
+}
+
+// ページロード
+// 時に実行されるイベントリスナーを追加
+window.addEventListener("load", () => {
+	if (menu_open_button) {
+		menu_open_button();
+	}
+});
+
+window.addEventListener("load", () => {
+	if (menu_close_button) {
+		menu_close_button();
+	}
+});
+
+window.addEventListener("load", () => {
+	if (display_now_month_names) {
+		display_now_month_names();
+	}
+});
