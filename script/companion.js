@@ -1,31 +1,47 @@
-function menu_open_button() {
+function menu_button() {
 	// メニューの開閉機能
-	const menu_open_tab = document.getElementById("menu_open_tab");
+	const menu_tab = document.getElementById("menu_tab");
 	const toggle_menu_open_btn = document.getElementById("toggle_menu_open_btn");
-	toggle_menu_open_btn.onclick = () => {
-		if (menu_open_tab.style.display === "none") {
-			menu_open_tab.style.display = "block";
-		} else if (menu_open_tab.style.display === "block") {
-			menu_open_tab.style.display = "none";
-		} else {
-			console.error("Unexpected menu state");
-		}
-	};
+	if (toggle_menu_open_btn) {
+		toggle_menu_open_btn.onclick = () => {
+			if (menu_tab.style.display === "none") {
+				menu_tab.style.display = "block";
+			} else if (menu_tab.style.display === "block") {
+				menu_tab.style.display = "none";
+			} else {
+				console.error("Unexpected menu state");
+			}
+		};
+	} else {
+		console.error("toggle_menu_open_btn is not found");
+	}
+
+	const toggle_menu_close_btn = document.getElementById(
+		"toggle_menu_close_btn",
+	);
+	if (toggle_menu_close_btn) {
+		toggle_menu_close_btn.onclick = () => {
+			if (menu_tab.style.display === "block") {
+				menu_tab.style.display = "none";
+			} else if (menu_tab.style.display === "none") {
+				menu_tab.style.display = "block";
+			} else {
+				console.error("Unexpected menu state");
+			}
+		};
+	} else {
+		console.error("toggle_menu_close_btn is not found");
+	}
 }
 
+// メニューを閉じるボタンの関数を追加
 function menu_close_button() {
-	// メニューの開閉機能
-	const menu_close_tab = document.getElementById("menu_tab");
-	const toggle_menu_close_btn = document.getElementById("toggle_menu_close_btn");
-	toggle_menu_close_btn.onclick = () => {
-		if (menu_close_tab.style.display === "block") {
-			menu_close_tab.style.display = "none";
-		} else if (menu_close_tab.style.display === "none") {
-			menu_close_tab.style.display = "block";
-		} else {
-			console.error("Unexpected menu state");
-		}
-	};
+	const menu_tab = document.getElementById("menu_tab");
+	if (menu_tab) {
+		menu_tab.style.display = "none";
+	} else {
+		console.error("menu_tab is not found");
+	}
 }
 
 // 一部国家の月名を表示する関数
@@ -136,22 +152,14 @@ function display_now_month_names() {
 }
 
 // ページロード時に実行されるイベントリスナーを追加
-// メニューを開くボタン
-window.addEventListener("load", () => {
-	if (menu_open_button) {
-		menu_open_button();
-	}
-});
 
-// メニューを閉じるボタン
 window.addEventListener("load", () => {
-	if (menu_close_button) {
-		menu_close_button();
+	// メニューを開くボタンと閉じるボタンの関数の読み込み
+	if (menu_button) {
+		menu_button();
 	}
-});
 
-// 各国の月名を表示する関数
-window.addEventListener("load", () => {
+	// 各国の月名を表示する関数の読み込み
 	if (display_now_month_names) {
 		display_now_month_names();
 	}
