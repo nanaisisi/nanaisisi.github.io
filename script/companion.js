@@ -1,26 +1,17 @@
 function menu_button() {
 	// メニューの開閉機能
-	const menu_tab = document.getElementById("menu_tab");
 	const toggle_menu_open_btn = document.getElementById("toggle_menu_open_btn");
-	if (toggle_menu_open_btn) {
-		toggle_menu_open_btn.onclick = () => {
-			if (menu_tab.style.display === "none") {
-				menu_tab.style.display = "block";
-			} else if (menu_tab.style.display === "block") {
-				menu_tab.style.display = "none";
-			} else {
-				console.error("Unexpected menu state");
-			}
-		};
-	} else {
-		console.error("toggle_menu_open_btn is not found");
-	}
-
 	const toggle_menu_close_btn = document.getElementById(
 		"toggle_menu_close_btn",
 	);
-	if (toggle_menu_close_btn) {
-		toggle_menu_close_btn.onclick = () => {
+	toggle_menu(toggle_menu_open_btn);
+	toggle_menu(toggle_menu_close_btn);
+}
+
+function toggle_menu(toggle_menu_btn) {
+	const menu_tab = document.getElementById("menu_tab");
+	if (toggle_menu_btn) {
+		toggle_menu_btn.onclick = () => {
 			if (menu_tab.style.display === "block") {
 				menu_tab.style.display = "none";
 			} else if (menu_tab.style.display === "none") {
@@ -31,16 +22,6 @@ function menu_button() {
 		};
 	} else {
 		console.error("toggle_menu_close_btn is not found");
-	}
-}
-
-// メニューを閉じるボタンの関数を追加
-function menu_close_button() {
-	const menu_tab = document.getElementById("menu_tab");
-	if (menu_tab) {
-		menu_tab.style.display = "none";
-	} else {
-		console.error("menu_tab is not found");
 	}
 }
 
