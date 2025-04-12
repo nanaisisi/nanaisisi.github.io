@@ -112,3 +112,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Changed main_page iframe at index.html.
 - Changed insert.html divide to software.html.
+
+## [1.2.0] -2025-02-24
+
+### Changes
+
+- Changed index.html menu and content struct structure.
