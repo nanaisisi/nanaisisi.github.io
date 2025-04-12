@@ -146,9 +146,11 @@ a:hover {
   }
   a:link {
     color: #03C;
+    /*一応#00fもあるにはある*/
   }
   a:visited {
     color: #857;
+    /*一応#000090もあるにはある*/
   }
   a:focus {
     color: #c07100;
@@ -158,5 +160,4 @@ a:hover {
     color: #c07100;
     /*#393もいいかも*/
   }
-  
 }

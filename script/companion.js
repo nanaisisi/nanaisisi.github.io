@@ -135,8 +135,7 @@ function display_now_month_names() {
 	}
 }
 
-// ページロード
-// 時に実行されるイベントリスナーを追加
+// ページロード時に実行されるイベントリスナーを追加
 window.addEventListener("load", () => {
 	if (menu_open_button) {
 		menu_open_button();
