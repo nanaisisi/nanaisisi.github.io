@@ -88,21 +88,16 @@ main {
     color: #aaa;
   }
 
-  .back_black {
-    color-scheme: only dark;
-    background-color: #222;
-  }
-
   a:link {
     color-scheme: only dark;
     color: #ffff99;
   }
-  
+
   a:visited {
     color-scheme: only dark;
     color: #885577;
   }
-  
+
   a:hover {
     color-scheme: only dark;
     color: #cf0;
@@ -115,11 +110,6 @@ body {
   color-scheme: only dark;
   background-color: #222;
   color: #aaa;
-}
-
-.back_black {
-  color-scheme: only dark;
-  background-color: #222;
 }
 
 a:link {
@@ -152,12 +142,28 @@ a:hover {
     color: #857;
     /*一応#000090もあるにはある*/
   }
-  a:focus {
+
+  a:hover {
     color: #c07100;
     /*#393もいいかも*/
   }
-  a:active {
-    color: #c07100;
-    /*#393もいいかも*/
-  }
+}
+
+body {
+  background-color: light-dark(#ffffff,#222);
+  color: #aaa;
+}
+
+a:link {
+  color: #ffff99;
+}
+
+a:visited {
+  color-scheme: only dark;
+  color: #885577;
+}
+
+a:hover {
+  color-scheme: only dark;
+  color: #cf0;
 }
