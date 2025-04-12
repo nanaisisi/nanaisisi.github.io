@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helix Editorの操作方法</title>
+    <link rel="stylesheet" href="../style/style.css" />
+    <script defer src="../script/companion.js"></script>
+  </head>
+  <body class="theme">
+    <div id="menu_tab" class="menu" style="display: none">
+      <iframe loading="lazy" src="menu.html" name="menu" title="目次"></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="toggle_menu_open_btn">メニューの開閉</button>
+    </div>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#Head_1">概要</a></li>
+          <li><a href="#Head_2">使用の位置づけ</a></li>
+          <li><a href="#Head_3">使い方</a></li>
+          <li><a href="#Head_4">他のvi族</a></li>
+          <li><a href="#Head_5">逆にemacs</a></li>
+          <li><a href="#Head_6">他のエディタ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Helix Editorの操作方法</h1>
+      <h2 id="Head_1">概要</h2>
+      コマンド名hx。<br />
+      helix editorは、<br />
+      簡潔に言えばlinux以来(unix?)の古典的2大巨頭、きのたけ戦争めいたエディタ戦争におけるviとemacsで言えば多分vi系のエディタである。<br />
+      Kakouneというエディタを踏襲している。このソフトはRustで書かれているのが使用理由だ。
+      <h2 id="Head_2">使用の位置づけ</h2>
+      基本的にはviなのだがそのへんで一般的なnvimなどのようにプラグインを使わなくとも、ある程度使えてとてもいい感じ。<br />
+      コミュニティは大きくないし、拡張性はこなれていないので開発されるらしいプラグイン機能は期待できないか。<br />
+      <h2 id="Head_3">hxの使い方</h2>
+      hx ファイル名<br />
+      でファイルの作成を含めファイルの編集ができる。<br />
+      キーバインドは、普通のショートカットキーがCtrl+Cでコピー(Copy、貼り付けは隣のvだが)などのように英語の頭文字になっている。<br />
+      開いたらコマンド入力できる画面になるが、<br />
+      編集するには、挿入モードにするためにinsertの頭文字でiキー、<br />
+      もしくはなんか追加する勢いがあるところが違う気もするaddの頭文字でaキーを押す。<br />
+      そこで普通にキー入力で編集したら、<br />
+      escキーで<br />
+      わかんないっすね。
+      <h2 id="Head_4">他のvi族</h2>
+      <h3>vi</h3>
+      言わずと知れた元祖。もとはラインエディタらしい？<br />
+      <h3>vim</h3>
+      その改良型。普及的には割とよくあるだろうか。これ派の人もいるらしいような。独自のvim
+      scriptや多言語によるプラグインとか<br />
+      <h3>neovim</h3>
+      コマンド名など、よくnvimとも。<br />
+      vimの改良型。<br />
+      端的に言えば、vim scriptをluaに変えたもの。<br />
+      今世紀からminecraftのcomputercraftとかあったなーみたいなゲーム用などそこそこの存在感を持つLuaを大々的に採用したエコシステムで専用言語よりは良し悪し？<br />
+      AstroNvimという設定済みのものなどがある様子。<br />
+      <h3>vscode</h3>
+      拡張機能で操作などを変えるものでvimやneovimのものがある様子。<br />
+      <h3>Kakoune</h3>
+      Helixの元になっているものらしい。<br />
+      C++というのもCの拡張版的立ち位置でCと比べるとなんとも言えない存在感だが<br />
+      <h2 id="Head_5">逆にemacs</h2>
+      神の言語と呼ばれるlispと一般的なC言語を用いたエディタらしい。<br />
+      <h2 id="Head_6">他のエディタ</h2>
+      vi～nvimの話でした
+      <ul class="table_of_contents">
+        <li><a href="#Head_6_1">nano</a></li>
+        <li><a href="#Head_6_2">vscode</a></li>
+        <li><a href="#Head_6_3">sublime text</a></li>
+        <li><a href="#Head_6_4">Eclipse</a></li>
+        <li><a href="#Head_6_5">IntelliJ IDEA</a></li>
+        <li><a href="#Head_6_6">visual studio</a></li>
+        <li><a href="#Head_6_7">NetBeans</a></li>
+        <li><a href="#Head_6_8">Delphi</a></li>
+        <li><a href="#Head_6_9">EmEditor</a></li>
+      </ul>
+      <h3 id="Head_6_1">nano</h3>
+      vi系よりは操作しやすくメモ帳といったところの様子。<br />
+      <h3 id="Head_6_2">vscode</h3>
+      拡張機能といえばvscode、現状の覇権エディタ
+      <h3 id="Head_6_3">sublime text</h3>
+      AIと気持ちが合った。nanoって書いたからだな割と。<br />
+      <h3 id="Head_6_4">Eclipse</h3>
+      Renesasとかで結構存在感ある<br />
+      <h3 id="Head_6_5">IntelliJ IDEA</h3>
+      気持ちが合うなー。<br />
+      種類があるがAndroid公式のAndroid Studioとかもある。
+      <h3 id="Head_6_6">visual studio</h3>
+      Microsoft公式
+      <h3 id="Head_6_7">NetBeans</h3>
+      マイクラみたいにjavaといえばではあるはず
+      <h3 id="Head_6_8">Delphi</h3>
+      dotnetにいたるところとかC++とか時代に関連したようなところはある。
+      <h3 id="Head_6_9">EmEditor</h3>
+      なんか窓の杜で聞くよね。
+    </main>
+    <footer></footer>
+  </body>
+</html>

@@ -12,10 +12,18 @@
     />
     <title>書式例</title>
     <link rel="stylesheet" href="../style/style.css" />
+    <script defer src="../script/companion.js"></script>
   </head>
-  <body>
+  <body class="theme">
+    <div id="menu_tab" class="menu" style="display: none">
+      <iframe loading="lazy" src="menu.html" name="menu" title="目次"></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="toggle_menu_open_btn">メニューの開閉</button>
+    </div>
     <div>
       <h1>書式例</h1>
+      <h2>目次</h2>
       <ul class="table_of_contents">
         <li><a href="#Head_1">概要</a></li>
         <li><a href="#Head_2">本文タイトル</a></li>
@@ -26,27 +34,6 @@
         <li><a href="#Mini_1">項目1</a></li>
       </ul>
       <h3 id="Mini_1">項目1</h3>
-      <table>
-        <caption>
-          表番号タイトル
-        </caption>
-        <tr>
-          <th>項目1</th>
-          <td>内容1</td>
-        </tr>
-        <tr>
-          <th>項目2</th>
-          <td>内容2</td>
-        </tr>
-        <tr>
-          <th>項目3</th>
-          <td>内容3</td>
-        </tr>
-        <tr>
-          <th>項目4</th>
-          <td>内容4</td>
-        </tr>
-      </table>
     </div>
   </body>
 </html>
