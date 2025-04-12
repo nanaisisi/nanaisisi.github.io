@@ -4,12 +4,12 @@ function menu_button() {
 	const toggle_menu_close_btn = document.getElementById(
 		"toggle_menu_close_btn",
 	);
-	toggle_menu(toggle_menu_open_btn);
-	toggle_menu(toggle_menu_close_btn);
+	const menu_open_tab = document.getElementById("menu_tab");
+	const menu_close_tab = document.getElementById("menu_tab");
+	toggle_menu(toggle_menu_open_btn, menu_open_tab);
 }
 
-function toggle_menu(toggle_menu_btn) {
-	const menu_tab = document.getElementById("menu_tab");
+function toggle_menu(toggle_menu_btn, menu_tab) {
 	if (toggle_menu_btn) {
 		toggle_menu_btn.onclick = () => {
 			if (menu_tab.style.display === "block") {
