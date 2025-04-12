@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Helix Editorの操作方法</title>
-    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script defer src="./script/companion.js"></script>
   </head>
-  <body>
+  <body class="theme">
+    <div class="fixed-bar">
+      <button id="toggle_menu_btn">メニューの開閉</button>
+    </div>
     <header>
       <nav>
         <ul>
@@ -23,7 +27,7 @@
       <h1>Helix Editorの操作方法</h1>
       <h2 id="Head_1">概要</h2>
       コマンド名hx。<br />
-      helix editorは、<br>
+      helix editorは、<br />
       簡潔に言えばlinux以来(unix?)の古典的2大巨頭、きのたけ戦争めいたエディタ戦争におけるviとemacsで言えば多分vi系のエディタである。<br />
       Kakouneというエディタを踏襲している。このソフトはRustで書かれているのが使用理由だ。
       <h2 id="Head_2">使用の位置づけ</h2>
@@ -43,7 +47,8 @@
       <h3>vi</h3>
       言わずと知れた元祖。もとはラインエディタらしい？<br />
       <h3>vim</h3>
-      その改良型。普及的には割とよくあるだろうか。これ派の人もいるらしいような。独自のvim scriptや多言語によるプラグインとか<br />
+      その改良型。普及的には割とよくあるだろうか。これ派の人もいるらしいような。独自のvim
+      scriptや多言語によるプラグインとか<br />
       <h3>neovim</h3>
       コマンド名など、よくnvimとも。<br />
       vimの改良型。<br />
