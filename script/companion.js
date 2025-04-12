@@ -1,7 +1,7 @@
 function menu_open_button() {
 	// メニューの開閉機能
-	const menu_open_tab = document.getElementById("menu_tab");
-	const toggle_menu_open_btn = document.getElementById("toggle_menu_open_btn");
+	const menu_open_tab = document.getElementById("menu_open_tab");
+	const toggle_menu_open_btn = document.getElementById("toggle_menu_btn");
 	toggle_menu_open_btn.onclick = () => {
 		if (menu_open_tab.style.display === "none") {
 			menu_open_tab.style.display = "block";
@@ -16,7 +16,7 @@ function menu_open_button() {
 function menu_close_button() {
 	// メニューの開閉機能
 	const menu_close_tab = document.getElementById("menu_tab");
-	const toggle_menu_close_btn = document.getElementById("toggle_menu_close__btn");
+	const toggle_menu_close_btn = document.getElementById("toggle_menu_btn");
 	toggle_menu_close_btn.onclick = () => {
 		if (menu_close_tab.style.display === "block") {
 			menu_close_tab.style.display = "none";

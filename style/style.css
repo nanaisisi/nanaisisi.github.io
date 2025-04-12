@@ -55,7 +55,6 @@ td {
 }
 
 th {
-  color-scheme: only dark;
   height: 2.5em;
   margin: auto;
   border: solid;
@@ -84,24 +83,29 @@ main {
 
 @media (prefers-color-scheme: no-preference) {
   body {
-    color-scheme: only light;
-    background-color: #fff;
-    color: #000;
+    color-scheme: only dark;
+    background-color: #222;
+    color: #aaa;
+  }
+
+  .back_black {
+    color-scheme: only dark;
+    background-color: #222;
   }
 
   a:link {
-    color-scheme: only light;
-    color: #0000ff;
+    color-scheme: only dark;
+    color: #ffff99;
   }
-
+  
   a:visited {
-    color-scheme: only light;
-    color: #857;
+    color-scheme: only dark;
+    color: #885577;
   }
-
+  
   a:hover {
-    color-scheme: only light;
-    color: #f00;
+    color-scheme: only dark;
+    color: #cf0;
   }
 }
 
@@ -112,6 +116,12 @@ body {
   background-color: #222;
   color: #aaa;
 }
+
+.back_black {
+  color-scheme: only dark;
+  background-color: #222;
+}
+
 a:link {
   color-scheme: only dark;
   color: #ffff99;
@@ -126,9 +136,27 @@ a:hover {
   color-scheme: only dark;
   color: #cf0;
 }
-
-.back_black {
-  color-scheme: only dark;
-  background-color: #222;
 }
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ffffff;
+    color: #444444;
+    /*#202020もいいかも*/
+  }
+  a:link {
+    color: #03C;
+  }
+  a:visited {
+    color: #857;
+  }
+  a:focus {
+    color: #c07100;
+    /*#393もいいかも*/
+  }
+  a:active {
+    color: #c07100;
+    /*#393もいいかも*/
+  }
+  
 }
