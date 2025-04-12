@@ -1,12 +1,30 @@
-function menu_button() {
+function menu_open_button() {
 	// メニューの開閉機能
-	const menu_tab = document.getElementById("menu_tab");
-	const toggle_menu_btn = document.getElementById("toggle_menu_btn");
-	toggle_menu_btn.onclick = () => {
-		if (menu_tab.style.display === "none") {
-			menu_tab.style.display = "block";
+	const menu_open_tab = document.getElementById("menu_tab");
+	const toggle_menu_open_btn = document.getElementById("toggle_menu_btn");
+	toggle_menu_open_btn.onclick = () => {
+		if (menu_open_tab.style.display === "none") {
+			menu_open_tab.style.display = "block";
+		} else if (menu_open_tab.style.display === "block") {
+			menu_open_tab.style.display = "none";
 		} else {
-			menu_tab.style.display = "none";
+			console.error("Unexpected menu state");
+		}
+		
+	};
+}
+
+function menu_close_button() {
+	// メニューの開閉機能
+	const menu_close_tab = document.getElementById("menu_tab");
+	const toggle_menu_close_btn = document.getElementById("toggle_menu_btn");
+	toggle_menu_close_btn.onclick = () => {
+		if (menu_close_tab.style.display === "block") {
+			menu_close_tab.style.display = "none";
+		} else if (menu_close_tab.style.display === "none") {
+			menu_close_tab.style.display = "block";
+		} else {
+			console.error("Unexpected menu state");
 		}
 	};
 }
@@ -119,15 +137,16 @@ function display_now_month_names() {
 }
 
 // ページロード
+// 時に実行されるイベントリスナーを追加
 window.addEventListener("load", () => {
-	if (tp_top) {
-		tp_top();
+	if (menu_open_button) {
+		menu_open_button();
 	}
 });
 
 window.addEventListener("load", () => {
-	if (menu_button) {
-		menu_button();
+	if (menu_close_button) {
+		menu_close_button();
 	}
 });
 
