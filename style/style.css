@@ -124,6 +124,7 @@ a:hover {
   }
 }
 
+/* light-dark() function */
 body {
   background-color: light-dark(#ffffff,#222);
   color: light-dark(#444444,#aaa);
