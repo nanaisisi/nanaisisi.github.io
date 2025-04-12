@@ -2,20 +2,6 @@
   font-size: small;
 }
 
-
-.center {
-  text-align: center;
-  min-width: 50vw;
-}
-
-.page_structure {
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100%;
-}
-
 .menu_hr {
   width: 100%;
   size: 1;
@@ -34,17 +20,6 @@
   left: 0;
   width: 200px;
   height: 100%;
-}
-
-.contents {
-  box-sizing: border-box;
-}
-
-.contents iframe {
-  box-sizing: border-box;
-  position: absolute;
-  width: 95%;
-  height: 70%;
 }
 
 table,
@@ -151,19 +126,17 @@ a:hover {
 
 body {
   background-color: light-dark(#ffffff,#222);
-  color: #aaa;
+  color: light-dark(#444444,#aaa);
 }
 
 a:link {
-  color: #ffff99;
+  color: light-dark(#03C,#ffff99);
 }
 
 a:visited {
-  color-scheme: only dark;
-  color: #885577;
+  color: light-dark(#857,#885577);
 }
 
 a:hover {
-  color-scheme: only dark;
-  color: #cf0;
+  color: light-dark(#c07100,#cf0);
 }
