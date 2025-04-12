@@ -8,18 +8,18 @@
 }
 
 .menu {
-  box-sizing: border-box;
+  box-sizing: content-box;
   top: 0;
   left: 0;
   width: 200px;
 }
 
 .menu iframe {
-  box-sizing: border-box;
+  box-sizing: content-box;
   position: absolute;
   left: 0;
   width: 200px;
-  height: 100%;
+  height: 90%;
 }
 
 table,
@@ -54,6 +54,12 @@ main {
   display: flex;
   flex-direction: row-reverse;
   flex-direction: column-reverse;
+}
+
+.right_btn {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 @media (prefers-color-scheme: no-preference) {
