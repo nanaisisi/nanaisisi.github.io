@@ -1,7 +1,7 @@
 function menu_open_button() {
 	// メニューの開閉機能
 	const menu_open_tab = document.getElementById("menu_open_tab");
-	const toggle_menu_open_btn = document.getElementById("toggle_menu_btn");
+	const toggle_menu_open_btn = document.getElementById("toggle_menu_open_btn");
 	toggle_menu_open_btn.onclick = () => {
 		if (menu_open_tab.style.display === "none") {
 			menu_open_tab.style.display = "block";
@@ -16,7 +16,7 @@ function menu_open_button() {
 function menu_close_button() {
 	// メニューの開閉機能
 	const menu_close_tab = document.getElementById("menu_tab");
-	const toggle_menu_close_btn = document.getElementById("toggle_menu_btn");
+	const toggle_menu_close_btn = document.getElementById("toggle_menu_close_btn");
 	toggle_menu_close_btn.onclick = () => {
 		if (menu_close_tab.style.display === "block") {
 			menu_close_tab.style.display = "none";
@@ -28,7 +28,7 @@ function menu_close_button() {
 	};
 }
 
-// 旧暦の和風月名を表示する関数
+// 一部国家の月名を表示する関数
 function display_now_month_names() {
 	const english_month_names = [
 		"January",
@@ -136,18 +136,21 @@ function display_now_month_names() {
 }
 
 // ページロード時に実行されるイベントリスナーを追加
+// メニューを開くボタン
 window.addEventListener("load", () => {
 	if (menu_open_button) {
 		menu_open_button();
 	}
 });
 
+// メニューを閉じるボタン
 window.addEventListener("load", () => {
 	if (menu_close_button) {
 		menu_close_button();
 	}
 });
 
+// 各国の月名を表示する関数
 window.addEventListener("load", () => {
 	if (display_now_month_names) {
 		display_now_month_names();
