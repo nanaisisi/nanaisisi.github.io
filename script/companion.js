@@ -15,7 +15,7 @@ async function loadWasm() {
 
 // 既存のJavaScriptコード（フォールバック用）
 function menu_button() {
-	// メニューの開閉機能
+	メニューの開閉機能;
 	const toggle_menu_open_btn = document.getElementById("toggle_menu_open_btn");
 	const toggle_menu_close_btn = document.getElementById(
 		"toggle_menu_close_btn",
