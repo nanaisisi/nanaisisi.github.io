@@ -1,5 +1,19 @@
-//before rust test_code
+// Wasmモジュールのロードと既存のJavaScript機能
+// WASMのロード関数
+async function loadWasm() {
+	try {
+		// Wasmモジュールの読み込み
+		const wasm = await import("../nanai_wasm_rs/pkg/nanai_wasm_rs.js");
+		await wasm.default();
+		console.log("WASM loaded successfully!");
+		return wasm;
+	} catch (error) {
+		console.error("Error loading WASM:", error);
+		return null;
+	}
+}
 
+// 既存のJavaScriptコード（フォールバック用）
 function menu_button() {
 	// メニューの開閉機能
 	const toggle_menu_open_btn = document.getElementById("toggle_menu_open_btn");
@@ -28,7 +42,7 @@ function toggle_menu(toggle_menu_btn, menu_tab) {
 }
 
 // 一部国家の月名を表示する関数
-function display_now_month_names() {
+function display_now_month_names_js() {
 	const english_month_names = [
 		"January",
 		"February",
@@ -134,16 +148,51 @@ function display_now_month_names() {
 	}
 }
 
-// ページロード時に実行されるイベントリスナーを追加
-
-window.addEventListener("load", () => {
-	// メニューを開くボタンと閉じるボタンの関数の読み込み
-	if (menu_button) {
-		menu_button();
+// WASM版の月名表示関数
+async function display_now_month_names_wasm() {
+	const wasmModule = await loadWasm();
+	if (!wasmModule) {
+		// WASmのロードに失敗した場合はJavaScriptバージョンを使用
+		display_now_month_names_js();
+		return;
 	}
 
-	// 各国の月名を表示する関数の読み込み
-	if (display_now_month_names) {
-		display_now_month_names();
+	const current_month = wasmModule.get_current_month();
+	const japanese_now_month_name =
+		wasmModule.get_japanese_month_name(current_month);
+	const english_now_month_name =
+		wasmModule.get_english_month_name(current_month);
+	const ukrainian_now_month_name =
+		wasmModule.get_ukrainian_month_name(current_month);
+	const ukrainian_alphabet_now_month_name =
+		wasmModule.get_ukrainian_alphabet_month_name(current_month);
+	const swedish_now_month_name =
+		wasmModule.get_swedish_month_name(current_month);
+	const suomi_now_month_name = wasmModule.get_suomi_month_name(current_month);
+
+	const month_names_element = document.getElementById("month_names");
+	if (month_names_element) {
+		month_names_element.innerHTML = `
+            JP: ${japanese_now_month_name}<br>
+            EN: ${english_now_month_name}<br>
+            UA: ${ukrainian_now_month_name}<br>
+            UA_EN: ${ukrainian_alphabet_now_month_name}<br>
+            SE: ${swedish_now_month_name}<br>
+            FI: ${suomi_now_month_name}
+        `;
+	}
+}
+
+// ページのロード時にWasmを使用して機能を実行
+window.addEventListener("load", async () => {
+	// メニューボタンの初期化
+	menu_button();
+
+	// 月名表示 - WasmとJavaScriptのハイブリッド実装
+	try {
+		await display_now_month_names_wasm();
+	} catch (error) {
+		console.error("Error in WASM implementation, falling back to JS:", error);
+		display_now_month_names_js();
 	}
 });
