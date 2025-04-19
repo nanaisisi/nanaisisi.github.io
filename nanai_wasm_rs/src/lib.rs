@@ -1,27 +1,129 @@
 use wasm_bindgen::prelude::*;
-use web_sys::Window;
 
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+// Rustで記述されたWASM関数
+#[wasm_bindgen]
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
 }
 
-fn window() -> web_sys::Window {
-    web_sys::window().expect("no global `window` exists")
+// 現在の月を返す関数
+#[wasm_bindgen]
+pub fn get_current_month() -> usize {
+    let date = js_sys::Date::new_0();
+    date.get_month() as usize
 }
 
-fn document() -> web_sys::Document {
-    window()
-        .document()
-        .expect("should have a document on window")
+// 月名を返す関数群
+#[wasm_bindgen]
+pub fn get_japanese_month_name(month_index: usize) -> String {
+    let japanese_month_names = [
+        "睦月",
+        "如月",
+        "弥生",
+        "卯月",
+        "皐月",
+        "水無月",
+        "文月",
+        "葉月",
+        "長月",
+        "神無月",
+        "霜月",
+        "師走",
+    ];
+    japanese_month_names[month_index % 12].to_string()
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+#[wasm_bindgen]
+pub fn get_english_month_name(month_index: usize) -> String {
+    let english_month_names = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+    english_month_names[month_index % 12].to_string()
+}
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+#[wasm_bindgen]
+pub fn get_ukrainian_month_name(month_index: usize) -> String {
+    let ukrainian_month_names = [
+        "Січень",
+        "Лютий",
+        "Березень",
+        "Квітень",
+        "Травень",
+        "Червень",
+        "Липень",
+        "Серпень",
+        "Вересень",
+        "Жовтень",
+        "Листопад",
+        "Грудень",
+    ];
+    ukrainian_month_names[month_index % 12].to_string()
+}
+
+#[wasm_bindgen]
+pub fn get_ukrainian_alphabet_month_name(month_index: usize) -> String {
+    let ukrainian_alphabet_month_names = [
+        "si-chen",
+        "lu-tyi",
+        "be-re-zen",
+        "kvi-ten",
+        "tra-vehn",
+        "cher-vehn",
+        "ly-pehn",
+        "ser-pehn",
+        "ve-re-sehn",
+        "zhov-tehn",
+        "lys-to-pad",
+        "hru-dehn",
+    ];
+    ukrainian_alphabet_month_names[month_index % 12].to_string()
+}
+
+#[wasm_bindgen]
+pub fn get_swedish_month_name(month_index: usize) -> String {
+    let swedish_month_names = [
+        "Januari",
+        "Februari",
+        "Mars",
+        "April",
+        "Maj",
+        "Juni",
+        "Juli",
+        "Augusti",
+        "September",
+        "Oktober",
+        "November",
+        "December",
+    ];
+    swedish_month_names[month_index % 12].to_string()
+}
+
+#[wasm_bindgen]
+pub fn get_suomi_month_name(month_index: usize) -> String {
+    let suomi_month_names = [
+        "Tammikuu",
+        "Helmikuu",
+        "Maaliskuu",
+        "Huhtikuu",
+        "Toukokuu",
+        "Kesäkuu",
+        "Heinäkuu",
+        "Elokuu",
+        "Syyskuu",
+        "Lokakuu",
+        "Marraskuu",
+        "Joulukuu",
+    ];
+    suomi_month_names[month_index % 12].to_string()
 }
