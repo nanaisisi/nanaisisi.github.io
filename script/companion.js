@@ -1,3 +1,5 @@
+//before rust test_code
+
 function menu_button() {
 	// メニューの開閉機能
 	const toggle_menu_open_btn = document.getElementById("toggle_menu_open_btn");
