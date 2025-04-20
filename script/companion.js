@@ -15,14 +15,10 @@ async function loadWasm() {
 
 // 既存のJavaScriptコード（フォールバック用）
 function menu_button() {
-	メニューの開閉機能;
-	const toggle_menu_open_btn = document.getElementById("toggle_menu_open_btn");
-	const toggle_menu_close_btn = document.getElementById(
-		"toggle_menu_close_btn",
-	);
+	// メニューの開閉機能
+	const toggle_menu_btn = document.getElementById("toggle_menu_btn");
 	const menu_open_tab = document.getElementById("menu_tab");
-	const menu_close_tab = document.getElementById("menu_tab");
-	toggle_menu(toggle_menu_open_btn, menu_open_tab);
+	toggle_menu(toggle_menu_btn, menu_open_tab);
 }
 
 function toggle_menu(toggle_menu_btn, menu_tab) {
@@ -37,7 +33,7 @@ function toggle_menu(toggle_menu_btn, menu_tab) {
 			}
 		};
 	} else {
-		console.error("toggle_menu_close_btn is not found");
+		console.error("toggle_menu_btn is not found");
 	}
 }
 
@@ -153,33 +149,39 @@ async function display_now_month_names_wasm() {
 	const wasmModule = await loadWasm();
 	if (!wasmModule) {
 		// WASmのロードに失敗した場合はJavaScriptバージョンを使用
+		console.log("Falling back to JS implementation");
 		display_now_month_names_js();
 		return;
 	}
 
-	const current_month = wasmModule.get_current_month();
-	const japanese_now_month_name =
-		wasmModule.get_japanese_month_name(current_month);
-	const english_now_month_name =
-		wasmModule.get_english_month_name(current_month);
-	const ukrainian_now_month_name =
-		wasmModule.get_ukrainian_month_name(current_month);
-	const ukrainian_alphabet_now_month_name =
-		wasmModule.get_ukrainian_alphabet_month_name(current_month);
-	const swedish_now_month_name =
-		wasmModule.get_swedish_month_name(current_month);
-	const suomi_now_month_name = wasmModule.get_suomi_month_name(current_month);
+	try {
+		const current_month = wasmModule.get_current_month();
+		const japanese_now_month_name =
+			wasmModule.get_japanese_month_name(current_month);
+		const english_now_month_name =
+			wasmModule.get_english_month_name(current_month);
+		const ukrainian_now_month_name =
+			wasmModule.get_ukrainian_month_name(current_month);
+		const ukrainian_alphabet_now_month_name =
+			wasmModule.get_ukrainian_alphabet_month_name(current_month);
+		const swedish_now_month_name =
+			wasmModule.get_swedish_month_name(current_month);
+		const suomi_now_month_name = wasmModule.get_suomi_month_name(current_month);
 
-	const month_names_element = document.getElementById("month_names");
-	if (month_names_element) {
-		month_names_element.innerHTML = `
-            JP: ${japanese_now_month_name}<br>
-            EN: ${english_now_month_name}<br>
-            UA: ${ukrainian_now_month_name}<br>
-            UA_EN: ${ukrainian_alphabet_now_month_name}<br>
-            SE: ${swedish_now_month_name}<br>
-            FI: ${suomi_now_month_name}
-        `;
+		const month_names_element = document.getElementById("month_names");
+		if (month_names_element) {
+			month_names_element.innerHTML = `
+                JP: ${japanese_now_month_name}<br>
+                EN: ${english_now_month_name}<br>
+                UA: ${ukrainian_now_month_name}<br>
+                UA_EN: ${ukrainian_alphabet_now_month_name}<br>
+                SE: ${swedish_now_month_name}<br>
+                FI: ${suomi_now_month_name}
+            `;
+		}
+	} catch (error) {
+		console.error("Error calling WASM functions:", error);
+		display_now_month_names_js();
 	}
 }
 
@@ -188,11 +190,16 @@ window.addEventListener("load", async () => {
 	// メニューボタンの初期化
 	menu_button();
 
-	// 月名表示 - WasmとJavaScriptのハイブリッド実装
-	try {
-		await display_now_month_names_wasm();
-	} catch (error) {
-		console.error("Error in WASM implementation, falling back to JS:", error);
-		display_now_month_names_js();
+	// 月名表示 - 月名表示要素があるかチェック
+	const month_names_element = document.getElementById("month_names");
+	if (month_names_element) {
+		try {
+			await display_now_month_names_wasm();
+		} catch (error) {
+			console.error("Error in WASM implementation, falling back to JS:", error);
+			display_now_month_names_js();
+		}
+	} else {
+		console.log("month_names element not found, skipping month name display");
 	}
 });
