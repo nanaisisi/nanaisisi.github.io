@@ -4,79 +4,73 @@
 
 <?xml version="1.1" encoding="UTF-8"?>
 <html lang="ja-JP">
-  <head>
-    <meta
-      charset="utf-8"
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
-    <title>insert</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../style/style.css" />
-    <link rel="icon" href="../img/favicon.png" type="image/svg+xml" />
-    <script defer src="../script/companion.js"></script>
-  </head>
-  <body class="theme">
-    <div id="menu_tab" class="menu" style="display: none">
-      <iframe loading="lazy" src="menu.html" name="menu" title="目次"></iframe>
-    </div>
-    <div class="fixed-bar">
-      <button class="right_btn" id="toggle_menu_open_btn">
-        メニューの開閉
-      </button>
-      <button id="theme_toggle_btn">テーマ切り替え</button>
-    </div>
-    <header>
-      <nav>
-        <ul class="table_of_contents">
-          <li><a href="#Head_1">所感</a></li>
-          <li><a href="#Head_2">目標</a></li>
-          <li><a href="#Head_3">提出について</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div>
-      <h1>追加情報</h1>
-      <h2 id="Head_1">所感</h2>
-      ダークテーマ一貫になってしまっているのイーロンマスクみてぇ。<br />
-      下の内容と違っていて、Prettierはあんまり使えなくなってしまっていて。<br />
-      書式なんて知らない♪Rising Hopeなのかで。<br />
-      sftpよくわからないので、使えたらいいんだけどな～<br />
-      <a href="https://dengekibunko.jp/novecomi/" target="_blank" rel="noopener"
-        >現在(2023/m08/04-12:48)あっPWA<br
-      /></a>
-      デバッガーの言うがままに適当に書きました<br />
-      <h2 id="Head_2">目標</h2>
-      <ul>
-        <li>各所改善。レスポンシブデザインとか？</li>
-        <li>
-          Menu_pageへの背景の導入。メニュー部分での選択表示。画像自体はsvgで行けそう。上記の文字部分処理をいきなりする必要はなくなる。
-        </li>
-        <li>
-          menu.phpへの機能追加。月などの暦の大幅対応。大阪万博までの日時表示。JST、UTC、東部標準時の表示。機器間での時間差の算出
-        </li>
-        <li>右下ツールの拡張</li>
-        <li>
-          PHP利用部の強制的な作成。変えようのないサーバーサイド環境と考えれば多少は
-        </li>
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+  <title>insert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style/style.css" />
+  <link rel="icon" href="../img/favicon.png" type="image/svg+xml" />
+  <script defer src="../script/companion.js"></script>
+</head>
+
+<body class="theme">
+  <div id="menu_tab" class="menu" style="display: none">
+    <iframe loading="lazy" src="menu.html" name="menu" title="目次"></iframe>
+  </div>
+  <div class="fixed-bar">
+    <button class="right_btn" id="toggle_menu_btn">
+      メニューの開閉
+    </button>
+    <button id="theme_toggle_btn">テーマ切り替え</button>
+  </div>
+  <header>
+    <nav>
+      <ul class="table_of_contents">
+        <li><a href="#Head_1">所感</a></li>
+        <li><a href="#Head_2">目標</a></li>
+        <li><a href="#Head_3">提出について</a></li>
       </ul>
-      なんとなくXHTMLかもしれません。<br />
-      <h2 id="Head_3">このサイトの作成について</h2>
-      うまく適応させていないので、あまり使用していませんが、<br />
-      エディターの標準機能とかでことたりとるわ。<br />
-      一応リンターとして、<br />
-      JavaScriptとTypescriptのその他の用途でも使用可能なRome(今だと実質的にBiomeか)と、<br />
-      Formatterなど限定的な用途でHTMLなど様々なファイル拡張子に、汎用的に使用できるPrettierを使用しています。<br />
-      テストにJest、よくわからん。<br />
-      パス汚染環境「prettier *
-      --write」、つかいやすいのは「{任意のパッケージマネージャ{例、NPX}}
-      prettier * --write」<br />
-      危ない指定みたいですよ？ワイルドカードなので(マクロみたいな行頭)。PC破壊的コマンドって、こういう指定だったんだなと。<br />
-    </div>
-  </body>
+    </nav>
+  </header>
+  <div>
+    <h1>追加情報</h1>
+    <h2 id="Head_1">所感</h2>
+    ダークテーマ一貫になってしまっているのイーロンマスクみてぇ。<br />
+    下の内容と違っていて、Prettierはあんまり使えなくなってしまっていて。<br />
+    書式なんて知らない♪Rising Hopeなのかで。<br />
+    sftpよくわからないので、使えたらいいんだけどな～<br />
+    <a href="https://dengekibunko.jp/novecomi/" target="_blank" rel="noopener">現在(2023/m08/04-12:48)あっPWA<br /></a>
+    デバッガーの言うがままに適当に書きました<br />
+    <h2 id="Head_2">目標</h2>
+    <ul>
+      <li>各所改善。レスポンシブデザインとか？</li>
+      <li>
+        Menu_pageへの背景の導入。メニュー部分での選択表示。画像自体はsvgで行けそう。上記の文字部分処理をいきなりする必要はなくなる。
+      </li>
+      <li>
+        menu.phpへの機能追加。月などの暦の大幅対応。大阪万博までの日時表示。JST、UTC、東部標準時の表示。機器間での時間差の算出
+      </li>
+      <li>右下ツールの拡張</li>
+      <li>
+        PHP利用部の強制的な作成。変えようのないサーバーサイド環境と考えれば多少は
+      </li>
+    </ul>
+    なんとなくXHTMLかもしれません。<br />
+    <h2 id="Head_3">このサイトの作成について</h2>
+    うまく適応させていないので、あまり使用していませんが、<br />
+    エディターの標準機能とかでことたりとるわ。<br />
+    一応リンターとして、<br />
+    JavaScriptとTypescriptのその他の用途でも使用可能なRome(今だと実質的にBiomeか)と、<br />
+    Formatterなど限定的な用途でHTMLなど様々なファイル拡張子に、汎用的に使用できるPrettierを使用しています。<br />
+    テストにJest、よくわからん。<br />
+    パス汚染環境「prettier *
+    --write」、つかいやすいのは「{任意のパッケージマネージャ{例、NPX}}
+    prettier * --write」<br />
+    危ない指定みたいですよ？ワイルドカードなので(マクロみたいな行頭)。PC破壊的コマンドって、こういう指定だったんだなと。<br />
+  </div>
+</body>
+
 </html>
