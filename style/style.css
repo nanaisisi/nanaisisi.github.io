@@ -147,3 +147,57 @@ a:visited {
 a:hover {
   color: light-dark(#c07100,#cf0);
 }
+
+/* テーマ切り替えボタンのスタイル */
+.theme-toggle-btn {
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 10px 0;
+  background-color: light-dark(#333, #ddd);
+  color: light-dark(#fff, #333);
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.theme-toggle-btn:hover {
+  background-color: light-dark(#444, #ccc);
+}
+
+/* ダークモードとライトモードのクラス */
+.dark-theme {
+  background-color: #222;
+  color: #aaa;
+}
+
+.dark-theme a:link {
+  color: #ffff99;
+}
+
+.dark-theme a:visited {
+  color: #885577;
+}
+
+.dark-theme a:hover {
+  color: #cf0;
+}
+
+.light-theme {
+  background-color: #ffffff;
+  color: #444444;
+}
+
+.light-theme a:link {
+  color: #03C;
+}
+
+.light-theme a:visited {
+  color: #857;
+}
+
+.light-theme a:hover {
+  color: #c07100;
+}
