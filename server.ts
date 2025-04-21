@@ -1,7 +1,5 @@
-// JSRからHTTPモジュールをインポート
-// @deno-types="jsr:@std/http"
-import { serve } from "jsr:@std/http";
-
+//run 
+//deno run --allow-net --allow-read server.ts --unstable
 // MIMEタイプのマッピング
 const mimeTypes: Record<string, string> = {
 	".html": "text/html",
@@ -63,4 +61,4 @@ async function handler(req: Request): Promise<Response> {
 
 console.log("サーバーを起動しています...");
 console.log("http://localhost:8000 でアクセスできます");
-serve(handler, { port: 8000 });
+Deno.serve(handler, { port: 8000 });
