@@ -6,7 +6,8 @@
 <html lang="ja-JP">
 
 <head>
-  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>コマンドラインツール</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,41 +29,831 @@
   <header>
     <nav>
       <ul class="table_of_contents">
-        <li><a href="#Head_1">概要</a></li>
-        <li><a href="#Head_2">本文タイトル</a></li>
+        <li><a href="#Head_1">各環境のコマンドツール比較</a></li>
+        <li><a href="#Head_2">基本コマンド</a></li>
+        <li><a href="#Head_3">ファイル操作コマンド</a></li>
+        <li><a href="#Head_4">テキスト処理コマンド</a></li>
+        <li><a href="#Head_5">システム管理コマンド</a></li>
+        <li><a href="#Head_6">ネットワークコマンド</a></li>
+        <li><a href="#Head_7">環境ごとの特徴</a></li>
+        <li><a href="#Head_8">Nushellと他のシェルとの比較</a></li>
+        <li><a href="#Head_9">移行ガイド：他のシェルからNushellへ</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <div>
-      <h1>書式例</h1>
-      <h2 id="Head_1">概要等</h2>
-      <h2 id="Head_2">本文タイトル</h2>
-      <ul class="table_of_contents">
-        <li><a href="#Mini_1">項目1</a></li>
-      </ul>
-      <h3 id="Mini_1">項目1</h3>
+      <h1>各シェル環境のコマンドツール比較</h1>
+
+      <h2 id="Head_1">各環境のコマンドツール比較</h2>
+      <p>
+        bash/cmd/powershell&lt;nushell≦rust<br>
+        ネイティブ環境は無視。<br>
+        nushellは組み込みの統計システム仕様。<br>
+        Rust製ツールは向いてる。
+      </p>
+
+      <h2 id="Head_2">基本コマンド</h2>
       <table>
         <caption>
-          表番号タイトル
+          表2.1: 各シェル環境における基本的なコマンド一覧と比較
         </caption>
-        <tr>
-          <th>項目1</th>
-          <td>内容1</td>
-        </tr>
-        <tr>
-          <th>項目2</th>
-          <td>内容2</td>
-        </tr>
-        <tr>
-          <th>項目3</th>
-          <td>内容3</td>
-        </tr>
-        <tr>
-          <th>項目4</th>
-          <td>内容4</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>機能</th>
+            <th>bash</th>
+            <th>cmd</th>
+            <th>powershell&lt;</th>
+            <th>nushell≦</th>
+            <th>rust</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ディレクトリ変更</td>
+            <td>cd<br>(change directory)</td>
+            <td>cd</td>
+            <td>Set-Location / cd</td>
+            <td>cd</td>
+            <td>zoxide</td>
+          </tr>
+          <tr>
+            <td>ディレクトリ一覧</td>
+            <td>ls</td>
+            <td>dir</td>
+            <td>Get-ChildItem / dir / ls</td>
+            <td>ls</td>
+            <td>eza</td>
+          </tr>
+          <tr>
+            <td>現在のディレクトリ表示</td>
+            <td>pwd</td>
+            <td>cd (引数なし)</td>
+            <td>Get-Location / pwd</td>
+            <td>pwd</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>ファイル内容表示</td>
+            <td>cat</td>
+            <td>type</td>
+            <td>Get-Content / cat / type</td>
+            <td>open / cat</td>
+            <td>bat</td>
+          </tr>
+          <tr>
+            <td>画面消去</td>
+            <td>clear</td>
+            <td>cls</td>
+            <td>Clear-Host / cls</td>
+            <td>clear</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>コマンド履歴</td>
+            <td>history</td>
+            <td>doskey /history</td>
+            <td>Get-History / history</td>
+            <td>history</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>ディレクトリ作成</td>
+            <td>mkdir</td>
+            <td>mkdir / md</td>
+            <td>New-Item / mkdir</td>
+            <td>mkdir</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>ファイルコピー</td>
+            <td>cp</td>
+            <td>copy</td>
+            <td>Copy-Item / cp / copy</td>
+            <td>cp</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>ファイル移動/名前変更</td>
+            <td>mv</td>
+            <td>move / rename / ren</td>
+            <td>Move-Item / Rename-Item / mv / move</td>
+            <td>mv</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>ファイル削除</td>
+            <td>rm</td>
+            <td>del / erase</td>
+            <td>Remove-Item / del / rm</td>
+            <td>rm</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>ディレクトリ削除</td>
+            <td>rmdir / rm -r</td>
+            <td>rmdir / rd</td>
+            <td>Remove-Item / rmdir / rd</td>
+            <td>rm -r</td>
+            <td>-</td>
+          </tr>
+        </tbody>
       </table>
+
+      <h2 id="Head_3">ファイル操作コマンド</h2>
+      <table>
+        <caption>
+          表3.1: 各シェル環境におけるファイル操作コマンドの比較
+        </caption>
+        <thead>
+          <tr>
+            <th>機能</th>
+            <th>bash</th>
+            <th>cmd.exe (Windows)</th>
+            <th>PowerShell</th>
+            <th>Nushell (Nu)</th>
+            <th>rust</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ファイル検索</td>
+            <td>find / locate</td>
+            <td>where / findstr</td>
+            <td>Get-ChildItem -Recurse | Where-Object</td>
+            <td>ls **/* | where name =~ pattern</td>
+            <td>fd / ripgrep</td>
+          </tr>
+          <tr>
+            <td>ファイル内テキスト検索</td>
+            <td>grep</td>
+            <td>findstr</td>
+            <td>Select-String</td>
+            <td>open | lines | where $it =~ pattern</td>
+            <td>ripgrep</td>
+          </tr>
+          <tr>
+            <td>ファイル比較</td>
+            <td>diff</td>
+            <td>fc</td>
+            <td>Compare-Object</td>
+            <td>diff (プラグイン)</td>
+            <td>difftastic</td>
+          </tr>
+          <tr>
+            <td>ファイル属性変更</td>
+            <td>chmod</td>
+            <td>attrib</td>
+            <td>Set-ItemProperty</td>
+            <td>chmod (外部コマンド)</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>ファイル所有者変更</td>
+            <td>chown</td>
+            <td>icacls</td>
+            <td>Set-Acl</td>
+            <td>chown (外部コマンド)</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>シンボリックリンク作成</td>
+            <td>ln -s</td>
+            <td>mklink</td>
+            <td>New-Item -ItemType SymbolicLink</td>
+            <td>ln -s (外部コマンド)</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>ファイルサイズ確認</td>
+            <td>ls -l / du</td>
+            <td>dir</td>
+            <td>(Get-Item).Length</td>
+            <td>ls | get size</td>
+            <td>dust / dua</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="Head_4">テキスト処理コマンド</h2>
+      <table>
+        <caption>
+          テキスト処理コマンド
+        </caption>
+        <thead>
+          <tr>
+            <th>機能</th>
+            <th>bash</th>
+            <th>cmd.exe (Windows)</th>
+            <th>PowerShell</th>
+            <th>Nushell (Nu)</th>
+            <th>rust</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>テキスト検索</td>
+            <td>grep</td>
+            <td>findstr</td>
+            <td>Select-String</td>
+            <td>find-in-string</td>
+            <td>ripgrep</td>
+          </tr>
+          <tr>
+            <td>テキスト置換</td>
+            <td>sed</td>
+            <td>-</td>
+            <td>-replace / $_.Replace()</td>
+            <td>str replace</td>
+            <td>sd / amber</td>
+          </tr>
+          <tr>
+            <td>テキスト整形</td>
+            <td>fmt / awk</td>
+            <td>-</td>
+            <td>Format-*</td>
+            <td>fmt</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>ソート</td>
+            <td>sort</td>
+            <td>sort</td>
+            <td>Sort-Object</td>
+            <td>sort-by</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>行数カウント</td>
+            <td>wc -l</td>
+            <td>find /c /v ""</td>
+            <td>(Get-Content).Count</td>
+            <td>lines | length</td>
+            <td>tokei</td>
+          </tr>
+          <tr>
+            <td>テキスト差分</td>
+            <td>diff</td>
+            <td>fc</td>
+            <td>Compare-Object</td>
+            <td>diff (プラグイン)</td>
+            <td>difftastic</td>
+          </tr>
+          <tr>
+            <td>先頭/末尾の表示</td>
+            <td>head / tail</td>
+            <td>-</td>
+            <td>Select-Object -First/-Last</td>
+            <td>first / last</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>テキスト分割</td>
+            <td>cut / awk</td>
+            <td>-</td>
+            <td>-split</td>
+            <td>split</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="Head_5">システム管理コマンド</h2>
+      <table>
+        <caption>
+          システム管理コマンド
+        </caption>
+        <thead>
+          <tr>
+            <th>機能</th>
+            <th>bash</th>
+            <th>cmd.exe (Windows)</th>
+            <th>PowerShell</th>
+            <th>Nushell (Nu)</th>
+            <th>rust</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>プロセス一覧</td>
+            <td>ps</td>
+            <td>tasklist</td>
+            <td>Get-Process</td>
+            <td>ps</td>
+            <td>procs</td>
+          </tr>
+          <tr>
+            <td>プロセス終了</td>
+            <td>kill</td>
+            <td>taskkill</td>
+            <td>Stop-Process</td>
+            <td>kill (外部コマンド)</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>システム情報</td>
+            <td>uname -a / lsb_release</td>
+            <td>systeminfo</td>
+            <td>Get-ComputerInfo</td>
+            <td>sys</td>
+            <td>sysinfo</td>
+          </tr>
+          <tr>
+            <td>ディスク使用量</td>
+            <td>df</td>
+            <td>dir C: / diskpart</td>
+            <td>Get-PSDrive</td>
+            <td>sys | get disks</td>
+            <td>dua / dust</td>
+          </tr>
+          <tr>
+            <td>メモリ使用状況</td>
+            <td>free</td>
+            <td>systeminfo</td>
+            <td>Get-Process | Measure-Object</td>
+            <td>sys | get mem</td>
+            <td>bottom</td>
+          </tr>
+          <tr>
+            <td>サービス管理</td>
+            <td>service / systemctl</td>
+            <td>sc / net</td>
+            <td>Get-Service / Start-Service</td>
+            <td>外部コマンド</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>シャットダウン</td>
+            <td>shutdown</td>
+            <td>shutdown</td>
+            <td>Stop-Computer</td>
+            <td>外部コマンド</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>ユーザー管理</td>
+            <td>useradd / usermod</td>
+            <td>net user</td>
+            <td>Get-LocalUser</td>
+            <td>外部コマンド</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="Head_6">ネットワークコマンド</h2>
+      <table>
+        <caption>
+          ネットワークコマンド
+        </caption>
+        <thead>
+          <tr>
+            <th>機能</th>
+            <th>bash</th>
+            <th>cmd.exe (Windows)</th>
+            <th>PowerShell</th>
+            <th>Nushell (Nu)</th>
+            <th>rust</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IPアドレス確認</td>
+            <td>ifconfig / ip addr</td>
+            <td>ipconfig</td>
+            <td>Get-NetIPAddress</td>
+            <td>sys | get net</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>疎通確認</td>
+            <td>ping</td>
+            <td>ping</td>
+            <td>Test-Connection</td>
+            <td>ping (外部コマンド)</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>ネットワーク経路</td>
+            <td>traceroute</td>
+            <td>tracert</td>
+            <td>Test-NetConnection -TraceRoute</td>
+            <td>外部コマンド</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>DNS検索</td>
+            <td>nslookup / dig</td>
+            <td>nslookup</td>
+            <td>Resolve-DnsName</td>
+            <td>外部コマンド</td>
+            <td>dog</td>
+          </tr>
+          <tr>
+            <td>ファイルダウンロード</td>
+            <td>wget / curl</td>
+            <td>-</td>
+            <td>Invoke-WebRequest</td>
+            <td>http get</td>
+            <td>curl-rs</td>
+          </tr>
+          <tr>
+            <td>ポート確認</td>
+            <td>netstat / ss</td>
+            <td>netstat</td>
+            <td>Get-NetTCPConnection</td>
+            <td>外部コマンド</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>ファイル転送</td>
+            <td>scp / rsync</td>
+            <td>-</td>
+            <td>Copy-Item (UNC)</td>
+            <td>外部コマンド</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="Head_7">環境ごとの特徴</h2>
+      <h3>cmd.exe（コマンドプロンプト）の特徴</h3>
+      <ul>
+        <li>Windowsに標準搭載されている最も基本的なコマンドラインインターフェース</li>
+        <li>バッチファイル（.bat, .cmd）でスクリプト作成が可能</li>
+        <li>シンプルだが機能が制限されている</li>
+        <li>Windowsシステム管理用の独自コマンドを多数搭載</li>
+        <li>大文字小文字を区別しない</li>
+      </ul>
+
+      <h3>PowerShellの特徴</h3>
+      <ul>
+        <li>Windows向けの高機能なシェル環境およびスクリプト言語</li>
+        <li>オブジェクトパイプラインを使用（テキストではなくオブジェクトを受け渡す）</li>
+        <li>豊富なコマンドレット（動詞-名詞形式のコマンド）</li>
+        <li>.NETフレームワークとの統合</li>
+        <li>クロスプラットフォーム対応（PowerShell Core）</li>
+        <li>エイリアス機能によりBashやcmd.exeコマンドと互換性あり</li>
+      </ul>
+
+      <h3>Bash（Unix/Linux）の特徴</h3>
+      <ul>
+        <li>Unix/Linuxシステムの標準的なシェル</li>
+        <li>豊富なテキスト処理ツールと組み合わせたパイプライン処理が強力</li>
+        <li>シェルスクリプトによる自動化が充実</li>
+        <li>大文字小文字を区別する</li>
+        <li>Windows環境ではWSL、Git Bash、Cygwinなどで利用可能</li>
+        <li>UNIXの哲学「一つのことを上手くやる」に基づく多数の専用ツール</li>
+      </ul>
+
+      <h3>Nushell（Nu）の特徴</h3>
+      <ul>
+        <li>新世代のクロスプラットフォームシェル（Windows/Linux/macOS対応）</li>
+        <li>構造化データ（JSON, YAML, XML等）をネイティブに扱える</li>
+        <li>テーブル形式データの操作に強い（データベースのようなクエリが可能）</li>
+        <li>Rustで実装されており、高速かつ安全</li>
+        <li>モダンな構文と豊富な組み込み関数</li>
+        <li>プラグインシステムによる拡張性</li>
+        <li>他のシェルコマンドと互換性を持ちつつ、独自の強力な機能も提供</li>
+      </ul>
+
+      <p>
+        これらの違いを理解することで、各環境に適したコマンドツールを選択し、
+        効率的な操作が可能になります。また、クロスプラットフォームで動作する
+        ツールを作成する際には、これらの環境差異を考慮したデザインが重要です。
+      </p>
+
+      <h2 id="Head_8">Nushellと他のシェルとの比較</h2>
+      <p>
+        Nushell（Nu）は従来のシェル（Bash、CMD、PowerShellなど）と比較して、いくつかの重要な違いがあります。
+        同じ操作を行う場合でも、構文や概念が異なることがあるので、以下に主な違いと実際の使用例を示します。
+      </p>
+
+      <h3>パイプラインの違い</h3>
+      <p>
+        従来のシェルではテキストストリームをパイプでつなぎますが、Nushellでは構造化データをパイプでつなぎます。
+        これはPowerShellのオブジェクトパイプラインに近い概念ですが、さらに強力です。
+      </p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>シェル</th>
+            <th>コマンド例</th>
+            <th>説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bash</td>
+            <td><code>ls -la | grep "\.txt$" | sort</code></td>
+            <td>テキストベースのパイプライン（グレップで.txtファイルを抽出し、ソート）</td>
+          </tr>
+          <tr>
+            <td>PowerShell</td>
+            <td><code>Get-ChildItem | Where-Object {$_.Name -like "*.txt"} | Sort-Object Length</code></td>
+            <td>オブジェクトパイプライン（.txtファイルをフィルタリングし、サイズでソート）</td>
+          </tr>
+          <tr>
+            <td>Nushell</td>
+            <td><code>ls | where name =~ "\.txt$" | sort-by size</code></td>
+            <td>構造化データのパイプライン（テーブルベースのフィルタリングとソート）</td>
+          </tr>
+          <tr>
+            <td>Rust (例)</td>
+            <td><code>fd "\.txt$" | sort</code></td>
+            <td>Rustツールを組み合わせたパイプライン処理</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h3>データ型とテーブル</h3>
+      <p>
+        Nushellでは、ほとんどのコマンド出力がテーブル形式になっています。
+        これにより、データベースのようなクエリが可能になります。
+      </p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>シェル</th>
+            <th>コマンド例</th>
+            <th>説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bash</td>
+            <td><code>ps aux | awk '{print $2, $4, $11}' | sort -k2</code></td>
+            <td>テキスト処理でプロセスID、CPU使用率、コマンドを抽出しソート</td>
+          </tr>
+          <tr>
+            <td>PowerShell</td>
+            <td><code>Get-Process | Select-Object Id, CPU, ProcessName | Sort-Object CPU</code></td>
+            <td>オブジェクトのプロパティを選択してソート</td>
+          </tr>
+          <tr>
+            <td>Nushell</td>
+            <td><code>ps | select pid cpu name | sort-by cpu</code></td>
+            <td>テーブルから列を選択し、CPUでソート</td>
+          </tr>
+          <tr>
+            <td>Rust (例)</td>
+            <td><code>procs | jaq -r '.[] | [.pid, .cpu, .name] | @tsv' | sort -k2</code></td>
+            <td>Rustツールを組み合わせたプロセス情報の処理</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h3>ファイル操作の違い</h3>
+      <p>
+        Nushellでは、構造化ファイル（JSON、YAML、CSVなど）をネイティブに扱えます。
+      </p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>シェル</th>
+            <th>コマンド例</th>
+            <th>説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bash</td>
+            <td><code>cat data.json | jq '.items[] | select(.price > 100)'</code></td>
+            <td>jqを使ってJSONファイルからデータを抽出</td>
+          </tr>
+          <tr>
+            <td>PowerShell</td>
+            <td><code>Get-Content data.json | ConvertFrom-Json | Where-Object {$_.price -gt 100}</code></td>
+            <td>JSONをオブジェクトに変換してフィルタリング</td>
+          </tr>
+          <tr>
+            <td>Nushell</td>
+            <td><code>open data.json | where price > 100</code></td>
+            <td>JSONファイルを直接開いてフィルタリング</td>
+          </tr>
+          <tr>
+            <td>Rust (例)</td>
+            <td><code>cat data.json | jaq -r '.items[] | select(.price > 100)'</code></td>
+            <td>Rust製jqクローン（jaq）を使用したJSON処理</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h3>変数と環境</h3>
+      <p>
+        変数の扱いもシェルによって大きく異なります。
+      </p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>シェル</th>
+            <th>コマンド例</th>
+            <th>説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bash</td>
+            <td><code>NAME="John"<br>echo "Hello, $NAME"</code></td>
+            <td>変数を設定し、展開する</td>
+          </tr>
+          <tr>
+            <td>CMD</td>
+            <td><code>SET NAME=John<br>echo Hello, %NAME%</code></td>
+            <td>環境変数を設定し、参照する</td>
+          </tr>
+          <tr>
+            <td>PowerShell</td>
+            <td><code>$NAME = "John"<br>Write-Host "Hello, $NAME"</code></td>
+            <td>変数を設定し、展開する</td>
+          </tr>
+          <tr>
+            <td>Nushell</td>
+            <td><code>let name = "John"<br>echo $"Hello, ($name)"</code></td>
+            <td>let で変数を設定し、文字列補間で使用</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h3>条件分岐とループ</h3>
+      <p>
+        制御構文もシェルによって異なります。
+      </p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>シェル</th>
+            <th>コマンド例（条件分岐）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bash</td>
+            <td><pre><code>if [ "$count" -gt 10 ]; then
+  echo "Greater than 10"
+else
+  echo "Less than or equal to 10"
+fi</code></pre></td>
+          </tr>
+          <tr>
+            <td>CMD</td>
+            <td><pre><code>IF %count% GTR 10 (
+  echo Greater than 10
+) ELSE (
+  echo Less than or equal to 10
+)</code></pre></td>
+          </tr>
+          <tr>
+            <td>PowerShell</td>
+            <td><pre><code>if ($count -gt 10) {
+  Write-Host "Greater than 10"
+} else {
+  Write-Host "Less than or equal to 10"
+}</code></pre></td>
+          </tr>
+          <tr>
+            <td>Nushell</td>
+            <td><pre><code>if $count > 10 {
+  echo "Greater than 10"
+} else {
+  echo "Less than or equal to 10"
+}</code></pre></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h2 id="Head_9">移行ガイド：他のシェルからNushellへ</h2>
+      <p>
+        Bashや他のシェルからNushellに移行する際の主なポイントを理解しましょう。
+      </p>
+      
+      <h3>BashからNushellへ</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>操作</th>
+            <th>Bash</th>
+            <th>Nushell</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>パスの設定</td>
+            <td><code>export PATH=$PATH:/new/path</code></td>
+            <td><code>$env.PATH = ($env.PATH | append "/new/path")</code></td>
+          </tr>
+          <tr>
+            <td>エイリアス設定</td>
+            <td><code>alias ll='ls -la'</code></td>
+            <td><code>alias ll = ls -la</code></td>
+          </tr>
+          <tr>
+            <td>環境変数設定</td>
+            <td><code>export EDITOR=vim</code></td>
+            <td><code>$env.EDITOR = "vim"</code></td>
+          </tr>
+          <tr>
+            <td>コマンド置換</td>
+            <td><code>echo "Today is $(date)"</code></td>
+            <td><code>echo $"Today is (date | str trim)"</code></td>
+          </tr>
+          <tr>
+            <td>ファイル読み込み</td>
+            <td><code>source ~/.bashrc</code></td>
+            <td><code>source ~/.config/nushell/config.nu</code></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h3>CMDからNushellへ</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>操作</th>
+            <th>CMD</th>
+            <th>Nushell</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ディレクトリ変更</td>
+            <td><code>cd C:\Users</code></td>
+            <td><code>cd C:\Users</code></td>
+          </tr>
+          <tr>
+            <td>環境変数設定</td>
+            <td><code>SET TEMP=C:\TEMP</code></td>
+            <td><code>$env.TEMP = "C:\TEMP"</code></td>
+          </tr>
+          <tr>
+            <td>エコー表示</td>
+            <td><code>ECHO %USERNAME%</code></td>
+            <td><code>echo $env.USERNAME</code></td>
+          </tr>
+          <tr>
+            <td>バッチファイル実行</td>
+            <td><code>CALL script.bat</code></td>
+            <td><code>^script.bat</code> (外部コマンド実行)</td>
+          </tr>
+          <tr>
+            <td>FOR ループ</td>
+            <td><code>FOR %i IN (*.txt) DO ECHO %i</code></td>
+            <td><code>ls *.txt | each { |it| echo $it.name }</code></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h3>Nushellスクリプトの例</h3>
+      <p>簡単なNushellスクリプトの例を示します。これは、ディレクトリ内の大きなファイルを探して表示するスクリプトです。</p>
+      
+      <pre><code>
+# large_files.nu - 大きなファイルを見つけるスクリプト
+def find_large_files [
+  path: path   # 検索するディレクトリパス
+  size: int    # 最小サイズ（KB）
+] {
+  # パスが存在するか確認
+  if not ($path | path exists) {
+    echo $"パス ($path) が見つかりません"
+    return
+  }
+  
+  # ファイルを再帰的に検索し、サイズでフィルタリング
+  ls -la $path --recursive 
+  | where type == file 
+  | where size > ($size * 1024)  # KB単位から変換
+  | sort-by size
+  | select name size modified
+  | update size { |row| $row.size / 1024 / 1024 }  # MBに変換
+}
+
+# メイン処理
+let search_path = if ($nu.args | length) > 0 { $nu.args.0 } else { "." }
+let min_size = if ($nu.args | length) > 1 { $nu.args.1 | into int } else { 1024 }  # デフォルト1MB
+
+echo $"($search_path) 内の ($min_size)KB より大きいファイルを検索中..."
+find_large_files $search_path $min_size
+</code></pre>
+      
+      <p>
+        Nushellを使いこなすと、複雑なデータ処理操作も、他のシェルよりもシンプルかつ直感的に書けるようになります。
+        特に、構造化データ（JSON, YAML, CSV）の処理や、テーブルデータの操作が必要な場合に威力を発揮します。
+      </p>
+
+      <p>
+        参考リソース:
+      </p>
+      <ul>
+        <li><a href="https://www.nushell.sh/book/coming_from_bash.html" target="_blank" rel="noopener noreferrer">BashからNushellへ移行するガイド</a></li>
+        <li><a href="https://www.nushell.sh/book/coming_from_cmd.html" target="_blank" rel="noopener noreferrer">CMDからNushellへ移行するガイド</a></li>
+        <li><a href="https://www.nushell.sh/book/" target="_blank" rel="noopener noreferrer">Nushell公式ドキュメント</a></li>
+      </ul>
+      
     </div>
   </main>
   <footer></footer>
