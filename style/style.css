@@ -65,7 +65,7 @@ main {
   flex-direction: column-reverse;
 }
 
-.right_btn {
+.menu_toggle_btn {
   position: absolute;
   left: 0;
   top: 0;
@@ -158,7 +158,7 @@ a:hover {
 }
 
 /* テーマ切り替えボタンのスタイル */
-.theme-toggle-btn {
+.theme_toggle_btn {
   cursor: pointer;
   padding: 5px 10px;
   margin: 10px 0;
@@ -172,7 +172,7 @@ a:hover {
   gap: 5px;
 }
 
-.theme-toggle-btn:hover {
+.theme_toggle_btn:hover {
   background-color: light-dark(#444, #ccc);
 }
 
