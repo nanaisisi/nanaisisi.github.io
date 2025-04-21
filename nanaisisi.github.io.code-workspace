@@ -8,5 +8,6 @@
     "markuplint.nodePath": "./node_modules/@markuplint/bin/markuplint.js",
     "editor.formatOnSave": true,
     "svg.preview.background": "transparent",
+    "deno.path": "C:\\Users\\masak\\AppData\\Local\\Microsoft\\WinGet\\Packages\\DenoLand.Deno_Microsoft.Winget.Source_8wekyb3d8bbwe",
   },
 }
