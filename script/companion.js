@@ -21,7 +21,15 @@ function tp_top() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2e10f48 (ok)
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4d076cd (ok)
+=======
+>>>>>>> c9e34f3 (ok)
 // サイト全体の機能を統合するメインスクリプト
 <<<<<<< HEAD
 import { initMenuButton } from "./menu-handler.js";
@@ -444,6 +452,101 @@ function toggleTheme() {
 		body.classList.add("light-theme");
 		localStorage.setItem("theme", "light");
 	}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+
+	// テーマ変更を他のページに通知
+	if (window.parent && window.parent !== window) {
+		// iframeから親ページへの通知
+		window.parent.postMessage(
+			{ type: "theme-change", theme: localStorage.getItem("theme") },
+			"*",
+		);
+	} else {
+		// 親ページからiframeへの通知
+		const iframes = document.querySelectorAll("iframe");
+		// biome-ignore lint/complexity/noForEach: <explanation>
+		iframes.forEach((iframe) => {
+			try {
+				iframe.contentWindow.postMessage(
+					{ type: "theme-change", theme: localStorage.getItem("theme") },
+					"*",
+				);
+			} catch (e) {
+				console.error("Failed to send theme to iframe:", e);
+			}
+		});
+	}
+}
+
+// メッセージイベントを監視して他ページからのテーマ変更を受け取る
+function setupThemeMessageListener() {
+	window.addEventListener("message", (event) => {
+		// メッセージがテーマ変更に関するものかチェック
+		if (event.data && event.data.type === "theme-change") {
+			const newTheme = event.data.theme;
+			const body = document.body;
+
+			// 受け取ったテーマを適用
+			if (newTheme === "dark") {
+				body.classList.remove("light-theme");
+				body.classList.add("dark-theme");
+				localStorage.setItem("theme", "dark");
+			} else if (newTheme === "light") {
+				body.classList.remove("dark-theme");
+				body.classList.add("light-theme");
+				localStorage.setItem("theme", "light");
+			}
+		}
+	});
+>>>>>>> 9f84713 (ok)
+}
+
+// 保存されたテーマ設定を適用
+function applyStoredTheme() {
+	const storedTheme = localStorage.getItem("theme");
+	const body = document.body;
+	const prefersDark = window.matchMedia?.(
+		"(prefers-color-scheme: dark)",
+	).matches;
+
+	if (storedTheme) {
+		if (storedTheme === "dark") {
+			body.classList.remove("light-theme");
+			body.classList.add("dark-theme");
+		} else {
+			body.classList.remove("dark-theme");
+			body.classList.add("light-theme");
+		}
+	} else {
+		// ユーザーの設定がなければシステム設定に合わせる
+		if (prefersDark) {
+			body.classList.add("dark-theme");
+		} else {
+			body.classList.add("light-theme");
+		}
+	}
+}
+
+// ページのロード時にWasmを使用して機能を実行
+window.addEventListener("load", async () => {
+	// テーマ設定の適用
+	applyStoredTheme();
+
+	// テーマメッセージリスナーのセットアップ
+	setupThemeMessageListener();
+
+	// テーマ切り替えボタンの初期化
+	const themeToggleBtn = document.getElementById("theme-toggle-btn");
+	if (themeToggleBtn) {
+		themeToggleBtn.addEventListener("click", toggleTheme);
+	}
+
+	// メニューボタンの初期化
+	menu_button();
+>>>>>>> 8140f89 (cant_run)
 
 	// テーマ変更を他のページに通知
 	if (window.parent && window.parent !== window) {
@@ -518,22 +621,22 @@ function applyStoredTheme() {
 }
 
 // ページのロード時にWasmを使用して機能を実行
+=======
+// サイト全体の機能を統合するメインスクリプト
+import { initMenuButton } from "./menu-handler.js";
+import { initThemeManager } from "./theme-manager.js";
+import { initMonthDisplay } from "./month-display.js";
+
+// ページのロード時に各機能を初期化
+>>>>>>> 5737e17 (divide)
 window.addEventListener("load", async () => {
-	// テーマ設定の適用
-	applyStoredTheme();
-
-	// テーマメッセージリスナーのセットアップ
-	setupThemeMessageListener();
-
-	// テーマ切り替えボタンの初期化
-	const themeToggleBtn = document.getElementById("theme-toggle-btn");
-	if (themeToggleBtn) {
-		themeToggleBtn.addEventListener("click", toggleTheme);
-	}
+	// テーマ関連の初期化
+	initThemeManager();
 
 	// メニューボタンの初期化
-	menu_button();
+	initMenuButton();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	// 月名表示 - WasmとJavaScriptのハイブリッド実装
 	try {
@@ -648,8 +751,28 @@ function applyStoredTheme() {
 // ページのロード時に各機能を初期化
 >>>>>>> 44eb280 (divide)
 window.addEventListener("load", async () => {
+<<<<<<< HEAD
 	// テーマ関連の初期化
 	initThemeManager();
+=======
+	// テーマ設定の適用
+	applyStoredTheme();
+
+	// テーマメッセージリスナーのセットアップ
+	setupThemeMessageListener();
+
+	// テーマ切り替えボタンの初期化
+	const themeToggleBtn = document.getElementById("theme_toggle_btn");
+	if (themeToggleBtn) {
+		themeToggleBtn.addEventListener("click", toggleTheme);
+	}
+>>>>>>> 6cd9137 (ok)
+
+	// メニューの初期状態を非表示に設定
+	const menu_tab = document.getElementById("menu_tab");
+	if (menu_tab) {
+		menu_tab.style.display = "none";
+	}
 
 	// メニューボタンの初期化
 <<<<<<< HEAD
@@ -663,6 +786,23 @@ window.addEventListener("load", async () => {
 	initMenuButton();
 
 >>>>>>> 44eb280 (divide)
+=======
+>>>>>>> 5737e17 (divide)
+=======
+// サイト全体の機能を統合するメインスクリプト
+import { initMenuButton } from "./menu-handler.js";
+import { initThemeManager } from "./theme-manager.js";
+import { initMonthDisplay } from "./month-display.js";
+
+// ページのロード時に各機能を初期化
+window.addEventListener("load", async () => {
+	// テーマ関連の初期化
+	initThemeManager();
+
+	// メニューボタンの初期化
+	initMenuButton();
+
+>>>>>>> fb6f1c2 (divide)
 	// 月名表示機能の初期化
 	await initMonthDisplay();
 });

@@ -196,6 +196,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Changes
 - Changed adopt copilot AI
 - Changed index.html menu and content struct structure.
@@ -204,3 +205,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 =======
 - Added CHANGELOG.md.
 >>>>>>> 044b6fe (ok)
+=======
+- Added CHANGELOG.md.
+=======
+## [1.2.0] -2025-02-24
+
+### Changes
+
+- Changed index.html menu and content struct structure.
+
+## [1.3.0] -2025-05-02
+
+### Added
+- Added new pages from dev copilot.
+- Added theme change button in contents htmls.
+
+### Changes
+- Changed adopt copilot AI
+- Changed index.html menu and content struct structure.
+- Changed script adopt rust wasm.
+>>>>>>> 963ea0e (ok)
+>>>>>>> c9e34f3 (ok)

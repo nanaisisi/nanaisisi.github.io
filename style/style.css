@@ -1,6 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 main {
   overflow: hidden;
 }
@@ -175,6 +177,22 @@ import { loadWasm } from './wasm-loader.js';
 =======
 =======
 >>>>>>> 257ff7d (cng)
+=======
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+/* 基本スタイル */
+>>>>>>> ad04ae0 (ok)
+>>>>>>> c9e34f3 (ok)
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 8f79a68 (ok)
+>>>>>>> 06dd4fe (ok)
 /* 基本スタイル */
 body {
   font-size: medium;
@@ -267,7 +285,6 @@ table, td {
   top: 0;
   left: 0;
   width: 200px;
-  display: none;
 }
 
 .menu iframe {
@@ -278,6 +295,9 @@ table, td {
   height: 90%;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -313,16 +333,48 @@ table, td {
 >>>>>>> 70ed32c (ok)
 =======
 /* 固定バーのスタイル */
+=======
+/* 固定バーのスタイル改善 */
+>>>>>>> 4784b2d (cng)
 .fixed-bar {
   position: fixed;
   top: 10px;
-  left: 10px;
+  right: 10px; /* 左ではなく右に配置して、メニューと重ならないようにする */
   z-index: 100;
   display: flex;
   gap: 10px;
+  padding: 5px 10px;
+  background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(34, 34, 34, 0.8));
+  border-radius: 8px;
+  box-shadow: 0 2px 5px light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
 }
 
 >>>>>>> b9a75c9 (ok)
+=======
+/* 固定バーのスタイル */
+=======
+/* 固定バーのスタイル改善 */
+>>>>>>> e8dac10 (cng)
+.fixed-bar {
+  position: fixed;
+  top: 10px;
+  right: 10px; /* 左ではなく右に配置して、メニューと重ならないようにする */
+  z-index: 100;
+  display: flex;
+  gap: 10px;
+  padding: 5px 10px;
+  background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(34, 34, 34, 0.8));
+  border-radius: 8px;
+  box-shadow: 0 2px 5px light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+>>>>>>> 9f84713 (ok)
 table,
 td {
 >>>>>>> f1f2fab (ok)
@@ -362,6 +414,9 @@ main {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 /* ボタン位置 */
 .menu_toggle_btn {
   position: fixed;
@@ -369,6 +424,8 @@ main {
   top: 10px;
   z-index: 101;
 =======
+=======
+>>>>>>> 6cd9137 (ok)
 .menu_toggle_btn {
   position: absolute;
   left: 0;
@@ -489,6 +546,28 @@ import { loadWasm } from './wasm-loader.js';
 =======
 /* 基本スタイル */
 body {
+  font-size: medium;
+  margin-top: 50px; /* ヘッダー部分のスペース確保 */
+}
+
+.index_h1 {
+	font-size: small;
+}
+
+<<<<<<< HEAD
+body {
+<<<<<<< HEAD
+  font-size: medium;
+  margin-top: 50px; /* ヘッダー部分のスペース確保 */
+}
+
+.index_h1 {
+	font-size: small;
+}
+
+<<<<<<< HEAD
+body {
+<<<<<<< HEAD
 >>>>>>> fb30a47 (err fix)
   font-size: small;
 =======
@@ -560,6 +639,7 @@ main {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* ボタン位置 */
 .menu-toggle-btn {
   position: fixed;
@@ -605,13 +685,594 @@ main {
   }
 =======
 .right_btn {
+=======
+.menu_toggle_btn {
+>>>>>>> 5bd68ad (ok)
   position: absolute;
   left: 0;
   top: 0;
 >>>>>>> 22e0c6d (ok)
 }
 
+/* テーマ切り替えボタンのスタイル */
+=======
+/* ボタンのスタイル統一 */
+.fixed-bar button,
+.menu_toggle_btn,
+>>>>>>> 4784b2d (cng)
+.theme_toggle_btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: light-dark(#f0f0f0, #333);
+  color: light-dark(#333, #f0f0f0);
+  transition: background-color 0.2s ease;
+}
+
+.fixed-bar button:hover,
+.menu_toggle_btn:hover,
+.theme_toggle_btn:hover {
+  background-color: light-dark(#e0e0e0, #444);
+}
+
+/* メニュートグルボタンの位置調整 */
+.menu_toggle_btn {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 101; /* メニューより上に表示 */
+}
+
+/* テーマ切り替えボタンを固定バーに含める場合 */
+.theme_toggle_btn {
+  position: relative; /* fixed から relative に変更 */
+  top: unset;
+  right: unset;
+}
+
+/* テーマ切り替えボタンのスタイル */
+=======
+/* ボタンのスタイル統一 */
+.fixed-bar button,
+.menu_toggle_btn,
+>>>>>>> e8dac10 (cng)
+.theme_toggle_btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: light-dark(#f0f0f0, #333);
+  color: light-dark(#333, #f0f0f0);
+  transition: background-color 0.2s ease;
+}
+
+.fixed-bar button:hover,
+.menu_toggle_btn:hover,
+.theme_toggle_btn:hover {
+  background-color: light-dark(#e0e0e0, #444);
+}
+
+/* メニュートグルボタンの位置調整 */
+.menu_toggle_btn {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 101; /* メニューより上に表示 */
+}
+
+/* テーマ切り替えボタンを固定バーに含める場合 */
+.theme_toggle_btn {
+  position: relative; /* fixed から relative に変更 */
+  top: unset;
+  right: unset;
+}
+
 @media (prefers-color-scheme: no-preference) {
+  body {
+    color-scheme: only dark;
+<<<<<<< HEAD
+  background-color: #222;
+  color: #aaa;
+  }
+
+  a:link {
+  color-scheme: only dark;
+  color: #ffff99;
+  }
+
+  a:visited {
+  color-scheme: only dark;
+  color: #885577;
+  }
+
+  a:hover {
+  color-scheme: only dark;
+  color: #cf0;
+  }
+=======
+    background-color: #222;
+    color: #aaa;
+=======
+import { loadWasm } from './wasm-loader.js';
+=======
+/* 基本スタイル */
+body {
+>>>>>>> 93254ff (err fix)
+  font-size: small;
+<<<<<<< HEAD
+>>>>>>> 8f79a68 (ok)
+=======
+=======
+  font-size: medium; /* smallからmediumに変更してメニューを大きく */
+  margin-top: 50px; /* ヘッダー部分のスペースを確保 */
+>>>>>>> bdf15c1 (ok)
+}
+
+=======
+/* メニュースタイル */
+>>>>>>> ac055d6 (handmade rollback | fix)
+.menu {
+	top: 0;
+	left: 0;
+}
+
+.menu_iframe {
+  width: 80%;
+  height: 80%;
+  border: none;
+  overflow: auto;
+  position: fixed;
+}
+
+/* メニュータブスタイル - 被せる表示 */
+<<<<<<< HEAD
+#menu_tab {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 200px;
+  background-color: light-dark(#f0f0f0, #333);
+  padding: 10px;
+  border-radius: 0 0 5px 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  overflow-y: auto;
+  max-height: calc(100vh - 70px);
+}
+
+.menu a {
+  display: block;
+  padding: 4px 0;
+  text-decoration: none;
+}
+
+.menu h1 {
+  margin-top: 30px; /* ボタンと重ならないよう上部にマージン */
+>>>>>>> eb1e903 (handmade rollback)
+}
+=======
+>>>>>>> fb30ac0 (yet menu css)
+
+.menu_hr {
+  margin: auto;
+  width: auto;
+  border: solid;
+  border-width: 0.1px;
+}
+
+/* テーブルスタイル */
+table, td {
+  margin: auto;
+  border: solid;
+  border-width: 0.1px;
+}
+
+th {
+  height: 2.5em;
+  margin: auto;
+  border: solid;
+  border-width: 0.1px;
+}
+
+main {
+  overflow: hidden;
+}
+
+.simple_dom_js {
+  position: absolute;
+  right: max;
+  bottom: 0;
+}
+
+.dom_parts_structure {
+  box-sizing: border-box;
+  right: max;
+  bottom: 0;
+  display: flex;
+    flex-direction: column-reverse;
+}
+
+/* ボタン位置 */
+.menu_toggle_btn {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 101;
+}
+
+.theme_toggle_btn {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 101;
+}
+
+/* カラーテーマの設定 - @media クエリを保持 */
+@media (prefers-color-scheme: no-preference) {
+<<<<<<< HEAD
+  @media (prefers-color-scheme: dark) {
+    body {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      background-color: #222;
+      color: #aaa;
+    }
+    
+    a:link {
+      color: #ffff99;
+    }
+    
+    a:visited {
+      color: #885577;
+    }
+    
+    a:hover {
+      color: #cf0;
+    }
+>>>>>>> 8082101 (fix)
+  }
+<<<<<<< HEAD
+
+  // 月名表示処理を実行100;
+  try {lay: flex;
+    await displayMonthNamesWasm();
+  } catch (error) {dding: 5px 10px;
+    console.error("Error in WASM implementation, falling back to JS:", error);nd-color: light-dark(rgba(255, 255, 255, 0.8), rgba(34, 34, 34, 0.8));
+    displayMonthNamesJs();: 8px;
+  }
+}kdrop-filter: blur(5px);
+webkit-backdrop-filter: blur(5px);
+/**transition: all 0.3s ease;
+ * WASM版の月名表示関数
+ */
+async function displayMonthNamesWasm() {le,
+	const wasmModule = await loadWasm();
+	if (!wasmModule) {argin: auto;
+		// WASmのロードに失敗した場合はJavaScriptバージョンを使用
+		console.log("Falling back to JS implementation");
+		displayMonthNamesJs();
+		return;
+	}
+
+	try { auto;
+		const current_month = wasmModule.get_current_month();border: solid;
+		const japanese_now_month_name =  border-width: 0.1px}
+			wasmModule.get_japanese_month_name(current_month);
+		const english_now_month_name =
+			wasmModule.get_english_month_name(current_month);
+		const ukrainian_now_month_name =
+			wasmModule.get_ukrainian_month_name(current_month);
+		const ukrainian_alphabet_now_month_name =
+			wasmModule.get_ukrainian_alphabet_month_name(current_month);
+		const swedish_now_month_name =
+			wasmModule.get_swedish_month_name(current_month);
+		const suomi_now_month_name = wasmModule.get_suomi_month_name(current_month);
+
+		updateMonthNamesDisplay(
+			japanese_now_month_name,
+			english_now_month_name,  right: max;
+			ukrainian_now_month_name,
+			ukrainian_alphabet_now_month_name,
+			swedish_now_month_name,rse;
+			suomi_now_month_name,erse;
+		);
+	} catch (error) {
+		console.error("Error calling WASM functions:", error);
+		displayMonthNamesJs();ed-bar button,
+	}
+}
+
+<<<<<<< HEAD
+@media (prefers-color-scheme: dark) {
+  body {
+    color-scheme: only dark;
+<<<<<<< HEAD
+  background-color: #222;
+  color: #aaa;
+  }
+
+  a:link {
+  color-scheme: only dark;
+  color: #ffff99;
+  }
+
+  a:visited {
+  color-scheme: only dark;
+  color: #885577;
+  }
+
+  a:hover {
+  color-scheme: only dark;
+  color: #cf0;
+  }
+=======
+    background-color: #222;
+    color: #aaa;
+=======
+import { loadWasm } from './wasm-loader.js';
+=======
+/* 基本スタイル */
+body {
+>>>>>>> c329f2d (err fix)
+  font-size: small;
+<<<<<<< HEAD
+>>>>>>> ad04ae0 (ok)
+=======
+=======
+  font-size: medium; /* smallからmediumに変更してメニューを大きく */
+  margin-top: 50px; /* ヘッダー部分のスペースを確保 */
+>>>>>>> 8888801 (ok)
+}
+
+=======
+/* メニュースタイル */
+>>>>>>> 5d3e8ed (handmade rollback | fix)
+.menu {
+	top: 0;
+	left: 0;
+}
+
+.menu_iframe {
+  width: 80%;
+  height: 80%;
+  border: none;
+  overflow: auto;
+  position: fixed;
+}
+
+/* メニュータブスタイル - 被せる表示 */
+<<<<<<< HEAD
+#menu_tab {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 200px;
+  background-color: light-dark(#f0f0f0, #333);
+  padding: 10px;
+  border-radius: 0 0 5px 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  overflow-y: auto;
+  max-height: calc(100vh - 70px);
+}
+
+.menu a {
+  display: block;
+  padding: 4px 0;
+  text-decoration: none;
+}
+
+.menu h1 {
+  margin-top: 30px; /* ボタンと重ならないよう上部にマージン */
+>>>>>>> ae54c2c (handmade rollback)
+}
+=======
+>>>>>>> 906146a (yet menu css)
+
+.menu_hr {
+  margin: auto;
+  width: auto;
+  border: solid;
+  border-width: 0.1px;
+}
+
+/* テーブルスタイル */
+table, td {
+  margin: auto;
+  border: solid;
+  border-width: 0.1px;
+}
+
+th {
+  height: 2.5em;
+  margin: auto;
+  border: solid;
+  border-width: 0.1px;
+}
+
+main {
+  overflow: hidden;
+}
+
+.simple_dom_js {
+  position: absolute;
+  right: max;
+  bottom: 0;
+}
+
+.dom_parts_structure {
+  box-sizing: border-box;
+  right: max;
+  bottom: 0;
+  display: flex;
+    flex-direction: column-reverse;
+}
+
+/* ボタン位置 */
+.menu_toggle_btn {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 101;
+}
+
+.theme_toggle_btn {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 101;
+}
+
+/* カラーテーマの設定 - @media クエリを保持 */
+@media (prefers-color-scheme: no-preference) {
+<<<<<<< HEAD
+  @media (prefers-color-scheme: dark) {
+    body {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      background-color: #222;
+      color: #aaa;
+    }
+    
+    a:link {
+      color: #ffff99;
+    }
+    
+    a:visited {
+      color: #885577;
+    }
+    
+    a:hover {
+      color: #cf0;
+    }
+>>>>>>> f3659f8 (fix)
+  }
+<<<<<<< HEAD
+
+  // 月名表示処理を実行100;
+  try {lay: flex;
+    await displayMonthNamesWasm();
+  } catch (error) {dding: 5px 10px;
+    console.error("Error in WASM implementation, falling back to JS:", error);nd-color: light-dark(rgba(255, 255, 255, 0.8), rgba(34, 34, 34, 0.8));
+    displayMonthNamesJs();: 8px;
+  }
+}kdrop-filter: blur(5px);
+webkit-backdrop-filter: blur(5px);
+/**transition: all 0.3s ease;
+ * WASM版の月名表示関数
+ */
+async function displayMonthNamesWasm() {le,
+	const wasmModule = await loadWasm();
+	if (!wasmModule) {argin: auto;
+		// WASmのロードに失敗した場合はJavaScriptバージョンを使用
+		console.log("Falling back to JS implementation");
+		displayMonthNamesJs();
+		return;
+	}
+
+	try { auto;
+		const current_month = wasmModule.get_current_month();border: solid;
+		const japanese_now_month_name =  border-width: 0.1px}
+			wasmModule.get_japanese_month_name(current_month);
+		const english_now_month_name =
+			wasmModule.get_english_month_name(current_month);
+		const ukrainian_now_month_name =
+			wasmModule.get_ukrainian_month_name(current_month);
+		const ukrainian_alphabet_now_month_name =
+			wasmModule.get_ukrainian_alphabet_month_name(current_month);
+		const swedish_now_month_name =
+			wasmModule.get_swedish_month_name(current_month);
+		const suomi_now_month_name = wasmModule.get_suomi_month_name(current_month);
+
+		updateMonthNamesDisplay(
+			japanese_now_month_name,
+			english_now_month_name,  right: max;
+			ukrainian_now_month_name,
+			ukrainian_alphabet_now_month_name,
+			swedish_now_month_name,rse;
+			suomi_now_month_name,erse;
+		);
+	} catch (error) {
+		console.error("Error calling WASM functions:", error);
+		displayMonthNamesJs();ed-bar button,
+	}
+}
+
+<<<<<<< HEAD
+@media (prefers-color-scheme: light) {
+	body {
+	  background-color: #ffffff;
+	  color: #444444;
+	  /*#202020もいいかも*/
+	}
+	a:link {
+	  color: #03C;
+	  /*一応#00fもあるにはある*/
+	}
+	a:visited {
+	  color: #857;
+	  /*一応#000090もあるにはある*/
+	}
+  
+	a:hover {
+	  color: #c07100;
+	  /*#393もいいかも*/
+	}
+  }
+  
+  /* light-dark() function */
+  body {
+	background-color: light-dark(#ffffff,#222);
+	color: light-dark(#444444,#aaa);
+  }
+  
+  a:link {
+	color: light-dark(#03C,#ffff99);
+  }
+  
+  a:visited {
+	color: light-dark(#857,#885577);
+  }
+  
+  a:hover {
+	color: light-dark(#c07100,#cf0);
+  }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+		color-scheme: only dark;
+=======
+   color-scheme: only dark;
+>>>>>>> 5d3e8ed (handmade rollback | fix)
+=======
+      color-scheme: only dark;
+>>>>>>> 71d6d40 (yet css)
+		background-color: #222;
+		color: #aaa;
+	  }
+	
+	  a:link {
+		color-scheme: only dark;
+		color: #ffff99;
+	  }
+	
+	  a:visited {
+		color-scheme: only dark;
+		color: #885577;
+	  }
+	
+	  a:hover {
+		color-scheme: only dark;
+		color: #cf0;
+    }
+=======
   body {
     color-scheme: only dark;
   background-color: #222;
@@ -654,6 +1315,7 @@ main {
   a:hover {
   color-scheme: only dark;
   color: #cf0;
+>>>>>>> d9bf938 (fix css)
   }
 }
 
@@ -696,6 +1358,8 @@ main {
 	color: light-dark(#c07100,#cf0);
   }
 <<<<<<< HEAD
+>>>>>>> 60f7d60 (handmade rollback)
+>>>>>>> ae54c2c (handmade rollback)
   
   .theme_toggle_btn{
 	background-color: light-dark(#333, #ddd);
@@ -704,8 +1368,11 @@ main {
   
   .theme_toggle_btn:hover {
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 	background-color: light-dark(#444, #ccc);
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
   }
 <<<<<<< HEAD
@@ -735,6 +1402,20 @@ async function displayMonthNamesWasm() {le,
 
 <<<<<<< HEAD
   a:visited {
+=======
+  body {
+    color-scheme: only dark;
+  background-color: #222;
+  color: #aaa;
+  }
+
+  a:link {
+  color-scheme: only dark;
+  color: #ffff99;
+  }
+
+  a:visited {
+>>>>>>> 4d35e6c (fix css)
   color-scheme: only dark;
   color: #885577;
   }
@@ -742,6 +1423,7 @@ async function displayMonthNamesWasm() {le,
   a:hover {
   color-scheme: only dark;
   color: #cf0;
+<<<<<<< HEAD
 =======
 @media (prefers-color-scheme: no-preference) {
   body {
@@ -769,11 +1451,19 @@ async function displayMonthNamesWasm() {le,
     color-scheme: only dark;
     color: #cf0;
 >>>>>>> 7c15adb (ok)
+=======
+>>>>>>> 4d35e6c (fix css)
+=======
+	background-color: light-dark(#444, #ccc);
+	
+>>>>>>> 60f7d60 (handmade rollback)
   }
-}
 
 @media (prefers-color-scheme: dark) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d35e6c (fix css)
   body {
     color-scheme: only dark;
   background-color: #222;
@@ -793,7 +1483,11 @@ async function displayMonthNamesWasm() {le,
   a:hover {
   color-scheme: only dark;
   color: #cf0;
+<<<<<<< HEAD
 >>>>>>> c3de900 (fix css)
+=======
+<<<<<<< HEAD
+>>>>>>> 06dd4fe (ok)
   }
 }
 
@@ -863,6 +1557,9 @@ async function displayMonthNamesWasm() {le,
 =======
   background-color: light-dark(#444, #ccc);
 >>>>>>> 714f06a (yet css)
+=======
+  background-color: light-dark(#444, #ccc);
+>>>>>>> 71d6d40 (yet css)
  }
 >>>>>>> a010f71 (handmade rollback | fix)
 <<<<<<< HEAD
@@ -951,6 +1648,8 @@ a:hover {
 	}
 }
 
+=======
+>>>>>>> 8082101 (fix)
 /**border: none;
  * JavaScript版の月名表示関数 border-radius: 4px;
  */  cursor: pointer;
@@ -1041,6 +1740,7 @@ function displayMonthNamesJs() {ont-size: 14px;
 	];{
 7;
 	const current_month = new Date().getMonth(); // 0から11の値を返す90もあるにはある*/
+<<<<<<< HEAD
 
 	updateMonthNamesDisplay(
 		japanese_month_names[current_month],
@@ -1246,17 +1946,36 @@ function updateMonthNamesDisplay(jp, en, ua, ua_en, se, fi) {ink {
 =======
 }
 =======
+=======
+>>>>>>> 8082101 (fix)
 
-body {
-  color-scheme: only dark;
-  background-color: #222;
-  color: #aaa;
+	updateMonthNamesDisplay(
+		japanese_month_names[current_month],
+		english_month_names[current_month],    color: #c07100;
+		ukrainian_month_names[current_month],
+		ukrainian_alphabet_month_names[current_month],
+		swedish_month_names[current_month],
+		suomi_month_names[current_month],
+	);
 }
-
-a:link {
-  color-scheme: only dark;
-  color: #ffff99;
+fff,#222);
+/**olor: light-dark(#444444,#aaa);
+ * 月名表示を更新
+ */
+function updateMonthNamesDisplay(jp, en, ua, ua_en, se, fi) {ink {
+	const month_names_element = document.getElementById("month_names");ight-dark(#03C,#ffff99);
+	if (month_names_element) {
+		month_names_element.innerHTML = `
+            JP: ${jp}<br>
+            EN: ${en}<br>85577);
+            UA: ${ua}<br>
+            UA_EN: ${ua_en}<br>
+            SE: ${se}<br>
+            FI: ${fi}00,#cf0);
+        `;
+	}
 }
+<<<<<<< HEAD
 
 a:visited {
   color-scheme: only dark;
@@ -1327,30 +2046,255 @@ a:hover {
   color: light-dark(#c07100,#cf0);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 70ed32c (ok)
 <<<<<<< HEAD
 >>>>>>> 74cdfe7 (fix txtstr)
 =======
 =======
 
-/* テーマ切り替えボタンのスタイル */
-.theme-toggle-btn {
-  cursor: pointer;
-  padding: 5px 10px;
-  margin: 10px 0;
+.theme_toggle_btn{
   background-color: light-dark(#333, #ddd);
   color: light-dark(#fff, #333);
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
 }
 
-.theme-toggle-btn:hover {
+=======
+>>>>>>> 8082101 (fix)
+.theme_toggle_btn:hover {
   background-color: light-dark(#444, #ccc);
+  
+=======
+>>>>>>> 93254ff (err fix)
 }
+=======
+		color-scheme: only dark;
+=======
+   color-scheme: only dark;
+>>>>>>> ac055d6 (handmade rollback | fix)
+=======
+      color-scheme: only dark;
+>>>>>>> 7e3036e (yet css)
+		background-color: #222;
+		color: #aaa;
+	  }
+	
+	  a:link {
+		color-scheme: only dark;
+		color: #ffff99;
+	  }
+	
+	  a:visited {
+		color-scheme: only dark;
+		color: #885577;
+	  }
+	
+	  a:hover {
+		color-scheme: only dark;
+		color: #cf0;
+    }
+=======
+>>>>>>> 4d35e6c (fix css)
+  }
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+	  background-color: #ffffff;
+	  color: #444444;
+	  /*#202020もいいかも*/
+	}
+	a:link {
+	  color: #03C;
+	  /*一応#00fもあるにはある*/
+	}
+	a:visited {
+	  color: #857;
+	  /*一応#000090もあるにはある*/
+	}
+  
+	a:hover {
+	  color: #c07100;
+	  /*#393もいいかも*/
+	}
+  }
+  
+  /* light-dark() function */
+  body {
+	background-color: light-dark(#ffffff,#222);
+	color: light-dark(#444444,#aaa);
+  }
+  
+  a:link {
+	color: light-dark(#03C,#ffff99);
+  }
+  
+  a:visited {
+	color: light-dark(#857,#885577);
+  }
+  
+  a:hover {
+	color: light-dark(#c07100,#cf0);
+  }
+<<<<<<< HEAD
+  
+  .theme_toggle_btn{
+	background-color: light-dark(#333, #ddd);
+	color: light-dark(#fff, #333);
+  }
+  
+  .theme_toggle_btn:hover {
+<<<<<<< HEAD
+	background-color: light-dark(#444, #ccc);
+	
+<<<<<<< HEAD
+  }
+>>>>>>> 4b30c78 (handmade rollback)
+=======
+=======
+  background-color: light-dark(#444, #ccc);
+>>>>>>> 7e3036e (yet css)
+ }
+>>>>>>> ac055d6 (handmade rollback | fix)
+=======
+>>>>>>> 627119e (ok)
+=======
+
+.theme_toggle_btn{
+  background-color: light-dark(#333, #ddd);
+  color: light-dark(#fff, #333);
+}
+
+=======
+/**border: none;
+ * JavaScript版の月名表示関数 border-radius: 4px;
+ */  cursor: pointer;
+function displayMonthNamesJs() {ont-size: 14px;
+	const english_month_names = [ight-dark(#f0f0f0, #333);
+		"January",olor: light-dark(#333, #f0f0f0);
+		"February",.2s ease;
+		"March",
+		"April",
+		"May",tton:hover,
+		"June",le_btn:hover,
+		"July",gle_btn:hover {
+		"August",ound-color: light-dark(#e0e0e0, #444);
+		"September",
+		"October",
+		"November",タンの位置調整 */
+		"December",tn {
+	];fixed;
+	const japanese_month_names = [
+		"睦月",
+		"如月",-index: 101; /* メニューより上に表示 */
+		"弥生",
+		"卯月",
+		"皐月",り替えボタンを固定バーに含める場合 */
+		"水無月",toggle_btn {
+		"文月",ion: relative; /* fixed から relative に変更 */
+		"葉月",unset;
+		"長月", unset;
+		"神無月",
+		"霜月",
+		"師走",(prefers-color-scheme: no-preference) {
+	];
+	const ukrainian_month_names = [or-scheme: only dark;
+		"Січень",kground-color: #222;
+		"Лютий", color: #aaa;
+		"Березень",
+		"Квітень",
+		"Травень",
+		"Червень",eme: only dark;
+		"Липень",ffff99;
+		"Серпень",
+		"Вересень",
+		"Жовтень", {
+		"Листопад",heme: only dark;
+		"Грудень",85577;
+	];
+	const ukrainian_alphabet_month_names = [
+		"si-chen",
+		"lu-tyi", color-scheme: only dark;
+		"be-re-zen",
+		"kvi-ten",
+		"tra-vehn",
+		"cher-vehn",
+		"ly-pehn",ers-color-scheme: dark) {
+		"ser-pehn",
+		"ve-re-sehn",
+		"zhov-tehn",me: only dark;
+		"lys-to-pad",color: #222;
+		"hru-dehn",
+	];
+	const swedish_month_names = [
+		"Januari",
+		"Februari",olor-scheme: only dark;
+		"Mars",
+		"April",
+		"Maj",
+		"Juni", {
+		"Juli",heme: only dark;
+		"Augusti", #885577;
+		"September",
+		"Oktober",
+		"November",
+		"December",: only dark;
+	];0;
+	const suomi_month_names = [
+		"Tammikuu",
+		"Helmikuu",
+		"Maaliskuu",: light) {
+		"Huhtikuu",
+		"Toukokuu",d-color: #ffffff;
+		"Kesäkuu",4444;
+		"Heinäkuu",もいいかも*/
+		"Elokuu",
+		"Syyskuu",
+		"Lokakuu",3C;
+		"Marraskuu",fもあるにはある*/
+		"Joulukuu",
+	];{
+7;
+	const current_month = new Date().getMonth(); // 0から11の値を返す90もあるにはある*/
+
+	updateMonthNamesDisplay(
+		japanese_month_names[current_month],
+		english_month_names[current_month],    color: #c07100;
+		ukrainian_month_names[current_month],
+		ukrainian_alphabet_month_names[current_month],
+		swedish_month_names[current_month],
+		suomi_month_names[current_month],
+	);
+}
+fff,#222);
+/**olor: light-dark(#444444,#aaa);
+ * 月名表示を更新
+ */
+function updateMonthNamesDisplay(jp, en, ua, ua_en, se, fi) {ink {
+	const month_names_element = document.getElementById("month_names");ight-dark(#03C,#ffff99);
+	if (month_names_element) {
+		month_names_element.innerHTML = `
+            JP: ${jp}<br>
+            EN: ${en}<br>85577);
+            UA: ${ua}<br>
+            UA_EN: ${ua_en}<br>
+            SE: ${se}<br>
+            FI: ${fi}00,#cf0);
+        `;
+	}
+}
+>>>>>>> f3659f8 (fix)
+.theme_toggle_btn:hover {
+  background-color: light-dark(#444, #ccc);
+  
+=======
+>>>>>>> c329f2d (err fix)
+}
+>>>>>>> 8140f89 (cant_run)
+=======
+ }
+>>>>>>> 5d3e8ed (handmade rollback | fix)
+=======
+>>>>>>> 6950ed4 (ok)
 
 /* ダークモードとライトモードのクラス */
 .dark-theme {
@@ -1385,7 +2329,172 @@ a:hover {
 
 .light-theme a:hover {
   color: #c07100;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 }
+<<<<<<< HEAD
 >>>>>>> 8d9ca66 (cant_run)
+<<<<<<< HEAD
 >>>>>>> 5639730 (ok)
+<<<<<<< HEAD
 >>>>>>> 2e10f48 (ok)
+=======
+=======
+=======
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .menu_toggle_btn {
+    top: 10px;
+    left: 10px;
+  }
+  
+  .theme_toggle_btn {
+    top: 10px;
+    right: 10px;
+  }
+  
+  body {
+    margin-top: 40px;
+  }
+<<<<<<< HEAD
+=======
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .menu_toggle_btn {
+    top: 10px;
+    left: 10px;
+  }
+  
+  .theme_toggle_btn {
+    top: 10px;
+    right: 10px;
+  }
+  
+  body {
+    margin-top: 40px;
+  }
+<<<<<<< HEAD
+>>>>>>> e8dac10 (cng)
+}
+
+/* メニューが開いている時の調整 */
+@media (min-width: 769px) {
+  .menu-open .fixed-bar {
+    left: 220px; /* メニューの幅+余白 */
+  }
+<<<<<<< HEAD
+<<<<<<< HEAD
+}
+<<<<<<< HEAD
+>>>>>>> 4784b2d (cng)
+=======
+
+/* 月名表示のスタイル */
+.month-names-display {
+  font-size: 0.9rem; /* フォントサイズを少し大きく */
+  padding: 8px;
+  margin: 10px 0;
+  background-color: light-dark(rgba(255, 255, 255, 0.2), rgba(34, 34, 34, 0.4));
+  border-radius: 4px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
+  color: light-dark(#444, #ccc);
+=======
+}
+
+/* 月名表示のスタイル */
+.month-names-display {
+  font-size: 0.9rem; /* フォントサイズを少し大きく */
+  padding: 8px;
+  margin: 10px 0;
+  background-color: light-dark(rgba(255, 255, 255, 0.2), rgba(34, 34, 34, 0.4));
+  border-radius: 4px;
+<<<<<<< HEAD
+  max-width: 200px;
+>>>>>>> f3659f8 (fix)
+=======
+  width: 100%;
+  text-align: center;
+  border: 1px solid light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
+  color: light-dark(#444, #ccc);
+>>>>>>> 8888801 (ok)
+}
+
+/* 月名表示のスタイル - メニュー内配置用 */
+.menu .month-names-display {
+  font-size: 0.8rem;
+  padding: 8px;
+  margin: 10px 5px;
+  background-color: light-dark(rgba(255, 255, 255, 0.2), rgba(34, 34, 34, 0.4));
+  border-radius: 4px;
+  max-width: calc(100% - 10px);
+  text-align: center;
+  position: relative;
+  z-index: 102; /* メニューより上 */
+}
+
+/* 不要になった固定バー内の月名表示を非表示 */
+.fixed-bar .month-names-display {
+  display: none;
+}
+
+/* メニュー内の月名表示のスタイリング */
+.menu .month-names-display {
+  color: light-dark(#444, #ccc);
+  border: 1px solid light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
+<<<<<<< HEAD
+}
+>>>>>>> 8082101 (fix)
+<<<<<<< HEAD
+>>>>>>> 8f79a68 (ok)
+=======
+=======
+}
+>>>>>>> ac055d6 (handmade rollback | fix)
+<<<<<<< HEAD
+>>>>>>> eb1e903 (handmade rollback)
+=======
+=======
+}
+>>>>>>> 627119e (ok)
+<<<<<<< HEAD
+>>>>>>> fb30ac0 (yet menu css)
+<<<<<<< HEAD
+>>>>>>> 06dd4fe (ok)
+=======
+=======
+=======
+}
+>>>>>>> 8140f89 (cant_run)
+<<<<<<< HEAD
+>>>>>>> 577348d (dark default)
+<<<<<<< HEAD
+>>>>>>> 382396a (fix)
+=======
+=======
+=======
+}
+>>>>>>> e8dac10 (cng)
+=======
+}
+>>>>>>> f3659f8 (fix)
+<<<<<<< HEAD
+>>>>>>> ad04ae0 (ok)
+=======
+=======
+}
+>>>>>>> 5d3e8ed (handmade rollback | fix)
+<<<<<<< HEAD
+>>>>>>> ae54c2c (handmade rollback)
+=======
+=======
+}
+>>>>>>> 6950ed4 (ok)
+>>>>>>> 906146a (yet menu css)
+>>>>>>> c9e34f3 (ok)

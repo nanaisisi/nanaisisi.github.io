@@ -21,12 +21,21 @@ pub enum Month {
 
 impl Month {
     /// 月のインデックス（0〜11）から Month を作成
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2c21a2e (yet)
     ///
     /// # Errors
     ///
     /// インデックスが無効な場合に`MonthError::InvalidMonthIndex`を返します。
     /// ただし、現在の実装では12以上のインデックスを渡した場合は12で割った余りを使用するため、
     /// エラーは発生しません。
+<<<<<<< HEAD
+=======
+>>>>>>> 69d9913 (yet)
+=======
+>>>>>>> 2c21a2e (yet)
     pub fn from_index(index: usize) -> Result<Self, MonthError> {
         match index % 12 {
             0 => Ok(Self::January),
@@ -46,6 +55,10 @@ impl Month {
     }
 
     /// 現在の月を取得
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2c21a2e (yet)
     ///
     /// # Panics
     ///
@@ -54,6 +67,11 @@ impl Month {
     /// ただし、JavaScriptのDate APIの仕様上、月のインデックスは常に0-11の範囲内であるため、
     /// 実際にはパニックは発生しません。
     #[must_use]
+<<<<<<< HEAD
+=======
+>>>>>>> 69d9913 (yet)
+=======
+>>>>>>> 2c21a2e (yet)
     pub fn current() -> Self {
         let date = js_sys::Date::new_0();
         let month_index = date.get_month() as usize;
@@ -70,6 +88,18 @@ pub enum Language {
     UkrainianAlphabet,
     Swedish,
     Finnish,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    Polish,
+    Czech,
+    Slovak,
+    Lithuanian,
+    Latvian,
+    Estonian,
+=======
+>>>>>>> 69d9913 (yet)
+>>>>>>> 906146a (yet menu css)
 }
 
 impl fmt::Display for Language {
@@ -81,6 +111,18 @@ impl fmt::Display for Language {
             Language::UkrainianAlphabet => write!(f, "UkrainianAlphabet"),
             Language::Swedish => write!(f, "Swedish"),
             Language::Finnish => write!(f, "Finnish"),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            Language::Polish => write!(f, "Polish"),
+            Language::Czech => write!(f, "Czech"),
+            Language::Slovak => write!(f, "Slovak"),
+            Language::Lithuanian => write!(f, "Lithuanian"),
+            Language::Latvian => write!(f, "Latvian"),
+            Language::Estonian => write!(f, "Estonian"),
+=======
+>>>>>>> 69d9913 (yet)
+>>>>>>> 906146a (yet menu css)
         }
     }
 }
@@ -100,7 +142,10 @@ pub enum MonthError {
 
 // JavaScript側に返すためのエラー型
 #[wasm_bindgen]
+<<<<<<< HEAD
 #[derive(Debug)]
+=======
+>>>>>>> 69d9913 (yet)
 pub struct JsError {
     message: String,
 }
@@ -109,13 +154,27 @@ pub struct JsError {
 impl JsError {
     // js_classは使われていないので削除し、constructorだけにします
     #[wasm_bindgen(constructor)]
+<<<<<<< HEAD
+<<<<<<< HEAD
     #[must_use]
+=======
+>>>>>>> 69d9913 (yet)
+=======
+    #[must_use]
+>>>>>>> 2c21a2e (yet)
     pub fn new(message: String) -> Self {
         Self { message }
     }
 
     #[wasm_bindgen(getter)]
+<<<<<<< HEAD
+<<<<<<< HEAD
     #[must_use]
+=======
+>>>>>>> 69d9913 (yet)
+=======
+    #[must_use]
+>>>>>>> 2c21a2e (yet)
     pub fn message(&self) -> String {
         self.message.clone()
     }

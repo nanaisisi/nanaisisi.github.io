@@ -5,12 +5,28 @@
     "rust-lang.rust-analyzer",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "serayuzgur.crates",
     "stylelint.vscode-stylelint",
 >>>>>>> 969d9dd (ok)
 =======
 >>>>>>> aad1647 (ok)
+=======
+    "serayuzgur.crates",
+    "stylelint.vscode-stylelint",
+>>>>>>> e65f4e5 (ok)
+=======
+>>>>>>> 45259ec (ok)
+=======
+    "serayuzgur.crates",
+    "stylelint.vscode-stylelint",
+>>>>>>> dc12e7a (ok)
+=======
+>>>>>>> 94c07cf (ok)
     "tamasfe.even-better-toml",
     "vadimcn.vscode-lldb",
     "biomejs.biome"
