@@ -18,6 +18,12 @@ function menu_button() {
 	// メニューの開閉機能
 	const toggle_menu_btn = document.getElementById("toggle_menu_btn");
 	const menu_tab = document.getElementById("menu_tab");
+
+	// メニューの初期状態を非表示に設定
+	if (menu_tab) {
+		menu_tab.style.display = "none";
+	}
+
 	toggle_menu(toggle_menu_btn, menu_tab);
 }
 
@@ -282,6 +288,12 @@ window.addEventListener("load", async () => {
 	const themeToggleBtn = document.getElementById("theme_toggle_btn");
 	if (themeToggleBtn) {
 		themeToggleBtn.addEventListener("click", toggleTheme);
+	}
+
+	// メニューの初期状態を非表示に設定
+	const menu_tab = document.getElementById("menu_tab");
+	if (menu_tab) {
+		menu_tab.style.display = "none";
 	}
 
 	// メニューボタンの初期化
