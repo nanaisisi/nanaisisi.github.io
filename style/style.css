@@ -26,14 +26,14 @@ table,
 td {
   margin: auto;
   border: solid;
-  border-width: 1;
+  border-width: 0.1px;
 }
 
 th {
   height: 2.5em;
   margin: auto;
   border: solid;
-}
+  border-width: 0.1px}
 
 main {
   overflow: hidden;
