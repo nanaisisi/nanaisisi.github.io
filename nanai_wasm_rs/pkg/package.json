@@ -1,0 +1,15 @@
+{
+  "name": "nanai_wasm_rs",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "nanai_wasm_rs_bg.wasm",
+    "nanai_wasm_rs.js",
+    "nanai_wasm_rs.d.ts"
+  ],
+  "main": "nanai_wasm_rs.js",
+  "types": "nanai_wasm_rs.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
