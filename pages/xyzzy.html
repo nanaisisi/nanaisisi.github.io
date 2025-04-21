@@ -4,63 +4,59 @@
 
 <?xml version="1.1" encoding="UTF-8" ?>
 <html lang="ja-JP">
-  <head>
-    <meta
-      charset="utf-8"
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
-    <title>xyzzy操作方法</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../style/style.css" />
-    <link rel="icon" href="../img/favicon.png" type="image/svg+xml" />
-    <script defer src="../script/companion.js"></script>
-  </head>
-  <body class="theme">
-    <div id="menu_tab" class="menu" style="display: none">
-      <iframe loading="lazy" src="menu.html" name="menu" title="目次"></iframe>
-    </div>
-    <div class="fixed-bar">
-      <button class="right_btn" id="toggle_menu_open_btn">
-        メニューの開閉
-      </button>
-    </div>
-    <div>
-      <h1>xyzzyについて</h1>
-      <ul class="table_of_contents">
-        <li><a href="#Head_1">概要</a></li>
-        <li><a href="#Head_2">設定</a></li>
-        <li><a href="#Head_3">ショートカットキー</a></li>
-      </ul>
-      <h2 id="Head_1">概要</h2>
-      基本的には恐らくnvimやvscodeのようにカスタマイズされるでもなく、ベーシックな機能を持ったemacs系のエディタ。
-      <h2 id="Head_2">設定</h2>
-      あんまり設定しない方が良さそうな気がする。<br />
-      半角スペース当たりいじっても良さそうなものだが知らん。
-      <h3>Indent_setting</h3>
-      インデント幅を設定する場合は4とか色々あるらしいのでお好みで。
-      <h4>インデント幅変更設定</h4>
-      ;;インデントのレベル<br />
-      (setq c-indent-level 4)<br />
-      <h2 id="Head_3">ショートカットキー</h2>
-      右クリックとかメニューの編集などを活用したほうがいいのだろうな。<br />
-      その辺にショートカットキーも書いてあるので参考に、分割ウィンドウ系とかぜひ参考に<br />
-      割とメニューの方からキーバインドを参考にしてくれ。<br />
-      コメントは先頭とか行頭などお好みかな。<br />
-      <h3>コピペ</h3>
-      shift押しながら矢印キーやCtrl+矢印、クリックで範囲選択して、以下のように<br />
-      <p></p>
-      Ctrl+Insert : コピー<br />
-      Shift+Insert : ペースト<br />
-      <h3>自動インデント</h3>
-      Esc x<br />
-      エスケープキーを押して離してxキー入力<br />
-      そこにc-modeを入力して設定する。
-    </div>
-  </body>
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+  <title>xyzzy操作方法</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style/style.css" />
+  <link rel="icon" href="../img/favicon.png" type="image/svg+xml" />
+  <script defer src="../script/companion.js"></script>
+</head>
+
+<body class="theme">
+  <div id="menu_tab" class="menu" style="display: none">
+    <iframe loading="lazy" src="menu.html" name="menu" title="目次"></iframe>
+  </div>
+  <div class="fixed-bar">
+    <button class="right_btn" id="toggle_menu_btn">
+      メニューの開閉
+    </button>
+  </div>
+  <div>
+    <h1>xyzzyについて</h1>
+    <ul class="table_of_contents">
+      <li><a href="#Head_1">概要</a></li>
+      <li><a href="#Head_2">設定</a></li>
+      <li><a href="#Head_3">ショートカットキー</a></li>
+    </ul>
+    <h2 id="Head_1">概要</h2>
+    基本的には恐らくnvimやvscodeのようにカスタマイズされるでもなく、ベーシックな機能を持ったemacs系のエディタ。
+    <h2 id="Head_2">設定</h2>
+    あんまり設定しない方が良さそうな気がする。<br />
+    半角スペース当たりいじっても良さそうなものだが知らん。
+    <h3>Indent_setting</h3>
+    インデント幅を設定する場合は4とか色々あるらしいのでお好みで。
+    <h4>インデント幅変更設定</h4>
+    ;;インデントのレベル<br />
+    (setq c-indent-level 4)<br />
+    <h2 id="Head_3">ショートカットキー</h2>
+    右クリックとかメニューの編集などを活用したほうがいいのだろうな。<br />
+    その辺にショートカットキーも書いてあるので参考に、分割ウィンドウ系とかぜひ参考に<br />
+    割とメニューの方からキーバインドを参考にしてくれ。<br />
+    コメントは先頭とか行頭などお好みかな。<br />
+    <h3>コピペ</h3>
+    shift押しながら矢印キーやCtrl+矢印、クリックで範囲選択して、以下のように<br />
+    <p></p>
+    Ctrl+Insert : コピー<br />
+    Shift+Insert : ペースト<br />
+    <h3>自動インデント</h3>
+    Esc x<br />
+    エスケープキーを押して離してxキー入力<br />
+    そこにc-modeを入力して設定する。
+  </div>
+</body>
+
 </html>
