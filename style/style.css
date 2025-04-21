@@ -23,6 +23,16 @@
   height: 90%;
 }
 
+/* 固定バーのスタイル */
+.fixed-bar {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  display: flex;
+  gap: 10px;
+}
+
 table,
 td {
   margin: auto;
@@ -39,8 +49,6 @@ th {
 main {
   overflow: hidden;
 }
-
-
 
 .simple_dom_js {
   position: absolute;
