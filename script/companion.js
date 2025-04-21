@@ -208,6 +208,7 @@ function toggleTheme() {
 	} else {
 		// 親ページからiframeへの通知
 		const iframes = document.querySelectorAll("iframe");
+		// biome-ignore lint/complexity/noForEach: <explanation>
 		iframes.forEach((iframe) => {
 			try {
 				iframe.contentWindow.postMessage(
