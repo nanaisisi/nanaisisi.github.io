@@ -6,7 +6,8 @@
 <html lang="ja-JP">
 
 <head>
-  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>技術記事メニュー</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,6 +21,11 @@
   <div id="menu_tab" class="menu" style="display: none">
     <iframe loading="lazy" src="menu.html" name="menu" title="目次"></iframe>
   </div>
+  <div class="fixed-bar">
+    <button class="right_btn" id="toggle_menu_btn">
+      メニューの開閉
+    </button>
+  </div>
   <div>
     <h1>技術記事メニュー</h1>
     <a href="menu.html" target="menu">メニューに戻る</a>
@@ -31,12 +37,13 @@
     <a href="xyzzy.html" target="_parent">雑なxyzzy</a><br />
     <a href="helix.html" target="_parent">雑なhelix editor</a><br />
     <a href="git.html" target="_parent">雑なGit</a><br />
+    <a href="cli_tool.html" target="_parent">コマンドラインツール</a><br />
     <a href="env.html" target="_parent">環境</a><br />
     <hr class="menu_hr" />
     <!--githubリポジトリは特にアイコンつけたいね-->
     <a href="https://github.com/nanaisisi/nanaisisi.github.io" target="_blank"
       rel="noopener noreferrer">本githubリポジトリ</a><br />
-    <a href="../CHANGELOG.md" target="_blank">更新履歴</a><br />
+    <a href="../CHANGELOG.md" target="_blank" rel="noopener noreferrer">更新履歴</a><br />
     <a href="https://github.com/nanaisisi/aut_nu/tree/main/env_doc" target="_blank"
       rel="noopener noreferrer">環境構築メモ</a><br />
     <a href="https://github.com/nanaisisi/aut_nu" target="_blank" rel="noopener noreferrer">環境アップデートスクリプト</a><br />
