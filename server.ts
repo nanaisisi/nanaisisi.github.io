@@ -1,8 +1,9 @@
-// @deno-types="https://deno.land/std@0.224.0/http/server.ts"
-import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
+// JSRからHTTPモジュールをインポート
+// @deno-types="jsr:@std/http"
+import { serve } from "jsr:@std/http";
 
 // MIMEタイプのマッピング
-const mimeTypes = {
+const mimeTypes: Record<string, string> = {
 	".html": "text/html",
 	".css": "text/css",
 	".js": "application/javascript",
@@ -17,12 +18,12 @@ const mimeTypes = {
 	".md": "text/markdown",
 };
 
-function getMimeType(path) {
+function getMimeType(path: string): string {
 	const extension = path.substring(path.lastIndexOf("."));
 	return mimeTypes[extension] || "application/octet-stream";
 }
 
-async function handler(req) {
+async function handler(req: Request): Promise<Response> {
 	// URLからパスを取得
 	const url = new URL(req.url);
 	let path = url.pathname;
