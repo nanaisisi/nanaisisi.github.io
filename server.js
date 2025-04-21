@@ -13,6 +13,7 @@ const mimeTypes = {
 	".jpeg": "image/jpeg",
 	".gif": "image/gif",
 	".ico": "image/x-icon",
+	".md": "text/markdown",
 };
 
 function getMimeType(path) {
@@ -60,4 +61,4 @@ async function handler(req) {
 
 console.log("サーバーを起動しています...");
 console.log("http://localhost:8000 でアクセスできます");
-await serve(handler, { port: 8000 });
+serve(handler, { port: 8000 });
