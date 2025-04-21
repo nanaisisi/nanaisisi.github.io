@@ -279,7 +279,7 @@ window.addEventListener("load", async () => {
 	setupThemeMessageListener();
 
 	// テーマ切り替えボタンの初期化
-	const themeToggleBtn = document.getElementById("theme-toggle-btn");
+	const themeToggleBtn = document.getElementById("theme_toggle_btn");
 	if (themeToggleBtn) {
 		themeToggleBtn.addEventListener("click", toggleTheme);
 	}
