@@ -70,6 +70,21 @@ main {
   top: 0;
 }
 
+/* テーマ切り替えボタンのスタイル */
+.theme_toggle_btn {
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
 @media (prefers-color-scheme: no-preference) {
   body {
     color-scheme: only dark;
@@ -156,25 +171,14 @@ a:hover {
   color: light-dark(#c07100,#cf0);
 }
 
-/* テーマ切り替えボタンのスタイル */
-.theme_toggle_btn {
-  top: max;
-  right: 0;
-  cursor: pointer;
-  padding: 5px 10px;
-  margin: 10px 0;
+.theme_toggle_btn{
   background-color: light-dark(#333, #ddd);
   color: light-dark(#fff, #333);
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
 }
 
 .theme_toggle_btn:hover {
   background-color: light-dark(#444, #ccc);
+  
 }
 
 /* ダークモードとライトモードのクラス */
