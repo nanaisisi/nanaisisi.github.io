@@ -1,11 +1,5 @@
 use wasm_bindgen::prelude::*;
 
-// Rustで記述されたWASM関数
-#[wasm_bindgen]
-pub fn add(a: i32, b: i32) -> i32 {
-    a + b
-}
-
 // 現在の月を返す関数
 #[wasm_bindgen]
 pub fn get_current_month() -> usize {
