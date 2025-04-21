@@ -197,6 +197,50 @@ function toggleTheme() {
 		body.classList.add("light-theme");
 		localStorage.setItem("theme", "light");
 	}
+
+	// テーマ変更を他のページに通知
+	if (window.parent && window.parent !== window) {
+		// iframeから親ページへの通知
+		window.parent.postMessage(
+			{ type: "theme-change", theme: localStorage.getItem("theme") },
+			"*",
+		);
+	} else {
+		// 親ページからiframeへの通知
+		const iframes = document.querySelectorAll("iframe");
+		iframes.forEach((iframe) => {
+			try {
+				iframe.contentWindow.postMessage(
+					{ type: "theme-change", theme: localStorage.getItem("theme") },
+					"*",
+				);
+			} catch (e) {
+				console.error("Failed to send theme to iframe:", e);
+			}
+		});
+	}
+}
+
+// メッセージイベントを監視して他ページからのテーマ変更を受け取る
+function setupThemeMessageListener() {
+	window.addEventListener("message", (event) => {
+		// メッセージがテーマ変更に関するものかチェック
+		if (event.data && event.data.type === "theme-change") {
+			const newTheme = event.data.theme;
+			const body = document.body;
+
+			// 受け取ったテーマを適用
+			if (newTheme === "dark") {
+				body.classList.remove("light-theme");
+				body.classList.add("dark-theme");
+				localStorage.setItem("theme", "dark");
+			} else if (newTheme === "light") {
+				body.classList.remove("dark-theme");
+				body.classList.add("light-theme");
+				localStorage.setItem("theme", "light");
+			}
+		}
+	});
 }
 
 // 保存されたテーマ設定を適用
@@ -229,6 +273,9 @@ function applyStoredTheme() {
 window.addEventListener("load", async () => {
 	// テーマ設定の適用
 	applyStoredTheme();
+
+	// テーマメッセージリスナーのセットアップ
+	setupThemeMessageListener();
 
 	// テーマ切り替えボタンの初期化
 	const themeToggleBtn = document.getElementById("theme-toggle-btn");
