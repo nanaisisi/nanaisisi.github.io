@@ -17,8 +17,8 @@ async function loadWasm() {
 function menu_button() {
 	// メニューの開閉機能
 	const toggle_menu_btn = document.getElementById("toggle_menu_btn");
-	const menu_open_tab = document.getElementById("menu_tab");
-	toggle_menu(toggle_menu_btn, menu_open_tab);
+	const menu_tab = document.getElementById("menu_tab");
+	toggle_menu(toggle_menu_btn, menu_tab);
 }
 
 function toggle_menu(toggle_menu_btn, menu_tab) {
