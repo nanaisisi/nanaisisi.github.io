@@ -185,8 +185,57 @@ async function display_now_month_names_wasm() {
 	}
 }
 
+// テーマ切り替え機能
+function toggleTheme() {
+	const body = document.body;
+	if (body.classList.contains("light-theme")) {
+		body.classList.remove("light-theme");
+		body.classList.add("dark-theme");
+		localStorage.setItem("theme", "dark");
+	} else {
+		body.classList.remove("dark-theme");
+		body.classList.add("light-theme");
+		localStorage.setItem("theme", "light");
+	}
+}
+
+// 保存されたテーマ設定を適用
+function applyStoredTheme() {
+	const storedTheme = localStorage.getItem("theme");
+	const body = document.body;
+	const prefersDark = window.matchMedia?.(
+		"(prefers-color-scheme: dark)",
+	).matches;
+
+	if (storedTheme) {
+		if (storedTheme === "dark") {
+			body.classList.remove("light-theme");
+			body.classList.add("dark-theme");
+		} else {
+			body.classList.remove("dark-theme");
+			body.classList.add("light-theme");
+		}
+	} else {
+		// ユーザーの設定がなければシステム設定に合わせる
+		if (prefersDark) {
+			body.classList.add("dark-theme");
+		} else {
+			body.classList.add("light-theme");
+		}
+	}
+}
+
 // ページのロード時にWasmを使用して機能を実行
 window.addEventListener("load", async () => {
+	// テーマ設定の適用
+	applyStoredTheme();
+
+	// テーマ切り替えボタンの初期化
+	const themeToggleBtn = document.getElementById("theme-toggle-btn");
+	if (themeToggleBtn) {
+		themeToggleBtn.addEventListener("click", toggleTheme);
+	}
+
 	// メニューボタンの初期化
 	menu_button();
 
