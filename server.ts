@@ -1,4 +1,5 @@
-import { serve } from "https://deno.land/std@0.207.0/http/server.ts";
+// @deno-types="https://deno.land/std@0.224.0/http/server.ts"
+import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 
 // MIMEタイプのマッピング
 const mimeTypes = {
