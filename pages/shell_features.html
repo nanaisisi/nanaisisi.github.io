@@ -1,0 +1,530 @@
+<!doctype html>
+
+<!-- Content-Type: application/xhtml+xml -->
+
+<?xml version="1.1" encoding="UTF-8" ?>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>シェル環境の特徴</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="icon" href="../img/favicon.png" type="image/svg+xml" />
+    <script type="module" src="../script/companion.js"></script>
+  </head>
+
+  <body class="theme">
+    <div id="menu_tab" class="menu">
+      <iframe loading="lazy" src="menu.html" name="menu" title="目次"></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button class="menu_toggle_btn" id="toggle_menu_btn">
+        メニューの開閉
+      </button>
+      <button id="toggle_theme_btn" class="theme_toggle_btn">
+        🌓 テーマ切替
+      </button>
+    </div>
+    <header>
+      <nav>
+        <ul class="table_of_contents">
+          <li><a href="#Head_1">環境ごとの特徴</a></li>
+          <li><a href="#Head_2">Nushellと他のシェルとの比較</a></li>
+          <li><a href="#Head_3">移行ガイド：他のシェルからNushellへ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <h1>シェル環境の特徴</h1>
+
+        <h2 id="Head_1">環境ごとの特徴</h2>
+        <h3>cmd.exe（コマンドプロンプト）の特徴</h3>
+        <ul>
+          <li>
+            Windowsに標準搭載されている最も基本的なコマンドラインインターフェース
+          </li>
+          <li>バッチファイル（.bat, .cmd）でスクリプト作成が可能</li>
+          <li>シンプルだが機能が制限されている</li>
+          <li>Windowsシステム管理用の独自コマンドを多数搭載</li>
+          <li>大文字小文字を区別しない</li>
+        </ul>
+
+        <h3>PowerShellの特徴</h3>
+        <ul>
+          <li>Windows向けの高機能なシェル環境およびスクリプト言語</li>
+          <li>
+            オブジェクトパイプラインを使用（テキストではなくオブジェクトを受け渡す）
+          </li>
+          <li>豊富なコマンドレット（動詞-名詞形式のコマンド）</li>
+          <li>.NETフレームワークとの統合</li>
+          <li>クロスプラットフォーム対応（PowerShell Core）</li>
+          <li>エイリアス機能によりBashやcmd.exeコマンドと互換性あり</li>
+        </ul>
+
+        <h3>Bash（Unix/Linux）の特徴</h3>
+        <ul>
+          <li>Unix/Linuxシステムの標準的なシェル</li>
+          <li>豊富なテキスト処理ツールと組み合わせたパイプライン処理が強力</li>
+          <li>シェルスクリプトによる自動化が充実</li>
+          <li>大文字小文字を区別する</li>
+          <li>Windows環境ではWSL、Git Bash、Cygwinなどで利用可能</li>
+          <li>UNIXの哲学「一つのことを上手くやる」に基づく多数の専用ツール</li>
+        </ul>
+
+        <h3>Nushell（Nu）の特徴</h3>
+        <ul>
+          <li>
+            新世代のクロスプラットフォームシェル（Windows/Linux/macOS対応）
+          </li>
+          <li>構造化データ（JSON, YAML, XML等）をネイティブに扱える</li>
+          <li>
+            テーブル形式データの操作に強い（データベースのようなクエリが可能）
+          </li>
+          <li>Rustで実装されており、高速かつ安全</li>
+          <li>モダンな構文と豊富な組み込み関数</li>
+          <li>プラグインシステムによる拡張性</li>
+          <li>他のシェルコマンドと互換性を持ちつつ、独自の強力な機能も提供</li>
+        </ul>
+
+        <p>
+          これらの違いを理解することで、各環境に適したコマンドツールを選択し、
+          効率的な操作が可能になります。また、クロスプラットフォームで動作する
+          ツールを作成する際には、これらの環境差異を考慮したデザインが重要です。
+        </p>
+
+        <h2 id="Head_2">Nushellと他のシェルとの比較</h2>
+        <p>
+          Nushell（Nu）は従来のシェル（Bash、CMD、PowerShellなど）と比較して、いくつかの重要な違いがあります。
+          同じ操作を行う場合でも、構文や概念が異なることがあるので、以下に主な違いと実際の使用例を示します。
+        </p>
+
+        <h3>パイプラインの違い</h3>
+        <p>
+          従来のシェルではテキストストリームをパイプでつなぎますが、Nushellでは構造化データをパイプでつなぎます。
+          これはPowerShellのオブジェクトパイプラインに近い概念ですが、さらに強力です。
+        </p>
+
+        <table>
+          <caption>
+            パイプラインの違い
+          </caption>
+          <thead>
+            <tr>
+              <th>シェル</th>
+              <th>コマンド例</th>
+              <th>説明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bash</td>
+              <td><code>ls -la | grep "\.txt$" | sort</code></td>
+              <td>
+                テキストベースのパイプライン（グレップで.txtファイルを抽出し、ソート）
+              </td>
+            </tr>
+            <tr>
+              <td>PowerShell</td>
+              <td>
+                <code
+                  >Get-ChildItem | Where-Object {$_.Name -like "*.txt"} |
+                  Sort-Object Length</code
+                >
+              </td>
+              <td>
+                オブジェクトパイプライン（.txtファイルをフィルタリングし、サイズでソート）
+              </td>
+            </tr>
+            <tr>
+              <td>Nushell</td>
+              <td><code>ls | where name =~ "\.txt$" | sort-by size</code></td>
+              <td>
+                構造化データのパイプライン（テーブルベースのフィルタリングとソート）
+              </td>
+            </tr>
+            <tr>
+              <td>Rust (例)</td>
+              <td><code>fd "\.txt$" | sort</code></td>
+              <td>Rustツールを組み合わせたパイプライン処理</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>データ型とテーブル</h3>
+        <p>
+          Nushellでは、ほとんどのコマンド出力がテーブル形式になっています。
+          これにより、データベースのようなクエリが可能になります。
+        </p>
+
+        <table>
+          <caption>
+            データ型とテーブル
+          </caption>
+          <thead>
+            <tr>
+              <th>シェル</th>
+              <th>コマンド例</th>
+              <th>説明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bash</td>
+              <td>
+                <code>ps aux | awk '{print $2, $4, $11}' | sort -k2</code>
+              </td>
+              <td>
+                テキスト処理でプロセスID、CPU使用率、コマンドを抽出しソート
+              </td>
+            </tr>
+            <tr>
+              <td>PowerShell</td>
+              <td>
+                <code
+                  >Get-Process | Select-Object Id, CPU, ProcessName |
+                  Sort-Object CPU</code
+                >
+              </td>
+              <td>オブジェクトのプロパティを選択してソート</td>
+            </tr>
+            <tr>
+              <td>Nushell</td>
+              <td><code>ps | select pid cpu name | sort-by cpu</code></td>
+              <td>テーブルから列を選択し、CPUでソート</td>
+            </tr>
+            <tr>
+              <td>Rust (例)</td>
+              <td>
+                <code
+                  >procs | jaq -r '.[] | [.pid, .cpu, .name] | @tsv' | sort
+                  -k2</code
+                >
+              </td>
+              <td>Rustツールを組み合わせたプロセス情報の処理</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>ファイル操作の違い</h3>
+        <p>
+          Nushellでは、構造化ファイル（JSON、YAML、CSVなど）をネイティブに扱えます。
+        </p>
+
+        <table>
+          <caption>
+            ファイル操作の違い
+          </caption>
+          <thead>
+            <tr>
+              <th>シェル</th>
+              <th>コマンド例</th>
+              <th>説明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bash</td>
+              <td>
+                <code
+                  >cat data.json | jq '.items[] | select(.price > 100)'</code
+                >
+              </td>
+              <td>jqを使ってJSONファイルからデータを抽出</td>
+            </tr>
+            <tr>
+              <td>PowerShell</td>
+              <td>
+                <code
+                  >Get-Content data.json | ConvertFrom-Json | Where-Object
+                  {$_.price -gt 100}</code
+                >
+              </td>
+              <td>JSONをオブジェクトに変換してフィルタリング</td>
+            </tr>
+            <tr>
+              <td>Nushell</td>
+              <td><code>open data.json | where price > 100</code></td>
+              <td>JSONファイルを直接開いてフィルタリング</td>
+            </tr>
+            <tr>
+              <td>Rust (例)</td>
+              <td>
+                <code
+                  >cat data.json | jaq -r '.items[] | select(.price >
+                  100)'</code
+                >
+              </td>
+              <td>Rust製jqクローン（jaq）を使用したJSON処理</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>変数と環境</h3>
+        <p>変数の扱いもシェルによって大きく異なります。</p>
+
+        <table>
+          <caption>
+            変数と環境
+          </caption>
+          <thead>
+            <tr>
+              <th>シェル</th>
+              <th>コマンド例</th>
+              <th>説明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bash</td>
+              <td>
+                <code>NAME="John"<br />echo "Hello, $NAME"</code>
+              </td>
+              <td>変数を設定し、展開する</td>
+            </tr>
+            <tr>
+              <td>CMD</td>
+              <td>
+                <code>SET NAME=John<br />echo Hello, %NAME%</code>
+              </td>
+              <td>環境変数を設定し、参照する</td>
+            </tr>
+            <tr>
+              <td>PowerShell</td>
+              <td>
+                <code>$NAME = "John"<br />Write-Host "Hello, $NAME"</code>
+              </td>
+              <td>変数を設定し、展開する</td>
+            </tr>
+            <tr>
+              <td>Nushell</td>
+              <td>
+                <code>let name = "John"<br />echo $"Hello, ($name)"</code>
+              </td>
+              <td>let で変数を設定し、文字列補間で使用</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>条件分岐とループ</h3>
+        <p>制御構文もシェルによって異なります。</p>
+
+        <table>
+          <caption>
+            条件分岐とループ
+          </caption>
+          <thead>
+            <tr>
+              <th>シェル</th>
+              <th>コマンド例（条件分岐）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bash</td>
+              <td>
+                <pre><code>if [ "$count" -gt 10 ]; then
+  echo "Greater than 10"
+else
+  echo "Less than or equal to 10"
+fi</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>CMD</td>
+              <td>
+                <pre><code>IF %count% GTR 10 (
+  echo Greater than 10
+) ELSE (
+  echo Less than or equal to 10
+)</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>PowerShell</td>
+              <td>
+                <pre><code>if ($count -gt 10) {
+  Write-Host "Greater than 10"
+} else {
+  Write-Host "Less than or equal to 10"
+}</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>Nushell</td>
+              <td>
+                <pre><code>if $count > 10 {
+  echo "Greater than 10"
+} else {
+  echo "Less than or equal to 10"
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="Head_3">移行ガイド：他のシェルからNushellへ</h2>
+        <p>
+          Bashや他のシェルからNushellに移行する際の主なポイントを理解しましょう。
+        </p>
+
+        <h3>BashからNushellへ</h3>
+        <table>
+          <caption>
+            BashからNushellへの移行ガイド
+          </caption>
+          <thead>
+            <tr>
+              <th>操作</th>
+              <th>Bash</th>
+              <th>Nushell</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>パスの設定</td>
+              <td><code>export PATH=$PATH:/new/path</code></td>
+              <td><code>$env.PATH = ($env.PATH | append "/new/path")</code></td>
+            </tr>
+            <tr>
+              <td>エイリアス設定</td>
+              <td><code>alias ll='ls -la'</code></td>
+              <td><code>alias ll = ls -la</code></td>
+            </tr>
+            <tr>
+              <td>環境変数設定</td>
+              <td><code>export EDITOR=vim</code></td>
+              <td><code>$env.EDITOR = "vim"</code></td>
+            </tr>
+            <tr>
+              <td>コマンド置換</td>
+              <td><code>echo "Today is $(date)"</code></td>
+              <td><code>echo $"Today is (date | str trim)"</code></td>
+            </tr>
+            <tr>
+              <td>ファイル読み込み</td>
+              <td><code>source ~/.bashrc</code></td>
+              <td><code>source ~/.config/nushell/config.nu</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>CMDからNushellへ</h3>
+        <table>
+          <caption>
+            CMDからNushellへの移行ガイド
+          </caption>
+          <thead>
+            <tr>
+              <th>操作</th>
+              <th>CMD</th>
+              <th>Nushell</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ディレクトリ変更</td>
+              <td><code>cd C:\Users</code></td>
+              <td><code>cd C:\Users</code></td>
+            </tr>
+            <tr>
+              <td>環境変数設定</td>
+              <td><code>SET TEMP=C:\TEMP</code></td>
+              <td><code>$env.TEMP = "C:\TEMP"</code></td>
+            </tr>
+            <tr>
+              <td>エコー表示</td>
+              <td><code>ECHO %USERNAME%</code></td>
+              <td><code>echo $env.USERNAME</code></td>
+            </tr>
+            <tr>
+              <td>バッチファイル実行</td>
+              <td><code>CALL script.bat</code></td>
+              <td><code>^script.bat</code> (外部コマンド実行)</td>
+            </tr>
+            <tr>
+              <td>FOR ループ</td>
+              <td><code>FOR %i IN (*.txt) DO ECHO %i</code></td>
+              <td><code>ls *.txt | each { |it| echo $it.name }</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Nushellスクリプトの例</h3>
+        <p>
+          簡単なNushellスクリプトの例を示します。これは、ディレクトリ内の大きなファイルを探して表示するスクリプトです。
+        </p>
+
+        <pre><code>
+# large_files.nu - 大きなファイルを見つけるスクリプト
+def find_large_files [
+  path: path   # 検索するディレクトリパス
+  size: int    # 最小サイズ（KB）
+] {
+  # パスが存在するか確認
+  if not ($path | path exists) {
+    echo $"パス ($path) が見つかりません"
+    return
+  }
+  
+  # ファイルを再帰的に検索し、サイズでフィルタリング
+  ls -la $path --recursive 
+  | where type == file 
+  | where size > ($size * 1024)  # KB単位から変換
+  | sort-by size
+  | select name size modified
+  | update size { |row| $row.size / 1024 / 1024 }  # MBに変換
+}
+
+# メイン処理
+let search_path = if ($nu.args | length) > 0 { $nu.args.0 } else { "." }
+let min_size = if ($nu.args | length) > 1 { $nu.args.1 | into int } else { 1024 }  # デフォルト1MB
+
+echo $"($search_path) 内の ($min_size)KB より大きいファイルを検索中..."
+find_large_files $search_path $min_size
+</code></pre>
+
+        <p>
+          Nushellを使いこなすと、複雑なデータ処理操作も、他のシェルよりもシンプルかつ直感的に書けるようになります。
+          特に、構造化データ（JSON, YAML,
+          CSV）の処理や、テーブルデータの操作が必要な場合に威力を発揮します。
+        </p>
+
+        <p>参考リソース:</p>
+        <ul>
+          <li>
+            <a
+              href="https://www.nushell.sh/book/coming_from_bash.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >BashからNushellへ移行するガイド</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.nushell.sh/book/coming_from_cmd.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CMDからNushellへ移行するガイド</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.nushell.sh/book/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Nushell公式ドキュメント</a
+            >
+          </li>
+        </ul>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
