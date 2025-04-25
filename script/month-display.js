@@ -5,6 +5,8 @@ import { loadWasm } from "./wasm-loader.js";
  */
 export async function initMonthDisplay() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 	// メニューのiframeを取得
 	const menuFrame = document.querySelector('iframe[name="menu"]');
 
@@ -58,6 +60,57 @@ export async function initMonthDisplay() {
 	} else {
 		console.log("month_names element not found, skipping month name display");
 >>>>>>> 44eb280 (divide)
+=======
+	// 月名表示要素がすでにある場合はそれを使用
+	let month_names_element = document.getElementById("month_names");
+=======
+	// メニューのiframeを取得
+	const menuFrame = document.querySelector('iframe[name="menu"]');
+>>>>>>> fb30a47 (err fix)
+
+	if (!menuFrame) {
+		console.log("Menu iframe not found, skipping month name display");
+		return;
+	}
+
+	// iframeのロード完了を待つ
+	await new Promise((resolve) => {
+		if (
+			menuFrame.contentDocument &&
+			menuFrame.contentDocument.readyState === "complete"
+		) {
+			resolve();
+		} else {
+			menuFrame.onload = () => resolve();
+		}
+	});
+
+	// iframe内の月名表示要素を取得
+	try {
+		const monthElement =
+			menuFrame.contentDocument.getElementById("month_names");
+
+		if (!monthElement) {
+			console.log("month_names element not found in menu iframe");
+			return;
+		}
+
+		// 月名表示処理を実行
+		try {
+			await displayMonthNamesWasm(monthElement);
+		} catch (error) {
+			console.error("Error in WASM implementation, falling back to JS:", error);
+			displayMonthNamesJs(monthElement);
+		}
+	} catch (error) {
+<<<<<<< HEAD
+		console.error("Error in WASM implementation, falling back to JS:", error);
+		displayMonthNamesJs();
+>>>>>>> 2baa9a3 (fix)
+=======
+		// セキュリティの制限などでiframeにアクセスできない場合
+		console.error("Cannot access iframe content:", error);
+>>>>>>> fb30a47 (err fix)
 	}
 }
 
@@ -65,19 +118,27 @@ export async function initMonthDisplay() {
  * WASM版の月名表示関数
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 async function displayMonthNamesWasm(monthElement) {
 =======
 async function displayMonthNamesWasm() {
 >>>>>>> 44eb280 (divide)
+=======
+async function displayMonthNamesWasm(monthElement) {
+>>>>>>> fb30a47 (err fix)
 	const wasmModule = await loadWasm();
 	if (!wasmModule) {
 		// WASmのロードに失敗した場合はJavaScriptバージョンを使用
 		console.log("Falling back to JS implementation");
 <<<<<<< HEAD
+<<<<<<< HEAD
 		displayMonthNamesJs(monthElement);
 =======
 		displayMonthNamesJs();
 >>>>>>> 44eb280 (divide)
+=======
+		displayMonthNamesJs(monthElement);
+>>>>>>> fb30a47 (err fix)
 		return;
 	}
 
@@ -97,9 +158,13 @@ async function displayMonthNamesWasm() {
 
 		updateMonthNamesDisplay(
 <<<<<<< HEAD
+<<<<<<< HEAD
 			monthElement,
 =======
 >>>>>>> 44eb280 (divide)
+=======
+			monthElement,
+>>>>>>> fb30a47 (err fix)
 			japanese_now_month_name,
 			english_now_month_name,
 			ukrainian_now_month_name,
@@ -110,10 +175,14 @@ async function displayMonthNamesWasm() {
 	} catch (error) {
 		console.error("Error calling WASM functions:", error);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		displayMonthNamesJs(monthElement);
 =======
 		displayMonthNamesJs();
 >>>>>>> 44eb280 (divide)
+=======
+		displayMonthNamesJs(monthElement);
+>>>>>>> fb30a47 (err fix)
 	}
 }
 
@@ -121,10 +190,14 @@ async function displayMonthNamesWasm() {
  * JavaScript版の月名表示関数
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 function displayMonthNamesJs(monthElement) {
 =======
 function displayMonthNamesJs() {
 >>>>>>> 44eb280 (divide)
+=======
+function displayMonthNamesJs(monthElement) {
+>>>>>>> fb30a47 (err fix)
 	const english_month_names = [
 		"January",
 		"February",
@@ -214,9 +287,13 @@ function displayMonthNamesJs() {
 
 	updateMonthNamesDisplay(
 <<<<<<< HEAD
+<<<<<<< HEAD
 		monthElement,
 =======
 >>>>>>> 44eb280 (divide)
+=======
+		monthElement,
+>>>>>>> fb30a47 (err fix)
 		japanese_month_names[current_month],
 		english_month_names[current_month],
 		ukrainian_month_names[current_month],
@@ -230,6 +307,9 @@ function displayMonthNamesJs() {
  * 月名表示を更新
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fb30a47 (err fix)
 function updateMonthNamesDisplay(element, jp, en, ua, ua_en, se, fi) {
 	if (element) {
 		element.innerHTML = `
@@ -240,6 +320,7 @@ function updateMonthNamesDisplay(element, jp, en, ua, ua_en, se, fi) {
         SE: ${se}<br>
         FI: ${fi}
     `;
+<<<<<<< HEAD
 =======
 function updateMonthNamesDisplay(jp, en, ua, ua_en, se, fi) {
 	const month_names_element = document.getElementById("month_names");
@@ -253,5 +334,7 @@ function updateMonthNamesDisplay(jp, en, ua, ua_en, se, fi) {
             FI: ${fi}
         `;
 >>>>>>> 44eb280 (divide)
+=======
+>>>>>>> fb30a47 (err fix)
 	}
 }
