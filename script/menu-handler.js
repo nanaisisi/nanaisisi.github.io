@@ -32,10 +32,7 @@ function setupMenuToggle(toggle_menu_btn, menu_tab) {
 		};
 	} else {
 		console.warn(
-			"Menu elements not found. Button: " +
-				(toggle_menu_btn ? "✓" : "✗") +
-				", Menu: " +
-				(menu_tab ? "✓" : "✗"),
+			`Menu elements not found. Button: ${toggle_menu_btn ? "✓" : "✗"}, Menu: ${menu_tab ? "✓" : "✗"}`,
 		);
 	}
 }
