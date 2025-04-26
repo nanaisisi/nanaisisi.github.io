@@ -13,9 +13,9 @@ body {
 	box-sizing: content-box;
 	top: 0;
 	left: 0;
-	width: 200px;
-  font-size: 1rem;
-  line-height: 1.5;
+  height: 60%;
+	width: 60%;
+
 }
 
 /* メニュータブスタイル - 被せる表示 */
@@ -23,9 +23,9 @@ body {
   position: fixed;
   top: 50px;
   left: 0;
-  width: 200px;
+  width: 280px;
   background-color: light-dark(#f0f0f0, #333);
-  padding: 10px;
+  padding: 15px;
   border-radius: 0 0 5px 0;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 100;
