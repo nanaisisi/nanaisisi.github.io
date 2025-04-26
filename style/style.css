@@ -110,23 +110,76 @@ main {
 @media (prefers-color-scheme: no-preference) {
   @media (prefers-color-scheme: dark) {
     body {
-      background-color: #222;
-      color: #aaa;
-    }
-    
-    a:link {
-      color: #ffff99;
-    }
-    
-    a:visited {
-      color: #885577;
-    }
-    
-    a:hover {
-      color: #cf0;
-    }
+		color-scheme: only dark;
+		background-color: #222;
+		color: #aaa;
+	  }
+	
+	  a:link {
+		color-scheme: only dark;
+		color: #ffff99;
+	  }
+	
+	  a:visited {
+		color-scheme: only dark;
+		color: #885577;
+	  }
+	
+	  a:hover {
+		color-scheme: only dark;
+		color: #cf0;
+	  }
+	}
   }
-}
+
+  @media (prefers-color-scheme: light) {
+	body {
+	  background-color: #ffffff;
+	  color: #444444;
+	  /*#202020もいいかも*/
+	}
+	a:link {
+	  color: #03C;
+	  /*一応#00fもあるにはある*/
+	}
+	a:visited {
+	  color: #857;
+	  /*一応#000090もあるにはある*/
+	}
+  
+	a:hover {
+	  color: #c07100;
+	  /*#393もいいかも*/
+	}
+  }
+  
+  /* light-dark() function */
+  body {
+	background-color: light-dark(#ffffff,#222);
+	color: light-dark(#444444,#aaa);
+  }
+  
+  a:link {
+	color: light-dark(#03C,#ffff99);
+  }
+  
+  a:visited {
+	color: light-dark(#857,#885577);
+  }
+  
+  a:hover {
+	color: light-dark(#c07100,#cf0);
+  }
+  
+  .theme_toggle_btn{
+	background-color: light-dark(#333, #ddd);
+	color: light-dark(#fff, #333);
+  }
+  
+  .theme_toggle_btn:hover {
+	background-color: light-dark(#444, #ccc);
+	
+  }
 
 /* ダークモードとライトモードのクラス */
 .dark-theme {
