@@ -117,27 +117,48 @@ main {
 
 /* カラーテーマの設定 - @media クエリを保持 */
 @media (prefers-color-scheme: no-preference) {
-  @media (prefers-color-scheme: dark) {
-    body {
-      color-scheme: only dark;
-		background-color: #222;
-		color: #aaa;
-	  }
-	
-	  a:link {
-		color-scheme: only dark;
-		color: #ffff99;
-	  }
-	
-	  a:visited {
-		color-scheme: only dark;
-		color: #885577;
-	  }
-	
-	  a:hover {
-		color-scheme: only dark;
-		color: #cf0;
-    }
+  body {
+    color-scheme: only dark;
+  background-color: #222;
+  color: #aaa;
+  }
+
+  a:link {
+  color-scheme: only dark;
+  color: #ffff99;
+  }
+
+  a:visited {
+  color-scheme: only dark;
+  color: #885577;
+  }
+
+  a:hover {
+  color-scheme: only dark;
+  color: #cf0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color-scheme: only dark;
+  background-color: #222;
+  color: #aaa;
+  }
+
+  a:link {
+  color-scheme: only dark;
+  color: #ffff99;
+  }
+
+  a:visited {
+  color-scheme: only dark;
+  color: #885577;
+  }
+
+  a:hover {
+  color-scheme: only dark;
+  color: #cf0;
   }
 }
 
