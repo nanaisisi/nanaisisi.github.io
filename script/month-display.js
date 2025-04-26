@@ -4,17 +4,35 @@ import { loadWasm } from "./wasm-loader.js";
  * 月名表示機能を初期化
  */
 export async function initMonthDisplay() {
-	// 月名表示要素があるかチェック
-	const month_names_element = document.getElementById("month_names");
-	if (month_names_element) {
-		try {
-			await displayMonthNamesWasm();
-		} catch (error) {
-			console.error("Error in WASM implementation, falling back to JS:", error);
-			displayMonthNamesJs();
+	// 月名表示要素がすでにある場合はそれを使用
+	let month_names_element = document.getElementById("month_names");
+
+	// 要素がない場合は、メニュー内に作成
+	if (!month_names_element) {
+		const menuElement = document.getElementById("menu_tab");
+
+		if (menuElement) {
+			month_names_element = document.createElement("div");
+			month_names_element.id = "month_names";
+			month_names_element.className = "month-names-display";
+
+			// メニューの最初の子要素として追加
+			// iframeの前に配置
+			menuElement.insertBefore(month_names_element, menuElement.firstChild);
+
+			console.log("Created month_names element in menu");
+		} else {
+			console.log("Menu element not found, skipping month name display");
+			return; // メニューがなければ終了
 		}
-	} else {
-		console.log("month_names element not found, skipping month name display");
+	}
+
+	// 月名表示処理を実行
+	try {
+		await displayMonthNamesWasm();
+	} catch (error) {
+		console.error("Error in WASM implementation, falling back to JS:", error);
+		displayMonthNamesJs();
 	}
 }
 
