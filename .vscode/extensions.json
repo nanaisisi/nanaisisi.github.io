@@ -3,6 +3,14 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "rust-lang.rust-analyzer",
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    "serayuzgur.crates",
+    "stylelint.vscode-stylelint",
+>>>>>>> 969d9dd (ok)
+=======
+>>>>>>> aad1647 (ok)
     "tamasfe.even-better-toml",
     "vadimcn.vscode-lldb",
     "biomejs.biome"

@@ -211,6 +211,7 @@ body {
 /* メニュースタイル */
 >>>>>>> 668d5fc (handmade rollback | fix)
 .menu {
+<<<<<<< HEAD
 	top: 0;
 	left: 0;
 }
@@ -443,37 +444,21 @@ body {
 >>>>>>> a010f71 (handmade rollback | fix)
 .menu {
 	box-sizing: content-box;
+=======
+>>>>>>> 7c62785 (yet css)
 	top: 0;
 	left: 0;
-	width: 200px;
-  font-size: 1rem;
-  line-height: 1.5;
+}
+
+.menu_iframe {
+  width: 80%;
+  height: 80%;
+  border: none;
+  overflow: auto;
+  position: fixed;
 }
 
 /* メニュータブスタイル - 被せる表示 */
-#menu_tab {
-  position: fixed;
-  top: 50px;
-  left: 0;
-  width: 200px;
-  background-color: light-dark(#f0f0f0, #333);
-  padding: 10px;
-  border-radius: 0 0 5px 0;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-  overflow-y: auto;
-  max-height: calc(100vh - 70px);
-}
-
-.menu a {
-  display: block;
-  padding: 4px 0;
-  text-decoration: none;
-}
-
-.menu h1 {
-  margin-top: 30px; /* ボタンと重ならないよう上部にマージン */
-}
 
 .menu_hr {
   margin: auto;
@@ -514,24 +499,6 @@ main {
     flex-direction: column-reverse;
 }
 
-/* ボタンスタイル */
-.menu_toggle_btn,
-.theme_toggle_btn {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  background-color: light-dark(#f0f0f0, #333);
-  color: light-dark(#333, #f0f0f0);
-  transition: background-color 0.2s ease;
-}
-
-.menu_toggle_btn:hover,
-.theme_toggle_btn:hover {
-  background-color: light-dark(#e0e0e0, #444);
-}
-
 /* ボタン位置 */
 .menu_toggle_btn {
   position: fixed;
@@ -549,27 +516,48 @@ main {
 
 /* カラーテーマの設定 - @media クエリを保持 */
 @media (prefers-color-scheme: no-preference) {
-  @media (prefers-color-scheme: dark) {
-    body {
-      color-scheme: only dark;
-		background-color: #222;
-		color: #aaa;
-	  }
-	
-	  a:link {
-		color-scheme: only dark;
-		color: #ffff99;
-	  }
-	
-	  a:visited {
-		color-scheme: only dark;
-		color: #885577;
-	  }
-	
-	  a:hover {
-		color-scheme: only dark;
-		color: #cf0;
-    }
+  body {
+    color-scheme: only dark;
+  background-color: #222;
+  color: #aaa;
+  }
+
+  a:link {
+  color-scheme: only dark;
+  color: #ffff99;
+  }
+
+  a:visited {
+  color-scheme: only dark;
+  color: #885577;
+  }
+
+  a:hover {
+  color-scheme: only dark;
+  color: #cf0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color-scheme: only dark;
+  background-color: #222;
+  color: #aaa;
+  }
+
+  a:link {
+  color-scheme: only dark;
+  color: #ffff99;
+  }
+
+  a:visited {
+  color-scheme: only dark;
+  color: #885577;
+  }
+
+  a:hover {
+  color-scheme: only dark;
+  color: #cf0;
   }
 }
 
@@ -611,6 +599,7 @@ main {
   a:hover {
 	color: light-dark(#c07100,#cf0);
   }
+<<<<<<< HEAD
   
   .theme_toggle_btn{
 	background-color: light-dark(#333, #ddd);
@@ -752,7 +741,12 @@ async function displayMonthNamesWasm() {le,
 >>>>>>> 714f06a (yet css)
  }
 >>>>>>> a010f71 (handmade rollback | fix)
+<<<<<<< HEAD
 >>>>>>> b977b21 (handmade rollback)
+=======
+=======
+>>>>>>> af2ed1b (ok)
+>>>>>>> c286aaa (yet menu css)
 
 /* ダークモードとライトモードのクラス */
 .dark-theme {
@@ -996,6 +990,7 @@ function updateMonthNamesDisplay(jp, en, ua, ua_en, se, fi) {ink {
   color: #c07100;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 257ff7d (cng)
 }
@@ -1118,3 +1113,6 @@ function updateMonthNamesDisplay(jp, en, ua, ua_en, se, fi) {ink {
   }
 }
 >>>>>>> b977b21 (handmade rollback)
+=======
+}
+>>>>>>> c286aaa (yet menu css)
