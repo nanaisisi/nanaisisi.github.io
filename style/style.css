@@ -1,27 +1,31 @@
 /* 基本スタイル */
+body {
+  font-size: medium;
+  margin-top: 50px; /* ヘッダー部分のスペース確保 */
+}
 
 .index_h1 {
 	font-size: small;
 }
 
-body {
-  font-size: medium; /* smallからmediumに変更してメニューを大きく */
-  margin-top: 50px; /* ヘッダー部分のスペースを確保 */
-}
-
+/* メニュースタイル */
 .menu {
 	box-sizing: content-box;
 	top: 0;
 	left: 0;
 	width: 200px;
-  font-size: 1rem; /* メニューフォントサイズ拡大 */
-  line-height: 1.5; /* 行間を広げる */
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .menu a {
   display: block;
   padding: 4px 0;
   text-decoration: none;
+}
+
+.menu h1 {
+  margin-top: 30px; /* ボタンと重ならないよう上部にマージン */
 }
 
 .menu_hr {
@@ -31,8 +35,8 @@ body {
   border-width: 0.1px;
 }
 
-table,
-td {
+/* テーブルスタイル */
+table, td {
   margin: auto;
   border: solid;
   border-width: 0.1px;
@@ -42,7 +46,8 @@ th {
   height: 2.5em;
   margin: auto;
   border: solid;
-  border-width: 0.1px}
+  border-width: 0.1px;
+}
 
 main {
   overflow: hidden;
@@ -59,16 +64,10 @@ main {
   right: max;
   bottom: 0;
   display: flex;
-  flex-direction: row-reverse;
-  flex-direction: column-reverse;
+    flex-direction: column-reverse;
 }
 
-/* 固定バーの調整 - 非表示に */
-.fixed-bar {
-  display: none; /* 固定バーを非表示に */
-}
-
-/* ボタンのスタイル統一 */
+/* ボタンスタイル */
 .menu_toggle_btn,
 .theme_toggle_btn {
   padding: 6px 12px;
@@ -86,7 +85,7 @@ main {
   background-color: light-dark(#e0e0e0, #444);
 }
 
-/* メニュートグルボタンの位置調整 */
+/* ボタン位置 */
 .menu_toggle_btn {
   position: fixed;
   left: 10px;
@@ -94,7 +93,6 @@ main {
   z-index: 101;
 }
 
-/* テーマ切り替えボタンの位置調整 */
 .theme_toggle_btn {
   position: fixed;
   right: 10px;
@@ -102,16 +100,11 @@ main {
   z-index: 101;
 }
 
-/* メニュー内のh1が重ならないよう調整 */
-.menu h1 {
-  margin-top: 30px; /* ボタンと重ならないよう上部にマージンを設定 */
-}
-
-/* カラーテーマの設定 */
+/* カラーテーマの設定 - @media クエリを保持 */
 @media (prefers-color-scheme: no-preference) {
   @media (prefers-color-scheme: dark) {
     body {
-		color-scheme: only dark;
+   color-scheme: only dark;
 		background-color: #222;
 		color: #aaa;
 	  }
@@ -180,7 +173,7 @@ main {
   .theme_toggle_btn:hover {
 	background-color: light-dark(#444, #ccc);
 	
-  }
+ }
 
 /* ダークモードとライトモードのクラス */
 .dark-theme {
@@ -217,6 +210,19 @@ main {
   color: #c07100;
 }
 
+/* 月名表示 */
+.month-names-display {
+  font-size: 0.9rem;
+  padding: 8px;
+  margin: 10px 0;
+  background-color: light-dark(rgba(255, 255, 255, 0.2), rgba(34, 34, 34, 0.4));
+  border-radius: 4px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
+  color: light-dark(#444, #ccc);
+}
+
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .menu_toggle_btn {
@@ -232,48 +238,4 @@ main {
   body {
     margin-top: 40px;
   }
-}
-
-/* メニューが開いている時の調整 */
-@media (min-width: 769px) {
-  .menu-open .fixed-bar {
-    left: 220px; /* メニューの幅+余白 */
-  }
-}
-
-/* 月名表示のスタイル */
-.month-names-display {
-  font-size: 0.9rem; /* フォントサイズを少し大きく */
-  padding: 8px;
-  margin: 10px 0;
-  background-color: light-dark(rgba(255, 255, 255, 0.2), rgba(34, 34, 34, 0.4));
-  border-radius: 4px;
-  width: 100%;
-  text-align: center;
-  border: 1px solid light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
-  color: light-dark(#444, #ccc);
-}
-
-/* 月名表示のスタイル - メニュー内配置用 */
-.menu .month-names-display {
-  font-size: 0.8rem;
-  padding: 8px;
-  margin: 10px 5px;
-  background-color: light-dark(rgba(255, 255, 255, 0.2), rgba(34, 34, 34, 0.4));
-  border-radius: 4px;
-  max-width: calc(100% - 10px);
-  text-align: center;
-  position: relative;
-  z-index: 102; /* メニューより上 */
-}
-
-/* 不要になった固定バー内の月名表示を非表示 */
-.fixed-bar .month-names-display {
-  display: none;
-}
-
-/* メニュー内の月名表示のスタイリング */
-.menu .month-names-display {
-  color: light-dark(#444, #ccc);
-  border: 1px solid light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
 }
