@@ -73,7 +73,7 @@ main {
 /* テーマ切り替えボタンのスタイル */
 .theme_toggle_btn {
   top: 0;
-  right: 0;
+  left: max;
   cursor: pointer;
   padding: 5px 10px;
   margin: 10px 0;
