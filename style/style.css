@@ -22,14 +22,21 @@
   height: 90%;
 }
 
-/* 固定バーのスタイル */
+/* 固定バーのスタイル改善 */
 .fixed-bar {
   position: fixed;
   top: 10px;
-  left: 10px;
+  right: 10px; /* 左ではなく右に配置して、メニューと重ならないようにする */
   z-index: 100;
   display: flex;
   gap: 10px;
+  padding: 5px 10px;
+  background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(34, 34, 34, 0.8));
+  border-radius: 8px;
+  box-shadow: 0 2px 5px light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
 }
 
 table,
@@ -64,25 +71,39 @@ main {
   flex-direction: column-reverse;
 }
 
-.menu_toggle_btn {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-/* テーマ切り替えボタンのスタイル */
+/* ボタンのスタイル統一 */
+.fixed-bar button,
+.menu_toggle_btn,
 .theme_toggle_btn {
-  top: 0;
-  left: max;
-  cursor: pointer;
-  padding: 5px 10px;
-  margin: 10px 0;
+  padding: 6px 12px;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
   font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
+  background-color: light-dark(#f0f0f0, #333);
+  color: light-dark(#333, #f0f0f0);
+  transition: background-color 0.2s ease;
+}
+
+.fixed-bar button:hover,
+.menu_toggle_btn:hover,
+.theme_toggle_btn:hover {
+  background-color: light-dark(#e0e0e0, #444);
+}
+
+/* メニュートグルボタンの位置調整 */
+.menu_toggle_btn {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 101; /* メニューより上に表示 */
+}
+
+/* テーマ切り替えボタンを固定バーに含める場合 */
+.theme_toggle_btn {
+  position: relative; /* fixed から relative に変更 */
+  top: unset;
+  right: unset;
 }
 
 @media (prefers-color-scheme: no-preference) {
@@ -214,4 +235,27 @@ a:hover {
 
 .light-theme a:hover {
   color: #c07100;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .fixed-bar {
+    top: auto;
+    bottom: 10px;
+    right: 10px;
+    flex-direction: column;
+  }
+  
+  .menu_toggle_btn {
+    top: auto;
+    bottom: 10px;
+    left: 10px;
+  }
+}
+
+/* メニューが開いている時の調整 */
+@media (min-width: 769px) {
+  .menu-open .fixed-bar {
+    left: 220px; /* メニューの幅+余白 */
+  }
 }
