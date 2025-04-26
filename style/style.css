@@ -197,38 +197,19 @@ body {
 /* メニュースタイル */
 >>>>>>> 668d5fc (handmade rollback | fix)
 .menu {
-	box-sizing: content-box;
 	top: 0;
 	left: 0;
-  height: 60%;
-	width: 60%;
+}
 
+.menu_iframe {
+  width: 80%;
+  height: 80%;
+  border: none;
+  overflow: auto;
+  position: fixed;
 }
 
 /* メニュータブスタイル - 被せる表示 */
-#menu_tab {
-  position: fixed;
-  top: 50px;
-  left: 0;
-  width: 280px;
-  background-color: light-dark(#f0f0f0, #333);
-  padding: 15px;
-  border-radius: 0 0 5px 0;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-  overflow-y: auto;
-  max-height: calc(100vh - 70px);
-}
-
-.menu a {
-  display: block;
-  padding: 4px 0;
-  text-decoration: none;
-}
-
-.menu h1 {
-  margin-top: 30px; /* ボタンと重ならないよう上部にマージン */
-}
 
 .menu_hr {
   margin: auto;
@@ -267,24 +248,6 @@ main {
   bottom: 0;
   display: flex;
     flex-direction: column-reverse;
-}
-
-/* ボタンスタイル */
-.menu_toggle_btn,
-.theme_toggle_btn {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  background-color: light-dark(#f0f0f0, #333);
-  color: light-dark(#333, #f0f0f0);
-  transition: background-color 0.2s ease;
-}
-
-.menu_toggle_btn:hover,
-.theme_toggle_btn:hover {
-  background-color: light-dark(#e0e0e0, #444);
 }
 
 /* ボタン位置 */
@@ -437,6 +400,7 @@ main {
   a:hover {
 	color: light-dark(#c07100,#cf0);
   }
+<<<<<<< HEAD
   
   .theme_toggle_btn{
 	background-color: light-dark(#333, #ddd);
@@ -456,6 +420,8 @@ main {
 >>>>>>> a9bfed0 (yet css)
  }
 >>>>>>> 668d5fc (handmade rollback | fix)
+=======
+>>>>>>> c5ce2ed (ok)
 
 /* ダークモードとライトモードのクラス */
 .dark-theme {
@@ -490,19 +456,7 @@ main {
 
 .light-theme a:hover {
   color: #c07100;
-}
-
-/* 月名表示 */
-.month-names-display {
-  font-size: 0.9rem;
-  padding: 8px;
-  margin: 10px 0;
-  background-color: light-dark(rgba(255, 255, 255, 0.2), rgba(34, 34, 34, 0.4));
-  border-radius: 4px;
-  width: 100%;
-  text-align: center;
-  border: 1px solid light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
-  color: light-dark(#444, #ccc);
+<<<<<<< HEAD
 }
 
 /* レスポンシブ対応 */
@@ -573,3 +527,6 @@ main {
 =======
 }
 >>>>>>> 668d5fc (handmade rollback | fix)
+=======
+}
+>>>>>>> c5ce2ed (ok)
