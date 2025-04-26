@@ -2,10 +2,11 @@
 
 .index_h1 {
 	font-size: small;
-  }
+}
 
 body {
-  font-size: small;
+  font-size: medium; /* smallからmediumに変更してメニューを大きく */
+  margin-top: 50px; /* ヘッダー部分のスペースを確保 */
 }
 
 .menu {
@@ -13,7 +14,15 @@ body {
 	top: 0;
 	left: 0;
 	width: 200px;
-  }
+  font-size: 1rem; /* メニューフォントサイズ拡大 */
+  line-height: 1.5; /* 行間を広げる */
+}
+
+.menu a {
+  display: block;
+  padding: 4px 0;
+  text-decoration: none;
+}
 
 .menu_hr {
   margin: auto;
@@ -54,25 +63,12 @@ main {
   flex-direction: column-reverse;
 }
 
-
-/* 固定バーのスタイル改善 */
+/* 固定バーの調整 - 非表示に */
 .fixed-bar {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 100;
-  display: flex;
-  gap: 10px;
-  padding: 5px 10px;
-  background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(34, 34, 34, 0.8));
-  border-radius: 8px;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
+  display: none; /* 固定バーを非表示に */
 }
 
 /* ボタンのスタイル統一 */
-.fixed-bar button,
 .menu_toggle_btn,
 .theme_toggle_btn {
   padding: 6px 12px;
@@ -85,7 +81,6 @@ main {
   transition: background-color 0.2s ease;
 }
 
-.fixed-bar button:hover,
 .menu_toggle_btn:hover,
 .theme_toggle_btn:hover {
   background-color: light-dark(#e0e0e0, #444);
@@ -96,14 +91,20 @@ main {
   position: fixed;
   left: 10px;
   top: 10px;
-  z-index: 101; /* メニューより上に表示 */
+  z-index: 101;
 }
 
-/* テーマ切り替えボタンを固定バーに含める場合 */
+/* テーマ切り替えボタンの位置調整 */
 .theme_toggle_btn {
-  position: relative; /* fixed から relative に変更 */
-  top: unset;
-  right: unset;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 101;
+}
+
+/* メニュー内のh1が重ならないよう調整 */
+.menu h1 {
+  margin-top: 30px; /* ボタンと重ならないよう上部にマージンを設定 */
 }
 
 /* カラーテーマの設定 */
@@ -128,11 +129,11 @@ main {
 	  a:hover {
 		color-scheme: only dark;
 		color: #cf0;
-	  }
-	}
+    }
   }
+}
 
-  @media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
 	body {
 	  background-color: #ffffff;
 	  color: #444444;
@@ -218,17 +219,18 @@ main {
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
-  .fixed-bar {
-    top: auto;
-    bottom: 10px;
-    right: 10px;
-    flex-direction: column;
+  .menu_toggle_btn {
+    top: 10px;
+    left: 10px;
   }
   
-  .menu_toggle_btn {
-    top: auto;
-    bottom: 10px;
-    left: 10px;
+  .theme_toggle_btn {
+    top: 10px;
+    right: 10px;
+  }
+  
+  body {
+    margin-top: 40px;
   }
 }
 
@@ -241,12 +243,15 @@ main {
 
 /* 月名表示のスタイル */
 .month-names-display {
-  font-size: 0.8rem;
-  padding: 5px;
-  margin-left: 10px;
-  background-color: light-dark(rgba(255, 255, 255, 0.6), rgba(34, 34, 34, 0.6));
+  font-size: 0.9rem; /* フォントサイズを少し大きく */
+  padding: 8px;
+  margin: 10px 0;
+  background-color: light-dark(rgba(255, 255, 255, 0.2), rgba(34, 34, 34, 0.4));
   border-radius: 4px;
-  max-width: 200px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
+  color: light-dark(#444, #ccc);
 }
 
 /* 月名表示のスタイル - メニュー内配置用 */
