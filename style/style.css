@@ -174,8 +174,60 @@ import { loadWasm } from './wasm-loader.js';
 =======
 /* 基本スタイル */
 body {
+  font-size: medium;
+  margin-top: 50px; /* ヘッダー部分のスペース確保 */
+}
+
+.index_h1 {
+	font-size: small;
+}
+
+<<<<<<< HEAD
+body {
+<<<<<<< HEAD
 >>>>>>> 8e7e773 (err fix)
   font-size: small;
+=======
+  font-size: medium; /* smallからmediumに変更してメニューを大きく */
+  margin-top: 50px; /* ヘッダー部分のスペースを確保 */
+>>>>>>> 1067afc (ok)
+}
+
+=======
+/* メニュースタイル */
+>>>>>>> 668d5fc (handmade rollback | fix)
+.menu {
+	box-sizing: content-box;
+	top: 0;
+	left: 0;
+	width: 200px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* メニュータブスタイル - 被せる表示 */
+#menu_tab {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 200px;
+  background-color: light-dark(#f0f0f0, #333);
+  padding: 10px;
+  border-radius: 0 0 5px 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  overflow-y: auto;
+  max-height: calc(100vh - 70px);
+}
+
+.menu a {
+  display: block;
+  padding: 4px 0;
+  text-decoration: none;
+}
+
+.menu h1 {
+  margin-top: 30px; /* ボタンと重ならないよう上部にマージン */
 }
 
 .menu_hr {
@@ -185,24 +237,39 @@ body {
   border-width: 0.1px;
 }
 
-/* 固定バーのスタイル改善 */
-.fixed-bar {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 100;
-  display: flex;
-  gap: 10px;
-  padding: 5px 10px;
-  background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(34, 34, 34, 0.8));
-  border-radius: 8px;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
+/* テーブルスタイル */
+table, td {
+  margin: auto;
+  border: solid;
+  border-width: 0.1px;
 }
 
-/* ボタンのスタイル統一 */
-.fixed-bar button,
+th {
+  height: 2.5em;
+  margin: auto;
+  border: solid;
+  border-width: 0.1px;
+}
+
+main {
+  overflow: hidden;
+}
+
+.simple_dom_js {
+  position: absolute;
+  right: max;
+  bottom: 0;
+}
+
+.dom_parts_structure {
+  box-sizing: border-box;
+  right: max;
+  bottom: 0;
+  display: flex;
+    flex-direction: column-reverse;
+}
+
+/* ボタンスタイル */
 .menu_toggle_btn,
 .theme_toggle_btn {
   padding: 6px 12px;
@@ -215,31 +282,34 @@ body {
   transition: background-color 0.2s ease;
 }
 
-.fixed-bar button:hover,
 .menu_toggle_btn:hover,
 .theme_toggle_btn:hover {
   background-color: light-dark(#e0e0e0, #444);
 }
 
-/* メニュートグルボタンの位置調整 */
+/* ボタン位置 */
 .menu_toggle_btn {
   position: fixed;
   left: 10px;
   top: 10px;
-  z-index: 101; /* メニューより上に表示 */
+  z-index: 101;
 }
 
-/* テーマ切り替えボタンを固定バーに含める場合 */
 .theme_toggle_btn {
-  position: relative; /* fixed から relative に変更 */
-  top: unset;
-  right: unset;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 101;
 }
 
-/* カラーテーマの設定 */
+/* カラーテーマの設定 - @media クエリを保持 */
 @media (prefers-color-scheme: no-preference) {
+<<<<<<< HEAD
   @media (prefers-color-scheme: dark) {
     body {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
       background-color: #222;
       color: #aaa;
     }
@@ -256,8 +326,136 @@ body {
       color: #cf0;
     }
 >>>>>>> 439e45a (fix)
+=======
+		color-scheme: only dark;
+=======
+   color-scheme: only dark;
+>>>>>>> 668d5fc (handmade rollback | fix)
+=======
+      color-scheme: only dark;
+>>>>>>> a9bfed0 (yet css)
+		background-color: #222;
+		color: #aaa;
+	  }
+	
+	  a:link {
+		color-scheme: only dark;
+		color: #ffff99;
+	  }
+	
+	  a:visited {
+		color-scheme: only dark;
+		color: #885577;
+	  }
+	
+	  a:hover {
+		color-scheme: only dark;
+		color: #cf0;
+    }
+=======
+  body {
+    color-scheme: only dark;
+  background-color: #222;
+  color: #aaa;
+  }
+
+  a:link {
+  color-scheme: only dark;
+  color: #ffff99;
+  }
+
+  a:visited {
+  color-scheme: only dark;
+  color: #885577;
+  }
+
+  a:hover {
+  color-scheme: only dark;
+  color: #cf0;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color-scheme: only dark;
+  background-color: #222;
+  color: #aaa;
+  }
+
+  a:link {
+  color-scheme: only dark;
+  color: #ffff99;
+  }
+
+  a:visited {
+  color-scheme: only dark;
+  color: #885577;
+  }
+
+  a:hover {
+  color-scheme: only dark;
+  color: #cf0;
+>>>>>>> c3de900 (fix css)
+  }
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+	  background-color: #ffffff;
+	  color: #444444;
+	  /*#202020もいいかも*/
+	}
+	a:link {
+	  color: #03C;
+	  /*一応#00fもあるにはある*/
+	}
+	a:visited {
+	  color: #857;
+	  /*一応#000090もあるにはある*/
+	}
+  
+	a:hover {
+	  color: #c07100;
+	  /*#393もいいかも*/
+	}
+  }
+  
+  /* light-dark() function */
+  body {
+	background-color: light-dark(#ffffff,#222);
+	color: light-dark(#444444,#aaa);
+  }
+  
+  a:link {
+	color: light-dark(#03C,#ffff99);
+  }
+  
+  a:visited {
+	color: light-dark(#857,#885577);
+  }
+  
+  a:hover {
+	color: light-dark(#c07100,#cf0);
+  }
+  
+  .theme_toggle_btn{
+	background-color: light-dark(#333, #ddd);
+	color: light-dark(#fff, #333);
+  }
+  
+  .theme_toggle_btn:hover {
+<<<<<<< HEAD
+	background-color: light-dark(#444, #ccc);
+	
+<<<<<<< HEAD
+>>>>>>> 5e88fc8 (handmade rollback)
+  }
+=======
+=======
+  background-color: light-dark(#444, #ccc);
+>>>>>>> a9bfed0 (yet css)
+ }
+>>>>>>> 668d5fc (handmade rollback | fix)
 
 /* ダークモードとライトモードのクラス */
 .dark-theme {
@@ -294,20 +492,35 @@ body {
   color: #c07100;
 }
 
+/* 月名表示 */
+.month-names-display {
+  font-size: 0.9rem;
+  padding: 8px;
+  margin: 10px 0;
+  background-color: light-dark(rgba(255, 255, 255, 0.2), rgba(34, 34, 34, 0.4));
+  border-radius: 4px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
+  color: light-dark(#444, #ccc);
+}
+
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
-  .fixed-bar {
-    top: auto;
-    bottom: 10px;
-    right: 10px;
-    flex-direction: column;
-  }
-  
   .menu_toggle_btn {
-    top: auto;
-    bottom: 10px;
+    top: 10px;
     left: 10px;
   }
+  
+  .theme_toggle_btn {
+    top: 10px;
+    right: 10px;
+  }
+  
+  body {
+    margin-top: 40px;
+  }
+<<<<<<< HEAD
 }
 
 /* メニューが開いている時の調整 */
@@ -322,12 +535,15 @@ body {
 
 /* 月名表示のスタイル */
 .month-names-display {
-  font-size: 0.8rem;
-  padding: 5px;
-  margin-left: 10px;
-  background-color: light-dark(rgba(255, 255, 255, 0.6), rgba(34, 34, 34, 0.6));
+  font-size: 0.9rem; /* フォントサイズを少し大きく */
+  padding: 8px;
+  margin: 10px 0;
+  background-color: light-dark(rgba(255, 255, 255, 0.2), rgba(34, 34, 34, 0.4));
   border-radius: 4px;
-  max-width: 200px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
+  color: light-dark(#444, #ccc);
 }
 
 /* 月名表示のスタイル - メニュー内配置用 */
@@ -354,3 +570,6 @@ body {
   border: 1px solid light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
 }
 >>>>>>> 439e45a (fix)
+=======
+}
+>>>>>>> 668d5fc (handmade rollback | fix)
