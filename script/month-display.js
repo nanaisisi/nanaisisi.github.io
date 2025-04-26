@@ -4,6 +4,7 @@ import { loadWasm } from "./wasm-loader.js";
  * 月名表示機能を初期化
  */
 export async function initMonthDisplay() {
+<<<<<<< HEAD
 	// メニューのiframeを取得
 	const menuFrame = document.querySelector('iframe[name="menu"]');
 
@@ -44,18 +45,39 @@ export async function initMonthDisplay() {
 	} catch (error) {
 		// セキュリティの制限などでiframeにアクセスできない場合
 		console.error("Cannot access iframe content:", error);
+=======
+	// 月名表示要素があるかチェック
+	const month_names_element = document.getElementById("month_names");
+	if (month_names_element) {
+		try {
+			await displayMonthNamesWasm();
+		} catch (error) {
+			console.error("Error in WASM implementation, falling back to JS:", error);
+			displayMonthNamesJs();
+		}
+	} else {
+		console.log("month_names element not found, skipping month name display");
+>>>>>>> 44eb280 (divide)
 	}
 }
 
 /**
  * WASM版の月名表示関数
  */
+<<<<<<< HEAD
 async function displayMonthNamesWasm(monthElement) {
+=======
+async function displayMonthNamesWasm() {
+>>>>>>> 44eb280 (divide)
 	const wasmModule = await loadWasm();
 	if (!wasmModule) {
 		// WASmのロードに失敗した場合はJavaScriptバージョンを使用
 		console.log("Falling back to JS implementation");
+<<<<<<< HEAD
 		displayMonthNamesJs(monthElement);
+=======
+		displayMonthNamesJs();
+>>>>>>> 44eb280 (divide)
 		return;
 	}
 
@@ -74,7 +96,10 @@ async function displayMonthNamesWasm(monthElement) {
 		const suomi_now_month_name = wasmModule.get_suomi_month_name(current_month);
 
 		updateMonthNamesDisplay(
+<<<<<<< HEAD
 			monthElement,
+=======
+>>>>>>> 44eb280 (divide)
 			japanese_now_month_name,
 			english_now_month_name,
 			ukrainian_now_month_name,
@@ -84,14 +109,22 @@ async function displayMonthNamesWasm(monthElement) {
 		);
 	} catch (error) {
 		console.error("Error calling WASM functions:", error);
+<<<<<<< HEAD
 		displayMonthNamesJs(monthElement);
+=======
+		displayMonthNamesJs();
+>>>>>>> 44eb280 (divide)
 	}
 }
 
 /**
  * JavaScript版の月名表示関数
  */
+<<<<<<< HEAD
 function displayMonthNamesJs(monthElement) {
+=======
+function displayMonthNamesJs() {
+>>>>>>> 44eb280 (divide)
 	const english_month_names = [
 		"January",
 		"February",
@@ -180,7 +213,10 @@ function displayMonthNamesJs(monthElement) {
 	const current_month = new Date().getMonth(); // 0から11の値を返す
 
 	updateMonthNamesDisplay(
+<<<<<<< HEAD
 		monthElement,
+=======
+>>>>>>> 44eb280 (divide)
 		japanese_month_names[current_month],
 		english_month_names[current_month],
 		ukrainian_month_names[current_month],
@@ -193,6 +229,7 @@ function displayMonthNamesJs(monthElement) {
 /**
  * 月名表示を更新
  */
+<<<<<<< HEAD
 function updateMonthNamesDisplay(element, jp, en, ua, ua_en, se, fi) {
 	if (element) {
 		element.innerHTML = `
@@ -203,5 +240,18 @@ function updateMonthNamesDisplay(element, jp, en, ua, ua_en, se, fi) {
         SE: ${se}<br>
         FI: ${fi}
     `;
+=======
+function updateMonthNamesDisplay(jp, en, ua, ua_en, se, fi) {
+	const month_names_element = document.getElementById("month_names");
+	if (month_names_element) {
+		month_names_element.innerHTML = `
+            JP: ${jp}<br>
+            EN: ${en}<br>
+            UA: ${ua}<br>
+            UA_EN: ${ua_en}<br>
+            SE: ${se}<br>
+            FI: ${fi}
+        `;
+>>>>>>> 44eb280 (divide)
 	}
 }
