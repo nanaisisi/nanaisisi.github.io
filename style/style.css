@@ -18,6 +18,21 @@ body {
   line-height: 1.5;
 }
 
+/* メニュータブスタイル - 被せる表示 */
+#menu_tab {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 200px;
+  background-color: light-dark(#f0f0f0, #333);
+  padding: 10px;
+  border-radius: 0 0 5px 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  overflow-y: auto;
+  max-height: calc(100vh - 70px);
+}
+
 .menu a {
   display: block;
   padding: 4px 0;
@@ -104,7 +119,7 @@ main {
 @media (prefers-color-scheme: no-preference) {
   @media (prefers-color-scheme: dark) {
     body {
-   color-scheme: only dark;
+      color-scheme: only dark;
 		background-color: #222;
 		color: #aaa;
 	  }
@@ -171,8 +186,7 @@ main {
   }
   
   .theme_toggle_btn:hover {
-	background-color: light-dark(#444, #ccc);
-	
+  background-color: light-dark(#444, #ccc);
  }
 
 /* ダークモードとライトモードのクラス */
