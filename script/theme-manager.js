@@ -84,9 +84,6 @@ function setupThemeMessageListener() {
 function applyStoredTheme() {
 	const storedTheme = localStorage.getItem("theme");
 	const body = document.body;
-	const prefersDark = window.matchMedia?.(
-		"(prefers-color-scheme: dark)",
-	).matches;
 
 	if (storedTheme) {
 		if (storedTheme === "dark") {
@@ -97,11 +94,10 @@ function applyStoredTheme() {
 			body.classList.add("light-theme");
 		}
 	} else {
-		// ユーザーの設定がなければシステム設定に合わせる
-		if (prefersDark) {
-			body.classList.add("dark-theme");
-		} else {
-			body.classList.add("light-theme");
-		}
+		// ユーザーの設定がなければダークテーマをデフォルトとして使用する
+		body.classList.remove("light-theme");
+		body.classList.add("dark-theme");
+		// オプションでローカルストレージにも保存（次回以降のためのデフォルト設定）
+		localStorage.setItem("theme", "dark");
 	}
 }
