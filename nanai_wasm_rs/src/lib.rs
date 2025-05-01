@@ -25,8 +25,7 @@ pub use month::{
 // テスト用のモジュール
 #[cfg(test)]
 mod tests {
-    use super::*;
-    use crate::types::{Language, Month, MonthError};
+    use crate::types::{Language, Month};
 
     #[test]
     fn test_month_from_index() {
