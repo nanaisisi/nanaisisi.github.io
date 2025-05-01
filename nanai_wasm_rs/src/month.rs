@@ -116,7 +116,11 @@ static MONTH_NAMES: LazyLock<HashMap<Language, [&'static str; 12]>> = LazyLock::
 });
 
 // 内部関数：月名を取得する共通ロジック
-fn get_month_name_internal(month: Month, language: Language) -> Result<String, MonthError> {
+// テストで使用するためにpub(crate)にします
+pub(crate) fn get_month_name_internal(
+    month: Month,
+    language: Language,
+) -> Result<String, MonthError> {
     let month_names = MONTH_NAMES
         .get(&language)
         .ok_or_else(|| MonthError::UnsupportedLanguage(language.to_string()))?;
