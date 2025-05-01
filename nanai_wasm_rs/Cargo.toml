@@ -2,7 +2,7 @@
 name = "nanai_wasm_rs"
 version = "0.1.0"
 edition = "2024"
-rust-version = "1.77" # LazyLockが使用可能な最小バージョン
+rust-version = "1.85" # LazyLockが使用可能な最小バージョン
 
 [lib]
 crate-type = ["cdylib", "rlib"]
