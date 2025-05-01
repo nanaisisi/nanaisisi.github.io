@@ -21,6 +21,12 @@ pub enum Month {
 
 impl Month {
     /// 月のインデックス（0〜11）から Month を作成
+    ///
+    /// # Errors
+    ///
+    /// インデックスが無効な場合に`MonthError::InvalidMonthIndex`を返します。
+    /// ただし、現在の実装では12以上のインデックスを渡した場合は12で割った余りを使用するため、
+    /// エラーは発生しません。
     pub fn from_index(index: usize) -> Result<Self, MonthError> {
         match index % 12 {
             0 => Ok(Self::January),
@@ -40,6 +46,14 @@ impl Month {
     }
 
     /// 現在の月を取得
+    ///
+    /// # Panics
+    ///
+    /// この関数は`js_sys::Date`から取得した月のインデックスが0-11の範囲内であることを
+    /// 前提としており、そうでない場合は`unwrap()`でパニックする可能性があります。
+    /// ただし、JavaScriptのDate APIの仕様上、月のインデックスは常に0-11の範囲内であるため、
+    /// 実際にはパニックは発生しません。
+    #[must_use]
     pub fn current() -> Self {
         let date = js_sys::Date::new_0();
         let month_index = date.get_month() as usize;
@@ -94,11 +108,13 @@ pub struct JsError {
 impl JsError {
     // js_classは使われていないので削除し、constructorだけにします
     #[wasm_bindgen(constructor)]
+    #[must_use]
     pub fn new(message: String) -> Self {
         Self { message }
     }
 
     #[wasm_bindgen(getter)]
+    #[must_use]
     pub fn message(&self) -> String {
         self.message.clone()
     }
