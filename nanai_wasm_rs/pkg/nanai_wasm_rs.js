@@ -289,11 +289,11 @@ export function get_suomi_month_name(month_index) {
 }
 
 function __wbg_adapter_18(arg0, arg1, arg2) {
-    wasm.closure29_externref_shim(arg0, arg1, arg2);
+    wasm.closure27_externref_shim(arg0, arg1, arg2);
 }
 
 function __wbg_adapter_51(arg0, arg1, arg2, arg3) {
-    wasm.closure41_externref_shim(arg0, arg1, arg2, arg3);
+    wasm.closure39_externref_shim(arg0, arg1, arg2, arg3);
 }
 
 const JsErrorFinalization = (typeof FinalizationRegistry === 'undefined')
@@ -473,8 +473,8 @@ function __wbg_get_imports() {
         const ret = false;
         return ret;
     };
-    imports.wbg.__wbindgen_closure_wrapper120 = function(arg0, arg1, arg2) {
-        const ret = makeMutClosure(arg0, arg1, 30, __wbg_adapter_18);
+    imports.wbg.__wbindgen_closure_wrapper117 = function(arg0, arg1, arg2) {
+        const ret = makeMutClosure(arg0, arg1, 28, __wbg_adapter_18);
         return ret;
     };
     imports.wbg.__wbindgen_init_externref_table = function() {
