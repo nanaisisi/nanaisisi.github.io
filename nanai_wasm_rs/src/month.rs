@@ -1,14 +1,14 @@
 use js_sys::{Array, Promise};
-use once_cell::sync::Lazy;
 use std::collections::HashMap;
+use std::sync::LazyLock;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen_futures::future_to_promise;
 
 use crate::types::{JsError, Language, Month, MonthError};
 
 // 月名のデータを一箇所に集約
-// Lazy staticを使用して初期化時のコストを削減
-static MONTH_NAMES: Lazy<HashMap<Language, [&'static str; 12]>> = Lazy::new(|| {
+// LazyLockを使用して初期化時のコストを削減
+static MONTH_NAMES: LazyLock<HashMap<Language, [&'static str; 12]>> = LazyLock::new(|| {
     let mut map = HashMap::new();
     map.insert(
         Language::Japanese,
@@ -145,8 +145,7 @@ pub fn get_month_name(month_index: usize, language_code: &str) -> Result<String,
         "fi" => Language::Finnish,
         _ => {
             return Err(JsError::new(format!(
-                "Unsupported language code: {}",
-                language_code
+                "Unsupported language code: {language_code}"
             )));
         }
     };
