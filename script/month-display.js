@@ -4,30 +4,100 @@ import { loadWasm } from "./wasm-loader.js";
  * 月名表示機能を初期化
  */
 export async function initMonthDisplay() {
-	// メニューのiframeを取得
-	const menuFrame = document.querySelector('iframe[name="menu"]');
+	// 直接要素を取得する場合とiframe内の要素を取得する場合の両方に対応
+	await tryDisplayInMainPage();
+	await tryDisplayInMenuFrame();
+}
+
+/**
+ * メインページ内の月名表示を試みる
+ */
+async function tryDisplayInMainPage() {
+	// メインページ内に月名表示要素があるか確認
+	const monthElement = document.getElementById("month_names");
+	if (monthElement) {
+		try {
+			await displayMonthNamesWasm(monthElement);
+		} catch (error) {
+			console.error("Error in WASM implementation for main page:", error);
+			displayMonthNamesJs(monthElement);
+		}
+	}
+}
+
+/**
+ * メニューiframe内での月名表示を試みる
+ */
+async function tryDisplayInMenuFrame() {
+	// メニューのiframeを取得（複数の方法を試行）
+	let menuFrame = document.querySelector('iframe[name="menu"]');
+
+	// 見つからない場合はクラスで検索
+	if (!menuFrame) {
+		menuFrame = document.querySelector(".menu iframe");
+	}
+
+	// それでも見つからない場合は全てのiframeを確認
+	if (!menuFrame) {
+		const allFrames = document.querySelectorAll("iframe");
+		for (const frame of allFrames) {
+			if (frame.src?.includes("menu.html")) {
+				menuFrame = frame;
+				break;
+			}
+		}
+	}
 
 	if (!menuFrame) {
-		console.log("Menu iframe not found, skipping month name display");
+		console.log("Menu iframe not found after multiple attempts");
 		return;
 	}
 
 	// iframeのロード完了を待つ
-	await new Promise((resolve) => {
-		if (
-			menuFrame.contentDocument &&
-			menuFrame.contentDocument.readyState === "complete"
-		) {
-			resolve();
-		} else {
-			menuFrame.onload = () => resolve();
-		}
-	});
-
-	// iframe内の月名表示要素を取得
 	try {
-		const monthElement =
-			menuFrame.contentDocument.getElementById("month_names");
+		await new Promise((resolve, reject) => {
+			// すでにロード完了している場合
+			if (
+				menuFrame.contentDocument?.readyState === "complete" &&
+				menuFrame.contentDocument?.getElementById("month_names")
+			) {
+				resolve();
+				return;
+			}
+
+			// 既存のonloadを保存
+			const originalOnload = menuFrame.onload;
+
+			// 30秒のタイムアウトを設定
+			const timeout = setTimeout(() => {
+				menuFrame.onload = originalOnload;
+				reject(new Error("Iframe load timeout"));
+			}, 30000);
+
+			// 新しいonloadハンドラを設定
+			menuFrame.onload = () => {
+				clearTimeout(timeout);
+				// 元のonloadがあれば呼び出す
+				if (originalOnload) originalOnload.call(menuFrame);
+				resolve();
+			};
+
+			// すでにロード済みだがonloadが発火していない場合のフォールバック
+			if (menuFrame.contentDocument?.readyState === "complete") {
+				clearTimeout(timeout);
+				resolve();
+			}
+		});
+
+		// iframe内の月名表示要素を取得
+		const frameDocument =
+			menuFrame.contentDocument ?? menuFrame.contentWindow?.document;
+
+		if (!frameDocument) {
+			throw new Error("Cannot access iframe document");
+		}
+
+		const monthElement = frameDocument.getElementById("month_names");
 
 		if (!monthElement) {
 			console.log("month_names element not found in menu iframe");
@@ -38,12 +108,12 @@ export async function initMonthDisplay() {
 		try {
 			await displayMonthNamesWasm(monthElement);
 		} catch (error) {
-			console.error("Error in WASM implementation, falling back to JS:", error);
+			console.error("Error in WASM implementation for iframe:", error);
 			displayMonthNamesJs(monthElement);
 		}
 	} catch (error) {
 		// セキュリティの制限などでiframeにアクセスできない場合
-		console.error("Cannot access iframe content:", error);
+		console.error("Cannot access or process iframe content:", error);
 	}
 }
 
