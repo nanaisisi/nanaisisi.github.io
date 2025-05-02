@@ -16,49 +16,19 @@
     />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="icon" href="../img/favicon.png" type="image/svg+xml" />
-    <script type="module">
-      // 直接このファイルが開かれた場合のための初期化処理
-      import { initThemeManager } from "../script/theme-manager.js";
-      import { loadWasm } from "../script/wasm-loader.js";
-
-      // DOMContentLoadedイベントでinitThemeManagerを呼び出す
-      document.addEventListener("DOMContentLoaded", async () => {
-        // テーマ管理を初期化
-        initThemeManager();
-        
-        // 月名表示を初期化
-        const monthElement = document.getElementById("month_names");
-        if (monthElement) {
-          try {
-            // WAsmモジュールを読み込み
-            const wasmModule = await loadWasm();
-            if (wasmModule) {
-              const current_month = wasmModule.get_current_month();
-              const japanese = wasmModule.get_japanese_month_name(current_month);
-              const english = wasmModule.get_english_month_name(current_month);
-              const ukrainian = wasmModule.get_ukrainian_month_name(current_month);
-              const ukrAlphabet = wasmModule.get_ukrainian_alphabet_month_name(current_month);
-              const swedish = wasmModule.get_swedish_month_name(current_month);
-              const finnish = wasmModule.get_suomi_month_name(current_month);
-              
-              // 月名を表示
-              monthElement.innerHTML = `
-                JP: ${japanese}<br>
-                EN: ${english}<br>
-                UA: ${ukrainian}<br>
-                UA_EN: ${ukrAlphabet}<br>
-                SE: ${swedish}<br>
-                FI: ${finnish}
-              `;
-            }
-          } catch (error) {
-            console.error("Error initializing WASM in menu.html:", error);
-            // エラー時はメッセージを表示（オプション）
-            monthElement.textContent = "月名の読み込み中にエラーが発生しました";
-          }
-        }
-      });
-    </script>
+    <!-- インラインスクリプトを外部ファイルに置き換え -->
+    <script type="module" src="../script/menu-month-display.js"></script>
+    <style>
+      .menu-category {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #666;
+      }
+      .theme_dark .menu-category {
+        color: #aaa;
+      }
+    </style>
   </head>
 
   <body class="theme">
@@ -66,28 +36,29 @@
       <h1>メニュー</h1>
       <a href="../index.html" target="_parent">ふんわり更新履歴</a><br />
       <a href="nav.html" target="_parent">このサイトの使い方紹介</a><br />
-      <a href="software.html" target="_parent">私的ソフトウェア</a><br />
-      <a href="vscode.html" target="_parent">vscode拡張機能</a><br />
+
+      <div class="menu-category">🔧 技術関連</div>
+      <a href="tech_menu.html" target="menu">技術メニュー</a><br />
+
+      <div class="menu-category">🎮 趣味・娯楽</div>
       <a href="hobby.html" target="_parent">趣味</a><br />
       <a href="military.html" target="_parent">軍事</a><br />
       <a href="fiction_book.html" target="_parent">本的作品</a><br />
       <a href="anime.html" target="_parent">アニメ</a><br />
       <a href="music.html" target="_parent">音楽</a><br />
       <a href="youtube_likes.html" target="_parent">ようつべ類</a><br />
+
+      <div class="menu-category">🔤 その他</div>
       <a href="naming.html" target="_parent">ネーミング</a><br />
       <a href="insert.html" target="_parent">追加情報</a><br />
       <a href="format.html" target="_parent">書式例</a><br />
-      <a href="xyzzy.html" target="_parent">雑なxyzzy</a><br />
-      <a href="helix.html" target="_parent">雑なhelix editor</a><br />
-      <a href="git.html" target="_parent">雑なGit</a><br />
-      <a href="rust_tool.html" target="_parent">雑なRustソフト</a><br />
       <a href="r3.html" target="_parent">始まらないR3</a><br />
       <a href="env.html" target="_parent">環境</a><br />
       <a href="credit.html" target="_parent">クレジット</a><br />
+
       <hr class="menu_hr" />
-      <a href="tech_menu.html" target="menu">技術メニュー</a><br />
-      <hr class="menu_hr" />
-      <!--githubリポジトリは特にアイコンつけたいね-->
+
+      <div class="menu-category">📁 リソース</div>
       <a
         href="https://github.com/nanaisisi/nanaisisi.github.io"
         target="_blank"
