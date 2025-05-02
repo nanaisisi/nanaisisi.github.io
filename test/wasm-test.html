@@ -12,37 +12,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style/style.css" />
+  <link rel="stylesheet" href="../style/wasm-test-styles.css" />
   <link rel="icon" href="../img/favicon.png" type="image/svg+xml" />
   <script type="module" src="../script/companion.js"></script>
 
   <title>WebAssembly月名テスト</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    .result-container {
-      margin-top: 20px;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-    }
-    
-    .control-panel {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
-    
-    button, select {
-      padding: 8px 12px;
-    }
-  </style>
 </head>
-<body>
+<body class="theme wasm-test">
   <div id="menu_tab" class="menu">
     <!-- 月名表示がここに動的に追加される -->
     <iframe loading="lazy" src="../pages/menu.html" name="menu" title="目次" class="menu_iframe"></iframe>
