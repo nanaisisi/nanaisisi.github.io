@@ -106,6 +106,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+<<<<<<< HEAD
 - Added helix.html.
 - Added menu on helix.html.
 - Added todo.md
+=======
+- Added many pages!
+
+### Changes
+
+- Changed main_page iframe at index.html.
+- Changed insert.html divide to software.html.
+
+## [1.2.0] -2025-02-24
+
+### Changes
+
+- Changed index.html menu and content struct structure.
+
+## [1.3.0] -2025-05-02
+
+### Added
+- Added new pages from dev copilot.
+- Added theme change button in contents htmls.
+
+### Changes
+- Changed adopt copilot AI
+- Changed index.html menu and content struct structure.
+- Changed script adopt rust wasm.
+>>>>>>> c971624 (ok)
