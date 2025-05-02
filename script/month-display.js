@@ -41,7 +41,7 @@ async function tryDisplayInMenuFrame() {
 	if (!menuFrame) {
 		const allFrames = document.querySelectorAll("iframe");
 		for (const frame of allFrames) {
-			if (frame.src && frame.src.includes("menu.html")) {
+			if (frame.src?.includes("menu.html")) {
 				menuFrame = frame;
 				break;
 			}
@@ -58,9 +58,8 @@ async function tryDisplayInMenuFrame() {
 		await new Promise((resolve, reject) => {
 			// すでにロード完了している場合
 			if (
-				menuFrame.contentDocument &&
-				menuFrame.contentDocument.readyState === "complete" &&
-				menuFrame.contentDocument.getElementById("month_names")
+				menuFrame.contentDocument?.readyState === "complete" &&
+				menuFrame.contentDocument?.getElementById("month_names")
 			) {
 				resolve();
 				return;
@@ -84,10 +83,7 @@ async function tryDisplayInMenuFrame() {
 			};
 
 			// すでにロード済みだがonloadが発火していない場合のフォールバック
-			if (
-				menuFrame.contentDocument &&
-				menuFrame.contentDocument.readyState === "complete"
-			) {
+			if (menuFrame.contentDocument?.readyState === "complete") {
 				clearTimeout(timeout);
 				resolve();
 			}
@@ -95,8 +91,7 @@ async function tryDisplayInMenuFrame() {
 
 		// iframe内の月名表示要素を取得
 		const frameDocument =
-			menuFrame.contentDocument ||
-			(menuFrame.contentWindow && menuFrame.contentWindow.document);
+			menuFrame.contentDocument ?? menuFrame.contentWindow?.document;
 
 		if (!frameDocument) {
 			throw new Error("Cannot access iframe document");
