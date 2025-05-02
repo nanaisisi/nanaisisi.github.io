@@ -1,0 +1,53 @@
+/* メニューカテゴリのスタイル */
+.menu-category {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #666;
+}
+
+.theme_dark .menu-category {
+  color: #aaa;
+}
+
+/* サブカテゴリのスタイル */
+.menu-subcategory {
+  margin-left: 10px;
+  font-style: italic;
+  color: #888;
+  margin-top: 3px;
+  margin-bottom: 2px;
+  font-size: 0.9em;
+}
+
+.theme_dark .menu-subcategory {
+  color: #999;
+}
+
+/* インデントされたメニュー項目 */
+.menu-indent {
+  margin-left: 15px;
+}
+
+/* メニュー間の区切り線 */
+.menu_hr {
+  margin: 10px 0;
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.theme_dark .menu_hr {
+  background-color: #444;
+}
+
+/* メニューリンクのスタイル */
+.menu a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 2px 0;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
