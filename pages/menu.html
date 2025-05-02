@@ -16,7 +16,49 @@
     />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="icon" href="../img/favicon.png" type="image/svg+xml" />
-  <script type="module" src="../script/companion.js"></script>
+    <script type="module">
+      // 直接このファイルが開かれた場合のための初期化処理
+      import { initThemeManager } from "../script/theme-manager.js";
+      import { loadWasm } from "../script/wasm-loader.js";
+
+      // DOMContentLoadedイベントでinitThemeManagerを呼び出す
+      document.addEventListener("DOMContentLoaded", async () => {
+        // テーマ管理を初期化
+        initThemeManager();
+        
+        // 月名表示を初期化
+        const monthElement = document.getElementById("month_names");
+        if (monthElement) {
+          try {
+            // WAsmモジュールを読み込み
+            const wasmModule = await loadWasm();
+            if (wasmModule) {
+              const current_month = wasmModule.get_current_month();
+              const japanese = wasmModule.get_japanese_month_name(current_month);
+              const english = wasmModule.get_english_month_name(current_month);
+              const ukrainian = wasmModule.get_ukrainian_month_name(current_month);
+              const ukrAlphabet = wasmModule.get_ukrainian_alphabet_month_name(current_month);
+              const swedish = wasmModule.get_swedish_month_name(current_month);
+              const finnish = wasmModule.get_suomi_month_name(current_month);
+              
+              // 月名を表示
+              monthElement.innerHTML = `
+                JP: ${japanese}<br>
+                EN: ${english}<br>
+                UA: ${ukrainian}<br>
+                UA_EN: ${ukrAlphabet}<br>
+                SE: ${swedish}<br>
+                FI: ${finnish}
+              `;
+            }
+          } catch (error) {
+            console.error("Error initializing WASM in menu.html:", error);
+            // エラー時はメッセージを表示（オプション）
+            monthElement.textContent = "月名の読み込み中にエラーが発生しました";
+          }
+        }
+      });
+    </script>
   </head>
 
   <body class="theme">
