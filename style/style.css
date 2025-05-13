@@ -179,6 +179,13 @@ import { loadWasm } from './wasm-loader.js';
 body {
   font-size: medium;
   margin-top: 50px; /* ヘッダー部分のスペース確保 */
+  margin-bottom: 48px; /* フッターや下部に余白を追加 */
+}
+
+@media (max-width: 600px) {
+  body {
+    margin-bottom: 32px; /* モバイル時は少し小さめの余白 */
+  }
 }
 
 .index_h1 {
@@ -483,6 +490,7 @@ th {
 
 main {
   overflow: hidden;
+  padding-bottom: 32px;
 }
 
 .simple_dom_js {
