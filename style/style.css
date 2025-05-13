@@ -78,6 +78,14 @@ main {
   z-index: 101;
 }
 
+.yotube_iframe {
+  width: 100%;
+  height: auto;
+  border: none;
+  overflow: auto;
+  position: fixed;
+}
+
 /* カラーテーマの設定 - @media クエリを保持 */
 @media (prefers-color-scheme: no-preference) {
   body {
