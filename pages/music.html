@@ -4,35 +4,42 @@
 
 <?xml version="1.1" encoding="UTF-8"?>
 <html lang="ja-JP">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>音楽</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="icon" href="../img/favicon.png" />
+    <script type="module" src="../script/companion.js"></script>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>音楽</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style/style.css" />
-  <link rel="icon" href="../img/favicon.png" type="image/svg+xml" />
-  <script type="module" src="../script/companion.js"></script>
-</head>
+  <body class="theme">
+    <!-- メニュー構造の例 -->
+    <div id="menu_tab" class="menu">
+      <!-- 月名表示がここに動的に追加される -->
+      <iframe
+        loading="lazy"
+        src="menu.html"
+        name="menu"
+        title="目次"
+        class="menu_iframe"
+      ></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
+      <!-- その他のボタンがあれば追加 -->
+    </div>
 
-<body class="theme">
-  <!-- メニュー構造の例 -->
-<div id="menu_tab" class="menu">
-  <!-- 月名表示がここに動的に追加される -->
-  <iframe loading="lazy" src="menu.html" name="menu" title="目次" class="menu_iframe"></iframe>
-</div>
-  <div class="fixed-bar">
-  <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
-  <!-- その他のボタンがあれば追加 -->
-</div>
-
-<!-- メニューボタンは別に配置 -->
-<button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
-  <div>
-    <h1>音楽</h1>
-  </div>
-</body>
-
+    <!-- メニューボタンは別に配置 -->
+    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
+    <div>
+      <h1>音楽</h1>
+    </div>
+  </body>
 </html>
