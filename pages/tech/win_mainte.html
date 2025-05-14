@@ -8,6 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>windowsメンテナンス</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="../../style/style.css" />
     <link rel="icon" href="../../img/favicon.png" />
     <script type="module" src="../../script/companion.js"></script>
@@ -25,10 +26,38 @@
     </div>
     <div class="fixed-bar">
       <button id="theme-toggle-btn" class="theme-toggle-btn">テーマ切替</button>
+=======
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="icon" href="../../img/favicon.png" />
+    <script type="module" src="../../script/companion.js"></script>
+  </head>
+
+  <body class="theme">
+    <!-- メニュー構造の例 -->
+    <div id="menu_tab" class="menu">
+      <!-- 月名表示がここに動的に追加される -->
+      <iframe
+        loading="lazy"
+        src="menu.html"
+        name="menu"
+        title="目次"
+        class="menu_iframe"
+      ></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
       <!-- その他のボタンがあれば追加 -->
     </div>
 
     <!-- メニューボタンは別に配置 -->
+<<<<<<< HEAD
     <button id="toggle-menu-btn" class="menu-toggle-btn">メニュー</button>
     <header>
       <nav>
@@ -38,13 +67,28 @@
           <li><a href="#head-3">windowsメンテナンスの手順</a></li>
           <li><a href="#head-4">解説</a></li>
           <li><a href="#head-5">参考</a></li>
+=======
+    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
+    <header>
+      <nav>
+        <ul class="table_of_contents">
+          <li><a href="#Head_1">概要</a></li>
+          <li><a href="#Head_2">各所要時間</a></li>
+          <li><a href="#Head_3">windowsメンテナンスの手順</a></li>
+          <li><a href="#Head_4">解説</a></li>
+          <li><a href="#Head_5">参考</a></li>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
         </ul>
       </nav>
     </header>
     <main>
       <div>
         <h1>Windowsメンテナンス</h1>
+<<<<<<< HEAD
         <h2 id="head-1">概要</h2>
+=======
+        <h2 id="Head_1">概要</h2>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
         Windowsをメンテナンスする。公式のツールを使う。GUIとCUIの両方を使えばいい。<br />
         メモ:
         ドライブ、記憶装置。ディスク、ハードディスクドライブ(HDD)。ソリッドステートドライブ(SSD)<br />
@@ -60,9 +104,14 @@
             <code>Dism /Online /Cleanup-Image /RestoreHealth</code>（OS修復）
           </li>
           <li><code>chkdsk /f /r /scan /perf</code>（ドライブ修復）</li>
+<<<<<<< HEAD
           <li>ウイルススキャン（ウイルスやマルウェアの検出・除去）</li>
         </ul>
         <h2 id="head-2">各所要時間</h2>
+=======
+        </ul>
+        <h2 id="Head_2">各所要時間</h2>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
         <ul>
           <li>
             ドライブのデフラグと最適化：HDDはデフラグ多段階を数日覚悟、SSDはトリムで一時間以内多分数分以内
@@ -79,9 +128,14 @@
             <code>chkdsk /f /r /scan /perf</code
             >：数日覚悟。数時間は覚悟、絶望的
           </li>
+<<<<<<< HEAD
           <li>ウイルススキャン：数時間から数日覚悟</li>
         </ul>
         <h2 id="head-3">具体的な手順例</h2>
+=======
+        </ul>
+        <h2 id="Head_3">具体的な手順例</h2>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
         <ul>
           <li>ドライブのデフラグと最適化ソフトを起動、実行</li>
           <li>
@@ -98,11 +152,16 @@
               <li><code>sfc /scannow</code>（システムファイルチェック）</li>
             </ul>
           </li>
+<<<<<<< HEAD
           <li>
             ウイルススキャンを実行し、システムやファイルをスキャンしてウイルスやマルウェアを検出・除去する
           </li>
         </ul>
         <h2 id="head-4">解説</h2>
+=======
+        </ul>
+        <h2 id="Head_4">解説</h2>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
         <ul>
           <li>
             ドライブのデフラグと最適化は、HDDではデフラグを実行する。
@@ -140,11 +199,16 @@
             sfc
             /scannowは、システムファイルをチェックし、修復するためのツールである。コマンド系は一緒に使っておく。
           </li>
+<<<<<<< HEAD
           <li>
             ウイルススキャンは、システムやファイルをスキャンし、ウイルスやマルウェアを検出・除去するためのツールである。数時間から数日かかることがある。
           </li>
         </ul>
         <h2 id="head-5">参考</h2>
+=======
+        </ul>
+        <h2 id="Head_5">参考</h2>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
         <ul>
           <li>
             <a

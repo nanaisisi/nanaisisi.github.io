@@ -8,6 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>シェルの機能比較詳細</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="../../style/style.css" />
     <link rel="icon" href="../../img/favicon.png" />
     <script type="module" src="../../script/companion.js"></script>
@@ -38,6 +39,44 @@
             <li><a href="#head-4">変数と環境</a></li>
             <li><a href="#head-5">シェル分割（Word Splitting）の問題</a></li>
             <li><a href="#head-6">条件分岐とループ</a></li>
+=======
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="icon" href="../../img/favicon.png" />
+    <script type="module" src="../../script/companion.js"></script>
+  </head>
+
+  <body class="theme">
+    <div id="menu_tab" class="menu">
+      <iframe
+        loading="lazy"
+        src="menu.html"
+        name="menu"
+        title="目次"
+        class="menu_iframe"
+      ></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
+    </div>
+
+    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
+    <div>
+      <header>
+        <nav>
+          <ul class="table_of_contents">
+            <li><a href="#Head_1">パイプラインの違い</a></li>
+            <li><a href="#Head_2">データ型とテーブル</a></li>
+            <li><a href="#Head_3">ファイル操作の違い</a></li>
+            <li><a href="#Head_4">変数と環境</a></li>
+            <li><a href="#Head_5">シェル分割（Word Splitting）の問題</a></li>
+            <li><a href="#Head_6">条件分岐とループ</a></li>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
           </ul>
         </nav>
       </header>
@@ -45,14 +84,22 @@
         <div>
           <h1>シェルの機能比較詳細</h1>
           <p>
+<<<<<<< HEAD
             <small>このページはAIによって生成されたコンテンツです。</small
             ><br />
+=======
+            AIページ<br />
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
             このページでは、Nushell、Bash、PowerShell、CMDなど各シェル環境の機能的な違いを詳しく比較します。
             <a href="shell_features.html">シェル環境の特徴</a
             >の詳細版として、実際のコマンド例を交えて解説します。
           </p>
 
+<<<<<<< HEAD
           <h2 id="head-1">パイプラインの違い</h2>
+=======
+          <h2 id="Head_1">パイプラインの違い</h2>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
           <p>
             従来のシェルではテキストストリームをパイプでつなぎますが、Nushellでは構造化データをパイプでつなぎます。
             これはPowerShellのオブジェクトパイプラインに近い概念ですが、さらに強力です。
@@ -104,7 +151,11 @@
             </tbody>
           </table>
 
+<<<<<<< HEAD
           <h2 id="head-2">データ型とテーブル</h2>
+=======
+          <h2 id="Head_2">データ型とテーブル</h2>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
           <p>
             Nushellでは、ほとんどのコマンド出力がテーブル形式になっています。
             これにより、データベースのようなクエリが可能になります。
@@ -159,7 +210,11 @@
             </tbody>
           </table>
 
+<<<<<<< HEAD
           <h2 id="head-3">ファイル操作の違い</h2>
+=======
+          <h2 id="Head_3">ファイル操作の違い</h2>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
           <p>
             Nushellでは、構造化ファイル（JSON、YAML、CSVなど）をネイティブに扱えます。
           </p>
@@ -213,7 +268,11 @@
             </tbody>
           </table>
 
+<<<<<<< HEAD
           <h2 id="head-4">変数と環境</h2>
+=======
+          <h2 id="Head_4">変数と環境</h2>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
           <p>変数の扱いもシェルによって大きく異なります。</p>
 
           <table>
@@ -259,7 +318,11 @@
             </tbody>
           </table>
 
+<<<<<<< HEAD
           <h2 id="head-5">シェル分割（Word Splitting）の問題</h2>
+=======
+          <h2 id="Head_5">シェル分割（Word Splitting）の問題</h2>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
           <p>
             シェル分割は、特にBashなどの伝統的なシェルで変数を展開する際に発生する現象です。
             変数内にスペースが含まれると、適切にクォートしない場合に予期しない動作が発生します。
@@ -342,7 +405,11 @@ rm $files  # リストとして正しく扱われる</code></pre>
             Bashでは二重引用符でくくらないと意図しない分割が発生しますが、PowerShellやNushellはより安全な変数展開を提供しています。
           </p>
 
+<<<<<<< HEAD
           <h2 id="head-6">条件分岐とループ</h2>
+=======
+          <h2 id="Head_6">条件分岐とループ</h2>
+>>>>>>> 4a4a9e8 (continue dir in dir move and fix)
           <p>制御構文もシェルによって異なります。</p>
 
           <table>
