@@ -4,44 +4,57 @@
 
 <?xml version="1.1" encoding="UTF-8"?>
 <html lang="ja-JP">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>クレジット</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="icon" href="../img/favicon.png" />
+    <script type="module" src="../script/companion.js"></script>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>クレジット</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style/style.css" />
-  <link rel="icon" href="../img/favicon.png" type="image/svg+xml" />
-  <script type="module" src="../script/companion.js"></script>
-</head>
+  <body class="theme">
+    <div id="menu_tab" class="menu">
+      <!-- 月名表示がここに動的に追加される -->
+      <iframe
+        loading="lazy"
+        src="menu.html"
+        name="menu"
+        title="目次"
+        class="menu_iframe"
+      ></iframe>
+    </div>
 
-<body class="theme">
-  <div id="menu_tab" class="menu">
-  <!-- 月名表示がここに動的に追加される -->
-  <iframe loading="lazy" src="menu.html" name="menu" title="目次" class="menu_iframe"></iframe>
-</div>
-  
-  <div class="fixed-bar">
-    <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
-    <!-- その他のボタンがあれば追加 -->
-  </div>
+    <div class="fixed-bar">
+      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
+      <!-- その他のボタンがあれば追加 -->
+    </div>
 
-  <!-- メニューボタンは別に配置 -->
-  <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
-  
-  <div>
-        <h1>クレジット</h1>
-        <h2>参考</h2>
-        <br />
-        <a href="https://developer.mozilla.org/ja/" target="_blank" rel="noopener">Mozilla</a><br />
-        <a href="https://syosetu.com/" target="_blank" rel="noopener">WEB小説投稿サイト・小説家になろう</a><br />
-        ブラックモード2を参考にしました。<br />
-        <a href="https://syosetu.org/" target="_blank" rel="noopener">WEB小説投稿サイト・ハーメルン<br /></a>
-        ダークモードを参考にしました。<br />
-        他、多くのサイトの皆様<br />
-      </div>
-</body>
+    <!-- メニューボタンは別に配置 -->
+    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
 
+    <div>
+      <h1>クレジット</h1>
+      <h2>参考</h2>
+      <br />
+      <a href="https://developer.mozilla.org/ja/" target="_blank" rel="noopener"
+        >Mozilla</a
+      ><br />
+      <a href="https://syosetu.com/" target="_blank" rel="noopener"
+        >WEB小説投稿サイト・小説家になろう</a
+      ><br />
+      ブラックモード2を参考にしました。<br />
+      <a href="https://syosetu.org/" target="_blank" rel="noopener"
+        >WEB小説投稿サイト・ハーメルン<br
+      /></a>
+      ダークモードを参考にしました。<br />
+      他、多くのサイトの皆様<br />
+    </div>
+  </body>
 </html>

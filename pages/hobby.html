@@ -4,70 +4,79 @@
 
 <?xml version="1.1" encoding="UTF-8"?>
 <html lang="ja-JP">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>趣味</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="icon" href="../img/favicon.png" />
+    <script type="module" src="../script/companion.js"></script>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>趣味</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style/style.css" />
-  <link rel="icon" href="../img/favicon.png" type="image/svg+xml" />
-  <script type="module" src="../script/companion.js"></script>
-</head>
+  <body class="theme">
+    <!-- メニュー構造の例 -->
+    <div id="menu_tab" class="menu">
+      <!-- 月名表示がここに動的に追加される -->
+      <iframe
+        loading="lazy"
+        src="menu.html"
+        name="menu"
+        title="目次"
+        class="menu_iframe"
+      ></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
+      <!-- その他のボタンがあれば追加 -->
+    </div>
 
-<body class="theme">
-  <!-- メニュー構造の例 -->
-<div id="menu_tab" class="menu">
-  <!-- 月名表示がここに動的に追加される -->
-  <iframe loading="lazy" src="menu.html" name="menu" title="目次" class="menu_iframe"></iframe>
-</div>
-  <div class="fixed-bar">
-  <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
-  <!-- その他のボタンがあれば追加 -->
-</div>
+    <!-- メニューボタンは別に配置 -->
+    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
 
-<!-- メニューボタンは別に配置 -->
-<button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
-  
-  <h1>趣味</h1>
-  
-  <table>
-    <caption>趣味</caption>
-    <thead>
-      <tr>
-        <th>種類</th>
-        <th>内容</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>読書</th>
-        <td>ライトノベルを読みます。ほかには軍事雑誌など。</td>
-      </tr>
-      <tr>
-        <th>ゲーム(ジャンル:4Xストラテジー)</th>
-        <td>
-          メジャーなゲームはあまりしてこなかったのでわからないです。Stellaris、CivilizationⅥ
-        </td>
-      </tr>
-      <tr>
-        <th>アニメ</th>
-        <td>
-          メジャーなところを一部見たり、少しマイナーなものを見たりするくらいであまり見ません。
-        </td>
-      </tr>
-      <tr>
-        <th>音楽</th>
-        <td>アニソン、ゲームソングなど。流行りのやつがわからないです。</td>
-      </tr>
-      <tr>
-        <th>好きなもの</th>
-        <td>人型機動兵器、軍事</td>
-      </tr>
-    </tbody>
-  </table>
-</body>
+    <h1>趣味</h1>
 
+    <table>
+      <caption>
+        趣味
+      </caption>
+      <thead>
+        <tr>
+          <th>種類</th>
+          <th>内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>読書</th>
+          <td>ライトノベルを読みます。ほかには軍事雑誌など。</td>
+        </tr>
+        <tr>
+          <th>ゲーム(ジャンル:4Xストラテジー)</th>
+          <td>
+            メジャーなゲームはあまりしてこなかったのでわからないです。Stellaris、CivilizationⅥ
+          </td>
+        </tr>
+        <tr>
+          <th>アニメ</th>
+          <td>
+            メジャーなところを一部見たり、少しマイナーなものを見たりするくらいであまり見ません。
+          </td>
+        </tr>
+        <tr>
+          <th>音楽</th>
+          <td>アニソン、ゲームソングなど。流行りのやつがわからないです。</td>
+        </tr>
+        <tr>
+          <th>好きなもの</th>
+          <td>人型機動兵器、軍事</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>

@@ -4,47 +4,54 @@
 
 <?xml version="1.1" encoding="UTF-8" ?>
 <html lang="ja-JP">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>私のネーミング</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="icon" href="../img/favicon.png" />
+    <script type="module" src="../script/companion.js"></script>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>私のネーミング</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style/style.css" />
-  <link rel="icon" href="../img/favicon.png" type="image/svg+xml" />
-  <script type="module" src="../script/companion.js"></script>
-</head>
+  <body class="theme">
+    <!-- メニュー構造の例 -->
+    <div id="menu_tab" class="menu">
+      <!-- 月名表示がここに動的に追加される -->
+      <iframe
+        loading="lazy"
+        src="menu.html"
+        name="menu"
+        title="目次"
+        class="menu_iframe"
+      ></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
+      <!-- その他のボタンがあれば追加 -->
+    </div>
 
-<body class="theme">
-  <!-- メニュー構造の例 -->
-<div id="menu_tab" class="menu">
-  <!-- 月名表示がここに動的に追加される -->
-  <iframe loading="lazy" src="menu.html" name="menu" title="目次" class="menu_iframe"></iframe>
-</div>
-  <div class="fixed-bar">
-  <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
-  <!-- その他のボタンがあれば追加 -->
-</div>
+    <!-- メニューボタンは別に配置 -->
+    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
 
-<!-- メニューボタンは別に配置 -->
-<button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
-
-  <div>
-    <h1>私のネーミング</h1>
-    <ul class="table_of_contents">
-      <li><a href="#Head_1">概要</a></li>
-      <li><a href="#Head_2">具体例</a></li>
-    </ul>
-    <h2 id="Head_1">概要</h2>
-    <h2 id="Head_2">具体例</h2>
-    <ul class="table_of_contents">
-      <li><a href="#Mini_1">なないしし</a></li>
-    </ul>
-    <h3 id="Mini_1">なないしし</h3>
-    なないししとは、共同通信の七井智寿さんの名誉に基づいている。または名無し、アニメ攻殻機動隊SACの端役だが悪役のナナオ・A、アビス・コーリングで七篠がななしぃと呼ばれていることは俺が槻影さんが好きなことを表しているし、獅子はそのへんに加えてグリペンやグリフィンと呼ばれるものは体が獅子、ライオンであることから有翼獅子と呼ばれていることも踏まえている。3がすきなので10的には3の反対は7だよなと思ったこともある。
-  </div>
-</body>
-
+    <div>
+      <h1>私のネーミング</h1>
+      <ul class="table_of_contents">
+        <li><a href="#Head_1">概要</a></li>
+        <li><a href="#Head_2">具体例</a></li>
+      </ul>
+      <h2 id="Head_1">概要</h2>
+      <h2 id="Head_2">具体例</h2>
+      <ul class="table_of_contents">
+        <li><a href="#Mini_1">なないしし</a></li>
+      </ul>
+      <h3 id="Mini_1">なないしし</h3>
+      なないししとは、共同通信の七井智寿さんの名誉に基づいている。または名無し、アニメ攻殻機動隊SACの端役だが悪役のナナオ・A、アビス・コーリングで七篠がななしぃと呼ばれていることは俺が槻影さんが好きなことを表しているし、獅子はそのへんに加えてグリペンやグリフィンと呼ばれるものは体が獅子、ライオンであることから有翼獅子と呼ばれていることも踏まえている。3がすきなので10的には3の反対は7だよなと思ったこともある。
+    </div>
+  </body>
 </html>

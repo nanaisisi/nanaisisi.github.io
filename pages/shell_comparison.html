@@ -15,13 +15,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../style/style.css" />
-    <link rel="icon" href="../img/favicon.png" type="image/svg+xml" />
+    <link rel="icon" href="../img/favicon.png" />
     <script type="module" src="../script/companion.js"></script>
   </head>
 
   <body class="theme">
     <div id="menu_tab" class="menu">
-      <iframe loading="lazy" src="menu.html" name="menu" title="目次" class="menu_iframe"></iframe>
+      <iframe
+        loading="lazy"
+        src="menu.html"
+        name="menu"
+        title="目次"
+        class="menu_iframe"
+      ></iframe>
     </div>
     <div class="fixed-bar">
       <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
@@ -29,375 +35,382 @@
 
     <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
     <div>
-    <header>
-      <nav>
-        <ul class="table_of_contents">
-          <li><a href="#Head_1">パイプラインの違い</a></li>
-          <li><a href="#Head_2">データ型とテーブル</a></li>
-          <li><a href="#Head_3">ファイル操作の違い</a></li>
-          <li><a href="#Head_4">変数と環境</a></li>
-          <li><a href="#Head_5">シェル分割（Word Splitting）の問題</a></li>
-          <li><a href="#Head_6">条件分岐とループ</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div>
-        <h1>シェルの機能比較詳細</h1>
-        <p>
-        AIページ<br>
-          このページでは、Nushell、Bash、PowerShell、CMDなど各シェル環境の機能的な違いを詳しく比較します。
-          <a href="shell_features.html">シェル環境の特徴</a>の詳細版として、実際のコマンド例を交えて解説します。
-        </p>
+      <header>
+        <nav>
+          <ul class="table_of_contents">
+            <li><a href="#Head_1">パイプラインの違い</a></li>
+            <li><a href="#Head_2">データ型とテーブル</a></li>
+            <li><a href="#Head_3">ファイル操作の違い</a></li>
+            <li><a href="#Head_4">変数と環境</a></li>
+            <li><a href="#Head_5">シェル分割（Word Splitting）の問題</a></li>
+            <li><a href="#Head_6">条件分岐とループ</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div>
+          <h1>シェルの機能比較詳細</h1>
+          <p>
+            AIページ<br />
+            このページでは、Nushell、Bash、PowerShell、CMDなど各シェル環境の機能的な違いを詳しく比較します。
+            <a href="shell_features.html">シェル環境の特徴</a
+            >の詳細版として、実際のコマンド例を交えて解説します。
+          </p>
 
-        <h2 id="Head_1">パイプラインの違い</h2>
-        <p>
-          従来のシェルではテキストストリームをパイプでつなぎますが、Nushellでは構造化データをパイプでつなぎます。
-          これはPowerShellのオブジェクトパイプラインに近い概念ですが、さらに強力です。
-        </p>
+          <h2 id="Head_1">パイプラインの違い</h2>
+          <p>
+            従来のシェルではテキストストリームをパイプでつなぎますが、Nushellでは構造化データをパイプでつなぎます。
+            これはPowerShellのオブジェクトパイプラインに近い概念ですが、さらに強力です。
+          </p>
 
-        <table>
-          <caption>
-            パイプラインの違い
-          </caption>
-          <thead>
-            <tr>
-              <th>シェル</th>
-              <th>コマンド例</th>
-              <th>説明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Bash</td>
-              <td><code>ls -la | grep "\.txt$" | sort</code></td>
-              <td>
-                テキストベースのパイプライン（グレップで.txtファイルを抽出し、ソート）
-              </td>
-            </tr>
-            <tr>
-              <td>PowerShell</td>
-              <td>
-                <code
-                  >Get-ChildItem | Where-Object {$_.Name -like "*.txt"} |
-                  Sort-Object Length</code
-                >
-              </td>
-              <td>
-                オブジェクトパイプライン（.txtファイルをフィルタリングし、サイズでソート）
-              </td>
-            </tr>
-            <tr>
-              <td>Nushell</td>
-              <td><code>ls | where name =~ "\.txt$" | sort-by size</code></td>
-              <td>
-                構造化データのパイプライン（テーブルベースのフィルタリングとソート）
-              </td>
-            </tr>
-            <tr>
-              <td>Rust (例)</td>
-              <td><code>fd "\.txt$" | sort</code></td>
-              <td>Rustツールを組み合わせたパイプライン処理</td>
-            </tr>
-          </tbody>
-        </table>
+          <table>
+            <caption>
+              パイプラインの違い
+            </caption>
+            <thead>
+              <tr>
+                <th>シェル</th>
+                <th>コマンド例</th>
+                <th>説明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bash</td>
+                <td><code>ls -la | grep "\.txt$" | sort</code></td>
+                <td>
+                  テキストベースのパイプライン（グレップで.txtファイルを抽出し、ソート）
+                </td>
+              </tr>
+              <tr>
+                <td>PowerShell</td>
+                <td>
+                  <code
+                    >Get-ChildItem | Where-Object {$_.Name -like "*.txt"} |
+                    Sort-Object Length</code
+                  >
+                </td>
+                <td>
+                  オブジェクトパイプライン（.txtファイルをフィルタリングし、サイズでソート）
+                </td>
+              </tr>
+              <tr>
+                <td>Nushell</td>
+                <td><code>ls | where name =~ "\.txt$" | sort-by size</code></td>
+                <td>
+                  構造化データのパイプライン（テーブルベースのフィルタリングとソート）
+                </td>
+              </tr>
+              <tr>
+                <td>Rust (例)</td>
+                <td><code>fd "\.txt$" | sort</code></td>
+                <td>Rustツールを組み合わせたパイプライン処理</td>
+              </tr>
+            </tbody>
+          </table>
 
-        <h2 id="Head_2">データ型とテーブル</h2>
-        <p>
-          Nushellでは、ほとんどのコマンド出力がテーブル形式になっています。
-          これにより、データベースのようなクエリが可能になります。
-        </p>
+          <h2 id="Head_2">データ型とテーブル</h2>
+          <p>
+            Nushellでは、ほとんどのコマンド出力がテーブル形式になっています。
+            これにより、データベースのようなクエリが可能になります。
+          </p>
 
-        <table>
-          <caption>
-            データ型とテーブル
-          </caption>
-          <thead>
-            <tr>
-              <th>シェル</th>
-              <th>コマンド例</th>
-              <th>説明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Bash</td>
-              <td>
-                <code>ps aux | awk '{print $2, $4, $11}' | sort -k2</code>
-              </td>
-              <td>
-                テキスト処理でプロセスID、CPU使用率、コマンドを抽出しソート
-              </td>
-            </tr>
-            <tr>
-              <td>PowerShell</td>
-              <td>
-                <code
-                  >Get-Process | Select-Object Id, CPU, ProcessName |
-                  Sort-Object CPU</code
-                >
-              </td>
-              <td>オブジェクトのプロパティを選択してソート</td>
-            </tr>
-            <tr>
-              <td>Nushell</td>
-              <td><code>ps | select pid cpu name | sort-by cpu</code></td>
-              <td>テーブルから列を選択し、CPUでソート</td>
-            </tr>
-            <tr>
-              <td>Rust (例)</td>
-              <td>
-                <code
-                  >procs | jaq -r '.[] | [.pid, .cpu, .name] | @tsv' | sort
-                  -k2</code
-                >
-              </td>
-              <td>Rustツールを組み合わせたプロセス情報の処理</td>
-            </tr>
-          </tbody>
-        </table>
+          <table>
+            <caption>
+              データ型とテーブル
+            </caption>
+            <thead>
+              <tr>
+                <th>シェル</th>
+                <th>コマンド例</th>
+                <th>説明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bash</td>
+                <td>
+                  <code>ps aux | awk '{print $2, $4, $11}' | sort -k2</code>
+                </td>
+                <td>
+                  テキスト処理でプロセスID、CPU使用率、コマンドを抽出しソート
+                </td>
+              </tr>
+              <tr>
+                <td>PowerShell</td>
+                <td>
+                  <code
+                    >Get-Process | Select-Object Id, CPU, ProcessName |
+                    Sort-Object CPU</code
+                  >
+                </td>
+                <td>オブジェクトのプロパティを選択してソート</td>
+              </tr>
+              <tr>
+                <td>Nushell</td>
+                <td><code>ps | select pid cpu name | sort-by cpu</code></td>
+                <td>テーブルから列を選択し、CPUでソート</td>
+              </tr>
+              <tr>
+                <td>Rust (例)</td>
+                <td>
+                  <code
+                    >procs | jaq -r '.[] | [.pid, .cpu, .name] | @tsv' | sort
+                    -k2</code
+                  >
+                </td>
+                <td>Rustツールを組み合わせたプロセス情報の処理</td>
+              </tr>
+            </tbody>
+          </table>
 
-        <h2 id="Head_3">ファイル操作の違い</h2>
-        <p>
-          Nushellでは、構造化ファイル（JSON、YAML、CSVなど）をネイティブに扱えます。
-        </p>
+          <h2 id="Head_3">ファイル操作の違い</h2>
+          <p>
+            Nushellでは、構造化ファイル（JSON、YAML、CSVなど）をネイティブに扱えます。
+          </p>
 
-        <table>
-          <caption>
-            ファイル操作の違い
-          </caption>
-          <thead>
-            <tr>
-              <th>シェル</th>
-              <th>コマンド例</th>
-              <th>説明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Bash</td>
-              <td>
-                <code
-                  >cat data.json | jq '.items[] | select(.price > 100)'</code
-                >
-              </td>
-              <td>jqを使ってJSONファイルからデータを抽出</td>
-            </tr>
-            <tr>
-              <td>PowerShell</td>
-              <td>
-                <code
-                  >Get-Content data.json | ConvertFrom-Json | Where-Object
-                  {$_.price -gt 100}</code
-                >
-              </td>
-              <td>JSONをオブジェクトに変換してフィルタリング</td>
-            </tr>
-            <tr>
-              <td>Nushell</td>
-              <td><code>open data.json | where price > 100</code></td>
-              <td>JSONファイルを直接開いてフィルタリング</td>
-            </tr>
-            <tr>
-              <td>Rust (例)</td>
-              <td>
-                <code
-                  >cat data.json | jaq -r '.items[] | select(.price >
-                  100)'</code
-                >
-              </td>
-              <td>Rust製jqクローン（jaq）を使用したJSON処理</td>
-            </tr>
-          </tbody>
-        </table>
+          <table>
+            <caption>
+              ファイル操作の違い
+            </caption>
+            <thead>
+              <tr>
+                <th>シェル</th>
+                <th>コマンド例</th>
+                <th>説明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bash</td>
+                <td>
+                  <code
+                    >cat data.json | jq '.items[] | select(.price > 100)'</code
+                  >
+                </td>
+                <td>jqを使ってJSONファイルからデータを抽出</td>
+              </tr>
+              <tr>
+                <td>PowerShell</td>
+                <td>
+                  <code
+                    >Get-Content data.json | ConvertFrom-Json | Where-Object
+                    {$_.price -gt 100}</code
+                  >
+                </td>
+                <td>JSONをオブジェクトに変換してフィルタリング</td>
+              </tr>
+              <tr>
+                <td>Nushell</td>
+                <td><code>open data.json | where price > 100</code></td>
+                <td>JSONファイルを直接開いてフィルタリング</td>
+              </tr>
+              <tr>
+                <td>Rust (例)</td>
+                <td>
+                  <code
+                    >cat data.json | jaq -r '.items[] | select(.price >
+                    100)'</code
+                  >
+                </td>
+                <td>Rust製jqクローン（jaq）を使用したJSON処理</td>
+              </tr>
+            </tbody>
+          </table>
 
-        <h2 id="Head_4">変数と環境</h2>
-        <p>変数の扱いもシェルによって大きく異なります。</p>
+          <h2 id="Head_4">変数と環境</h2>
+          <p>変数の扱いもシェルによって大きく異なります。</p>
 
-        <table>
-          <caption>
-            変数と環境
-          </caption>
-          <thead>
-            <tr>
-              <th>シェル</th>
-              <th>コマンド例</th>
-              <th>説明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Bash</td>
-              <td>
-                <code>NAME="John"<br />echo "Hello, $NAME"</code>
-              </td>
-              <td>変数を設定し、展開する</td>
-            </tr>
-            <tr>
-              <td>CMD</td>
-              <td>
-                <code>SET NAME=John<br />echo Hello, %NAME%</code>
-              </td>
-              <td>環境変数を設定し、参照する</td>
-            </tr>
-            <tr>
-              <td>PowerShell</td>
-              <td>
-                <code>$NAME = "John"<br />Write-Host "Hello, $NAME"</code>
-              </td>
-              <td>変数を設定し、展開する</td>
-            </tr>
-            <tr>
-              <td>Nushell</td>
-              <td>
-                <code>let name = "John"<br />echo $"Hello, ($name)"</code>
-              </td>
-              <td>let で変数を設定し、文字列補間で使用</td>
-            </tr>
-          </tbody>
-        </table>
+          <table>
+            <caption>
+              変数と環境
+            </caption>
+            <thead>
+              <tr>
+                <th>シェル</th>
+                <th>コマンド例</th>
+                <th>説明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bash</td>
+                <td>
+                  <code>NAME="John"<br />echo "Hello, $NAME"</code>
+                </td>
+                <td>変数を設定し、展開する</td>
+              </tr>
+              <tr>
+                <td>CMD</td>
+                <td>
+                  <code>SET NAME=John<br />echo Hello, %NAME%</code>
+                </td>
+                <td>環境変数を設定し、参照する</td>
+              </tr>
+              <tr>
+                <td>PowerShell</td>
+                <td>
+                  <code>$NAME = "John"<br />Write-Host "Hello, $NAME"</code>
+                </td>
+                <td>変数を設定し、展開する</td>
+              </tr>
+              <tr>
+                <td>Nushell</td>
+                <td>
+                  <code>let name = "John"<br />echo $"Hello, ($name)"</code>
+                </td>
+                <td>let で変数を設定し、文字列補間で使用</td>
+              </tr>
+            </tbody>
+          </table>
 
-        <h2 id="Head_5">シェル分割（Word Splitting）の問題</h2>
-        <p>
-          シェル分割は、特にBashなどの伝統的なシェルで変数を展開する際に発生する現象です。
-          変数内にスペースが含まれると、適切にクォートしない場合に予期しない動作が発生します。
-          以下に各シェルでの分割動作と対処法を示します。
-        </p>
+          <h2 id="Head_5">シェル分割（Word Splitting）の問題</h2>
+          <p>
+            シェル分割は、特にBashなどの伝統的なシェルで変数を展開する際に発生する現象です。
+            変数内にスペースが含まれると、適切にクォートしない場合に予期しない動作が発生します。
+            以下に各シェルでの分割動作と対処法を示します。
+          </p>
 
-        <table>
-          <caption>
-            シェル分割の取り扱い比較
-          </caption>
-          <thead>
-            <tr>
-              <th>シェル</th>
-              <th>問題のある例</th>
-              <th>正しい使い方</th>
-              <th>説明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Bash</td>
-              <td>
-                <pre><code>FILES="file1.txt file2.txt"
+          <table>
+            <caption>
+              シェル分割の取り扱い比較
+            </caption>
+            <thead>
+              <tr>
+                <th>シェル</th>
+                <th>問題のある例</th>
+                <th>正しい使い方</th>
+                <th>説明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bash</td>
+                <td>
+                  <pre><code>FILES="file1.txt file2.txt"
 rm $FILES  # 分割されて2つのファイルとして解釈</code></pre>
-              </td>
-              <td>
-                <pre><code>FILES="file1.txt file2.txt"
+                </td>
+                <td>
+                  <pre><code>FILES="file1.txt file2.txt"
 rm "$FILES"  # 1つの引数として扱われる</code></pre>
-              </td>
-              <td>変数展開時にダブルクォートで囲まないと、スペースで分割されてしまう</td>
-            </tr>
-            <tr>
-              <td>CMD</td>
-              <td>
-                <pre><code>SET FILES=file1.txt file2.txt
+                </td>
+                <td>
+                  変数展開時にダブルクォートで囲まないと、スペースで分割されてしまう
+                </td>
+              </tr>
+              <tr>
+                <td>CMD</td>
+                <td>
+                  <pre><code>SET FILES=file1.txt file2.txt
 DEL %FILES%  # スペースが含まれると問題</code></pre>
-              </td>
-              <td>
-                <pre><code>SET "FILES=file1.txt file2.txt"
+                </td>
+                <td>
+                  <pre><code>SET "FILES=file1.txt file2.txt"
 DEL "%FILES%"  # セットとアクセス両方でクォート</code></pre>
-              </td>
-              <td>CMDではスペース含む変数は設定と使用時にクォートで囲む</td>
-            </tr>
-            <tr>
-              <td>PowerShell</td>
-              <td>
-                <pre><code>$files = "file1.txt file2.txt"
+                </td>
+                <td>CMDではスペース含む変数は設定と使用時にクォートで囲む</td>
+              </tr>
+              <tr>
+                <td>PowerShell</td>
+                <td>
+                  <pre><code>$files = "file1.txt file2.txt"
 Remove-Item $files  # 通常は問題なし</code></pre>
-              </td>
-              <td>
-                <pre><code># スペースを含む複数ファイル
+                </td>
+                <td>
+                  <pre><code># スペースを含む複数ファイル
 $files = "file1.txt", "file2.txt"
 Remove-Item $files</code></pre>
-              </td>
-              <td>PowerShellは自動分割しないが、複数アイテムを扱う場合は配列が推奨</td>
-            </tr>
-            <tr>
-              <td>Nushell</td>
-              <td>
-                <pre><code>let files = "file1.txt file2.txt"
+                </td>
+                <td>
+                  PowerShellは自動分割しないが、複数アイテムを扱う場合は配列が推奨
+                </td>
+              </tr>
+              <tr>
+                <td>Nushell</td>
+                <td>
+                  <pre><code>let files = "file1.txt file2.txt"
 rm $files  # 文字列として扱われる</code></pre>
-              </td>
-              <td>
-                <pre><code>let files = ["file1.txt", "file2.txt"]
+                </td>
+                <td>
+                  <pre><code>let files = ["file1.txt", "file2.txt"]
 rm $files  # リストとして正しく扱われる</code></pre>
-              </td>
-              <td>Nushellはタイプセーフなので、文字列は分割されない。複数アイテムはリストで表現</td>
-            </tr>
-          </tbody>
-        </table>
+                </td>
+                <td>
+                  Nushellはタイプセーフなので、文字列は分割されない。複数アイテムはリストで表現
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-        <p>
-          このようなシェル分割の違いは、異なるシェル間でスクリプトを移植する際に特に注意が必要です。
-          Bashでは二重引用符でくくらないと意図しない分割が発生しますが、PowerShellやNushellはより安全な変数展開を提供しています。
-        </p>
+          <p>
+            このようなシェル分割の違いは、異なるシェル間でスクリプトを移植する際に特に注意が必要です。
+            Bashでは二重引用符でくくらないと意図しない分割が発生しますが、PowerShellやNushellはより安全な変数展開を提供しています。
+          </p>
 
-        <h2 id="Head_6">条件分岐とループ</h2>
-        <p>制御構文もシェルによって異なります。</p>
+          <h2 id="Head_6">条件分岐とループ</h2>
+          <p>制御構文もシェルによって異なります。</p>
 
-        <table>
-          <caption>
-            条件分岐とループ
-          </caption>
-          <thead>
-            <tr>
-              <th>シェル</th>
-              <th>コマンド例（条件分岐）</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Bash</td>
-              <td>
-                <pre><code>if [ "$count" -gt 10 ]; then
+          <table>
+            <caption>
+              条件分岐とループ
+            </caption>
+            <thead>
+              <tr>
+                <th>シェル</th>
+                <th>コマンド例（条件分岐）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bash</td>
+                <td>
+                  <pre><code>if [ "$count" -gt 10 ]; then
   echo "Greater than 10"
 else
   echo "Less than or equal to 10"
 fi</code></pre>
-              </td>
-            </tr>
-            <tr>
-              <td>CMD</td>
-              <td>
-                <pre><code>IF %count% GTR 10 (
+                </td>
+              </tr>
+              <tr>
+                <td>CMD</td>
+                <td>
+                  <pre><code>IF %count% GTR 10 (
   echo Greater than 10
 ) ELSE (
   echo Less than or equal to 10
 )</code></pre>
-              </td>
-            </tr>
-            <tr>
-              <td>PowerShell</td>
-              <td>
-                <pre><code>if ($count -gt 10) {
+                </td>
+              </tr>
+              <tr>
+                <td>PowerShell</td>
+                <td>
+                  <pre><code>if ($count -gt 10) {
   Write-Host "Greater than 10"
 } else {
   Write-Host "Less than or equal to 10"
 }</code></pre>
-              </td>
-            </tr>
-            <tr>
-              <td>Nushell</td>
-              <td>
-                <pre><code>if $count > 10 {
+                </td>
+              </tr>
+              <tr>
+                <td>Nushell</td>
+                <td>
+                  <pre><code>if $count > 10 {
   echo "Greater than 10"
 } else {
   echo "Less than or equal to 10"
 }</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-        <p>
-          <a href="shell_features.html">シェル環境の基本特徴</a> | 
-          <a href="shell_nushell_migration.html">Nushell移行ガイド</a>
-        </p>
-      </div>
-    </main>
-    <footer></footer>
+          <p>
+            <a href="shell_features.html">シェル環境の基本特徴</a> |
+            <a href="shell_nushell_migration.html">Nushell移行ガイド</a>
+          </p>
+        </div>
+      </main>
+      <footer></footer>
     </div>
   </body>
 </html>
