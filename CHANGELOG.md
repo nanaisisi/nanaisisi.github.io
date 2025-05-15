@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- 0.x.y only because unstable system -->
 
+<<<<<<< HEAD
 ## [0.0.4] - 2025-10-17
 
 ### Added
@@ -25,9 +26,60 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added doc for Ai and etc.
 
 ### Changes
+=======
+## [0.0.1] -2025-5-17
+
+### Added
+- New html pages.
+
+### Changes
+- Changed version in CHANGELOG.md.
+- Changed pages folder genre divided to folder.
+
+### Fix
+- Fixed CHANGELOG.md Reverse order
+
+## [1.3.0] -2025-05-02
+
+### Added
+- Added new pages from dev copilot.
+- Added theme change button in contents htmls.
+
+### Changes
+- Changed adopt copilot AI
+- Changed index.html menu and content struct structure.
+- Changed script adopt rust wasm.
+
+## [1.2.0] -2025-02-24
+
+### Changes
+
+- Changed index.html menu and content struct structure.
+
+## [1.1.1] - 2024-10-20
+
+### Added
+
+- Added many pages!
+
+### Changes
+
+- Changed main_page iframe at index.html.
+- Changed insert.html divide to software.html.
+
+## [1.1.0] - 2024-09-20
+
+### Added
+
+- Added xyzzy.html.
+- Added menu on xyzzy.html.
+- Intake Jest.
+- Added on insert.html
+>>>>>>> 5412b6c (ok)
 
 - Changed page struct.
 
+<<<<<<< HEAD
 ## [0.0.2] -2025-6-29
 
 ### Added
@@ -98,6 +150,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Change
 
+=======
+>>>>>>> 5412b6c (ok)
 - Changed External edition, only from now on. Internal edition, discontinued due to end of environment.
 - Changed to BrowserCacheClear on major heading of index.html.
 - Changed menu order on menu.html.
@@ -192,6 +246,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 >>>>>>> 044b6fe (ok)
 
 ## [1.0.0] - 2024-02-21
+<<<<<<< HEAD
 
 ### Added
 
@@ -215,14 +270,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed index.html menu and content struct structure.
 
 ## [1.3.0] -2025-05-02
+=======
+>>>>>>> 5412b6c (ok)
 
 ### Added
-- Added new pages from dev copilot.
-- Added theme change button in contents htmls.
 
+<<<<<<< HEAD
 ### Changes
 - Changed adopt copilot AI
 - Changed index.html menu and content struct structure.
 - Changed script adopt rust wasm.
 >>>>>>> 963ea0e (ok)
+<<<<<<< HEAD
 >>>>>>> c9e34f3 (ok)
+=======
+=======
+- Added CHANGELOG.md.
+>>>>>>> 5412b6c (ok)
+>>>>>>> eeec990 (ok)

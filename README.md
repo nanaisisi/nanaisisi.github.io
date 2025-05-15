@@ -1,6 +1,7 @@
 # AI 生成です。
 
 # nanaisisi.github.io
+<<<<<<< HEAD
 
 # How to
 
@@ -63,4 +64,16 @@ All files in the [img](./img) and [pages](./pages), [doc](./doc), [nanai_wasm_rs
 >>>>>>> 6d5778d (index changelog)
 =======
 All files are licensed with [Apache License 2.0](./LICENSE-APACHE) + [MIT License](./doc/LICENSE-MIT).
+<<<<<<< HEAD
 >>>>>>> a724e4f (re license)
+=======
+=======
+cd nanai_wasm_rs
+
+cargo update
+
+deno outdated --update --latest
+
+deno run --allow-net --allow-read test\server.ts
+>>>>>>> e8c6b27 (ok)
+>>>>>>> c8c2409 (update)
