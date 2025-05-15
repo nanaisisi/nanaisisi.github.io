@@ -67,13 +67,6 @@ function makeMutClosure(arg0, arg1, dtor, f) {
     CLOSURE_DTORS.register(real, state, state);
     return real;
 }
-/**
- * @returns {number}
- */
-export function get_current_month() {
-    const ret = wasm.get_current_month();
-    return ret >>> 0;
-}
 
 let WASM_VECTOR_LEN = 0;
 
@@ -129,6 +122,13 @@ function passStringToWasm0(arg, malloc, realloc) {
 
     WASM_VECTOR_LEN = offset;
     return ptr;
+}
+/**
+ * @returns {number}
+ */
+export function get_current_month() {
+    const ret = wasm.get_current_month();
+    return ret >>> 0;
 }
 
 function takeFromExternrefTable0(idx) {
