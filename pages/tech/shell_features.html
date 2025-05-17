@@ -1,0 +1,116 @@
+<!doctype html>
+
+<!-- Content-Type: application/xhtml+xml -->
+
+<?xml version="1.1" encoding="UTF-8" ?>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>シェル環境の特徴</title>
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="icon" href="../../img/favicon.png" />
+    <script type="module" src="../../script/companion.js"></script>
+  </head>
+
+  <body class="theme">
+    <div id="menu_tab" class="menu">
+      <iframe
+        loading="lazy"
+        src="../menu.html"
+        name="menu"
+        title="目次"
+        class="menu_iframe"
+      ></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
+      <!-- その他のボタンがあれば追加 -->
+    </div>
+
+    <!-- メニューボタンは別に配置 -->
+    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
+    <header>
+      <nav>
+        <ul class="table_of_contents">
+          <li><a href="#Head_1">環境ごとの特徴</a></li>
+          <li><a href="#Head_2">関連ページ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <h1>シェル環境の特徴</h1>
+        AI記事
+        <h2 id="Head_1">環境ごとの特徴</h2>
+        <h3>cmd.exe（コマンドプロンプト）の特徴</h3>
+        <ul>
+          <li>
+            Windowsに標準搭載されている最も基本的なコマンドラインインターフェース
+          </li>
+          <li>バッチファイル（.bat, .cmd）でスクリプト作成が可能</li>
+          <li>シンプルだが機能が制限されている</li>
+          <li>Windowsシステム管理用の独自コマンドを多数搭載</li>
+          <li>大文字小文字を区別しない</li>
+        </ul>
+
+        <h3>PowerShellの特徴</h3>
+        <ul>
+          <li>Windows向けの高機能なシェル環境およびスクリプト言語</li>
+          <li>
+            オブジェクトパイプラインを使用（テキストではなくオブジェクトを受け渡す）
+          </li>
+          <li>豊富なコマンドレット（動詞-名詞形式のコマンド）</li>
+          <li>.NETフレームワークとの統合</li>
+          <li>クロスプラットフォーム対応（PowerShell Core）</li>
+          <li>エイリアス機能によりBashやcmd.exeコマンドと互換性あり</li>
+        </ul>
+
+        <h3>Bash（Unix/Linux）の特徴</h3>
+        <ul>
+          <li>Unix/Linuxシステムの標準的なシェル</li>
+          <li>豊富なテキスト処理ツールと組み合わせたパイプライン処理が強力</li>
+          <li>シェルスクリプトによる自動化が充実</li>
+          <li>大文字小文字を区別する</li>
+          <li>Windows環境ではWSL、Git Bash、Cygwinなどで利用可能</li>
+          <li>UNIXの哲学「一つのことを上手くやる」に基づく多数の専用ツール</li>
+        </ul>
+
+        <h3>Nushell（Nu）の特徴</h3>
+        <ul>
+          <li>
+            新世代のクロスプラットフォームシェル（Windows/Linux/macOS対応）
+          </li>
+          <li>構造化データ（JSON, YAML, XML等）をネイティブに扱える</li>
+          <li>
+            テーブル形式データの操作に強い（データベースのようなクエリが可能）
+          </li>
+          <li>Rustで実装されており、高速かつ安全</li>
+          <li>モダンな構文と豊富な組み込み関数</li>
+          <li>プラグインシステムによる拡張性</li>
+          <li>他のシェルコマンドと互換性を持ちつつ、独自の強力な機能も提供</li>
+        </ul>
+
+        <p>
+          これらの違いを理解することで、各環境に適したコマンドツールを選択し、
+          効率的な操作が可能になります。また、クロスプラットフォームで動作する
+          ツールを作成する際には、これらの環境差異を考慮したデザインが重要です。
+        </p>
+        <h2 id="Head_2">関連ページ</h2>
+        <div class="related-links">
+          <div class="related-link-item">
+            <h3>シェルの機能比較詳細</h3>
+            <p>各シェル環境の機能を詳しく比較しています。</p>
+            <a href="shell_comparison.html">詳細を見る</a>
+          </div>
+          <div class="related-link-item">
+            <h3>Nushell移行ガイド</h3>
+            <p>他のシェルからNushellへの移行方法をご紹介します。</p>
+            <a href="shell_nushell_migration.html">詳細を見る</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>

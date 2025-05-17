@@ -4,54 +4,57 @@
 
 <?xml version="1.1" encoding="UTF-8"?>
 <html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAKE XHTML</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="icon" href="./img/favicon.png" />
+    <script type="module" src="./script/companion.js"></script>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FAKE XHTML</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./style/style.css" />
-  <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
-  <script type="module" src="./script/companion.js"></script>
-</head>
+  <body class="theme">
+    <div id="menu_tab" class="menu">
+      <iframe
+        loading="lazy"
+        src="./pages/menu.html"
+        name="menu"
+        title="目次"
+        class="menu_iframe"
+      ></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
+      <!-- その他のボタンがあれば追加 -->
+    </div>
 
-<body class="theme">
-  <div id="menu_tab" class="menu">
-    <iframe loading="lazy" src="./pages/menu.html" name="menu" title="目次" class="menu_iframe"></iframe>
-  </div>
-  <div class="fixed-bar">
-  <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
-  <!-- その他のボタンがあれば追加 -->
-</div>
-
-<!-- メニューボタンは別に配置 -->
-<button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
-  <div>
-    <h1>サイト概要</h1>
-    <ul class="table_of_contents">
-      <li><a href="#Head_1">概要</a></li>
-      <li><a href="#Head_2">更新履歴</a></li>
-      <li><a href="./pages/nav.html" target="_parent">このサイトの読み方</a></li>
-    </ul>
-    <h2 id="Head_1">概要</h2>
-    <h2 id="Head_2">更新履歴</h2>
-    <h3>2025年04月20日</h3>
-    wasm化など。
-    <h3>2025年02月28日</h3>
-    和名月以外を追加
-    <h3>2025年02月24日</h3>
-    構造変更多種和名月
-    <h3>2025年01月31日</h3>
-    環境ページに使ってるものを追加。どう考えても無駄遣いの極みで憂鬱。
-    <h3>2025年01月13日</h3>
-    git,helix,他。あと環境メモ
-    <h3>2024年10月25日</h3>
-    vscode, helix文面修正
-    <h3>2024年10月20日</h3>
-    自己流のアプリ更新自動化プロジェクトと併せて色々ページ増やしてみた。代表例がこのページ
-  </div>
-</body>
-
+    <!-- メニューボタンは別に配置 -->
+    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
+    <div>
+      <h1>サイト概要</h1>
+      <ul class="table_of_contents">
+        <li><a href="#Head_1">概要</a></li>
+        <li><a href="#Head_2">更新履歴</a></li>
+        <li>
+          <a href="./pages/nav.html" target="_parent">このサイトの読み方</a>
+        </li>
+      </ul>
+      <h2 id="Head_1">概要</h2>
+      <h2 id="Head_2">更新履歴</h2>
+      <h3>2025年04月20日</h3>
+      wasm化など。
+      <h3>2025年02月28日</h3>
+      和名月以外を追加
+      <h3>2025年02月24日</h3>
+      構造変更多種和名月
+      <h3>2025年01月31日</h3>
+      環境ページに使ってるものを追加。どう考えても無駄遣いの極みで憂鬱。
+      <h3>2025年01月13日</h3>
+      git,helix,他。あと環境メモ
+      <h3>2024年10月25日</h3>
+      vscode, helix文面修正
+      <h3>2024年10月20日</h3>
+      自己流のアプリ更新自動化プロジェクトと併せて色々ページ増やしてみた。代表例がこのページ
+    </div>
+  </body>
 </html>
