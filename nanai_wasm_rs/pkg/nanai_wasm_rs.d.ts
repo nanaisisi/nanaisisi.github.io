@@ -20,6 +20,9 @@ export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembl
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
+  readonly __wbg_jserror_free: (a: number, b: number) => void;
+  readonly jserror_new: (a: number, b: number) => number;
+  readonly jserror_message: (a: number) => [number, number];
   readonly get_current_month: () => number;
   readonly get_month_name: (a: number, b: number, c: number) => [number, number, number, number];
   readonly get_month_name_async: (a: number, b: number, c: number) => any;
@@ -30,17 +33,14 @@ export interface InitOutput {
   readonly get_ukrainian_alphabet_month_name: (a: number) => [number, number];
   readonly get_swedish_month_name: (a: number) => [number, number];
   readonly get_suomi_month_name: (a: number) => [number, number];
-  readonly __wbg_jserror_free: (a: number, b: number) => void;
-  readonly jserror_new: (a: number, b: number) => number;
-  readonly jserror_message: (a: number) => [number, number];
   readonly __wbindgen_exn_store: (a: number) => void;
   readonly __externref_table_alloc: () => number;
   readonly __wbindgen_export_2: WebAssembly.Table;
   readonly __wbindgen_export_3: WebAssembly.Table;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
-  readonly __externref_table_dealloc: (a: number) => void;
   readonly __wbindgen_free: (a: number, b: number, c: number) => void;
+  readonly __externref_table_dealloc: (a: number) => void;
   readonly closure27_externref_shim: (a: number, b: number, c: any) => void;
   readonly closure39_externref_shim: (a: number, b: number, c: any, d: any) => void;
   readonly __wbindgen_start: () => void;

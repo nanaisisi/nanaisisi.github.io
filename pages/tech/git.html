@@ -1,0 +1,90 @@
+<!doctype html>
+
+<!-- Content-Type: application/xhtml+xml -->
+
+<?xml version="1.1" encoding="UTF-8"?>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gitの使い方</title>
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="icon" href="../../img/favicon.png" />
+    <script type="module" src="../../script/companion.js"></script>
+  </head>
+
+  <body class="theme">
+    <!-- メニュー構造の例 -->
+    <div id="menu_tab" class="menu">
+      <iframe
+        loading="lazy"
+        src="../menu.html"
+        name="menu"
+        title="目次"
+        class="menu_iframe"
+      ></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
+      <!-- その他のボタンがあれば追加 -->
+    </div>
+
+    <!-- メニューボタンは別に配置 -->
+    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#Head_1">概要</a></li>
+          <li><a href="#Head_2">設定</a></li>
+          <li><a href="#Head_3">git_cli頻用</a></li>
+          <li><a href="#Head_4">他</a></li>
+          <li><a href="#Head_5">参考</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <h1>Gitの使い方</h1>
+        <h2 id="Head_1">概要</h2>
+        github_cli、実行ファイル名gh(aptなどパッケージマネージャでの名前も同様)を用いて、<br />
+        gh auth loginでブラウザを用いて認証可能。<br />
+        いつもvscodeで作るな。githubに無限に負荷をかけてるので<br />
+        gh repo create "name"的な感じだろうか<br />
+        gh clone repo "user_name"/"repo_name"でリポジトリをgithubからクローン。
+        <h2 id="Head_2">設定</h2>
+        gh auth login<br />
+        git config --global user.name "name"<br />
+        git config --global user.email "email"<br />
+        <h2 id="Head_3">git_cli頻用</h2>
+        <h3>ダウンロード</h3>
+        これ自体は1つでよさそう<br />
+        git fetch<br />
+        git merge<br />
+        <h3>アップロード</h3>
+        コミットメッセージは必要じゃないかなと、addの内容も大事<br />
+        git add .<br />
+        git commit -m "message"<br />
+        git push<br />
+        <h2 id="Head_4">他</h2>
+        開発中のものはdevブランチから完成したらmainブランチへ合流するといった流れが一般に使われるが、めんどくさくなりそうなので使ってない。<br />
+        このページ群用に使う機会はあるかも。全体に影響していない変えたところを戻すだけなら最悪コミットのバージョン？を戻せばいいしというのはある。
+        <h2 id="Head_5">参考</h2>
+        <ul>
+          <li>
+            <a href="https://zenn.dev/praha/articles/db1c4bcc4ef48c"
+              >vscode式git</a
+            >
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="https://zenn.dev/takuyanagai0213/articles/958fa73d1b1e4b"
+              >コンクリフト解消</a
+            >
+          </li>
+        </ul>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
