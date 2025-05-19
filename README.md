@@ -75,5 +75,15 @@ cargo update
 deno outdated --update --latest
 
 deno run --allow-net --allow-read test\server.ts
+<<<<<<< HEAD
 >>>>>>> e8c6b27 (ok)
+<<<<<<< HEAD
 >>>>>>> c8c2409 (update)
+=======
+=======
+
+## License
+
+All files in the [img](./img) and [pages](./pages), [doc](./doc) folders are licensed with  [Apache License 2.0](./doc/LICENSE-APACHE) + [MIT License](./doc/LICENSE-MIT). The rest of the files in this repository are licensed with [CC0](./LICENSE).
+>>>>>>> ed059b3 (Update README.md)
+>>>>>>> e16530f (Rename license.yaml to license.yml)
