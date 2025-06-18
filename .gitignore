@@ -3,3 +3,19 @@ package-lock.json
 etc/counter_qua
 kousei_rs/target/
 kousei_rs/Cargo.lock
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1849bcc (ok)
+=======
+target
+>>>>>>> d1097a1 (ok)
+*.lock
+<<<<<<< HEAD
+>>>>>>> 26072bb (ok)
+=======
+
+# Note: WASMファイル（pkg/）はWebサイトの動作に必要なため、.gitignoreしない
+# リンターエラーについては biome.json で除外設定済み
+>>>>>>> 6899601 (fin and ignore)
+>>>>>>> 108aa1f (menu.html の更新)

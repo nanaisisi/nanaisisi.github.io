@@ -33,6 +33,15 @@ export interface InitOutput {
   readonly get_ukrainian_alphabet_month_name: (a: number) => [number, number];
   readonly get_swedish_month_name: (a: number) => [number, number];
   readonly get_suomi_month_name: (a: number) => [number, number];
+<<<<<<< HEAD
+=======
+  readonly get_polish_month_name: (a: number) => [number, number];
+  readonly get_czech_month_name: (a: number) => [number, number];
+  readonly get_slovak_month_name: (a: number) => [number, number];
+  readonly get_lithuanian_month_name: (a: number) => [number, number];
+  readonly get_latvian_month_name: (a: number) => [number, number];
+  readonly get_estonian_month_name: (a: number) => [number, number];
+>>>>>>> 23ec7fa (ok)
   readonly __wbindgen_exn_store: (a: number) => void;
   readonly __externref_table_alloc: () => number;
   readonly __wbindgen_export_2: WebAssembly.Table;

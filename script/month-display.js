@@ -8,12 +8,22 @@ export async function initMonthDisplay() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// メニューのiframeを取得
 	const menuFrame = document.querySelector('iframe[name="menu"]');
 =======
 	// 直接要素を取得する場合とiframe内の要素を取得する場合の両方に対応
 	await tryDisplayInMainPage();
 	await tryDisplayInMenuFrame();
+=======
+	try {
+		// 直接要素を取得する場合とiframe内の要素を取得する場合の両方に対応
+		await tryDisplayInMainPage();
+		await tryDisplayInMenuFrame();
+	} catch (error) {
+		console.error("Error in initMonthDisplay:", error);
+	}
+>>>>>>> 3e61169 (auto rollback)
 }
 
 /**
@@ -86,7 +96,13 @@ async function tryDisplayInMenuFrame() {
 			menuFrame.onload = () => {
 				clearTimeout(timeout);
 				// 元のonloadがあれば呼び出す
-				if (originalOnload) originalOnload.call(menuFrame);
+				if (originalOnload && typeof originalOnload === "function") {
+					try {
+						originalOnload.call(menuFrame);
+					} catch (e) {
+						console.warn("Error calling original onload:", e);
+					}
+				}
 				resolve();
 			};
 
@@ -234,6 +250,17 @@ async function displayMonthNamesWasm(monthElement) {
 		const swedish_now_month_name =
 			wasmModule.get_swedish_month_name(current_month);
 		const suomi_now_month_name = wasmModule.get_suomi_month_name(current_month);
+		const polish_now_month_name =
+			wasmModule.get_polish_month_name(current_month);
+		const czech_now_month_name = wasmModule.get_czech_month_name(current_month);
+		const slovak_now_month_name =
+			wasmModule.get_slovak_month_name(current_month);
+		const lithuanian_now_month_name =
+			wasmModule.get_lithuanian_month_name(current_month);
+		const latvian_now_month_name =
+			wasmModule.get_latvian_month_name(current_month);
+		const estonian_now_month_name =
+			wasmModule.get_estonian_month_name(current_month);
 
 		updateMonthNamesDisplay(
 <<<<<<< HEAD
@@ -250,6 +277,12 @@ async function displayMonthNamesWasm(monthElement) {
 			ukrainian_alphabet_now_month_name,
 			swedish_now_month_name,
 			suomi_now_month_name,
+			polish_now_month_name,
+			czech_now_month_name,
+			slovak_now_month_name,
+			lithuanian_now_month_name,
+			latvian_now_month_name,
+			estonian_now_month_name,
 		);
 	} catch (error) {
 		console.error("Error calling WASM functions:", error);
@@ -266,11 +299,13 @@ async function displayMonthNamesWasm(monthElement) {
 }
 
 /**
- * JavaScript版の月名表示関数
+ * JavaScript版の月名表示関数（WASMが利用できない場合のフォールバック）
  */
 <<<<<<< HEAD
 <<<<<<< HEAD
 function displayMonthNamesJs(monthElement) {
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
 function displayMonthNamesJs() {
 >>>>>>> 44eb280 (divide)
@@ -364,10 +399,18 @@ function displayMonthNamesJs(monthElement) {
 
 	const current_month = new Date().getMonth(); // 0から11の値を返す
 
+=======
+	// WAsmが利用できない場合の簡単なエラー表示
+>>>>>>> b3cb272 (ok)
+=======
+	// WASMが利用できない場合の簡単なエラー表示
+>>>>>>> 785877d (yet wasm)
 	updateMonthNamesDisplay(
 <<<<<<< HEAD
 <<<<<<< HEAD
 		monthElement,
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 44eb280 (divide)
 =======
@@ -379,6 +422,31 @@ function displayMonthNamesJs(monthElement) {
 		ukrainian_alphabet_month_names[current_month],
 		swedish_month_names[current_month],
 		suomi_month_names[current_month],
+=======
+		"WAsmエラー",
+		"WAsmエラー",
+		"WAsmエラー",
+		"WAsmエラー",
+		"WAsmエラー",
+		"WAsmエラー",
+>>>>>>> b3cb272 (ok)
+=======
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+<<<<<<< HEAD
+>>>>>>> 785877d (yet wasm)
+=======
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+>>>>>>> 368fb91 (wasm fin)
 	);
 }
 
@@ -387,9 +455,27 @@ function displayMonthNamesJs(monthElement) {
  */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fb30a47 (err fix)
 function updateMonthNamesDisplay(element, jp, en, ua, ua_en, se, fi) {
+=======
+function updateMonthNamesDisplay(
+	element,
+	jp,
+	en,
+	ua,
+	ua_en,
+	se,
+	fi,
+	pl,
+	cs,
+	sk,
+	lt,
+	lv,
+	et,
+) {
+>>>>>>> 368fb91 (wasm fin)
 	if (element) {
 		element.innerHTML = `
         JP: ${jp}<br>
@@ -397,7 +483,13 @@ function updateMonthNamesDisplay(element, jp, en, ua, ua_en, se, fi) {
         UA: ${ua}<br>
         UA_EN: ${ua_en}<br>
         SE: ${se}<br>
-        FI: ${fi}
+        FI: ${fi}<br>
+        PL: ${pl}<br>
+        CS: ${cs}<br>
+        SK: ${sk}<br>
+        LT: ${lt}<br>
+        LV: ${lv}<br>
+        ET: ${et}
     `;
 <<<<<<< HEAD
 =======

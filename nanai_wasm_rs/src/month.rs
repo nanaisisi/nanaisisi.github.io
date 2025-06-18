@@ -2,13 +2,13 @@
 use wasm_bindgen::prelude::*;
 =======
 use js_sys::{Array, Promise};
-use std::collections::HashMap;
-use std::sync::LazyLock;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen_futures::future_to_promise;
 
+use crate::month_names::MONTH_NAMES;
 use crate::types::{JsError, Language, Month, MonthError};
 
+<<<<<<< HEAD
 // 月名のデータを一箇所に集約
 // LazyLockを使用して初期化時のコストを削減
 static MONTH_NAMES: LazyLock<HashMap<Language, [&'static str; 12]>> = LazyLock::new(|| {
@@ -118,6 +118,8 @@ static MONTH_NAMES: LazyLock<HashMap<Language, [&'static str; 12]>> = LazyLock::
     map
 });
 
+=======
+>>>>>>> 23ec7fa (ok)
 // 内部関数：月名を取得する共通ロジック
 // テストで使用するためにpub(crate)にします
 pub(crate) fn get_month_name_internal(

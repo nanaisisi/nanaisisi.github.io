@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function tp_top() {
   const tp_top_btn = document.getElementById("tp_top_btn");
   /** @type {HTMLFrameElement} */
@@ -14,6 +15,12 @@ function tp_top() {
       });
     }
   }
+=======
+// サイト全体の機能を統合するメインスクリプト
+import { initMenuButton } from "./menu-handler.js";
+import { initMonthDisplay } from "./month-display.js";
+import { initThemeManager } from "./theme-manager.js";
+>>>>>>> 108aa1f (menu.html の更新)
 
 <<<<<<< HEAD
 <<<<<<< HEAD

@@ -10,9 +10,58 @@ async function initializeWasm() {
 		wasmInitialized = true;
 		console.log("WebAssembly module initialized successfully");
 
+		// WASM関数の利用可能性を確認
+		console.log("Available WASM functions:");
+		const functionNames = [
+			"get_current_month",
+			"get_month_name",
+			"get_month_name_async",
+			"get_month_names_all",
+			"get_japanese_month_name",
+			"get_english_month_name",
+			"get_ukrainian_month_name",
+			"get_ukrainian_alphabet_month_name",
+			"get_swedish_month_name",
+			"get_suomi_month_name",
+			"get_polish_month_name",
+			"get_czech_month_name",
+			"get_slovak_month_name",
+			"get_lithuanian_month_name",
+			"get_latvian_month_name",
+			"get_estonian_month_name",
+		];
+
+		for (const funcName of functionNames) {
+			console.log(`  ${funcName}: ${typeof wasmModule[funcName]}`);
+		}
+
 		// 現在の月を設定
 		const currentMonth = wasmModule.get_current_month();
+		console.log("Current month:", currentMonth);
 		document.getElementById("monthSelect").value = currentMonth;
+
+		// 新しい言語の個別関数テスト
+		console.log("Testing new language functions:");
+		try {
+			const testMonth = 0; // 1月でテスト
+			const polish = wasmModule.get_polish_month_name(testMonth);
+			const czech = wasmModule.get_czech_month_name(testMonth);
+			const slovak = wasmModule.get_slovak_month_name(testMonth);
+			const lithuanian = wasmModule.get_lithuanian_month_name(testMonth);
+			const latvian = wasmModule.get_latvian_month_name(testMonth);
+			const estonian = wasmModule.get_estonian_month_name(testMonth);
+
+			console.log("New language month names for January:", {
+				polish,
+				czech,
+				slovak,
+				lithuanian,
+				latvian,
+				estonian,
+			});
+		} catch (error) {
+			console.error("Error testing new language functions:", error);
+		}
 
 		// 初期表示
 		await displayMonthName();

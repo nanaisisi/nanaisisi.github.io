@@ -14,6 +14,15 @@ export const get_ukrainian_month_name: (a: number) => [number, number];
 export const get_ukrainian_alphabet_month_name: (a: number) => [number, number];
 export const get_swedish_month_name: (a: number) => [number, number];
 export const get_suomi_month_name: (a: number) => [number, number];
+<<<<<<< HEAD
+=======
+export const get_polish_month_name: (a: number) => [number, number];
+export const get_czech_month_name: (a: number) => [number, number];
+export const get_slovak_month_name: (a: number) => [number, number];
+export const get_lithuanian_month_name: (a: number) => [number, number];
+export const get_latvian_month_name: (a: number) => [number, number];
+export const get_estonian_month_name: (a: number) => [number, number];
+>>>>>>> 23ec7fa (ok)
 export const __wbindgen_exn_store: (a: number) => void;
 export const __externref_table_alloc: () => number;
 export const __wbindgen_export_2: WebAssembly.Table;
