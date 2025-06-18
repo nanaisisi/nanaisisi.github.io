@@ -10,8 +10,17 @@
 			"nanai_wasm_rs/pkg/**/*.js",
 			"nanai_wasm_rs/pkg/**/*.d.ts",
 			"**/*.wasm"
+<<<<<<< HEAD
+<<<<<<< HEAD
 		],
 		"ignoreUnknown": true
+=======
+		]
+>>>>>>> f0cbf47 (fin and ignore)
+=======
+		],
+		"ignoreUnknown": true
+>>>>>>> 0b3b3c7 (ok perhaps)
 	},
 	"linter": {
 		"enabled": true,

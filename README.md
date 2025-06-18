@@ -2,8 +2,10 @@
 
 # nanaisisi.github.io
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # How to
+<<<<<<< HEAD
 
 #nushell
 
@@ -68,12 +70,28 @@ All files are licensed with [Apache License 2.0](./LICENSE-APACHE) + [MIT Licens
 >>>>>>> a724e4f (re license)
 =======
 =======
+=======
+# How to
+>>>>>>> e0b33be (ok)
 cd nanai_wasm_rs
+=======
+>>>>>>> f56ec8e (ok)
 
-cargo update
+#nushell
 
+#locate root
+cd nanai_wasm_rs;cargo update
+
+#locate root
+cd nanai_wasm_rs; cargo build
+
+#locate root
+cd nanai_wasm_rs; wasm-pack build --target web
+
+#locate root
 deno outdated --update --latest
 
+#locate root
 deno run --allow-net --allow-read test\server.ts
 <<<<<<< HEAD
 >>>>>>> e8c6b27 (ok)
@@ -82,8 +100,32 @@ deno run --allow-net --allow-read test\server.ts
 =======
 =======
 
+# structure
+
+- right:content-page
+- right-example:index.html
+- left:menu.html
+
+## backend
+
+- JavaScript
+- WASM(Rust)
+
+## Dev phase
+
+- Nushell
+- VSCode
+- Deno
+
 ## License
 
+<<<<<<< HEAD
 All files in the [img](./img) and [pages](./pages), [doc](./doc) folders are licensed with  [Apache License 2.0](./doc/LICENSE-APACHE) + [MIT License](./doc/LICENSE-MIT). The rest of the files in this repository are licensed with [CC0](./LICENSE).
 >>>>>>> ed059b3 (Update README.md)
+<<<<<<< HEAD
 >>>>>>> e16530f (Rename license.yaml to license.yml)
+=======
+=======
+All files in the [img](./img) and [pages](./pages), [doc](./doc), [nanai_wasm_rs](./nanai_wasm_rs) folders are licensed with  [Apache License 2.0](./doc/LICENSE-APACHE) + [MIT License](./doc/LICENSE-MIT). The rest of the files in this repository are licensed with [CC0](./LICENSE).
+>>>>>>> 1d1bb25 (yet)
+>>>>>>> 74dc9a4 (menu.html の更新)

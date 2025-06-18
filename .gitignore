@@ -12,10 +12,19 @@ target
 >>>>>>> d1097a1 (ok)
 *.lock
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 26072bb (ok)
 =======
 
 # Note: WASMファイル（pkg/）はWebサイトの動作に必要なため、.gitignoreしない
 # リンターエラーについては biome.json で除外設定済み
 >>>>>>> 6899601 (fin and ignore)
+<<<<<<< HEAD
 >>>>>>> 108aa1f (menu.html の更新)
+=======
+=======
+
+# Note: WASMファイル（pkg/）はWebサイトの動作に必要なため、.gitignoreしない
+# リンターエラーについては biome.json で除外設定済み
+>>>>>>> f0cbf47 (fin and ignore)
+>>>>>>> 0923001 (Update menu.html)

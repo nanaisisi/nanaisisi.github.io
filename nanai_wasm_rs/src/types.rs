@@ -89,17 +89,29 @@ pub enum Language {
     Swedish,
     Finnish,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 27f44be (Add any langs fin)
+>>>>>>> 74dc9a4 (menu.html の更新)
     Polish,
     Czech,
     Slovak,
     Lithuanian,
     Latvian,
     Estonian,
+<<<<<<< HEAD
 =======
 >>>>>>> 69d9913 (yet)
+<<<<<<< HEAD
 >>>>>>> 906146a (yet menu css)
+=======
+=======
+>>>>>>> 27f44be (Add any langs fin)
+>>>>>>> 74dc9a4 (menu.html の更新)
 }
 
 impl fmt::Display for Language {
@@ -112,17 +124,29 @@ impl fmt::Display for Language {
             Language::Swedish => write!(f, "Swedish"),
             Language::Finnish => write!(f, "Finnish"),
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 27f44be (Add any langs fin)
+>>>>>>> 74dc9a4 (menu.html の更新)
             Language::Polish => write!(f, "Polish"),
             Language::Czech => write!(f, "Czech"),
             Language::Slovak => write!(f, "Slovak"),
             Language::Lithuanian => write!(f, "Lithuanian"),
             Language::Latvian => write!(f, "Latvian"),
             Language::Estonian => write!(f, "Estonian"),
+<<<<<<< HEAD
 =======
 >>>>>>> 69d9913 (yet)
+<<<<<<< HEAD
 >>>>>>> 906146a (yet menu css)
+=======
+=======
+>>>>>>> 27f44be (Add any langs fin)
+>>>>>>> 74dc9a4 (menu.html の更新)
         }
     }
 }
@@ -143,9 +167,13 @@ pub enum MonthError {
 // JavaScript側に返すためのエラー型
 #[wasm_bindgen]
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[derive(Debug)]
 =======
 >>>>>>> 69d9913 (yet)
+=======
+#[derive(Debug)]
+>>>>>>> 11795ac (ok)
 pub struct JsError {
     message: String,
 }

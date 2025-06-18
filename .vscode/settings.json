@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f0cbf47 (fin and ignore)
 {
   "files.exclude": {
     "**/target": true
@@ -20,6 +23,9 @@
     "editor.defaultFormatter": "biomejs.biome"
   }
 }
+<<<<<<< HEAD
 =======
 {}
 >>>>>>> 4bbb08c (longer long)
+=======
+>>>>>>> f0cbf47 (fin and ignore)
