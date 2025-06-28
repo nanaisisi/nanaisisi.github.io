@@ -1,11 +1,21 @@
 # nanaisisi.github.io
 # How to
-cd nanai_wasm_rs
 
-cargo update
+#nushell
 
+#locate root
+cd nanai_wasm_rs;cargo update
+
+#locate root
+cd nanai_wasm_rs; cargo build
+
+#locate root
+cd nanai_wasm_rs; wasm-pack build --target web
+
+#locate root
 deno outdated --update --latest
 
+#locate root
 deno run --allow-net --allow-read test\server.ts
 
 # structure
@@ -21,7 +31,8 @@ deno run --allow-net --allow-read test\server.ts
 
 ## Dev phase
 
-- VsCode
+- Nushell
+- VSCode
 - Deno
 
 ## License
