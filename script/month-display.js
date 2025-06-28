@@ -152,6 +152,17 @@ async function displayMonthNamesWasm(monthElement) {
 		const swedish_now_month_name =
 			wasmModule.get_swedish_month_name(current_month);
 		const suomi_now_month_name = wasmModule.get_suomi_month_name(current_month);
+		const polish_now_month_name =
+			wasmModule.get_polish_month_name(current_month);
+		const czech_now_month_name = wasmModule.get_czech_month_name(current_month);
+		const slovak_now_month_name =
+			wasmModule.get_slovak_month_name(current_month);
+		const lithuanian_now_month_name =
+			wasmModule.get_lithuanian_month_name(current_month);
+		const latvian_now_month_name =
+			wasmModule.get_latvian_month_name(current_month);
+		const estonian_now_month_name =
+			wasmModule.get_estonian_month_name(current_month);
 
 		updateMonthNamesDisplay(
 			monthElement,
@@ -161,6 +172,12 @@ async function displayMonthNamesWasm(monthElement) {
 			ukrainian_alphabet_now_month_name,
 			swedish_now_month_name,
 			suomi_now_month_name,
+			polish_now_month_name,
+			czech_now_month_name,
+			slovak_now_month_name,
+			lithuanian_now_month_name,
+			latvian_now_month_name,
+			estonian_now_month_name,
 		);
 	} catch (error) {
 		console.error("Error calling WASM functions:", error);
@@ -181,13 +198,33 @@ function displayMonthNamesJs(monthElement) {
 		"WASMエラー",
 		"WASMエラー",
 		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
 	);
 }
 
 /**
  * 月名表示を更新
  */
-function updateMonthNamesDisplay(element, jp, en, ua, ua_en, se, fi) {
+function updateMonthNamesDisplay(
+	element,
+	jp,
+	en,
+	ua,
+	ua_en,
+	se,
+	fi,
+	pl,
+	cs,
+	sk,
+	lt,
+	lv,
+	et,
+) {
 	if (element) {
 		element.innerHTML = `
         JP: ${jp}<br>
@@ -195,7 +232,13 @@ function updateMonthNamesDisplay(element, jp, en, ua, ua_en, se, fi) {
         UA: ${ua}<br>
         UA_EN: ${ua_en}<br>
         SE: ${se}<br>
-        FI: ${fi}
+        FI: ${fi}<br>
+        PL: ${pl}<br>
+        CS: ${cs}<br>
+        SK: ${sk}<br>
+        LT: ${lt}<br>
+        LV: ${lv}<br>
+        ET: ${et}
     `;
 	}
 }
