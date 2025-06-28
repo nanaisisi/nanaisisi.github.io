@@ -1,12 +1,17 @@
 // WebAssemblyモジュールの読み込み
-import init, * as wasmModule from "../nanai_wasm_rs/pkg/nanai_wasm_rs.js";
+import { loadWasm } from "./wasm-loader.js";
 
 // モジュールの初期化
 let wasmInitialized = false;
+let wasmModule = null;
 
 async function initializeWasm() {
 	try {
-		await init();
+		wasmModule = await loadWasm();
+		if (!wasmModule) {
+			throw new Error("WASM module failed to load");
+		}
+
 		wasmInitialized = true;
 		console.log("WebAssembly module initialized successfully");
 
@@ -29,10 +34,38 @@ async function initializeWasm() {
 			"get_lithuanian_month_name",
 			"get_latvian_month_name",
 			"get_estonian_month_name",
+			// 新機能
+			"createThemeConfig",
+			"getThemeSettings",
+			"createNavigationConfig",
+			"generateSitemap",
+			"createSiteConfig",
+			"getSiteInfo",
 		];
 
 		for (const funcName of functionNames) {
 			console.log(`  ${funcName}: ${typeof wasmModule[funcName]}`);
+		}
+
+		// 新機能のテスト
+		console.log("Testing new features:");
+		try {
+			// テーマ設定のテスト
+			const themeSettings = wasmModule.getThemeSettings();
+			console.log("Theme settings:", themeSettings);
+
+			// サイト情報のテスト
+			const siteInfo = wasmModule.getSiteInfo();
+			console.log("Site info:", siteInfo);
+
+			// サイトマップ生成のテスト
+			const sitemap = wasmModule.generateSitemap("https://example.com");
+			console.log(
+				"Generated sitemap (first 200 chars):",
+				`${sitemap?.substring(0, 200)}...`,
+			);
+		} catch (error) {
+			console.error("Error testing new features:", error);
 		}
 
 		// 現在の月を設定
@@ -144,6 +177,35 @@ function displayAllMonthNames() {
 	}
 }
 
+// 新機能をテストする関数
+function testNewFeatures() {
+	if (!wasmInitialized || !wasmModule) {
+		document.getElementById("newFeaturesResult").innerText = "WASM未初期化";
+		return;
+	}
+
+	try {
+		let result = "=== 新機能テスト結果 ===\n\n";
+
+		// テーマ設定のテスト
+		const themeSettings = wasmModule.getThemeSettings();
+		result += `テーマ設定: ${JSON.stringify(themeSettings, null, 2)}\n\n`;
+
+		// サイト情報のテスト
+		const siteInfo = wasmModule.getSiteInfo();
+		result += `サイト情報: ${JSON.stringify(siteInfo, null, 2)}\n\n`;
+
+		// サイトマップ生成のテスト
+		const sitemap = wasmModule.generateSitemap("https://example.com");
+		result += `サイトマップ(最初の300文字):\n${sitemap?.substring(0, 300)}...\n\n`;
+
+		document.getElementById("newFeaturesResult").innerText = result;
+	} catch (error) {
+		document.getElementById("newFeaturesResult").innerText =
+			`新機能テストエラー: ${error.message || error}`;
+	}
+}
+
 // イベントハンドラーの登録
 window.addEventListener("DOMContentLoaded", () => {
 	initializeWasm();
@@ -155,6 +217,12 @@ window.addEventListener("DOMContentLoaded", () => {
 	document.getElementById("getAllBtn").addEventListener("click", () => {
 		displayAllMonthNames();
 	});
+
+	document
+		.getElementById("testNewFeaturesBtn")
+		.addEventListener("click", () => {
+			testNewFeatures();
+		});
 
 	document.getElementById("monthSelect").addEventListener("change", () => {
 		displayMonthName();
