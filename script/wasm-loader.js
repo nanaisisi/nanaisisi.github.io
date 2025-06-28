@@ -80,6 +80,12 @@ export async function loadWasm() {
 				__wbindgen_boolean_get: (i) => Boolean(i),
 				__wbindgen_number_get: (i) => Number(i),
 				__wbindgen_number_new: (i) => i,
+				__wbindgen_string_new: (ptr, len) => {
+					const memory = wasmModule.instance.exports.memory;
+					const decoder = new TextDecoder("utf-8");
+					const memoryArray = new Uint8Array(memory.buffer);
+					return decoder.decode(memoryArray.subarray(ptr, ptr + len));
+				},
 				__wbindgen_string_get: (arg0, arg1) => {
 					const memory = wasmModule.instance.exports.memory;
 					const decoder = new TextDecoder("utf-8");
@@ -88,12 +94,21 @@ export async function loadWasm() {
 				},
 				__wbindgen_is_null: (i) => i === null,
 				__wbindgen_is_undefined: (i) => i === undefined,
+				__wbindgen_is_string: (i) => typeof i === "string",
 				__wbindgen_is_function: (i) => typeof i === "function",
+				__wbindgen_bigint_from_i64: (i) => i,
+				__wbindgen_bigint_from_u64: (i) => BigInt.asUintN(64, i),
+				__wbindgen_error_new: (ptr, len) => {
+					const memory = wasmModule.instance.exports.memory;
+					const decoder = new TextDecoder("utf-8");
+					const memoryArray = new Uint8Array(memory.buffer);
+					const message = decoder.decode(memoryArray.subarray(ptr, ptr + len));
+					return new Error(message);
+				},
 				__wbg_call_672a4d21634d4a24: () => {},
 				__wbg_call_7cccdd69e0791ae2: () => {},
 				__wbg_getMonth_d37edcd23642c97d: () => new Date().getMonth(),
 				__wbg_new0_f788a2397c7ca929: () => new Date(),
-				__wbg_new_23a2665fac83c611: () => {},
 				__wbg_new_78feb108b6472713: () => {},
 				__wbg_newnoargs_105ed471475aaf50: () => {},
 				__wbg_push_737cfc8c1432c2c6: () => {},
@@ -105,6 +120,27 @@ export async function loadWasm() {
 				__wbg_static_accessor_SELF_37c5d418e4bf5819: () => self,
 				__wbg_static_accessor_WINDOW_5de37043a91a9c40: () => window,
 				__wbg_then_44b73946d2fb3e7d: () => {},
+				__wbg_set_37837023f3d740e8: (arg0, arg1, arg2) => {
+					arg0[arg1 >>> 0] = arg2;
+				},
+				__wbg_set_3f1d0b984ed272ed: (arg0, arg1, arg2) => {
+					arg0[arg1] = arg2;
+				},
+				__wbg_set_8fc6bf8a5b1071d1: (arg0, arg1, arg2) => {
+					return arg0.set(arg1, arg2);
+				},
+				__wbg_new_23a2665fac83c611: (arg0, arg1) => {
+					// Promise コンストラクター用のスタブ
+					return new Promise((resolve, reject) => {
+						try {
+							resolve();
+						} catch (e) {
+							reject(e);
+						}
+					});
+				},
+				__wbg_new_405e22f390576ce2: () => new Object(),
+				__wbg_new_5e0be73521bc8c17: () => new Map(),
 				__wbindgen_cb_drop: () => {},
 				__wbindgen_closure_wrapper130: () => {},
 				__wbindgen_closure_wrapper468: () => {},
