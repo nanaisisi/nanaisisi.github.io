@@ -10,7 +10,8 @@
 			"nanai_wasm_rs/pkg/**/*.js",
 			"nanai_wasm_rs/pkg/**/*.d.ts",
 			"**/*.wasm"
-		]
+		],
+		"ignoreUnknown": true
 	},
 	"linter": {
 		"enabled": true,

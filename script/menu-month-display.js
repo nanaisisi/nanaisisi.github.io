@@ -52,9 +52,9 @@ async function initializeMonthDisplay() {
 			];
 
 			console.log("Function availability check:");
-			functionList.forEach((funcName) => {
+			for (const funcName of functionList) {
 				console.log(`  ${funcName}: ${typeof wasmModule[funcName]}`);
-			});
+			}
 
 			const japanese = wasmModule.get_japanese_month_name(current_month);
 			const english = wasmModule.get_english_month_name(current_month);
