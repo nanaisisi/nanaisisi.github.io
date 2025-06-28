@@ -169,18 +169,18 @@ async function displayMonthNamesWasm(monthElement) {
 }
 
 /**
- * JavaScript版の月名表示関数（WAsmが利用できない場合のフォールバック）
+ * JavaScript版の月名表示関数（WASMが利用できない場合のフォールバック）
  */
 function displayMonthNamesJs(monthElement) {
-	// WAsmが利用できない場合の簡単なエラー表示
+	// WASMが利用できない場合の簡単なエラー表示
 	updateMonthNamesDisplay(
 		monthElement,
-		"WAsmエラー",
-		"WAsmエラー",
-		"WAsmエラー",
-		"WAsmエラー",
-		"WAsmエラー",
-		"WAsmエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
 	);
 }
 
