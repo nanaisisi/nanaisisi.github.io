@@ -24,7 +24,7 @@ deno run --allow-net --allow-read test\server.ts
 - right-example:index.html
 - left:menu.html
 
-## backend
+## backside
 
 - JavaScript
 - WASM(Rust)
