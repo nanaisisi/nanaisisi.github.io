@@ -1,20 +1,18 @@
 // 月名表示のための処理
 import { initThemeManager } from "./theme-manager.js";
 import { loadWasm } from "./wasm-loader.js";
-import { safeExecuteAsync, logDebugInfo } from "./error-handler.js";
 
 // メイン初期化関数
 export async function initializeMenu() {
-	return await safeExecuteAsync(async () => {
-		// デバッグ情報を出力
-		logDebugInfo();
-
+	try {
 		// テーマ管理を初期化
 		initThemeManager();
 
 		// 月名表示を初期化
 		await initializeMonthDisplay();
-	}, "initializeMenu");
+	} catch (error) {
+		console.error("Error in initializeMenu:", error);
+	}
 }
 
 // 月名表示の初期化
@@ -61,10 +59,11 @@ async function initializeMonthDisplay() {
 	}
 }
 
-// DOMContentLoadedイベントの処理を改善
+// DOMContentLoadedイベントの処理
 function handleDOMContentLoaded() {
-	// 非同期処理を安全に実行し、Promiseの適切な処理を保証
-	safeExecuteAsync(initializeMenu, "handleDOMContentLoaded");
+	initializeMenu().catch((error) => {
+		console.error("Error during menu initialization:", error);
+	});
 }
 
 // DOMContentLoadedイベントでinitializeMenuを呼び出す
