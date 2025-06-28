@@ -1,9 +1,22 @@
+mod config;
 mod month;
 mod month_names;
+mod navigation;
+mod theme;
 mod types;
 
 // 型を公開
 pub use types::{JsError, Language, Month, MonthError};
+
+// 新しい機能の公開
+#[cfg(target_arch = "wasm32")]
+pub use theme::{Theme, ThemeConfig, create_theme_config, get_theme_settings};
+
+#[cfg(target_arch = "wasm32")]
+pub use navigation::{NavigationConfig, create_navigation_config, generate_sitemap};
+
+#[cfg(target_arch = "wasm32")]
+pub use config::{SiteConfig, create_site_config, get_site_info};
 
 // month.rsモジュールの関数を公開
 #[cfg(target_arch = "wasm32")]
