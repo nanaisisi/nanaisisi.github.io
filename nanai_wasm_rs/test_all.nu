@@ -66,6 +66,12 @@ print "   ✓ 境界値テスト"
 
 print ""
 print "🔧 WASM buildテストを実行中..."
+print "   古い生成ファイルをクリーンアップ中..."
+if (ls pkg | length) > 0 {
+    rm -rf pkg
+    print "   ✓ 古いpkgディレクトリを削除しました"
+}
+
 try {
     wasm-pack build --target web --out-dir pkg
     print "✅ WASM buildが完了しました"
