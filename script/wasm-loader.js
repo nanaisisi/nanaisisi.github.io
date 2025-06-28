@@ -11,6 +11,13 @@ export async function loadWasm() {
 		return wasm;
 	} catch (error) {
 		console.error("Error loading WASM:", error);
+		// エラー情報をより詳細に出力
+		if (error.message) {
+			console.error("Error message:", error.message);
+		}
+		if (error.stack) {
+			console.error("Error stack:", error.stack);
+		}
 		return null;
 	}
 }

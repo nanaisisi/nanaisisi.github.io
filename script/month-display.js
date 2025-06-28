@@ -4,9 +4,13 @@ import { loadWasm } from "./wasm-loader.js";
  * 月名表示機能を初期化
  */
 export async function initMonthDisplay() {
-	// 直接要素を取得する場合とiframe内の要素を取得する場合の両方に対応
-	await tryDisplayInMainPage();
-	await tryDisplayInMenuFrame();
+	try {
+		// 直接要素を取得する場合とiframe内の要素を取得する場合の両方に対応
+		await tryDisplayInMainPage();
+		await tryDisplayInMenuFrame();
+	} catch (error) {
+		console.error("Error in initMonthDisplay:", error);
+	}
 }
 
 /**
@@ -78,7 +82,13 @@ async function tryDisplayInMenuFrame() {
 			menuFrame.onload = () => {
 				clearTimeout(timeout);
 				// 元のonloadがあれば呼び出す
-				if (originalOnload) originalOnload.call(menuFrame);
+				if (originalOnload && typeof originalOnload === "function") {
+					try {
+						originalOnload.call(menuFrame);
+					} catch (e) {
+						console.warn("Error calling original onload:", e);
+					}
+				}
 				resolve();
 			};
 
@@ -168,7 +178,7 @@ function displayMonthNamesJs(monthElement) {
 		"WAsmエラー",
 		"WAsmエラー",
 		"WAsmエラー",
-		"WAsmエラー", 
+		"WAsmエラー",
 		"WAsmエラー",
 		"WAsmエラー",
 	);
