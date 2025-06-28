@@ -10,6 +10,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.1] -2025-5-17
 
 ### Added
+- Any language month name.
+
+### Changes
+- Changed feature replarce wasm from javascript, mayae.
+
+### Fix
+- Fixed imported file was wasm from JavaScript.
+
+## [0.0.1] -2025-5-17
+
+### Added
 - New html pages.
 
 ### Changes
