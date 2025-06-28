@@ -77,6 +77,12 @@ function displayAllMonthNames() {
 			"ウクライナ語(ラテン)",
 			"スウェーデン語",
 			"フィンランド語",
+			"ポーランド語",
+			"チェコ語",
+			"スロバキア語",
+			"リトアニア語",
+			"ラトビア語",
+			"エストニア語",
 		];
 		const resultHTML = Array.from(allNames)
 			.map((name, i) => `<div><strong>${languages[i]}:</strong> ${name}</div>`)
