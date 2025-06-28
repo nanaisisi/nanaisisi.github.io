@@ -1,4 +1,5 @@
 # nanaisisi.github.io
+# How to
 cd nanai_wasm_rs
 
 cargo update
@@ -6,6 +7,22 @@ cargo update
 deno outdated --update --latest
 
 deno run --allow-net --allow-read test\server.ts
+
+# structure
+
+- right:content-page
+- right-example:index.html
+- left:menu.html
+
+## backend
+
+- JavaScript
+- WASM(Rust)
+
+## Dev phase
+
+- VsCode
+- Deno
 
 ## License
 
