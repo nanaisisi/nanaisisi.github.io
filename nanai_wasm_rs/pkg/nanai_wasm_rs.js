@@ -123,6 +123,28 @@ function passStringToWasm0(arg, malloc, realloc) {
     WASM_VECTOR_LEN = offset;
     return ptr;
 }
+
+function takeFromExternrefTable0(idx) {
+    const value = wasm.__wbindgen_export_2.get(idx);
+    wasm.__externref_table_dealloc(idx);
+    return value;
+}
+/**
+ * @returns {any}
+ */
+export function getSiteInfo() {
+    const ret = wasm.getSiteInfo();
+    return ret;
+}
+
+/**
+ * @returns {SiteConfig}
+ */
+export function createSiteConfig() {
+    const ret = wasm.createSiteConfig();
+    return SiteConfig.__wrap(ret);
+}
+
 /**
  * @returns {number}
  */
@@ -131,11 +153,6 @@ export function get_current_month() {
     return ret >>> 0;
 }
 
-function takeFromExternrefTable0(idx) {
-    const value = wasm.__wbindgen_export_2.get(idx);
-    wasm.__externref_table_dealloc(idx);
-    return value;
-}
 /**
  * @param {number} month_index
  * @param {string} language_code
@@ -390,13 +407,87 @@ export function get_estonian_month_name(month_index) {
     }
 }
 
-function __wbg_adapter_18(arg0, arg1, arg2) {
-    wasm.closure27_externref_shim(arg0, arg1, arg2);
+/**
+ * @returns {ThemeConfig}
+ */
+export function createThemeConfig() {
+    const ret = wasm.createThemeConfig();
+    return ThemeConfig.__wrap(ret);
 }
 
-function __wbg_adapter_57(arg0, arg1, arg2, arg3) {
-    wasm.closure39_externref_shim(arg0, arg1, arg2, arg3);
+/**
+ * @returns {any}
+ */
+export function getThemeSettings() {
+    const ret = wasm.getThemeSettings();
+    return ret;
 }
+
+let cachedDataViewMemory0 = null;
+
+function getDataViewMemory0() {
+    if (cachedDataViewMemory0 === null || cachedDataViewMemory0.buffer.detached === true || (cachedDataViewMemory0.buffer.detached === undefined && cachedDataViewMemory0.buffer !== wasm.memory.buffer)) {
+        cachedDataViewMemory0 = new DataView(wasm.memory.buffer);
+    }
+    return cachedDataViewMemory0;
+}
+
+function getArrayJsValueFromWasm0(ptr, len) {
+    ptr = ptr >>> 0;
+    const mem = getDataViewMemory0();
+    const result = [];
+    for (let i = ptr; i < ptr + 4 * len; i += 4) {
+        result.push(wasm.__wbindgen_export_2.get(mem.getUint32(i, true)));
+    }
+    wasm.__externref_drop_slice(ptr, len);
+    return result;
+}
+/**
+ * @param {string} base_url
+ * @returns {NavigationConfig}
+ */
+export function createNavigationConfig(base_url) {
+    const ptr0 = passStringToWasm0(base_url, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ret = wasm.createNavigationConfig(ptr0, len0);
+    return NavigationConfig.__wrap(ret);
+}
+
+/**
+ * @param {string} base_url
+ * @returns {string}
+ */
+export function generateSitemap(base_url) {
+    let deferred2_0;
+    let deferred2_1;
+    try {
+        const ptr0 = passStringToWasm0(base_url, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.generateSitemap(ptr0, len0);
+        deferred2_0 = ret[0];
+        deferred2_1 = ret[1];
+        return getStringFromWasm0(ret[0], ret[1]);
+    } finally {
+        wasm.__wbindgen_free(deferred2_0, deferred2_1, 1);
+    }
+}
+
+function __wbg_adapter_28(arg0, arg1, arg2) {
+    wasm.closure57_externref_shim(arg0, arg1, arg2);
+}
+
+function __wbg_adapter_109(arg0, arg1, arg2, arg3) {
+    wasm.closure69_externref_shim(arg0, arg1, arg2, arg3);
+}
+
+/**
+ * @enum {0 | 1 | 2}
+ */
+export const Theme = Object.freeze({
+    Light: 0, "0": "Light",
+    Dark: 1, "1": "Dark",
+    Auto: 2, "2": "Auto",
+});
 
 const JsErrorFinalization = (typeof FinalizationRegistry === 'undefined')
     ? { register: () => {}, unregister: () => {} }
@@ -448,6 +539,344 @@ export class JsError {
         } finally {
             wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
         }
+    }
+}
+
+const NavigationConfigFinalization = (typeof FinalizationRegistry === 'undefined')
+    ? { register: () => {}, unregister: () => {} }
+    : new FinalizationRegistry(ptr => wasm.__wbg_navigationconfig_free(ptr >>> 0, 1));
+
+export class NavigationConfig {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(NavigationConfig.prototype);
+        obj.__wbg_ptr = ptr;
+        NavigationConfigFinalization.register(obj, obj.__wbg_ptr, obj);
+        return obj;
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+        NavigationConfigFinalization.unregister(this);
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_navigationconfig_free(ptr, 0);
+    }
+    /**
+     * @param {string} base_url
+     */
+    constructor(base_url) {
+        const ptr0 = passStringToWasm0(base_url, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.createNavigationConfig(ptr0, len0);
+        this.__wbg_ptr = ret >>> 0;
+        NavigationConfigFinalization.register(this, this.__wbg_ptr, this);
+        return this;
+    }
+    /**
+     * @param {string} page_id
+     * @returns {string | undefined}
+     */
+    getPageUrl(page_id) {
+        const ptr0 = passStringToWasm0(page_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.navigationconfig_getPageUrl(this.__wbg_ptr, ptr0, len0);
+        let v2;
+        if (ret[0] !== 0) {
+            v2 = getStringFromWasm0(ret[0], ret[1]).slice();
+            wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+        }
+        return v2;
+    }
+    /**
+     * @param {string} page_id
+     * @returns {string | undefined}
+     */
+    getPageTitle(page_id) {
+        const ptr0 = passStringToWasm0(page_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.navigationconfig_getPageTitle(this.__wbg_ptr, ptr0, len0);
+        let v2;
+        if (ret[0] !== 0) {
+            v2 = getStringFromWasm0(ret[0], ret[1]).slice();
+            wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+        }
+        return v2;
+    }
+    /**
+     * @param {string} category
+     * @returns {string[]}
+     */
+    getPagesByCategory(category) {
+        const ptr0 = passStringToWasm0(category, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.navigationconfig_getPagesByCategory(this.__wbg_ptr, ptr0, len0);
+        var v2 = getArrayJsValueFromWasm0(ret[0], ret[1]).slice();
+        wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
+        return v2;
+    }
+    /**
+     * @returns {string[]}
+     */
+    getAllCategories() {
+        const ret = wasm.navigationconfig_getAllCategories(this.__wbg_ptr);
+        var v1 = getArrayJsValueFromWasm0(ret[0], ret[1]).slice();
+        wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
+        return v1;
+    }
+    /**
+     * @param {string} page_id
+     * @returns {string | undefined}
+     */
+    buildBreadcrumb(page_id) {
+        const ptr0 = passStringToWasm0(page_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.navigationconfig_buildBreadcrumb(this.__wbg_ptr, ptr0, len0);
+        let v2;
+        if (ret[0] !== 0) {
+            v2 = getStringFromWasm0(ret[0], ret[1]).slice();
+            wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+        }
+        return v2;
+    }
+}
+
+const SiteConfigFinalization = (typeof FinalizationRegistry === 'undefined')
+    ? { register: () => {}, unregister: () => {} }
+    : new FinalizationRegistry(ptr => wasm.__wbg_siteconfig_free(ptr >>> 0, 1));
+
+export class SiteConfig {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(SiteConfig.prototype);
+        obj.__wbg_ptr = ptr;
+        SiteConfigFinalization.register(obj, obj.__wbg_ptr, obj);
+        return obj;
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+        SiteConfigFinalization.unregister(this);
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_siteconfig_free(ptr, 0);
+    }
+    constructor() {
+        const ret = wasm.createSiteConfig();
+        this.__wbg_ptr = ret >>> 0;
+        SiteConfigFinalization.register(this, this.__wbg_ptr, this);
+        return this;
+    }
+    /**
+     * @returns {string}
+     */
+    getSiteName() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const ret = wasm.siteconfig_getSiteName(this.__wbg_ptr);
+            deferred1_0 = ret[0];
+            deferred1_1 = ret[1];
+            return getStringFromWasm0(ret[0], ret[1]);
+        } finally {
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+     * @returns {string}
+     */
+    getVersion() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const ret = wasm.siteconfig_getVersion(this.__wbg_ptr);
+            deferred1_0 = ret[0];
+            deferred1_1 = ret[1];
+            return getStringFromWasm0(ret[0], ret[1]);
+        } finally {
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+     * @param {string} feature
+     * @returns {boolean}
+     */
+    isFeatureEnabled(feature) {
+        const ptr0 = passStringToWasm0(feature, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.siteconfig_isFeatureEnabled(this.__wbg_ptr, ptr0, len0);
+        return ret !== 0;
+    }
+    /**
+     * @param {string} feature
+     */
+    enableFeature(feature) {
+        const ptr0 = passStringToWasm0(feature, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.siteconfig_enableFeature(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+     * @param {string} feature
+     */
+    disableFeature(feature) {
+        const ptr0 = passStringToWasm0(feature, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.siteconfig_disableFeature(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+     * @returns {boolean}
+     */
+    getMenuAutoHide() {
+        const ret = wasm.siteconfig_getMenuAutoHide(this.__wbg_ptr);
+        return ret !== 0;
+    }
+    /**
+     * @param {boolean} auto_hide
+     */
+    setMenuAutoHide(auto_hide) {
+        wasm.siteconfig_setMenuAutoHide(this.__wbg_ptr, auto_hide);
+    }
+    /**
+     * @returns {boolean}
+     */
+    getShowBreadcrumbs() {
+        const ret = wasm.siteconfig_getShowBreadcrumbs(this.__wbg_ptr);
+        return ret !== 0;
+    }
+    /**
+     * @param {boolean} show
+     */
+    setShowBreadcrumbs(show) {
+        wasm.siteconfig_setShowBreadcrumbs(this.__wbg_ptr, show);
+    }
+    /**
+     * @returns {boolean}
+     */
+    getCompactMode() {
+        const ret = wasm.siteconfig_getCompactMode(this.__wbg_ptr);
+        return ret !== 0;
+    }
+    /**
+     * @param {boolean} compact
+     */
+    setCompactMode(compact) {
+        wasm.siteconfig_setCompactMode(this.__wbg_ptr, compact);
+    }
+    /**
+     * @returns {string}
+     */
+    exportConfig() {
+        let deferred2_0;
+        let deferred2_1;
+        try {
+            const ret = wasm.siteconfig_exportConfig(this.__wbg_ptr);
+            var ptr1 = ret[0];
+            var len1 = ret[1];
+            if (ret[3]) {
+                ptr1 = 0; len1 = 0;
+                throw takeFromExternrefTable0(ret[2]);
+            }
+            deferred2_0 = ptr1;
+            deferred2_1 = len1;
+            return getStringFromWasm0(ptr1, len1);
+        } finally {
+            wasm.__wbindgen_free(deferred2_0, deferred2_1, 1);
+        }
+    }
+    /**
+     * @param {string} json_config
+     */
+    importConfig(json_config) {
+        const ptr0 = passStringToWasm0(json_config, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.siteconfig_importConfig(this.__wbg_ptr, ptr0, len0);
+        if (ret[1]) {
+            throw takeFromExternrefTable0(ret[0]);
+        }
+    }
+}
+
+const ThemeConfigFinalization = (typeof FinalizationRegistry === 'undefined')
+    ? { register: () => {}, unregister: () => {} }
+    : new FinalizationRegistry(ptr => wasm.__wbg_themeconfig_free(ptr >>> 0, 1));
+
+export class ThemeConfig {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(ThemeConfig.prototype);
+        obj.__wbg_ptr = ptr;
+        ThemeConfigFinalization.register(obj, obj.__wbg_ptr, obj);
+        return obj;
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+        ThemeConfigFinalization.unregister(this);
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_themeconfig_free(ptr, 0);
+    }
+    constructor() {
+        const ret = wasm.createThemeConfig();
+        this.__wbg_ptr = ret >>> 0;
+        ThemeConfigFinalization.register(this, this.__wbg_ptr, this);
+        return this;
+    }
+    /**
+     * @returns {Theme}
+     */
+    getCurrentTheme() {
+        const ret = wasm.themeconfig_getCurrentTheme(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+     * @param {Theme} theme
+     */
+    setUserPreference(theme) {
+        wasm.themeconfig_setUserPreference(this.__wbg_ptr, theme);
+    }
+    /**
+     * @returns {Theme}
+     */
+    toggleTheme() {
+        const ret = wasm.themeconfig_toggleTheme(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+     * @returns {string}
+     */
+    getThemeClassName() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const ret = wasm.themeconfig_getThemeClassName(this.__wbg_ptr);
+            deferred1_0 = ret[0];
+            deferred1_1 = ret[1];
+            return getStringFromWasm0(ret[0], ret[1]);
+        } finally {
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+     * @param {boolean} is_dark
+     */
+    updateSystemPreference(is_dark) {
+        wasm.themeconfig_updateSystemPreference(this.__wbg_ptr, is_dark);
     }
 }
 
@@ -512,7 +941,7 @@ function __wbg_get_imports() {
                 const a = state0.a;
                 state0.a = 0;
                 try {
-                    return __wbg_adapter_57(a, state0.b, arg0, arg1);
+                    return __wbg_adapter_109(a, state0.b, arg0, arg1);
                 } finally {
                     state0.a = a;
                 }
@@ -522,6 +951,14 @@ function __wbg_get_imports() {
         } finally {
             state0.a = state0.b = 0;
         }
+    };
+    imports.wbg.__wbg_new_405e22f390576ce2 = function() {
+        const ret = new Object();
+        return ret;
+    };
+    imports.wbg.__wbg_new_5e0be73521bc8c17 = function() {
+        const ret = new Map();
+        return ret;
     };
     imports.wbg.__wbg_new_78feb108b6472713 = function() {
         const ret = new Array();
@@ -546,6 +983,16 @@ function __wbg_get_imports() {
         const ret = Promise.resolve(arg0);
         return ret;
     };
+    imports.wbg.__wbg_set_37837023f3d740e8 = function(arg0, arg1, arg2) {
+        arg0[arg1 >>> 0] = arg2;
+    };
+    imports.wbg.__wbg_set_3f1d0b984ed272ed = function(arg0, arg1, arg2) {
+        arg0[arg1] = arg2;
+    };
+    imports.wbg.__wbg_set_8fc6bf8a5b1071d1 = function(arg0, arg1, arg2) {
+        const ret = arg0.set(arg1, arg2);
+        return ret;
+    };
     imports.wbg.__wbg_static_accessor_GLOBAL_88a902d13a557d07 = function() {
         const ret = typeof global === 'undefined' ? null : global;
         return isLikeNone(ret) ? 0 : addToExternrefTable0(ret);
@@ -566,6 +1013,14 @@ function __wbg_get_imports() {
         const ret = arg0.then(arg1);
         return ret;
     };
+    imports.wbg.__wbindgen_bigint_from_i64 = function(arg0) {
+        const ret = arg0;
+        return ret;
+    };
+    imports.wbg.__wbindgen_bigint_from_u64 = function(arg0) {
+        const ret = BigInt.asUintN(64, arg0);
+        return ret;
+    };
     imports.wbg.__wbindgen_cb_drop = function(arg0) {
         const obj = arg0.original;
         if (obj.cnt-- == 1) {
@@ -575,8 +1030,12 @@ function __wbg_get_imports() {
         const ret = false;
         return ret;
     };
-    imports.wbg.__wbindgen_closure_wrapper130 = function(arg0, arg1, arg2) {
-        const ret = makeMutClosure(arg0, arg1, 28, __wbg_adapter_18);
+    imports.wbg.__wbindgen_closure_wrapper468 = function(arg0, arg1, arg2) {
+        const ret = makeMutClosure(arg0, arg1, 58, __wbg_adapter_28);
+        return ret;
+    };
+    imports.wbg.__wbindgen_error_new = function(arg0, arg1) {
+        const ret = new Error(getStringFromWasm0(arg0, arg1));
         return ret;
     };
     imports.wbg.__wbindgen_init_externref_table = function() {
@@ -593,8 +1052,16 @@ function __wbg_get_imports() {
         const ret = typeof(arg0) === 'function';
         return ret;
     };
+    imports.wbg.__wbindgen_is_string = function(arg0) {
+        const ret = typeof(arg0) === 'string';
+        return ret;
+    };
     imports.wbg.__wbindgen_is_undefined = function(arg0) {
         const ret = arg0 === undefined;
+        return ret;
+    };
+    imports.wbg.__wbindgen_number_new = function(arg0) {
+        const ret = arg0;
         return ret;
     };
     imports.wbg.__wbindgen_string_new = function(arg0, arg1) {
@@ -615,6 +1082,7 @@ function __wbg_init_memory(imports, memory) {
 function __wbg_finalize_init(instance, module) {
     wasm = instance.exports;
     __wbg_init.__wbindgen_wasm_module = module;
+    cachedDataViewMemory0 = null;
     cachedUint8ArrayMemory0 = null;
 
 
