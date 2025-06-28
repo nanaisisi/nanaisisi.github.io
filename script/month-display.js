@@ -159,104 +159,18 @@ async function displayMonthNamesWasm(monthElement) {
 }
 
 /**
- * JavaScript版の月名表示関数
+ * JavaScript版の月名表示関数（WAsmが利用できない場合のフォールバック）
  */
 function displayMonthNamesJs(monthElement) {
-	const english_month_names = [
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-		"August",
-		"September",
-		"October",
-		"November",
-		"December",
-	];
-	const japanese_month_names = [
-		"睦月",
-		"如月",
-		"弥生",
-		"卯月",
-		"皐月",
-		"水無月",
-		"文月",
-		"葉月",
-		"長月",
-		"神無月",
-		"霜月",
-		"師走",
-	];
-	const ukrainian_month_names = [
-		"Січень",
-		"Лютий",
-		"Березень",
-		"Квітень",
-		"Травень",
-		"Червень",
-		"Липень",
-		"Серпень",
-		"Вересень",
-		"Жовтень",
-		"Листопад",
-		"Грудень",
-	];
-	const ukrainian_alphabet_month_names = [
-		"si-chen",
-		"lu-tyi",
-		"be-re-zen",
-		"kvi-ten",
-		"tra-vehn",
-		"cher-vehn",
-		"ly-pehn",
-		"ser-pehn",
-		"ve-re-sehn",
-		"zhov-tehn",
-		"lys-to-pad",
-		"hru-dehn",
-	];
-	const swedish_month_names = [
-		"Januari",
-		"Februari",
-		"Mars",
-		"April",
-		"Maj",
-		"Juni",
-		"Juli",
-		"Augusti",
-		"September",
-		"Oktober",
-		"November",
-		"December",
-	];
-	const suomi_month_names = [
-		"Tammikuu",
-		"Helmikuu",
-		"Maaliskuu",
-		"Huhtikuu",
-		"Toukokuu",
-		"Kesäkuu",
-		"Heinäkuu",
-		"Elokuu",
-		"Syyskuu",
-		"Lokakuu",
-		"Marraskuu",
-		"Joulukuu",
-	];
-
-	const current_month = new Date().getMonth(); // 0から11の値を返す
-
+	// WAsmが利用できない場合の簡単なエラー表示
 	updateMonthNamesDisplay(
 		monthElement,
-		japanese_month_names[current_month],
-		english_month_names[current_month],
-		ukrainian_month_names[current_month],
-		ukrainian_alphabet_month_names[current_month],
-		swedish_month_names[current_month],
-		suomi_month_names[current_month],
+		"WAsmエラー",
+		"WAsmエラー",
+		"WAsmエラー",
+		"WAsmエラー", 
+		"WAsmエラー",
+		"WAsmエラー",
 	);
 }
 
