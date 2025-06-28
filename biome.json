@@ -1,0 +1,54 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
+	"files": {
+		"ignore": [
+			"node_modules",
+			"dist",
+			"build",
+			"pkg",
+			"target",
+			"nanai_wasm_rs/pkg/**/*.js",
+			"nanai_wasm_rs/pkg/**/*.d.ts",
+			"**/*.wasm"
+		]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"useArrowFunction": "off"
+			},
+			"style": {
+				"noParameterAssign": "warn",
+				"noVar": "warn",
+				"noArguments": "warn"
+			},
+			"suspicious": {
+				"noDoubleEquals": "warn",
+				"noAssignInExpressions": "warn"
+			},
+			"correctness": {
+				"noInnerDeclarations": "warn",
+				"noConstructorReturn": "warn"
+			}
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineWidth": 80
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double",
+			"semicolons": "always",
+			"arrowParentheses": "always"
+		}
+	},
+	"organizeImports": {
+		"enabled": true
+	}
+}
