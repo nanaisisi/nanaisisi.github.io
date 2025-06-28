@@ -112,6 +112,108 @@ static MONTH_NAMES: LazyLock<HashMap<Language, [&'static str; 12]>> = LazyLock::
             "Joulukuu",
         ],
     );
+    map.insert(
+        Language::Polish,
+        [
+            "Styczeń",
+            "Luty",
+            "Marzec",
+            "Kwiecień",
+            "Maj",
+            "Czerwiec",
+            "Lipiec",
+            "Sierpień",
+            "Wrzesień",
+            "Październik",
+            "Listopad",
+            "Grudzień",
+        ],
+    );
+    map.insert(
+        Language::Czech,
+        [
+            "Leden",
+            "Únor",
+            "Březen",
+            "Duben",
+            "Květen",
+            "Červen",
+            "Červenec",
+            "Srpen",
+            "Září",
+            "Říjen",
+            "Listopad",
+            "Prosinec",
+        ],
+    );
+    map.insert(
+        Language::Slovak,
+        [
+            "Január",
+            "Február",
+            "Marec",
+            "Apríl",
+            "Máj",
+            "Jún",
+            "Júl",
+            "August",
+            "September",
+            "Október",
+            "November",
+            "December",
+        ],
+    );
+    map.insert(
+        Language::Lithuanian,
+        [
+            "Sausis",
+            "Vasaris",
+            "Kovas",
+            "Balandis",
+            "Gegužė",
+            "Birželis",
+            "Liepa",
+            "Rugpjūtis",
+            "Rugsėjis",
+            "Spalis",
+            "Lapkritis",
+            "Gruodis",
+        ],
+    );
+    map.insert(
+        Language::Latvian,
+        [
+            "Janvāris",
+            "Februāris",
+            "Marts",
+            "Aprīlis",
+            "Maijs",
+            "Jūnijs",
+            "Jūlijs",
+            "Augusts",
+            "Septembris",
+            "Oktobris",
+            "Novembris",
+            "Decembris",
+        ],
+    );
+    map.insert(
+        Language::Estonian,
+        [
+            "Jaanuar",
+            "Veebruar",
+            "Märts",
+            "Aprill",
+            "Mai",
+            "Juuni",
+            "Juuli",
+            "August",
+            "September",
+            "Oktoober",
+            "November",
+            "Detsember",
+        ],
+    );
     map
 });
 
@@ -147,6 +249,12 @@ pub fn get_month_name(month_index: usize, language_code: &str) -> Result<String,
         "uk-latin" => Language::UkrainianAlphabet,
         "sv" => Language::Swedish,
         "fi" => Language::Finnish,
+        "pl" => Language::Polish,
+        "cs" => Language::Czech,
+        "sk" => Language::Slovak,
+        "lt" => Language::Lithuanian,
+        "lv" => Language::Latvian,
+        "et" => Language::Estonian,
         _ => {
             return Err(JsError::new(format!(
                 "Unsupported language code: {language_code}"
@@ -184,6 +292,12 @@ pub fn get_month_names_all(month_index: usize) -> Result<JsValue, JsError> {
         Language::UkrainianAlphabet,
         Language::Swedish,
         Language::Finnish,
+        Language::Polish,
+        Language::Czech,
+        Language::Slovak,
+        Language::Lithuanian,
+        Language::Latvian,
+        Language::Estonian,
     ] {
         let name = get_month_name_internal(month, *language).map_err(JsError::from)?;
         result.push(&JsValue::from_str(&name));
@@ -221,4 +335,34 @@ pub fn get_swedish_month_name(month_index: usize) -> String {
 #[wasm_bindgen(js_name = get_suomi_month_name)]
 pub fn get_suomi_month_name(month_index: usize) -> String {
     get_month_name(month_index, "fi").unwrap_or_else(|_| String::from("Error"))
+}
+
+#[wasm_bindgen(js_name = get_polish_month_name)]
+pub fn get_polish_month_name(month_index: usize) -> String {
+    get_month_name(month_index, "pl").unwrap_or_else(|_| String::from("Error"))
+}
+
+#[wasm_bindgen(js_name = get_czech_month_name)]
+pub fn get_czech_month_name(month_index: usize) -> String {
+    get_month_name(month_index, "cs").unwrap_or_else(|_| String::from("Error"))
+}
+
+#[wasm_bindgen(js_name = get_slovak_month_name)]
+pub fn get_slovak_month_name(month_index: usize) -> String {
+    get_month_name(month_index, "sk").unwrap_or_else(|_| String::from("Error"))
+}
+
+#[wasm_bindgen(js_name = get_lithuanian_month_name)]
+pub fn get_lithuanian_month_name(month_index: usize) -> String {
+    get_month_name(month_index, "lt").unwrap_or_else(|_| String::from("Error"))
+}
+
+#[wasm_bindgen(js_name = get_latvian_month_name)]
+pub fn get_latvian_month_name(month_index: usize) -> String {
+    get_month_name(month_index, "lv").unwrap_or_else(|_| String::from("Error"))
+}
+
+#[wasm_bindgen(js_name = get_estonian_month_name)]
+pub fn get_estonian_month_name(month_index: usize) -> String {
+    get_month_name(month_index, "et").unwrap_or_else(|_| String::from("Error"))
 }
