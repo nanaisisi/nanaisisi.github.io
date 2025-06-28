@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- 0.x.y only because unstable system -->
 
-## [0.0.2] -2025-5-17
+## [0.0.2] -2025-6-29
 
 ### Added
 - Any language month name.
