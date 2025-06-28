@@ -13,6 +13,7 @@
 		"validate:html": "markuplint **/*.html"
 	},
 	"dependencies": {
+		"biome": "^0.3.3",
 		"markuplint": "^4.12.0",
 		"prettier": "^3.4.2"
 	},
