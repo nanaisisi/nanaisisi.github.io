@@ -136,9 +136,13 @@ print "   ✓ 主要関数: 正常動作"
 print ""
 print "🎯 次のステップ:"
 <<<<<<< HEAD
+<<<<<<< HEAD
 print "   1. ブラウザで http://localhost:8000/test/wasm_test.html をテスト"
 =======
 print "   1. ブラウザで http://localhost:8000/test/wasm-test.html をテスト"
 >>>>>>> 058a4ba (nu)
+=======
+print "   1. ブラウザで http://localhost:8000/test/wasm_test.html をテスト"
+>>>>>>> 5a2c1b6 (file rename)
 print "   2. 各ページでの月名表示を確認"
 print "   3. mil/tech配下のページでのWASMロードを確認"

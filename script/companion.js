@@ -790,9 +790,9 @@ window.addEventListener("load", async () => {
 >>>>>>> 5737e17 (divide)
 =======
 // サイト全体の機能を統合するメインスクリプト
-import { initMenuButton } from "./menu-handler.js";
-import { initMonthDisplay } from "./month-display.js";
-import { initThemeManager } from "./theme-manager.js";
+import { initMenuButton } from "./menu_handler.js";
+import { initMonthDisplay } from "./month_display.js";
+import { initThemeManager } from "./theme_manager.js";
 
 // ページのロード時に各機能を初期化
 window.addEventListener("load", async () => {

@@ -11,18 +11,30 @@ export function initMenuButton() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
 >>>>>>> fb30a47 (err fix)
+=======
+>>>>>>> c329f2d (err fix)
+>>>>>>> 5a2c1b6 (file rename)
 =======
 	if (!menu_tab) {
 =======
 	if (!menuTab) {
+<<<<<<< HEAD
 >>>>>>> 4dc3ab7 (ok)
+=======
+>>>>>>> da82eda (ok)
+>>>>>>> 5a2c1b6 (file rename)
 		// メニュー要素が存在しないページでは何もしない
 		return;
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 17ee032 (fin)
+=======
+>>>>>>> 7f8fa00 (fin)
+>>>>>>> 5a2c1b6 (file rename)
 	if (menu_tab) {
 		menu_tab.style.display = "none";
 	} else {
@@ -32,23 +44,38 @@ export function initMenuButton() {
 	// メニューの初期状態を非表示に設定
 	if (menu_tab) {
 		menu_tab.style.display = "none";
+<<<<<<< HEAD
 >>>>>>> 44eb280 (divide)
+=======
+>>>>>>> fb6f1c2 (divide)
+>>>>>>> 5a2c1b6 (file rename)
 =======
 	if (menuTab) {
 		menuTab.style.display = "none";
 	} else {
 		console.warn("Menu element not found: menuTab");
+<<<<<<< HEAD
 >>>>>>> 4dc3ab7 (ok)
+=======
+>>>>>>> da82eda (ok)
+>>>>>>> 5a2c1b6 (file rename)
 	}
 =======
 window.addEventListener("load", async () => {on initMenuButton() {
   // 月名表示機能の初期化 ID名を環境に合わせて修正
   await initMonthDisplay();ntById("toggle_menu_btn");
 });nt.getElementById("menu_tab");
+<<<<<<< HEAD
 >>>>>>> 2baa9a3 (fix)
 =======
 	}
 >>>>>>> fb30a47 (err fix)
+=======
+>>>>>>> f3659f8 (fix)
+=======
+	}
+>>>>>>> c329f2d (err fix)
+>>>>>>> 5a2c1b6 (file rename)
 
 	setupMenuToggle(toggleMenuBtn, menuTab);
 }
@@ -56,7 +83,11 @@ window.addEventListener("load", async () => {on initMenuButton() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
 >>>>>>> fb30a47 (err fix)
+=======
+>>>>>>> c329f2d (err fix)
+>>>>>>> 5a2c1b6 (file rename)
 /**
  * メニュートグル機能を設定
  * @param {HTMLElement} toggleMenuBtn メニュートグルボタン要素
@@ -71,14 +102,22 @@ function setupMenuToggle(toggle_menu_btn, menu_tab) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
 >>>>>>> fb30a47 (err fix)
+=======
+>>>>>>> c329f2d (err fix)
+>>>>>>> 5a2c1b6 (file rename)
 =======
 function setupMenuToggle(toggleMenuBtn, menuTab) {
 	if (toggleMenuBtn && menuTab) {
 		toggleMenuBtn.onclick = () => {
 			if (menuTab.style.display === "block") {
 				menuTab.style.display = "none";
+<<<<<<< HEAD
 >>>>>>> 4dc3ab7 (ok)
+=======
+>>>>>>> da82eda (ok)
+>>>>>>> 5a2c1b6 (file rename)
 				document.body.classList.remove("menu-open");
 			} else {
 				menuTab.style.display = "block";
@@ -93,7 +132,11 @@ function setupMenuToggle(toggleMenuBtn, menuTab) {
 			`Menu elements not found. Button: ${toggle_menu_btn ? "✓" : "✗"}, Menu: ${menu_tab ? "✓" : "✗"}`,
 =======
 			`Menu elements not found. Button: ${toggleMenuBtn ? "✓" : "✗"}, Menu: ${menuTab ? "✓" : "✗"}`,
+<<<<<<< HEAD
 >>>>>>> 4dc3ab7 (ok)
+=======
+>>>>>>> da82eda (ok)
+>>>>>>> 5a2c1b6 (file rename)
 		);
 =======
 			} else if (menu_tab.style.display === "none") {
@@ -104,7 +147,11 @@ function setupMenuToggle(toggleMenuBtn, menuTab) {
 		};
 	} else {
 		console.error("Menu elements not found");
+<<<<<<< HEAD
 >>>>>>> 44eb280 (divide)
+=======
+>>>>>>> fb6f1c2 (divide)
+>>>>>>> 5a2c1b6 (file rename)
 =======
 /**none";
  * 月名表示機能を初期化
@@ -145,7 +192,11 @@ export async function initMonthDisplay() {
             SE: ${se}<br>
             FI: ${fi}
         `;
+<<<<<<< HEAD
 >>>>>>> 2baa9a3 (fix)
+=======
+>>>>>>> f3659f8 (fix)
+>>>>>>> 5a2c1b6 (file rename)
 =======
 			"Menu elements not found. Button: " +
 				(toggle_menu_btn ? "✓" : "✗") +
@@ -153,8 +204,14 @@ export async function initMonthDisplay() {
 				(menu_tab ? "✓" : "✗"),
 =======
 			`Menu elements not found. Button: ${toggle_menu_btn ? "✓" : "✗"}, Menu: ${menu_tab ? "✓" : "✗"}`,
+<<<<<<< HEAD
 >>>>>>> 714f06a (yet css)
 		);
 >>>>>>> fb30a47 (err fix)
+=======
+>>>>>>> 71d6d40 (yet css)
+		);
+>>>>>>> c329f2d (err fix)
+>>>>>>> 5a2c1b6 (file rename)
 	}
 }

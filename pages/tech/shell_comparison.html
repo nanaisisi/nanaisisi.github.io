@@ -55,24 +55,26 @@
   </head>
 
   <body class="theme">
-    <div id="menu_tab" class="menu">
+    <div id="menu-tab" class="menu">
       <iframe
         loading="lazy"
-        src="../menu.html"
+        src="tech_menu.html"
         name="menu"
         title="目次"
-        class="menu_iframe"
+        class="menu-iframe"
       ></iframe>
     </div>
     <div class="fixed-bar">
-      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
+      <button id="theme-toggle-btn" class="theme-toggle-btn">テーマ切替</button>
     </div>
 
-    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
+    <button id="toggle-menu-btn" class="menu-toggle-btn">メニュー</button>
     <div>
       <header>
         <nav>
+<<<<<<< HEAD
           <ul class="table_of_contents">
+<<<<<<< HEAD
             <li><a href="#Head_1">パイプラインの違い</a></li>
             <li><a href="#Head_2">データ型とテーブル</a></li>
             <li><a href="#Head_3">ファイル操作の違い</a></li>
@@ -80,6 +82,17 @@
             <li><a href="#Head_5">シェル分割（Word Splitting）の問題</a></li>
             <li><a href="#Head_6">条件分岐とループ</a></li>
 >>>>>>> 4a4a9e8 (continue dir in dir move and fix)
+=======
+=======
+          <ul class="table-of-contents">
+>>>>>>> fea84f8 (code rename)
+            <li><a href="#head-1">パイプラインの違い</a></li>
+            <li><a href="#head-2">データ型とテーブル</a></li>
+            <li><a href="#head-3">ファイル操作の違い</a></li>
+            <li><a href="#head-4">変数と環境</a></li>
+            <li><a href="#head-5">シェル分割（Word Splitting）の問題</a></li>
+            <li><a href="#head-6">条件分岐とループ</a></li>
+>>>>>>> 2ab0051 (chg)
           </ul>
         </nav>
       </header>
@@ -88,21 +101,30 @@
           <h1>シェルの機能比較詳細</h1>
           <p>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <small>このページはAIによって生成されたコンテンツです。</small
             ><br />
 =======
             AIページ<br />
 >>>>>>> 4a4a9e8 (continue dir in dir move and fix)
+=======
+            <small>このページはAIによって生成されたコンテンツです。</small
+            ><br />
+>>>>>>> 35f1fd0 (ok)
             このページでは、Nushell、Bash、PowerShell、CMDなど各シェル環境の機能的な違いを詳しく比較します。
             <a href="shell_features.html">シェル環境の特徴</a
             >の詳細版として、実際のコマンド例を交えて解説します。
           </p>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           <h2 id="head-1">パイプラインの違い</h2>
 =======
           <h2 id="Head_1">パイプラインの違い</h2>
 >>>>>>> 4a4a9e8 (continue dir in dir move and fix)
+=======
+          <h2 id="head-1">パイプラインの違い</h2>
+>>>>>>> 2ab0051 (chg)
           <p>
             従来のシェルではテキストストリームをパイプでつなぎますが、Nushellでは構造化データをパイプでつなぎます。
             これはPowerShellのオブジェクトパイプラインに近い概念ですが、さらに強力です。
@@ -155,10 +177,14 @@
           </table>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           <h2 id="head-2">データ型とテーブル</h2>
 =======
           <h2 id="Head_2">データ型とテーブル</h2>
 >>>>>>> 4a4a9e8 (continue dir in dir move and fix)
+=======
+          <h2 id="head-2">データ型とテーブル</h2>
+>>>>>>> 2ab0051 (chg)
           <p>
             Nushellでは、ほとんどのコマンド出力がテーブル形式になっています。
             これにより、データベースのようなクエリが可能になります。
@@ -214,10 +240,14 @@
           </table>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           <h2 id="head-3">ファイル操作の違い</h2>
 =======
           <h2 id="Head_3">ファイル操作の違い</h2>
 >>>>>>> 4a4a9e8 (continue dir in dir move and fix)
+=======
+          <h2 id="head-3">ファイル操作の違い</h2>
+>>>>>>> 2ab0051 (chg)
           <p>
             Nushellでは、構造化ファイル（JSON、YAML、CSVなど）をネイティブに扱えます。
           </p>
@@ -272,10 +302,14 @@
           </table>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           <h2 id="head-4">変数と環境</h2>
 =======
           <h2 id="Head_4">変数と環境</h2>
 >>>>>>> 4a4a9e8 (continue dir in dir move and fix)
+=======
+          <h2 id="head-4">変数と環境</h2>
+>>>>>>> 2ab0051 (chg)
           <p>変数の扱いもシェルによって大きく異なります。</p>
 
           <table>
@@ -322,10 +356,14 @@
           </table>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           <h2 id="head-5">シェル分割（Word Splitting）の問題</h2>
 =======
           <h2 id="Head_5">シェル分割（Word Splitting）の問題</h2>
 >>>>>>> 4a4a9e8 (continue dir in dir move and fix)
+=======
+          <h2 id="head-5">シェル分割（Word Splitting）の問題</h2>
+>>>>>>> 2ab0051 (chg)
           <p>
             シェル分割は、特にBashなどの伝統的なシェルで変数を展開する際に発生する現象です。
             変数内にスペースが含まれると、適切にクォートしない場合に予期しない動作が発生します。
@@ -409,10 +447,14 @@ rm $files  # リストとして正しく扱われる</code></pre>
           </p>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           <h2 id="head-6">条件分岐とループ</h2>
 =======
           <h2 id="Head_6">条件分岐とループ</h2>
 >>>>>>> 4a4a9e8 (continue dir in dir move and fix)
+=======
+          <h2 id="head-6">条件分岐とループ</h2>
+>>>>>>> 2ab0051 (chg)
           <p>制御構文もシェルによって異なります。</p>
 
           <table>

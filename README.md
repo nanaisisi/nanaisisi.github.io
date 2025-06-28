@@ -3,6 +3,9 @@
 # nanaisisi.github.io
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7f8fa00 (fin)
 
 # How to
 <<<<<<< HEAD
@@ -111,6 +114,13 @@ deno run --allow-net --allow-read test\server.ts
 - JavaScript
 - WASM(Rust)
 
+## Development
+
+- Start local dev server: `deno run --allow-net --allow-read test/server.ts`
+- Access at: http://localhost:8000
+- WASM modules load automatically via wasm-bindgen
+- Theme preferences stored as JSON in localStorage for compatibility
+
 ## Dev phase
 
 - Nushell
@@ -120,6 +130,7 @@ deno run --allow-net --allow-read test\server.ts
 ## License
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 All files in the [img](./img) and [pages](./pages), [doc](./doc) folders are licensed with  [Apache License 2.0](./doc/LICENSE-APACHE) + [MIT License](./doc/LICENSE-MIT). The rest of the files in this repository are licensed with [CC0](./LICENSE).
 >>>>>>> ed059b3 (Update README.md)
 <<<<<<< HEAD
@@ -128,4 +139,10 @@ All files in the [img](./img) and [pages](./pages), [doc](./doc) folders are lic
 =======
 All files in the [img](./img) and [pages](./pages), [doc](./doc), [nanai_wasm_rs](./nanai_wasm_rs) folders are licensed with  [Apache License 2.0](./doc/LICENSE-APACHE) + [MIT License](./doc/LICENSE-MIT). The rest of the files in this repository are licensed with [CC0](./LICENSE).
 >>>>>>> 1d1bb25 (yet)
+<<<<<<< HEAD
 >>>>>>> 74dc9a4 (menu.html の更新)
+=======
+=======
+All files in the [img](./img) and [pages](./pages), [doc](./doc), [nanai_wasm_rs](./nanai_wasm_rs) folders are licensed with [Apache License 2.0](./doc/LICENSE-APACHE) + [MIT License](./doc/LICENSE-MIT). The rest of the files in this repository are licensed with [CC0](./LICENSE).
+>>>>>>> 7f8fa00 (fin)
+>>>>>>> cbb0dbd (my_repo_list.html の更新)

@@ -8,6 +8,7 @@ rust-version = "1.85" # LazyLockが使用可能な最小バージョン
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 description = "For my web page, Rust lib for WASM"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/nanaisisi/nanaisisi.github.io"
@@ -22,6 +23,8 @@ rust-version = "1.85" # LazyLockが使用可能な最小バージョン
 =======
 =======
 rust-version = "1.85"                                           # LazyLockが使用可能な最小バージョン
+=======
+>>>>>>> 7e3531e (ok)
 description = "For my web page, Rust lib for WASM"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/nanaisisi/nanaisisi.github.io"
