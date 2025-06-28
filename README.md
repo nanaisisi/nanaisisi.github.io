@@ -3,19 +3,19 @@
 
 #nushell
 
-#locate root
+#locate root<br />
 cd nanai_wasm_rs;cargo update
 
-#locate root
+#locate root<br />
 cd nanai_wasm_rs; cargo build
 
-#locate root
+#locate root<br />
 cd nanai_wasm_rs; wasm-pack build --target web
 
-#locate root
+#locate root<br />
 deno outdated --update --latest
 
-#locate root
+#locate root<br />
 deno run --allow-net --allow-read test\server.ts
 
 # structure
