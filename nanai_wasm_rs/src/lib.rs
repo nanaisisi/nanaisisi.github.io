@@ -20,6 +20,14 @@ pub use month::{
     get_swedish_month_name,
     get_ukrainian_alphabet_month_name,
     get_ukrainian_month_name,
+    
+    // 新しい言語の関数
+    get_polish_month_name,
+    get_czech_month_name,
+    get_slovak_month_name,
+    get_lithuanian_month_name,
+    get_latvian_month_name,
+    get_estonian_month_name,
 };
 
 // テスト用のモジュール
@@ -52,6 +60,18 @@ mod tests {
         assert_eq!(
             get_month_name_internal(Month::December, Language::Finnish).unwrap(),
             "Joulukuu"
+        );
+        assert_eq!(
+            get_month_name_internal(Month::March, Language::Polish).unwrap(),
+            "Marzec"
+        );
+        assert_eq!(
+            get_month_name_internal(Month::September, Language::Czech).unwrap(),
+            "Září"
+        );
+        assert_eq!(
+            get_month_name_internal(Month::May, Language::Lithuanian).unwrap(),
+            "Gegužė"
         );
     }
 }

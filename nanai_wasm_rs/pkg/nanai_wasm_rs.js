@@ -67,6 +67,13 @@ function makeMutClosure(arg0, arg1, dtor, f) {
     CLOSURE_DTORS.register(real, state, state);
     return real;
 }
+/**
+ * @returns {number}
+ */
+export function get_current_month() {
+    const ret = wasm.get_current_month();
+    return ret >>> 0;
+}
 
 let WASM_VECTOR_LEN = 0;
 
@@ -122,13 +129,6 @@ function passStringToWasm0(arg, malloc, realloc) {
 
     WASM_VECTOR_LEN = offset;
     return ptr;
-}
-/**
- * @returns {number}
- */
-export function get_current_month() {
-    const ret = wasm.get_current_month();
-    return ret >>> 0;
 }
 
 function takeFromExternrefTable0(idx) {
@@ -288,11 +288,113 @@ export function get_suomi_month_name(month_index) {
     }
 }
 
+/**
+ * @param {number} month_index
+ * @returns {string}
+ */
+export function get_polish_month_name(month_index) {
+    let deferred1_0;
+    let deferred1_1;
+    try {
+        const ret = wasm.get_polish_month_name(month_index);
+        deferred1_0 = ret[0];
+        deferred1_1 = ret[1];
+        return getStringFromWasm0(ret[0], ret[1]);
+    } finally {
+        wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+    }
+}
+
+/**
+ * @param {number} month_index
+ * @returns {string}
+ */
+export function get_czech_month_name(month_index) {
+    let deferred1_0;
+    let deferred1_1;
+    try {
+        const ret = wasm.get_czech_month_name(month_index);
+        deferred1_0 = ret[0];
+        deferred1_1 = ret[1];
+        return getStringFromWasm0(ret[0], ret[1]);
+    } finally {
+        wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+    }
+}
+
+/**
+ * @param {number} month_index
+ * @returns {string}
+ */
+export function get_slovak_month_name(month_index) {
+    let deferred1_0;
+    let deferred1_1;
+    try {
+        const ret = wasm.get_slovak_month_name(month_index);
+        deferred1_0 = ret[0];
+        deferred1_1 = ret[1];
+        return getStringFromWasm0(ret[0], ret[1]);
+    } finally {
+        wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+    }
+}
+
+/**
+ * @param {number} month_index
+ * @returns {string}
+ */
+export function get_lithuanian_month_name(month_index) {
+    let deferred1_0;
+    let deferred1_1;
+    try {
+        const ret = wasm.get_lithuanian_month_name(month_index);
+        deferred1_0 = ret[0];
+        deferred1_1 = ret[1];
+        return getStringFromWasm0(ret[0], ret[1]);
+    } finally {
+        wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+    }
+}
+
+/**
+ * @param {number} month_index
+ * @returns {string}
+ */
+export function get_latvian_month_name(month_index) {
+    let deferred1_0;
+    let deferred1_1;
+    try {
+        const ret = wasm.get_latvian_month_name(month_index);
+        deferred1_0 = ret[0];
+        deferred1_1 = ret[1];
+        return getStringFromWasm0(ret[0], ret[1]);
+    } finally {
+        wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+    }
+}
+
+/**
+ * @param {number} month_index
+ * @returns {string}
+ */
+export function get_estonian_month_name(month_index) {
+    let deferred1_0;
+    let deferred1_1;
+    try {
+        const ret = wasm.get_estonian_month_name(month_index);
+        deferred1_0 = ret[0];
+        deferred1_1 = ret[1];
+        return getStringFromWasm0(ret[0], ret[1]);
+    } finally {
+        wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+    }
+}
+
 function __wbg_adapter_18(arg0, arg1, arg2) {
     wasm.closure27_externref_shim(arg0, arg1, arg2);
 }
 
-function __wbg_adapter_51(arg0, arg1, arg2, arg3) {
+function __wbg_adapter_57(arg0, arg1, arg2, arg3) {
     wasm.closure39_externref_shim(arg0, arg1, arg2, arg3);
 }
 
@@ -410,7 +512,7 @@ function __wbg_get_imports() {
                 const a = state0.a;
                 state0.a = 0;
                 try {
-                    return __wbg_adapter_51(a, state0.b, arg0, arg1);
+                    return __wbg_adapter_57(a, state0.b, arg0, arg1);
                 } finally {
                     state0.a = a;
                 }
@@ -473,7 +575,7 @@ function __wbg_get_imports() {
         const ret = false;
         return ret;
     };
-    imports.wbg.__wbindgen_closure_wrapper117 = function(arg0, arg1, arg2) {
+    imports.wbg.__wbindgen_closure_wrapper130 = function(arg0, arg1, arg2) {
         const ret = makeMutClosure(arg0, arg1, 28, __wbg_adapter_18);
         return ret;
     };
