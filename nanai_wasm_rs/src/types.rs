@@ -112,6 +112,7 @@ pub enum MonthError {
 
 // JavaScript側に返すためのエラー型
 #[wasm_bindgen]
+#[derive(Debug)]
 pub struct JsError {
     message: String,
 }

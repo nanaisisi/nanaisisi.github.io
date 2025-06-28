@@ -9,5 +9,6 @@
     "editor.formatOnSave": true,
     "svg.preview.background": "transparent",
     "deno.path": "C:\\Users\\masak\\AppData\\Local\\Microsoft\\WinGet\\Packages\\DenoLand.Deno_Microsoft.Winget.Source_8wekyb3d8bbwe",
+    "marquee.widgets.npm-stats.packageNames": ["nanaisisi-github-io"],
   },
 }
