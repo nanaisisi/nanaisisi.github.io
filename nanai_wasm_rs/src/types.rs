@@ -70,6 +70,12 @@ pub enum Language {
     UkrainianAlphabet,
     Swedish,
     Finnish,
+    Polish,
+    Czech,
+    Slovak,
+    Lithuanian,
+    Latvian,
+    Estonian,
 }
 
 impl fmt::Display for Language {
@@ -81,6 +87,12 @@ impl fmt::Display for Language {
             Language::UkrainianAlphabet => write!(f, "UkrainianAlphabet"),
             Language::Swedish => write!(f, "Swedish"),
             Language::Finnish => write!(f, "Finnish"),
+            Language::Polish => write!(f, "Polish"),
+            Language::Czech => write!(f, "Czech"),
+            Language::Slovak => write!(f, "Slovak"),
+            Language::Lithuanian => write!(f, "Lithuanian"),
+            Language::Latvian => write!(f, "Latvian"),
+            Language::Estonian => write!(f, "Estonian"),
         }
     }
 }
@@ -100,6 +112,7 @@ pub enum MonthError {
 
 // JavaScript側に返すためのエラー型
 #[wasm_bindgen]
+#[derive(Debug)]
 pub struct JsError {
     message: String,
 }
