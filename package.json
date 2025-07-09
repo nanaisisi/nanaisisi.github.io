@@ -1,5 +1,19 @@
 {
+	"name": "nanaisisi-github-io",
+	"version": "1.0.0",
+	"description": "Static website with WASM-powered month name display",
+	"scripts": {
+		"test": "cd nanai_wasm_rs && cargo test",
+		"test:wasm": "cd nanai_wasm_rs && wasm-pack test --headless --chrome",
+		"test:all": "cd nanai_wasm_rs && cargo test && wasm-pack test --headless --chrome",
+		"build:wasm": "cd nanai_wasm_rs && wasm-pack build --target web --out-dir pkg --release",
+		"dev": "deno run --allow-net --allow-read test/server.ts",
+		"lint": "biome check .",
+		"format": "biome format --write .",
+		"validate:html": "markuplint **/*.html"
+	},
 	"dependencies": {
+		"biome": "^0.3.3",
 		"markuplint": "^4.12.0",
 		"prettier": "^3.4.2"
 	},

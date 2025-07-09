@@ -3,3 +3,6 @@ package-lock.json
 /nanai_wasm_rs/target
 target
 *.lock
+
+# Note: WASMファイル（pkg/）はWebサイトの動作に必要なため、.gitignoreしない
+# リンターエラーについては biome.json で除外設定済み
