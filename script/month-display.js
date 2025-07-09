@@ -4,9 +4,13 @@ import { loadWasm } from "./wasm-loader.js";
  * 月名表示機能を初期化
  */
 export async function initMonthDisplay() {
-	// 直接要素を取得する場合とiframe内の要素を取得する場合の両方に対応
-	await tryDisplayInMainPage();
-	await tryDisplayInMenuFrame();
+	try {
+		// 直接要素を取得する場合とiframe内の要素を取得する場合の両方に対応
+		await tryDisplayInMainPage();
+		await tryDisplayInMenuFrame();
+	} catch (error) {
+		console.error("Error in initMonthDisplay:", error);
+	}
 }
 
 /**
@@ -78,7 +82,13 @@ async function tryDisplayInMenuFrame() {
 			menuFrame.onload = () => {
 				clearTimeout(timeout);
 				// 元のonloadがあれば呼び出す
-				if (originalOnload) originalOnload.call(menuFrame);
+				if (originalOnload && typeof originalOnload === "function") {
+					try {
+						originalOnload.call(menuFrame);
+					} catch (e) {
+						console.warn("Error calling original onload:", e);
+					}
+				}
 				resolve();
 			};
 
@@ -142,6 +152,17 @@ async function displayMonthNamesWasm(monthElement) {
 		const swedish_now_month_name =
 			wasmModule.get_swedish_month_name(current_month);
 		const suomi_now_month_name = wasmModule.get_suomi_month_name(current_month);
+		const polish_now_month_name =
+			wasmModule.get_polish_month_name(current_month);
+		const czech_now_month_name = wasmModule.get_czech_month_name(current_month);
+		const slovak_now_month_name =
+			wasmModule.get_slovak_month_name(current_month);
+		const lithuanian_now_month_name =
+			wasmModule.get_lithuanian_month_name(current_month);
+		const latvian_now_month_name =
+			wasmModule.get_latvian_month_name(current_month);
+		const estonian_now_month_name =
+			wasmModule.get_estonian_month_name(current_month);
 
 		updateMonthNamesDisplay(
 			monthElement,
@@ -151,6 +172,12 @@ async function displayMonthNamesWasm(monthElement) {
 			ukrainian_alphabet_now_month_name,
 			swedish_now_month_name,
 			suomi_now_month_name,
+			polish_now_month_name,
+			czech_now_month_name,
+			slovak_now_month_name,
+			lithuanian_now_month_name,
+			latvian_now_month_name,
+			estonian_now_month_name,
 		);
 	} catch (error) {
 		console.error("Error calling WASM functions:", error);
@@ -159,111 +186,45 @@ async function displayMonthNamesWasm(monthElement) {
 }
 
 /**
- * JavaScript版の月名表示関数
+ * JavaScript版の月名表示関数（WASMが利用できない場合のフォールバック）
  */
 function displayMonthNamesJs(monthElement) {
-	const english_month_names = [
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-		"August",
-		"September",
-		"October",
-		"November",
-		"December",
-	];
-	const japanese_month_names = [
-		"睦月",
-		"如月",
-		"弥生",
-		"卯月",
-		"皐月",
-		"水無月",
-		"文月",
-		"葉月",
-		"長月",
-		"神無月",
-		"霜月",
-		"師走",
-	];
-	const ukrainian_month_names = [
-		"Січень",
-		"Лютий",
-		"Березень",
-		"Квітень",
-		"Травень",
-		"Червень",
-		"Липень",
-		"Серпень",
-		"Вересень",
-		"Жовтень",
-		"Листопад",
-		"Грудень",
-	];
-	const ukrainian_alphabet_month_names = [
-		"si-chen",
-		"lu-tyi",
-		"be-re-zen",
-		"kvi-ten",
-		"tra-vehn",
-		"cher-vehn",
-		"ly-pehn",
-		"ser-pehn",
-		"ve-re-sehn",
-		"zhov-tehn",
-		"lys-to-pad",
-		"hru-dehn",
-	];
-	const swedish_month_names = [
-		"Januari",
-		"Februari",
-		"Mars",
-		"April",
-		"Maj",
-		"Juni",
-		"Juli",
-		"Augusti",
-		"September",
-		"Oktober",
-		"November",
-		"December",
-	];
-	const suomi_month_names = [
-		"Tammikuu",
-		"Helmikuu",
-		"Maaliskuu",
-		"Huhtikuu",
-		"Toukokuu",
-		"Kesäkuu",
-		"Heinäkuu",
-		"Elokuu",
-		"Syyskuu",
-		"Lokakuu",
-		"Marraskuu",
-		"Joulukuu",
-	];
-
-	const current_month = new Date().getMonth(); // 0から11の値を返す
-
+	// WASMが利用できない場合の簡単なエラー表示
 	updateMonthNamesDisplay(
 		monthElement,
-		japanese_month_names[current_month],
-		english_month_names[current_month],
-		ukrainian_month_names[current_month],
-		ukrainian_alphabet_month_names[current_month],
-		swedish_month_names[current_month],
-		suomi_month_names[current_month],
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
+		"WASMエラー",
 	);
 }
 
 /**
  * 月名表示を更新
  */
-function updateMonthNamesDisplay(element, jp, en, ua, ua_en, se, fi) {
+function updateMonthNamesDisplay(
+	element,
+	jp,
+	en,
+	ua,
+	ua_en,
+	se,
+	fi,
+	pl,
+	cs,
+	sk,
+	lt,
+	lv,
+	et,
+) {
 	if (element) {
 		element.innerHTML = `
         JP: ${jp}<br>
@@ -271,7 +232,13 @@ function updateMonthNamesDisplay(element, jp, en, ua, ua_en, se, fi) {
         UA: ${ua}<br>
         UA_EN: ${ua_en}<br>
         SE: ${se}<br>
-        FI: ${fi}
+        FI: ${fi}<br>
+        PL: ${pl}<br>
+        CS: ${cs}<br>
+        SK: ${sk}<br>
+        LT: ${lt}<br>
+        LV: ${lv}<br>
+        ET: ${et}
     `;
 	}
 }

@@ -1,0 +1,88 @@
+<!doctype html>
+
+<!-- Content-Type: application/xhtml+xml -->
+
+<?xml version="1.1" encoding="UTF-8" ?>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8" />
+    <title>WASM Debug Test</title>
+  </head>
+  <body>
+    <h1>WASM Debug Test</h1>
+    <button id="testBtn">Test New Languages</button>
+    <pre id="output"></pre>
+
+    <script type="module">
+      import init, * as wasm from "./nanai_wasm_rs/pkg/nanai_wasm_rs.js";
+
+      document.getElementById("testBtn").addEventListener("click", async () => {
+        const output = document.getElementById("output");
+
+        try {
+          // WASMを初期化
+          await init();
+          output.textContent += "WASM initialized successfully\n";
+
+          // 利用可能な関数をリスト
+          const funcs = [
+            "get_polish_month_name",
+            "get_czech_month_name",
+            "get_slovak_month_name",
+            "get_lithuanian_month_name",
+            "get_latvian_month_name",
+            "get_estonian_month_name",
+          ];
+
+          output.textContent += "\nFunction availability:\n";
+          for (const func of funcs) {
+            output.textContent += `${func}: ${typeof wasm[func]}\n`;
+          }
+
+          // 新しい言語の月名を取得（6月=インデックス5）
+          output.textContent += "\nMonth names for June (index 5):\n";
+
+          if (typeof wasm.get_polish_month_name === "function") {
+            const polish = wasm.get_polish_month_name(5);
+            output.textContent += `Polish: ${polish}\n`;
+          }
+
+          if (typeof wasm.get_czech_month_name === "function") {
+            const czech = wasm.get_czech_month_name(5);
+            output.textContent += `Czech: ${czech}\n`;
+          }
+
+          if (typeof wasm.get_slovak_month_name === "function") {
+            const slovak = wasm.get_slovak_month_name(5);
+            output.textContent += `Slovak: ${slovak}\n`;
+          }
+
+          if (typeof wasm.get_lithuanian_month_name === "function") {
+            const lithuanian = wasm.get_lithuanian_month_name(5);
+            output.textContent += `Lithuanian: ${lithuanian}\n`;
+          }
+
+          if (typeof wasm.get_latvian_month_name === "function") {
+            const latvian = wasm.get_latvian_month_name(5);
+            output.textContent += `Latvian: ${latvian}\n`;
+          }
+
+          if (typeof wasm.get_estonian_month_name === "function") {
+            const estonian = wasm.get_estonian_month_name(5);
+            output.textContent += `Estonian: ${estonian}\n`;
+          }
+
+          // get_month_names_allもテスト
+          output.textContent += "\nAll month names for June:\n";
+          const allNames = wasm.get_month_names_all(5);
+          for (let i = 0; i < allNames.length; i++) {
+            output.textContent += `${i}: ${allNames[i]}\n`;
+          }
+        } catch (error) {
+          output.textContent += `Error: ${error}\n`;
+          console.error(error);
+        }
+      });
+    </script>
+  </body>
+</html>

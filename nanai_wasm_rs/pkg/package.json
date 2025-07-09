@@ -1,7 +1,13 @@
 {
   "name": "nanai_wasm_rs",
   "type": "module",
+  "description": "For my web page, Rust lib for WASM",
   "version": "0.1.0",
+  "license": "MIT OR Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nanaisisi/nanaisisi.github.io"
+  },
   "files": [
     "nanai_wasm_rs_bg.wasm",
     "nanai_wasm_rs.js",
