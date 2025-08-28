@@ -1,0 +1,54 @@
+<!doctype html>
+
+<!-- Content-Type: application/xhtml+xml -->
+
+<?xml version="1.1" encoding="UTF-8" ?>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>書式例</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="icon" href="../img/favicon.png" />
+    <script type="module" src="../script/companion.js"></script>
+  </head>
+
+  <body class="theme">
+    <div id="menu_tab" class="menu">
+      <iframe
+        loading="lazy"
+        src="menu.html"
+        name="menu"
+        title="目次"
+        class="menu_iframe"
+      ></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
+      <!-- その他のボタンがあれば追加 -->
+    </div>
+
+    <!-- メニューボタンは別に配置 -->
+    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
+    <div>
+      <h1>書式例</h1>
+      <h2>目次</h2>
+      <ul class="table_of_contents">
+        <li><a href="#Head_1">概要</a></li>
+        <li><a href="#Head_2">本文タイトル</a></li>
+      </ul>
+      <h2 id="Head_1">概要等</h2>
+      <h2 id="Head_2">本文タイトル</h2>
+      <ul class="table_of_contents">
+        <li><a href="#Mini_1">項目1</a></li>
+      </ul>
+      <h3 id="Mini_1">項目1</h3>
+    </div>
+  </body>
+</html>
