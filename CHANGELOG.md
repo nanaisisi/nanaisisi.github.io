@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- 0.x.y only because unstable system -->
 
+## [0,0.3] -2025-9-20
+
+### Added
+- Added doc for Ai and etc.
+
+### Changes
+- Changed page struct.
+
 ## [0.0.2] -2025-6-29
 
 ### Added
