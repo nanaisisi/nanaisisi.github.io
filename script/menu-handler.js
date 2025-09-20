@@ -8,8 +8,16 @@ export function initMenuButton() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fb30a47 (err fix)
+=======
+	if (!menu_tab) {
+		// メニュー要素が存在しないページでは何もしない
+		return;
+	}
+
+>>>>>>> 17ee032 (fin)
 	if (menu_tab) {
 		menu_tab.style.display = "none";
 	} else {
