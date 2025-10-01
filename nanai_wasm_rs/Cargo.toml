@@ -2,7 +2,6 @@
 name = "nanai_wasm_rs"
 version = "0.1.0"
 edition = "2024"
-rust-version = "1.85"                                           # LazyLockが使用可能な最小バージョン
 description = "For my web page, Rust lib for WASM"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/nanaisisi/nanaisisi.github.io"
