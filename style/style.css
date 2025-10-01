@@ -1,4 +1,8 @@
-/* 基本スタイル */
+.heading {
+  list-style: square;
+  font-size: 1.5em;
+  font-weight: bold;
+}
 body {
   font-size: medium;
   margin-top: 50px; /* ヘッダー部分のスペース確保 */
@@ -12,13 +16,13 @@ body {
 }
 
 .index_h1 {
-	font-size: small;
+  font-size: small;
 }
 
 /* メニュースタイル */
 .menu {
-	top: 0;
-	left: 0;
+  top: 0;
+  left: 0;
 }
 
 .menu_iframe {
@@ -39,7 +43,8 @@ body {
 }
 
 /* テーブルスタイル */
-table, td {
+table,
+td {
   margin: auto;
   border: solid;
   border-width: 0.1px;
@@ -68,7 +73,7 @@ main {
   right: max;
   bottom: 0;
   display: flex;
-    flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 
 /* ボタン位置 */
@@ -98,87 +103,87 @@ main {
 @media (prefers-color-scheme: no-preference) {
   body {
     color-scheme: only dark;
-  background-color: #222;
-  color: #aaa;
+    background-color: #222;
+    color: #aaa;
   }
 
   a:link {
-  color-scheme: only dark;
-  color: #ffff99;
+    color-scheme: only dark;
+    color: #ffff99;
   }
 
   a:visited {
-  color-scheme: only dark;
-  color: #885577;
+    color-scheme: only dark;
+    color: #885577;
   }
 
   a:hover {
-  color-scheme: only dark;
-  color: #cf0;
+    color-scheme: only dark;
+    color: #cf0;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   body {
     color-scheme: only dark;
-  background-color: #222;
-  color: #aaa;
+    background-color: #222;
+    color: #aaa;
   }
 
   a:link {
-  color-scheme: only dark;
-  color: #ffff99;
+    color-scheme: only dark;
+    color: #ffff99;
   }
 
   a:visited {
-  color-scheme: only dark;
-  color: #885577;
+    color-scheme: only dark;
+    color: #885577;
   }
 
   a:hover {
-  color-scheme: only dark;
-  color: #cf0;
+    color-scheme: only dark;
+    color: #cf0;
   }
 }
 
 @media (prefers-color-scheme: light) {
-	body {
-	  background-color: #ffffff;
-	  color: #444444;
-	  /*#202020もいいかも*/
-	}
-	a:link {
-	  color: #03C;
-	  /*一応#00fもあるにはある*/
-	}
-	a:visited {
-	  color: #857;
-	  /*一応#000090もあるにはある*/
-	}
-  
-	a:hover {
-	  color: #c07100;
-	  /*#393もいいかも*/
-	}
-  }
-  
-  /* light-dark() function */
   body {
-	background-color: light-dark(#ffffff,#222);
-	color: light-dark(#444444,#aaa);
+    background-color: #ffffff;
+    color: #444444;
+    /*#202020もいいかも*/
   }
-  
   a:link {
-	color: light-dark(#03C,#ffff99);
+    color: #03c;
+    /*一応#00fもあるにはある*/
   }
-  
   a:visited {
-	color: light-dark(#857,#885577);
+    color: #857;
+    /*一応#000090もあるにはある*/
   }
-  
+
   a:hover {
-	color: light-dark(#c07100,#cf0);
+    color: #c07100;
+    /*#393もいいかも*/
   }
+}
+
+/* light-dark() function */
+body {
+  background-color: light-dark(#ffffff, #222);
+  color: light-dark(#444444, #aaa);
+}
+
+a:link {
+  color: light-dark(#03c, #ffff99);
+}
+
+a:visited {
+  color: light-dark(#857, #885577);
+}
+
+a:hover {
+  color: light-dark(#c07100, #cf0);
+}
 
 /* ダークモードとライトモードのクラス */
 .dark-theme {
@@ -204,7 +209,7 @@ main {
 }
 
 .light-theme a:link {
-  color: #03C;
+  color: #03c;
 }
 
 .light-theme a:visited {
