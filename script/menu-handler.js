@@ -5,6 +5,11 @@ export function initMenuButton() {
 	const toggle_menu_btn = document.getElementById("toggle_menu_btn");
 	const menu_tab = document.getElementById("menu_tab");
 
+	if (!menu_tab) {
+		// メニュー要素が存在しないページでは何もしない
+		return;
+	}
+
 	if (menu_tab) {
 		menu_tab.style.display = "none";
 	} else {

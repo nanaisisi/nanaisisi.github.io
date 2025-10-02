@@ -23,18 +23,27 @@ export function toggleTheme() {
 	if (body.classList.contains("light-theme")) {
 		body.classList.remove("light-theme");
 		body.classList.add("dark-theme");
-		localStorage.setItem("theme", "dark");
+		localStorage.setItem("theme", JSON.stringify("dark"));
 	} else {
 		body.classList.remove("dark-theme");
 		body.classList.add("light-theme");
-		localStorage.setItem("theme", "light");
+		localStorage.setItem("theme", JSON.stringify("light"));
 	}
 
 	// テーマ変更を他のページに通知
 	if (window.parent && window.parent !== window) {
 		// iframeから親ページへの通知
+		const themeItem = localStorage.getItem("theme");
+		let theme = null;
+		if (themeItem) {
+			try {
+				theme = JSON.parse(themeItem);
+			} catch (e) {
+				theme = themeItem;
+			}
+		}
 		window.parent.postMessage(
-			{ type: "theme-change", theme: localStorage.getItem("theme") },
+			{ type: "theme-change", theme: theme },
 			"*",
 		);
 	} else {
@@ -43,8 +52,17 @@ export function toggleTheme() {
 		// biome-ignore lint/complexity/noForEach: <explanation>
 		iframes.forEach((iframe) => {
 			try {
+				const themeItem = localStorage.getItem("theme");
+				let theme = null;
+				if (themeItem) {
+					try {
+						theme = JSON.parse(themeItem);
+					} catch (e) {
+						theme = themeItem;
+					}
+				}
 				iframe.contentWindow.postMessage(
-					{ type: "theme-change", theme: localStorage.getItem("theme") },
+					{ type: "theme-change", theme: theme },
 					"*",
 				);
 			} catch (e) {
@@ -68,11 +86,11 @@ function setupThemeMessageListener() {
 			if (newTheme === "dark") {
 				body.classList.remove("light-theme");
 				body.classList.add("dark-theme");
-				localStorage.setItem("theme", "dark");
+				localStorage.setItem("theme", JSON.stringify("dark"));
 			} else if (newTheme === "light") {
 				body.classList.remove("dark-theme");
 				body.classList.add("light-theme");
-				localStorage.setItem("theme", "light");
+				localStorage.setItem("theme", JSON.stringify("light"));
 			}
 		}
 	});
@@ -82,7 +100,19 @@ function setupThemeMessageListener() {
  * 保存されたテーマ設定を適用
  */
 function applyStoredTheme() {
-	const storedTheme = localStorage.getItem("theme");
+	const storedItem = localStorage.getItem("theme");
+	let storedTheme = null;
+
+	if (storedItem) {
+		try {
+			// 新しいJSON形式を試す
+			storedTheme = JSON.parse(storedItem);
+		} catch (e) {
+			// 古い形式（文字列）の場合
+			storedTheme = storedItem;
+		}
+	}
+
 	const body = document.body;
 
 	if (storedTheme) {
@@ -98,6 +128,6 @@ function applyStoredTheme() {
 		body.classList.remove("light-theme");
 		body.classList.add("dark-theme");
 		// オプションでローカルストレージにも保存（次回以降のためのデフォルト設定）
-		localStorage.setItem("theme", "dark");
+		localStorage.setItem("theme", JSON.stringify("dark"));
 	}
 }
