@@ -114,6 +114,8 @@ export async function loadWasm() {
 				__wbg_push_737cfc8c1432c2c6: () => {},
 				__wbg_queueMicrotask_97d92b4fcc8a61c5: () => {},
 				__wbg_queueMicrotask_d3219def82552485: () => {},
+				__wbg_queueMicrotask_25d0739ac89e8c88: queueMicrotask,
+				__wbg_queueMicrotask_4488407636f5bf24: queueMicrotask,
 				__wbg_resolve_4851785c9c5f573d: () => {},
 				__wbg_static_accessor_GLOBAL_88a902d13a557d07: () => globalThis,
 				__wbg_static_accessor_GLOBAL_THIS_56578be7e9f832b0: () => globalThis,
