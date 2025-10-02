@@ -1,4 +1,5 @@
 # nanaisisi.github.io
+
 # How to
 
 #nushell
@@ -29,6 +30,13 @@ deno run --allow-net --allow-read test\server.ts
 - JavaScript
 - WASM(Rust)
 
+## Development
+
+- Start local dev server: `deno run --allow-net --allow-read test/server.ts`
+- Access at: http://localhost:8000
+- WASM modules load automatically via wasm-bindgen
+- Theme preferences stored as JSON in localStorage for compatibility
+
 ## Dev phase
 
 - Nushell
@@ -37,4 +45,4 @@ deno run --allow-net --allow-read test\server.ts
 
 ## License
 
-All files in the [img](./img) and [pages](./pages), [doc](./doc), [nanai_wasm_rs](./nanai_wasm_rs) folders are licensed with  [Apache License 2.0](./doc/LICENSE-APACHE) + [MIT License](./doc/LICENSE-MIT). The rest of the files in this repository are licensed with [CC0](./LICENSE).
+All files in the [img](./img) and [pages](./pages), [doc](./doc), [nanai_wasm_rs](./nanai_wasm_rs) folders are licensed with [Apache License 2.0](./doc/LICENSE-APACHE) + [MIT License](./doc/LICENSE-MIT). The rest of the files in this repository are licensed with [CC0](./LICENSE).
