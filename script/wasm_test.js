@@ -1,5 +1,9 @@
 // WebAssemblyモジュールの読み込み
+<<<<<<< HEAD:script/wasm-test.js
 import init, * as wasmModule from "../nanai_wasm_rs/pkg/nanai_wasm_rs.js";
+=======
+import { loadWasm } from "./wasm_loader.js";
+>>>>>>> 73e3554 (chg):script/wasm_test.js
 
 // モジュールの初期化
 let wasmInitialized = false;

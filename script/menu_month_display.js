@@ -1,6 +1,6 @@
 // 月名表示のための処理
-import { initThemeManager } from "./theme-manager.js";
-import { loadWasm } from "./wasm-loader.js";
+import { initThemeManager } from "./theme_manager.js";
+import { loadWasm } from "./wasm_loader.js";
 
 // メイン初期化関数
 export async function initializeMenu() {
@@ -17,9 +17,9 @@ export async function initializeMenu() {
 
 // 月名表示の初期化
 async function initializeMonthDisplay() {
-	const monthElement = document.getElementById("month_names");
+	const monthElement = document.getElementById("month-names");
 	if (!monthElement) {
-		console.warn("month_names element not found in menu.html");
+		console.warn("month-names element not found in menu.html");
 		return;
 	}
 

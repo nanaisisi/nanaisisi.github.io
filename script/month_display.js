@@ -1,4 +1,4 @@
-import { loadWasm } from "./wasm-loader.js";
+import { loadWasm } from "./wasm_loader.js";
 
 /**
  * 月名表示機能を初期化
@@ -31,7 +31,7 @@ export async function initMonthDisplay() {
  */
 async function tryDisplayInMainPage() {
 	// メインページ内に月名表示要素があるか確認
-	const monthElement = document.getElementById("month_names");
+	const monthElement = document.getElementById("month-names");
 	if (monthElement) {
 		try {
 			await displayMonthNamesWasm(monthElement);
@@ -77,7 +77,7 @@ async function tryDisplayInMenuFrame() {
 			// すでにロード完了している場合
 			if (
 				menuFrame.contentDocument?.readyState === "complete" &&
-				menuFrame.contentDocument?.getElementById("month_names")
+				menuFrame.contentDocument?.getElementById("month-names")
 			) {
 				resolve();
 				return;
@@ -121,10 +121,10 @@ async function tryDisplayInMenuFrame() {
 			throw new Error("Cannot access iframe document");
 		}
 
-		const monthElement = frameDocument.getElementById("month_names");
+		const monthElement = frameDocument.getElementById("month-names");
 
 		if (!monthElement) {
-			console.log("month_names element not found in menu iframe");
+			console.log("month-names element not found in menu iframe");
 			return;
 		}
 

@@ -10,18 +10,20 @@
   </head>
 
   <body class="theme">
-    <div id="menu_tab" class="menu">
+    <div id="menu-tab" class="menu">
       <iframe
         loading="lazy"
         src="tech_menu.html"
         name="menu"
         title="目次"
-        class="menu_iframe"
+        class="menu-iframe"
       ></iframe>
     </div>
     <div class="fixed-bar">
-      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
-      <!-- その他のボタンがあれば追加 -->
+      <button class="menu-toggle-btn" id="toggle-menu-btn">
+        メニューの開閉
+      </button>
+      <button id="theme-toggle-btn" class="theme-toggle-btn">テーマ切替</button>
     </div>
 
 <<<<<<< HEAD
@@ -80,30 +82,29 @@
         <li><a href="#Head_6">他のエディタ</a></li>
 =======
     <!-- メニューボタンは別に配置 -->
-    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
     <header>
       <nav>
         <ul>
-          <li><a href="#Head_1">概要</a></li>
-          <li><a href="#Head_2">使用の位置づけ</a></li>
-          <li><a href="#Head_3">使い方</a></li>
-          <li><a href="#Head_4">他のvi族</a></li>
-          <li><a href="#Head_5">逆にemacs</a></li>
-          <li><a href="#Head_6">他のエディタ</a></li>
+          <li><a href="#head-1">概要</a></li>
+          <li><a href="#head-2">使用の位置づけ</a></li>
+          <li><a href="#head-3">hxの使い方</a></li>
+          <li><a href="#head-4">他のvi族</a></li>
+          <li><a href="#head-5">逆にemacs</a></li>
+          <li><a href="#head-6">他のエディタ</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <h1>Helix Editorの操作方法</h1>
-      <h2 id="Head_1">概要</h2>
+      <h2 id="head-1">概要</h2>
       コマンド名hx。<br />
       helix editorは、<br />
       簡潔に言えばlinux以来(unix?)の古典的2大巨頭、きのたけ戦争めいたエディタ戦争におけるviとemacsで言えば多分vi系のエディタである。<br />
       Kakouneというエディタを踏襲している。このソフトはRustで書かれているのが使用理由だ。
-      <h2 id="Head_2">使用の位置づけ</h2>
+      <h2 id="head-2">使用の位置づけ</h2>
       基本的にはviなのだがそのへんで一般的なnvimなどのようにプラグインを使わなくとも、ある程度使えてとてもいい感じ。<br />
       コミュニティは大きくないし、拡張性はこなれていないので開発されるらしいプラグイン機能は期待できないか。<br />
-      <h2 id="Head_3">hxの使い方</h2>
+      <h2 id="head-3">hxの使い方</h2>
       hx ファイル名<br />
       でファイルの作成を含めファイルの編集ができる。<br />
       キーバインドは、普通のショートカットキーがCtrl+Cでコピー(Copy、貼り付けは隣のvだが)などのように英語の頭文字になっている。<br />
@@ -113,7 +114,7 @@
       そこで普通にキー入力で編集したら、<br />
       escキーで<br />
       わかんないっすね。
-      <h2 id="Head_4">他のvi族</h2>
+      <h2 id="head-4">他のvi族</h2>
       <h3>vi</h3>
       言わずと知れた元祖。もとはラインエディタらしい？<br />
       <h3>vim</h3>
@@ -130,10 +131,11 @@
       <h3>Kakoune</h3>
       Helixの元になっているものらしい。<br />
       C++というのもCの拡張版的立ち位置でCと比べるとなんとも言えない存在感だが<br />
-      <h2 id="Head_5">逆にemacs</h2>
+      <h2 id="head-5">逆にemacs</h2>
       神の言語と呼ばれるlispと一般的なC言語を用いたエディタらしい。<br />
-      <h2 id="Head_6">他のエディタ</h2>
+      <h2 id="head-6">他のエディタ</h2>
       vi～nvimの話でした
+<<<<<<< HEAD
       <ul class="table_of_contents">
         <li><a href="#Head_6_1">nano</a></li>
         <li><a href="#Head_6_2">vscode</a></li>
@@ -145,25 +147,37 @@
         <li><a href="#Head_6_8">Delphi</a></li>
         <li><a href="#Head_6_9">EmEditor</a></li>
 >>>>>>> 7eea2ce (ok)
+=======
+      <ul class="table-of-contents">
+        <li><a href="#head-6-1">nano</a></li>
+        <li><a href="#head-6-2">vscode</a></li>
+        <li><a href="#head-6-3">sublime text</a></li>
+        <li><a href="#head-6-4">Eclipse</a></li>
+        <li><a href="#head-6-5">IntelliJ IDEA</a></li>
+        <li><a href="#head-6-6">visual studio</a></li>
+        <li><a href="#head-6-7">NetBeans</a></li>
+        <li><a href="#head-6-8">Delphi</a></li>
+        <li><a href="#head-6-9">EmEditor</a></li>
+>>>>>>> 7ec1487 (code rename)
       </ul>
-      <h3 id="Head_6_1">nano</h3>
+      <h3 id="head-6-1">nano</h3>
       vi系よりは操作しやすくメモ帳といったところの様子。<br />
-      <h3 id="Head_6_2">vscode</h3>
+      <h3 id="head-6-2">vscode</h3>
       拡張機能といえばvscode、現状の覇権エディタ
-      <h3 id="Head_6_3">sublime text</h3>
+      <h3 id="head-6-3">sublime text</h3>
       AIと気持ちが合った。nanoって書いたからだな割と。<br />
-      <h3 id="Head_6_4">Eclipse</h3>
+      <h3 id="head-6-4">Eclipse</h3>
       Renesasとかで結構存在感ある<br />
-      <h3 id="Head_6_5">IntelliJ IDEA</h3>
+      <h3 id="head-6-5">IntelliJ IDEA</h3>
       気持ちが合うなー。<br />
       種類があるがAndroid公式のAndroid Studioとかもある。
-      <h3 id="Head_6_6">visual studio</h3>
+      <h3 id="head-6-6">visual studio</h3>
       Microsoft公式
-      <h3 id="Head_6_7">NetBeans</h3>
+      <h3 id="head-6-7">NetBeans</h3>
       マイクラみたいにjavaといえばではあるはず
-      <h3 id="Head_6_8">Delphi</h3>
+      <h3 id="head-6-8">Delphi</h3>
       dotnetにいたるところとかC++とか時代に関連したようなところはある。
-      <h3 id="Head_6_9">EmEditor</h3>
+      <h3 id="head-6-9">EmEditor</h3>
       なんか窓の杜で聞くよね。
     </main>
     <footer></footer>

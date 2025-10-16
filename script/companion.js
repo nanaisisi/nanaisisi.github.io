@@ -17,10 +17,16 @@ function tp_top() {
   }
 =======
 // サイト全体の機能を統合するメインスクリプト
+<<<<<<< HEAD
 import { initMenuButton } from "./menu-handler.js";
 import { initMonthDisplay } from "./month-display.js";
 import { initThemeManager } from "./theme-manager.js";
 >>>>>>> 108aa1f (menu.html の更新)
+=======
+import { initMenuButton } from "./menu_handler.js";
+import { initMonthDisplay } from "./month_display.js";
+import { initThemeManager } from "./theme_manager.js";
+>>>>>>> 54908d2 (ok)
 
 <<<<<<< HEAD
 <<<<<<< HEAD

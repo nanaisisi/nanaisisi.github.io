@@ -2,9 +2,10 @@
  * メニューボタンの初期化と制御を行う
  */
 export function initMenuButton() {
-	const toggle_menu_btn = document.getElementById("toggle_menu_btn");
-	const menu_tab = document.getElementById("menu_tab");
+	const toggleMenuBtn = document.getElementById("toggle-menu-btn");
+	const menuTab = document.getElementById("menu-tab");
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -13,10 +14,14 @@ export function initMenuButton() {
 >>>>>>> fb30a47 (err fix)
 =======
 	if (!menu_tab) {
+=======
+	if (!menuTab) {
+>>>>>>> 4dc3ab7 (ok)
 		// メニュー要素が存在しないページでは何もしない
 		return;
 	}
 
+<<<<<<< HEAD
 >>>>>>> 17ee032 (fin)
 	if (menu_tab) {
 		menu_tab.style.display = "none";
@@ -28,6 +33,12 @@ export function initMenuButton() {
 	if (menu_tab) {
 		menu_tab.style.display = "none";
 >>>>>>> 44eb280 (divide)
+=======
+	if (menuTab) {
+		menuTab.style.display = "none";
+	} else {
+		console.warn("Menu element not found: menuTab");
+>>>>>>> 4dc3ab7 (ok)
 	}
 =======
 window.addEventListener("load", async () => {on initMenuButton() {
@@ -39,7 +50,7 @@ window.addEventListener("load", async () => {on initMenuButton() {
 	}
 >>>>>>> fb30a47 (err fix)
 
-	setupMenuToggle(toggle_menu_btn, menu_tab);
+	setupMenuToggle(toggleMenuBtn, menuTab);
 }
 
 <<<<<<< HEAD
@@ -48,9 +59,10 @@ window.addEventListener("load", async () => {on initMenuButton() {
 >>>>>>> fb30a47 (err fix)
 /**
  * メニュートグル機能を設定
- * @param {HTMLElement} toggle_menu_btn メニュートグルボタン要素
- * @param {HTMLElement} menu_tab メニュータブ要素
+ * @param {HTMLElement} toggleMenuBtn メニュートグルボタン要素
+ * @param {HTMLElement} menuTab メニュータブ要素
  */
+<<<<<<< HEAD
 function setupMenuToggle(toggle_menu_btn, menu_tab) {
 	if (toggle_menu_btn && menu_tab) {
 		toggle_menu_btn.onclick = () => {
@@ -60,9 +72,16 @@ function setupMenuToggle(toggle_menu_btn, menu_tab) {
 <<<<<<< HEAD
 =======
 >>>>>>> fb30a47 (err fix)
+=======
+function setupMenuToggle(toggleMenuBtn, menuTab) {
+	if (toggleMenuBtn && menuTab) {
+		toggleMenuBtn.onclick = () => {
+			if (menuTab.style.display === "block") {
+				menuTab.style.display = "none";
+>>>>>>> 4dc3ab7 (ok)
 				document.body.classList.remove("menu-open");
 			} else {
-				menu_tab.style.display = "block";
+				menuTab.style.display = "block";
 				document.body.classList.add("menu-open");
 			}
 		};
@@ -70,7 +89,11 @@ function setupMenuToggle(toggle_menu_btn, menu_tab) {
 		console.warn(
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			`Menu elements not found. Button: ${toggle_menu_btn ? "✓" : "✗"}, Menu: ${menu_tab ? "✓" : "✗"}`,
+=======
+			`Menu elements not found. Button: ${toggleMenuBtn ? "✓" : "✗"}, Menu: ${menuTab ? "✓" : "✗"}`,
+>>>>>>> 4dc3ab7 (ok)
 		);
 =======
 			} else if (menu_tab.style.display === "none") {
