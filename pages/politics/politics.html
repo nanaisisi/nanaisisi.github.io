@@ -1,0 +1,132 @@
+<!doctype html>
+
+<!-- Content-Type: application/xhtml+xml -->
+
+<?xml version="1.1" encoding="UTF-8"?>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>政経</title>
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="icon" href="../img/favicon.png" />
+    <script type="module" src="../script/companion.js"></script>
+  </head>
+
+  <body class="theme">
+    <div id="menu_tab" class="menu">
+      <iframe
+        loading="lazy"
+        src="menu.html"
+        name="menu"
+        title="目次"
+        class="menu_iframe"
+      ></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
+      <!-- その他のボタンがあれば追加 -->
+    </div>
+
+    <!-- メニューボタンは別に配置 -->
+    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
+
+    <h1>政経</h1>
+
+    <table>
+      <caption>
+        政治・経済関連
+      </caption>
+      <thead>
+        <tr>
+          <th>カテゴリ</th>
+          <th>トピック</th>
+          <th>内容</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th>政治</th>
+          <th>選挙制度</th>
+          <td>衆議院・参議院の選挙制度、投票方法、小選挙区制・比例代表制</td>
+        </tr>
+        <tr>
+          <th>政治</th>
+          <th>政党</th>
+          <td>
+            日本の主要政党（自民党、立憲民主党、公明党、共産党など）の政策比較
+          </td>
+        </tr>
+        <tr>
+          <th>政治</th>
+          <th>国際関係</th>
+          <td>日米関係、日中関係、日韓関係、国際機関（国連、WTOなど）</td>
+        </tr>
+        <tr>
+          <th>経済</th>
+          <th>財政政策</th>
+          <td>財政赤字、税制改革、社会保障制度、財政再建</td>
+        </tr>
+        <tr>
+          <th>経済</th>
+          <th>金融</th>
+          <td>日銀の金融政策、インフレ目標、為替相場、金利政策</td>
+        </tr>
+        <tr>
+          <th>経済</th>
+          <th>貿易</th>
+          <td>自由貿易協定（TPP、RCEP）、保護主義、貿易摩擦</td>
+        </tr>
+        <tr>
+          <th>経済</th>
+          <th>産業</th>
+          <td>自動車産業、半導体産業、農業、サービス業の発展戦略</td>
+        </tr>
+        <tr>
+          <th>社会</th>
+          <th>人口問題</th>
+          <td>少子高齢化、移民政策、地方創生、働き方改革</td>
+        </tr>
+        <tr>
+          <th>社会</th>
+          <th>環境・エネルギー</th>
+          <td>気候変動対策、再生可能エネルギー、原子力政策</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>関連リンク</h2>
+    <ul>
+      <li>
+        <a href="https://www.mof.go.jp/" target="_blank" rel="noopener"
+          >財務省</a
+        >
+      </li>
+      <li>
+        <a href="https://www.meti.go.jp/" target="_blank" rel="noopener"
+          >経済産業省</a
+        >
+      </li>
+      <li>
+        <a href="https://www.mofa.go.jp/" target="_blank" rel="noopener"
+          >外務省</a
+        >
+      </li>
+      <li>
+        <a href="https://www.jetro.go.jp/" target="_blank" rel="noopener"
+          >日本貿易振興機構（JETRO）</a
+        >
+      </li>
+    </ul>
+
+    <hr />
+    <footer>
+      <p><small>このページはAIによって生成されたコンテンツです。</small></p>
+    </footer>
+
+    <script type="module" src="../script/theme-manager.js"></script>
+    <script type="module" src="../script/menu-handler.js"></script>
+    <script type="module" src="../script/month-display.js"></script>
+  </body>
+</html>
