@@ -14,7 +14,7 @@
   </head>
 
   <body class="theme">
-    <div id="menu_tab" class="menu">
+    <div id="menu-tab" class="menu">
       <iframe
         loading="lazy"
         src="tech_menu.html"
@@ -24,20 +24,20 @@
       ></iframe>
     </div>
     <div class="fixed-bar">
-      <button id="theme_toggle_btn" class="theme_toggle_btn">テーマ切替</button>
+      <button id="theme-toggle-btn" class="theme_toggle_btn">テーマ切替</button>
     </div>
 
-    <button id="toggle_menu_btn" class="menu_toggle_btn">メニュー</button>
+    <button id="toggle-menu-btn" class="menu_toggle_btn">メニュー</button>
     <div>
       <header>
         <nav>
           <ul class="table_of_contents">
-            <li><a href="#Head_1">パイプラインの違い</a></li>
-            <li><a href="#Head_2">データ型とテーブル</a></li>
-            <li><a href="#Head_3">ファイル操作の違い</a></li>
-            <li><a href="#Head_4">変数と環境</a></li>
-            <li><a href="#Head_5">シェル分割（Word Splitting）の問題</a></li>
-            <li><a href="#Head_6">条件分岐とループ</a></li>
+            <li><a href="#head-1">パイプラインの違い</a></li>
+            <li><a href="#head-2">データ型とテーブル</a></li>
+            <li><a href="#head-3">ファイル操作の違い</a></li>
+            <li><a href="#head-4">変数と環境</a></li>
+            <li><a href="#head-5">シェル分割（Word Splitting）の問題</a></li>
+            <li><a href="#head-6">条件分岐とループ</a></li>
           </ul>
         </nav>
       </header>
@@ -52,7 +52,7 @@
             >の詳細版として、実際のコマンド例を交えて解説します。
           </p>
 
-          <h2 id="Head_1">パイプラインの違い</h2>
+          <h2 id="head-1">パイプラインの違い</h2>
           <p>
             従来のシェルではテキストストリームをパイプでつなぎますが、Nushellでは構造化データをパイプでつなぎます。
             これはPowerShellのオブジェクトパイプラインに近い概念ですが、さらに強力です。
@@ -104,7 +104,7 @@
             </tbody>
           </table>
 
-          <h2 id="Head_2">データ型とテーブル</h2>
+          <h2 id="head-2">データ型とテーブル</h2>
           <p>
             Nushellでは、ほとんどのコマンド出力がテーブル形式になっています。
             これにより、データベースのようなクエリが可能になります。
@@ -159,7 +159,7 @@
             </tbody>
           </table>
 
-          <h2 id="Head_3">ファイル操作の違い</h2>
+          <h2 id="head-3">ファイル操作の違い</h2>
           <p>
             Nushellでは、構造化ファイル（JSON、YAML、CSVなど）をネイティブに扱えます。
           </p>
@@ -213,7 +213,7 @@
             </tbody>
           </table>
 
-          <h2 id="Head_4">変数と環境</h2>
+          <h2 id="head-4">変数と環境</h2>
           <p>変数の扱いもシェルによって大きく異なります。</p>
 
           <table>
@@ -259,7 +259,7 @@
             </tbody>
           </table>
 
-          <h2 id="Head_5">シェル分割（Word Splitting）の問題</h2>
+          <h2 id="head-5">シェル分割（Word Splitting）の問題</h2>
           <p>
             シェル分割は、特にBashなどの伝統的なシェルで変数を展開する際に発生する現象です。
             変数内にスペースが含まれると、適切にクォートしない場合に予期しない動作が発生します。
@@ -342,7 +342,7 @@ rm $files  # リストとして正しく扱われる</code></pre>
             Bashでは二重引用符でくくらないと意図しない分割が発生しますが、PowerShellやNushellはより安全な変数展開を提供しています。
           </p>
 
-          <h2 id="Head_6">条件分岐とループ</h2>
+          <h2 id="head-6">条件分岐とループ</h2>
           <p>制御構文もシェルによって異なります。</p>
 
           <table>
@@ -409,3 +409,17 @@ fi</code></pre>
     </div>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
