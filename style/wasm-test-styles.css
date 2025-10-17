@@ -14,7 +14,7 @@ body.wasm-test {
 }
 
 /* ダークテーマ対応 */
-.theme_dark .result-container {
+.theme-dark .result-container {
   border-color: #444;
 }
 
@@ -25,7 +25,8 @@ body.wasm-test {
   flex-wrap: wrap;
 }
 
-button, select {
+button,
+select {
   padding: 8px 12px;
 }
 
