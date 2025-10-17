@@ -15,7 +15,7 @@ body {
   }
 }
 
-.index_h1 {
+.index-h1 {
   font-size: small;
 }
 
@@ -25,7 +25,7 @@ body {
   left: 0;
 }
 
-.menu_iframe {
+.menu-iframe {
   width: 80%;
   height: 80%;
   border: none;
@@ -35,7 +35,7 @@ body {
 
 /* メニュータブスタイル - 被せる表示 */
 
-.menu_hr {
+.menu-hr {
   margin: auto;
   width: auto;
   border: solid;
@@ -62,13 +62,13 @@ main {
   padding-bottom: 32px;
 }
 
-.simple_dom_js {
+.simple-dom-js {
   position: absolute;
   right: max;
   bottom: 0;
 }
 
-.dom_parts_structure {
+.dom-parts-structure {
   box-sizing: border-box;
   right: max;
   bottom: 0;
@@ -77,21 +77,21 @@ main {
 }
 
 /* ボタン位置 */
-.menu_toggle_btn {
+.menu-toggle-btn {
   position: fixed;
   left: 10px;
   top: 10px;
   z-index: 101;
 }
 
-.theme_toggle_btn {
+.theme-toggle-btn {
   position: fixed;
   right: 10px;
   top: 10px;
   z-index: 101;
 }
 
-.yotube_iframe {
+.youtube-iframe {
   width: 100%;
   height: auto;
   border: none;
