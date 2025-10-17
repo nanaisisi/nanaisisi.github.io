@@ -1,5 +1,5 @@
 // WebAssemblyモジュールの読み込み
-import { loadWasm } from "./wasm-loader.js";
+import { loadWasm } from "./wasm_loader.js";
 
 // モジュールの初期化
 let wasmInitialized = false;

@@ -1,5 +1,5 @@
 /* WebAssembly月名テスト用のスタイル */
-body.wasm-test {
+body.wasm_test {
   font-family: sans-serif;
   max-width: 800px;
   margin: 0 auto;
