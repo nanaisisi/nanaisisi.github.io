@@ -17,9 +17,9 @@ export async function initializeMenu() {
 
 // 月名表示の初期化
 async function initializeMonthDisplay() {
-	const monthElement = document.getElementById("month_names");
+	const monthElement = document.getElementById("month-names");
 	if (!monthElement) {
-		console.warn("month_names element not found in menu.html");
+		console.warn("month-names element not found in menu.html");
 		return;
 	}
 

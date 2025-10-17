@@ -2,42 +2,42 @@
  * メニューボタンの初期化と制御を行う
  */
 export function initMenuButton() {
-	const toggle_menu_btn = document.getElementById("toggle_menu_btn");
-	const menu_tab = document.getElementById("menu_tab");
+	const toggleMenuBtn = document.getElementById("toggle-menu-btn");
+	const menuTab = document.getElementById("menu-tab");
 
-	if (!menu_tab) {
+	if (!menuTab) {
 		// メニュー要素が存在しないページでは何もしない
 		return;
 	}
 
-	if (menu_tab) {
-		menu_tab.style.display = "none";
+	if (menuTab) {
+		menuTab.style.display = "none";
 	} else {
-		console.warn("Menu element not found: menu_tab");
+		console.warn("Menu element not found: menuTab");
 	}
 
-	setupMenuToggle(toggle_menu_btn, menu_tab);
+	setupMenuToggle(toggleMenuBtn, menuTab);
 }
 
 /**
  * メニュートグル機能を設定
- * @param {HTMLElement} toggle_menu_btn メニュートグルボタン要素
- * @param {HTMLElement} menu_tab メニュータブ要素
+ * @param {HTMLElement} toggleMenuBtn メニュートグルボタン要素
+ * @param {HTMLElement} menuTab メニュータブ要素
  */
-function setupMenuToggle(toggle_menu_btn, menu_tab) {
-	if (toggle_menu_btn && menu_tab) {
-		toggle_menu_btn.onclick = () => {
-			if (menu_tab.style.display === "block") {
-				menu_tab.style.display = "none";
+function setupMenuToggle(toggleMenuBtn, menuTab) {
+	if (toggleMenuBtn && menuTab) {
+		toggleMenuBtn.onclick = () => {
+			if (menuTab.style.display === "block") {
+				menuTab.style.display = "none";
 				document.body.classList.remove("menu-open");
 			} else {
-				menu_tab.style.display = "block";
+				menuTab.style.display = "block";
 				document.body.classList.add("menu-open");
 			}
 		};
 	} else {
 		console.warn(
-			`Menu elements not found. Button: ${toggle_menu_btn ? "✓" : "✗"}, Menu: ${menu_tab ? "✓" : "✗"}`,
+			`Menu elements not found. Button: ${toggleMenuBtn ? "✓" : "✗"}, Menu: ${menuTab ? "✓" : "✗"}`,
 		);
 	}
 }
