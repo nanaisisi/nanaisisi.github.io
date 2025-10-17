@@ -6,7 +6,7 @@
   color: #666;
 }
 
-.theme_dark .menu-category {
+.theme-dark .menu-category {
   color: #aaa;
 }
 
@@ -20,7 +20,7 @@
   font-size: 0.9em;
 }
 
-.theme_dark .menu-subcategory {
+.theme-dark .menu-subcategory {
   color: #999;
 }
 
@@ -30,14 +30,14 @@
 }
 
 /* メニュー間の区切り線 */
-.menu_hr {
+.menu-hr {
   margin: 10px 0;
   border: none;
   height: 1px;
   background-color: #ddd;
 }
 
-.theme_dark .menu_hr {
+.theme-dark .menu-hr {
   background-color: #444;
 }
 
