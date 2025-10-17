@@ -1,4 +1,4 @@
-import { loadWasm } from "./wasm-loader.js";
+import { loadWasm } from "./wasm_loader.js";
 
 /**
  * 月名表示機能を初期化

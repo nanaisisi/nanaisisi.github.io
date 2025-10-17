@@ -1,6 +1,6 @@
 // 月名表示のための処理
-import { initThemeManager } from "./theme-manager.js";
-import { loadWasm } from "./wasm-loader.js";
+import { initThemeManager } from "./theme_manager.js";
+import { loadWasm } from "./wasm_loader.js";
 
 // メイン初期化関数
 export async function initializeMenu() {
