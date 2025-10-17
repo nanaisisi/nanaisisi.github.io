@@ -33,7 +33,11 @@
 		"prettier": "^3.4.2"
 	},
 	"devDependencies": {
+<<<<<<< HEAD
 		"@biomejs/biome": "1.9.4"
+=======
+		"@biomejs/biome": "2.2.6"
+>>>>>>> c0b878e (update deno package)
 	}
 >>>>>>> e4598da (ok)
 }

@@ -7,44 +7,65 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- 0.x.y only because unstable system -->
 
-## [0,0.3] -2025-9-20
+## [0.0.4] - 2025-10-17
 
 ### Added
+
+- Added Broken AGENT.md.
+- Added politics category pages.
+
+### Changes
+
+- Changed naming conventions for html and etc code to kebab case and file name to snake_case.
+
+## [0.0.3] -2025-9-20
+
+### Added
+
 - Added doc for Ai and etc.
 
 ### Changes
+
 - Changed page struct.
 
 ## [0.0.2] -2025-6-29
 
 ### Added
+
 - Any language month name.
 
 ### Changes
+
 - Changed feature replarce wasm from javascript, mayae.
 
 ### Fix
+
 - Fixed imported file was wasm from JavaScript.
 
 ## [0.0.1] -2025-5-17
 
 ### Added
+
 - New html pages.
 
 ### Changes
+
 - Changed version in CHANGELOG.md.
 - Changed pages folder genre divided to folder.
 
 ### Fix
+
 - Fixed CHANGELOG.md Reverse order
 
 ## [1.3.0] -2025-05-02
 
 ### Added
+
 - Added new pages from dev copilot.
 - Added theme change button in contents htmls.
 
 ### Changes
+
 - Changed adopt copilot AI
 - Changed index.html menu and content struct structure.
 - Changed script adopt rust wasm.
