@@ -1,3 +1,5 @@
+# AI 生成です。
+
 # nanaisisi.github.io
 
 # How to
