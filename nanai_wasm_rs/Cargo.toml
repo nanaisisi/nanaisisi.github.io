@@ -94,8 +94,8 @@ serde-wasm-bindgen = "0.6"
 [dev-dependencies]
 wasm-bindgen-test = "0.3"
 
-
 [profile.release]
+<<<<<<< HEAD
 opt-level = "s"
 >>>>>>> f57d49c (yet)
 >>>>>>> 88effcf (ok)
@@ -104,7 +104,16 @@ opt-level = "s"
 [dev-dependencies]
 wasm-bindgen-test = "0.3"
 
+<<<<<<< HEAD
 >>>>>>> 19c444c (1.3.0)
+=======
+[profile.release]
+=======
+>>>>>>> 0f31362 (broken)
+lto = true
+codegen-units = 1
+opt-level = "z"
+>>>>>>> 6bfd3c1 (ok)
 
 [profile.release]
 opt-level = "s"

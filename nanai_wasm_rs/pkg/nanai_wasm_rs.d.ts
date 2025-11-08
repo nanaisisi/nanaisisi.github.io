@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 export function get_current_month(): number;
 export function get_month_name(month_index: number, language_code: string): string;
 export function get_month_name_async(month_index: number, language_code: string): Promise<any>;
@@ -18,6 +19,8 @@ export function get_suomi_month_name(month_index: number): string;
 >>>>>>> 817e691 (ok)
 =======
 >>>>>>> 74dc9a4 (menu.html の更新)
+=======
+>>>>>>> 6bfd3c1 (ok)
 <<<<<<< HEAD
 
 >>>>>>> 8d7dade (ok)
@@ -126,6 +129,7 @@ export function get_ukrainian_month_name(month_index: number): string;
 export function getSiteInfo(): any;
 export function createSiteConfig(): SiteConfig;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 1d1bb25 (yet)
 export function get_current_month(): number;
 export function get_month_name(month_index: number, language_code: string): string;
@@ -173,7 +177,37 @@ export function generateSitemap(base_url: string): string;
 export function createNavigationConfig(base_url: string): NavigationConfig;
 >>>>>>> 7e3531e (ok)
 export function createThemeConfig(): ThemeConfig;
+=======
+export function generateSitemap(base_url: string): string;
+=======
+>>>>>>> 0f31362 (broken)
+export function createNavigationConfig(base_url: string): NavigationConfig;
+export function generateSitemap(base_url: string): string;
+export function get_month_name_async(month_index: number, language_code: string): Promise<any>;
+export function get_lithuanian_month_name(month_index: number): string;
+export function get_ukrainian_alphabet_month_name(month_index: number): string;
+export function get_latvian_month_name(month_index: number): string;
+export function get_current_month(): number;
+export function get_polish_month_name(month_index: number): string;
+export function get_czech_month_name(month_index: number): string;
+export function get_month_names_all(month_index: number): any;
+export function get_suomi_month_name(month_index: number): string;
+export function get_estonian_month_name(month_index: number): string;
+export function get_slovak_month_name(month_index: number): string;
+export function get_month_name(month_index: number, language_code: string): string;
+export function get_english_month_name(month_index: number): string;
+<<<<<<< HEAD
+>>>>>>> 5736e17 (build wasm and improve update to break)
 export function getThemeSettings(): any;
+=======
+export function get_ukrainian_month_name(month_index: number): string;
+export function get_japanese_month_name(month_index: number): string;
+export function get_swedish_month_name(month_index: number): string;
+>>>>>>> 0f31362 (broken)
+export function createThemeConfig(): ThemeConfig;
+export function getThemeSettings(): any;
+export function getSiteInfo(): any;
+export function createSiteConfig(): SiteConfig;
 export enum Theme {
   Light = 0,
   Dark = 1,
@@ -240,6 +274,7 @@ export interface InitOutput {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   readonly __wbg_jserror_free: (a: number, b: number) => void;
   readonly jserror_new: (a: number, b: number) => number;
   readonly jserror_message: (a: number) => [number, number];
@@ -298,6 +333,7 @@ export interface InitOutput {
   readonly siteconfig_setShowBreadcrumbs: (a: number, b: number) => void;
   readonly siteconfig_new: () => number;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 1d1bb25 (yet)
   readonly __wbg_jserror_free: (a: number, b: number) => void;
   readonly jserror_new: (a: number, b: number) => number;
@@ -312,6 +348,29 @@ export interface InitOutput {
 >>>>>>> f56ec8e (ok)
 =======
 >>>>>>> 7e3531e (ok)
+=======
+=======
+  readonly __wbg_jserror_free: (a: number, b: number) => void;
+>>>>>>> 0f31362 (broken)
+  readonly __wbg_navigationconfig_free: (a: number, b: number) => void;
+  readonly __wbg_siteconfig_free: (a: number, b: number) => void;
+  readonly __wbg_themeconfig_free: (a: number, b: number) => void;
+  readonly createNavigationConfig: (a: number, b: number) => number;
+  readonly createSiteConfig: () => number;
+  readonly createThemeConfig: () => number;
+  readonly generateSitemap: (a: number, b: number) => [number, number];
+<<<<<<< HEAD
+  readonly navigationconfig_buildBreadcrumb: (a: number, b: number, c: number) => [number, number];
+  readonly navigationconfig_getAllCategories: (a: number) => [number, number];
+  readonly navigationconfig_getPageTitle: (a: number, b: number, c: number) => [number, number];
+  readonly navigationconfig_getPageUrl: (a: number, b: number, c: number) => [number, number];
+  readonly navigationconfig_getPagesByCategory: (a: number, b: number, c: number) => [number, number];
+  readonly navigationconfig_new: (a: number, b: number) => number;
+>>>>>>> 5736e17 (build wasm and improve update to break)
+=======
+  readonly getSiteInfo: () => any;
+  readonly getThemeSettings: () => any;
+>>>>>>> 0f31362 (broken)
   readonly get_current_month: () => number;
   readonly get_czech_month_name: (a: number) => [number, number];
   readonly get_english_month_name: (a: number) => [number, number];
@@ -328,35 +387,43 @@ export interface InitOutput {
   readonly get_swedish_month_name: (a: number) => [number, number];
   readonly get_ukrainian_alphabet_month_name: (a: number) => [number, number];
   readonly get_ukrainian_month_name: (a: number) => [number, number];
-  readonly __wbg_navigationconfig_free: (a: number, b: number) => void;
-  readonly createNavigationConfig: (a: number, b: number) => number;
-  readonly generateSitemap: (a: number, b: number) => [number, number];
+  readonly jserror_message: (a: number) => [number, number];
+  readonly jserror_new: (a: number, b: number) => number;
   readonly navigationconfig_buildBreadcrumb: (a: number, b: number, c: number) => [number, number];
   readonly navigationconfig_getAllCategories: (a: number) => [number, number];
   readonly navigationconfig_getPageTitle: (a: number, b: number, c: number) => [number, number];
   readonly navigationconfig_getPageUrl: (a: number, b: number, c: number) => [number, number];
   readonly navigationconfig_getPagesByCategory: (a: number, b: number, c: number) => [number, number];
-  readonly navigationconfig_new: (a: number, b: number) => number;
-  readonly __wbg_themeconfig_free: (a: number, b: number) => void;
-  readonly createThemeConfig: () => number;
-  readonly getThemeSettings: () => any;
+  readonly siteconfig_disableFeature: (a: number, b: number, c: number) => void;
+  readonly siteconfig_enableFeature: (a: number, b: number, c: number) => void;
+  readonly siteconfig_exportConfig: (a: number) => [number, number, number, number];
+  readonly siteconfig_getCompactMode: (a: number) => number;
+  readonly siteconfig_getMenuAutoHide: (a: number) => number;
+  readonly siteconfig_getShowBreadcrumbs: (a: number) => number;
+  readonly siteconfig_getSiteName: (a: number) => [number, number];
+  readonly siteconfig_getVersion: (a: number) => [number, number];
+  readonly siteconfig_importConfig: (a: number, b: number, c: number) => [number, number];
+  readonly siteconfig_isFeatureEnabled: (a: number, b: number, c: number) => number;
+  readonly siteconfig_setCompactMode: (a: number, b: number) => void;
+  readonly siteconfig_setMenuAutoHide: (a: number, b: number) => void;
+  readonly siteconfig_setShowBreadcrumbs: (a: number, b: number) => void;
   readonly themeconfig_getCurrentTheme: (a: number) => number;
   readonly themeconfig_getThemeClassName: (a: number) => [number, number];
   readonly themeconfig_setUserPreference: (a: number, b: number) => void;
   readonly themeconfig_toggleTheme: (a: number) => number;
   readonly themeconfig_updateSystemPreference: (a: number, b: number) => void;
+  readonly navigationconfig_new: (a: number, b: number) => number;
+  readonly siteconfig_new: () => number;
   readonly themeconfig_new: () => number;
-  readonly __wbg_jserror_free: (a: number, b: number) => void;
-  readonly jserror_message: (a: number) => [number, number];
-  readonly jserror_new: (a: number, b: number) => number;
+  readonly wasm_bindgen__convert__closures_____invoke__hfcdbc79a81c30a16: (a: number, b: number, c: any) => void;
+  readonly wasm_bindgen__closure__destroy__h932492acaa32c993: (a: number, b: number) => void;
+  readonly wasm_bindgen__convert__closures_____invoke__h2dcdf7ff41772175: (a: number, b: number, c: any, d: any) => void;
   readonly __wbindgen_exn_store: (a: number) => void;
   readonly __externref_table_alloc: () => number;
-  readonly __wbindgen_export_2: WebAssembly.Table;
-  readonly __wbindgen_export_3: WebAssembly.Table;
-  readonly __wbindgen_free: (a: number, b: number, c: number) => void;
-  readonly __externref_table_dealloc: (a: number) => void;
+  readonly __wbindgen_externrefs: WebAssembly.Table;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -411,10 +478,21 @@ export interface InitOutput {
 =======
 =======
   readonly __externref_drop_slice: (a: number, b: number) => void;
+<<<<<<< HEAD
   readonly closure60_externref_shim: (a: number, b: number, c: any) => void;
   readonly closure72_externref_shim: (a: number, b: number, c: any, d: any) => void;
 >>>>>>> 7e3531e (ok)
+<<<<<<< HEAD
 >>>>>>> cbb0dbd (my_repo_list.html の更新)
+=======
+=======
+>>>>>>> 5736e17 (build wasm and improve update to break)
+=======
+  readonly __wbindgen_free: (a: number, b: number, c: number) => void;
+  readonly __externref_drop_slice: (a: number, b: number) => void;
+  readonly __externref_table_dealloc: (a: number) => void;
+>>>>>>> 0f31362 (broken)
+>>>>>>> 6bfd3c1 (ok)
   readonly __wbindgen_start: () => void;
 }
 

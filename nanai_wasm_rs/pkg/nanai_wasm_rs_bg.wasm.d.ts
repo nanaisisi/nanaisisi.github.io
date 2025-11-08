@@ -7,6 +7,7 @@ export const memory: WebAssembly.Memory;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 export const __wbg_jserror_free: (a: number, b: number) => void;
 export const jserror_new: (a: number, b: number) => number;
 export const jserror_message: (a: number) => [number, number];
@@ -65,6 +66,7 @@ export const siteconfig_setMenuAutoHide: (a: number, b: number) => void;
 export const siteconfig_setShowBreadcrumbs: (a: number, b: number) => void;
 export const siteconfig_new: () => number;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 1d1bb25 (yet)
 export const __wbg_jserror_free: (a: number, b: number) => void;
 export const jserror_new: (a: number, b: number) => number;
@@ -79,6 +81,29 @@ export const jserror_message: (a: number) => [number, number];
 >>>>>>> f56ec8e (ok)
 =======
 >>>>>>> 7e3531e (ok)
+=======
+=======
+export const __wbg_jserror_free: (a: number, b: number) => void;
+>>>>>>> 0f31362 (broken)
+export const __wbg_navigationconfig_free: (a: number, b: number) => void;
+export const __wbg_siteconfig_free: (a: number, b: number) => void;
+export const __wbg_themeconfig_free: (a: number, b: number) => void;
+export const createNavigationConfig: (a: number, b: number) => number;
+export const createSiteConfig: () => number;
+export const createThemeConfig: () => number;
+export const generateSitemap: (a: number, b: number) => [number, number];
+<<<<<<< HEAD
+export const navigationconfig_buildBreadcrumb: (a: number, b: number, c: number) => [number, number];
+export const navigationconfig_getAllCategories: (a: number) => [number, number];
+export const navigationconfig_getPageTitle: (a: number, b: number, c: number) => [number, number];
+export const navigationconfig_getPageUrl: (a: number, b: number, c: number) => [number, number];
+export const navigationconfig_getPagesByCategory: (a: number, b: number, c: number) => [number, number];
+export const navigationconfig_new: (a: number, b: number) => number;
+>>>>>>> 5736e17 (build wasm and improve update to break)
+=======
+export const getSiteInfo: () => any;
+export const getThemeSettings: () => any;
+>>>>>>> 0f31362 (broken)
 export const get_current_month: () => number;
 export const get_czech_month_name: (a: number) => [number, number];
 export const get_english_month_name: (a: number) => [number, number];
@@ -95,35 +120,43 @@ export const get_suomi_month_name: (a: number) => [number, number];
 export const get_swedish_month_name: (a: number) => [number, number];
 export const get_ukrainian_alphabet_month_name: (a: number) => [number, number];
 export const get_ukrainian_month_name: (a: number) => [number, number];
-export const __wbg_navigationconfig_free: (a: number, b: number) => void;
-export const createNavigationConfig: (a: number, b: number) => number;
-export const generateSitemap: (a: number, b: number) => [number, number];
+export const jserror_message: (a: number) => [number, number];
+export const jserror_new: (a: number, b: number) => number;
 export const navigationconfig_buildBreadcrumb: (a: number, b: number, c: number) => [number, number];
 export const navigationconfig_getAllCategories: (a: number) => [number, number];
 export const navigationconfig_getPageTitle: (a: number, b: number, c: number) => [number, number];
 export const navigationconfig_getPageUrl: (a: number, b: number, c: number) => [number, number];
 export const navigationconfig_getPagesByCategory: (a: number, b: number, c: number) => [number, number];
-export const navigationconfig_new: (a: number, b: number) => number;
-export const __wbg_themeconfig_free: (a: number, b: number) => void;
-export const createThemeConfig: () => number;
-export const getThemeSettings: () => any;
+export const siteconfig_disableFeature: (a: number, b: number, c: number) => void;
+export const siteconfig_enableFeature: (a: number, b: number, c: number) => void;
+export const siteconfig_exportConfig: (a: number) => [number, number, number, number];
+export const siteconfig_getCompactMode: (a: number) => number;
+export const siteconfig_getMenuAutoHide: (a: number) => number;
+export const siteconfig_getShowBreadcrumbs: (a: number) => number;
+export const siteconfig_getSiteName: (a: number) => [number, number];
+export const siteconfig_getVersion: (a: number) => [number, number];
+export const siteconfig_importConfig: (a: number, b: number, c: number) => [number, number];
+export const siteconfig_isFeatureEnabled: (a: number, b: number, c: number) => number;
+export const siteconfig_setCompactMode: (a: number, b: number) => void;
+export const siteconfig_setMenuAutoHide: (a: number, b: number) => void;
+export const siteconfig_setShowBreadcrumbs: (a: number, b: number) => void;
 export const themeconfig_getCurrentTheme: (a: number) => number;
 export const themeconfig_getThemeClassName: (a: number) => [number, number];
 export const themeconfig_setUserPreference: (a: number, b: number) => void;
 export const themeconfig_toggleTheme: (a: number) => number;
 export const themeconfig_updateSystemPreference: (a: number, b: number) => void;
+export const navigationconfig_new: (a: number, b: number) => number;
+export const siteconfig_new: () => number;
 export const themeconfig_new: () => number;
-export const __wbg_jserror_free: (a: number, b: number) => void;
-export const jserror_message: (a: number) => [number, number];
-export const jserror_new: (a: number, b: number) => number;
+export const wasm_bindgen__convert__closures_____invoke__hfcdbc79a81c30a16: (a: number, b: number, c: any) => void;
+export const wasm_bindgen__closure__destroy__h932492acaa32c993: (a: number, b: number) => void;
+export const wasm_bindgen__convert__closures_____invoke__h2dcdf7ff41772175: (a: number, b: number, c: any, d: any) => void;
 export const __wbindgen_exn_store: (a: number) => void;
 export const __externref_table_alloc: () => number;
-export const __wbindgen_export_2: WebAssembly.Table;
-export const __wbindgen_export_3: WebAssembly.Table;
-export const __wbindgen_free: (a: number, b: number, c: number) => void;
-export const __externref_table_dealloc: (a: number) => void;
+export const __wbindgen_externrefs: WebAssembly.Table;
 export const __wbindgen_malloc: (a: number, b: number) => number;
 export const __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -178,8 +211,19 @@ export const closure69_externref_shim: (a: number, b: number, c: any, d: any) =>
 =======
 =======
 export const __externref_drop_slice: (a: number, b: number) => void;
+<<<<<<< HEAD
 export const closure60_externref_shim: (a: number, b: number, c: any) => void;
 export const closure72_externref_shim: (a: number, b: number, c: any, d: any) => void;
 >>>>>>> 7e3531e (ok)
+<<<<<<< HEAD
 >>>>>>> cbb0dbd (my_repo_list.html の更新)
+=======
+=======
+>>>>>>> 5736e17 (build wasm and improve update to break)
+=======
+export const __wbindgen_free: (a: number, b: number, c: number) => void;
+export const __externref_drop_slice: (a: number, b: number) => void;
+export const __externref_table_dealloc: (a: number) => void;
+>>>>>>> 0f31362 (broken)
+>>>>>>> 6bfd3c1 (ok)
 export const __wbindgen_start: () => void;
