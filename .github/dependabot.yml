@@ -9,13 +9,3 @@ updates:
     directory: "/nanai_wasm_rs" # Location of package manifests
     schedule:
       interval: "daily"
-
-    jobs:
-          open-pull-requests-limit: 0
-    reviewers:
-      - "nanaisisi"
-    assignees:
-      - "nanaisisi"
-    commit-message:
-      prefix: "deps"
-      include: "scope"
