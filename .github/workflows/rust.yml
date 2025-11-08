@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Install wasm-pack
-      run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+      run: curl https://drager.github.io/wasm-pack/installer/init.sh -sSf | sh
     - name: Build WASM
       run: cd nanai_wasm_rs && wasm-pack build --target web --out-dir pkg
     - name: Upload WASM artifacts
