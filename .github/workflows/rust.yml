@@ -27,7 +27,7 @@ jobs:
 
   deploy:
     if: github.ref == 'refs/heads/main'
-    needs: [build, build-wasm]
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: read
