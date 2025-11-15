@@ -7,13 +7,19 @@
 #nushell
 
 #locate root<br />
-cd nanai_wasm_rs;cargo update
+cd nanai_wasm_rs;
 
 #locate root<br />
-cd nanai_wasm_rs; cargo build
+cargo update -Z unstable-options --breaking
 
 #locate root<br />
-cd nanai_wasm_rs; wasm-pack build --target web
+cargo build
+
+#locate root<br />
+wasm-pack build --target web
+
+#locate root<br />
+cd ..
 
 #locate root<br />
 deno outdated --update --latest
