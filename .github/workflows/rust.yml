@@ -57,7 +57,7 @@ jobs:
         run: cd nanai_wasm_rs && cargo audit || echo "Audit found issues (non-blocking)"
 
       - name: Upload WASM artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: wasm-build
           path: nanai_wasm_rs/pkg/
