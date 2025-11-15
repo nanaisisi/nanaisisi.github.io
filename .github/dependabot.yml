@@ -9,3 +9,18 @@ updates:
     directory: "/nanai_wasm_rs" # Location of package manifests
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    reviewers:
+      - "nanaisisi"
+    assignees:
+      - "nanaisisi"
+  - package-ecosystem: "github-actions"
+    directory: "/" # Root for workflows
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "actions"
+      include: "scope"

@@ -1,0 +1,88 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+concurrency:
+  group: rust-wasm-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-slim
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            nanai_wasm_rs/target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('nanai_wasm_rs/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
+      - name: Install wasm-pack
+        run: cargo install wasm-pack
+
+      - name: Install cargo-audit
+        run: cargo install cargo-audit
+
+      - name: Format check
+        run: cd nanai_wasm_rs && cargo fmt -- --check
+
+      - name: Clippy check
+        run: cd nanai_wasm_rs && cargo clippy -- -D warnings
+
+      - name: Build (native)
+        run: cd nanai_wasm_rs && cargo build --verbose
+
+      - name: Test (native)
+        run: cd nanai_wasm_rs && cargo test --verbose
+
+      - name: Build WASM package
+        run: cd nanai_wasm_rs && wasm-pack build --target web --out-dir pkg
+
+      - name: Security audit (non-blocking)
+        run: cd nanai_wasm_rs && cargo audit || echo "Audit found issues (non-blocking)"
+
+      - name: Upload WASM artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wasm-build
+          path: nanai_wasm_rs/pkg/
+
+  commit:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download WASM artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: wasm-build
+          path: nanai_wasm_rs/pkg/
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add nanai_wasm_rs/pkg/
+          git diff --staged --quiet || git commit -m "ci: update wasm artifacts"
+          git push
