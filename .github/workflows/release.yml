@@ -1,0 +1,76 @@
+name: Release WASM
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build-release:
+    runs-on: ubuntu-slim
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            nanai_wasm_rs/target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('nanai_wasm_rs/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
+      - name: Install wasm-pack
+        run: cargo install wasm-pack
+
+      - name: Build WASM (release)
+        run: cd nanai_wasm_rs && wasm-pack build --release --target web --out-dir pkg
+
+      - name: Prepare assets
+        run: |
+          mkdir -p dist
+          cp nanai_wasm_rs/pkg/*.wasm dist/
+          cp nanai_wasm_rs/pkg/*.js dist/
+          cp nanai_wasm_rs/pkg/*.d.ts dist/ || true
+          tar -czf wasm-artifacts.tar.gz dist
+          # Create zip with only wasm binaries for convenience
+          zip -j wasm-binaries.zip dist/*.wasm || true
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: "${{ github.ref_name }}"
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset (tar)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: wasm-artifacts.tar.gz
+          asset_name: wasm-artifacts-${{ github.ref_name }}.tar.gz
+          asset_content_type: application/gzip
+
+      - name: Upload individual WASM asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: wasm-binaries.zip
+          asset_name: wasm-binaries-${{ github.ref_name }}.zip
+          asset_content_type: application/zip

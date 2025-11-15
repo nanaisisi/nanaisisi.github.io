@@ -18,6 +18,7 @@
 		"prettier": "^3.6.2"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.2.6"
+		"@biomejs/biome": "2.2.6",
+		"wabt": "^1.0.39"
 	}
 }
