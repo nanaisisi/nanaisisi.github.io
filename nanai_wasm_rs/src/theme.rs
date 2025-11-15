@@ -1,5 +1,5 @@
-use wasm_bindgen::prelude::*;
 use serde::{Deserialize, Serialize};
+use wasm_bindgen::prelude::*;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[wasm_bindgen]
@@ -94,6 +94,6 @@ pub fn get_theme_settings() -> JsValue {
         "defaultTheme": "auto",
         "storageKey": "theme-preference"
     });
-    
+
     serde_wasm_bindgen::to_value(&settings).unwrap_or(JsValue::NULL)
 }
