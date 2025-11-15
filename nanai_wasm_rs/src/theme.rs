@@ -1,10 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::*;
 =======
 use wasm_bindgen::prelude::*;
 use serde::{Deserialize, Serialize};
 >>>>>>> 1d1bb25 (yet)
+=======
+use serde::{Deserialize, Serialize};
+use wasm_bindgen::prelude::*;
+>>>>>>> 4689da9 (ok)
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[wasm_bindgen]
@@ -100,9 +105,13 @@ pub fn get_theme_settings() -> JsValue {
         "storageKey": "theme-preference"
     });
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> 1d1bb25 (yet)
+=======
+
+>>>>>>> 4689da9 (ok)
     serde_wasm_bindgen::to_value(&settings).unwrap_or(JsValue::NULL)
 }
