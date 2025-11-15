@@ -2,26 +2,26 @@
 /* eslint-disable */
 export function getSiteInfo(): any;
 export function createSiteConfig(): SiteConfig;
-export function get_czech_month_name(month_index: number): string;
-export function get_japanese_month_name(month_index: number): string;
-export function get_slovak_month_name(month_index: number): string;
-export function get_month_name(month_index: number, language_code: string): string;
-export function get_current_month(): number;
-export function get_month_names_all(month_index: number): any;
-export function get_english_month_name(month_index: number): string;
-export function get_ukrainian_month_name(month_index: number): string;
-export function get_ukrainian_alphabet_month_name(month_index: number): string;
-export function get_suomi_month_name(month_index: number): string;
-export function get_month_name_async(month_index: number, language_code: string): Promise<any>;
-export function get_latvian_month_name(month_index: number): string;
-export function get_lithuanian_month_name(month_index: number): string;
-export function get_polish_month_name(month_index: number): string;
-export function get_estonian_month_name(month_index: number): string;
-export function get_swedish_month_name(month_index: number): string;
 export function generateSitemap(base_url: string): string;
 export function createNavigationConfig(base_url: string): NavigationConfig;
-export function createThemeConfig(): ThemeConfig;
+export function get_ukrainian_month_name(month_index: number): string;
+export function get_polish_month_name(month_index: number): string;
+export function get_month_names_all(month_index: number): any;
+export function get_month_name(month_index: number, language_code: string): string;
+export function get_swedish_month_name(month_index: number): string;
+export function get_estonian_month_name(month_index: number): string;
+export function get_ukrainian_alphabet_month_name(month_index: number): string;
+export function get_month_name_async(month_index: number, language_code: string): Promise<any>;
+export function get_lithuanian_month_name(month_index: number): string;
+export function get_slovak_month_name(month_index: number): string;
+export function get_current_month(): number;
+export function get_japanese_month_name(month_index: number): string;
+export function get_latvian_month_name(month_index: number): string;
+export function get_suomi_month_name(month_index: number): string;
+export function get_czech_month_name(month_index: number): string;
+export function get_english_month_name(month_index: number): string;
 export function getThemeSettings(): any;
+export function createThemeConfig(): ThemeConfig;
 export enum Theme {
   Light = 0,
   Dark = 1,
@@ -93,6 +93,15 @@ export interface InitOutput {
   readonly siteconfig_setMenuAutoHide: (a: number, b: number) => void;
   readonly siteconfig_setShowBreadcrumbs: (a: number, b: number) => void;
   readonly siteconfig_new: () => number;
+  readonly __wbg_navigationconfig_free: (a: number, b: number) => void;
+  readonly createNavigationConfig: (a: number, b: number) => number;
+  readonly generateSitemap: (a: number, b: number) => [number, number];
+  readonly navigationconfig_buildBreadcrumb: (a: number, b: number, c: number) => [number, number];
+  readonly navigationconfig_getAllCategories: (a: number) => [number, number];
+  readonly navigationconfig_getPageTitle: (a: number, b: number, c: number) => [number, number];
+  readonly navigationconfig_getPageUrl: (a: number, b: number, c: number) => [number, number];
+  readonly navigationconfig_getPagesByCategory: (a: number, b: number, c: number) => [number, number];
+  readonly navigationconfig_new: (a: number, b: number) => number;
   readonly get_current_month: () => number;
   readonly get_czech_month_name: (a: number) => [number, number];
   readonly get_english_month_name: (a: number) => [number, number];
@@ -109,15 +118,6 @@ export interface InitOutput {
   readonly get_swedish_month_name: (a: number) => [number, number];
   readonly get_ukrainian_alphabet_month_name: (a: number) => [number, number];
   readonly get_ukrainian_month_name: (a: number) => [number, number];
-  readonly __wbg_navigationconfig_free: (a: number, b: number) => void;
-  readonly createNavigationConfig: (a: number, b: number) => number;
-  readonly generateSitemap: (a: number, b: number) => [number, number];
-  readonly navigationconfig_buildBreadcrumb: (a: number, b: number, c: number) => [number, number];
-  readonly navigationconfig_getAllCategories: (a: number) => [number, number];
-  readonly navigationconfig_getPageTitle: (a: number, b: number, c: number) => [number, number];
-  readonly navigationconfig_getPageUrl: (a: number, b: number, c: number) => [number, number];
-  readonly navigationconfig_getPagesByCategory: (a: number, b: number, c: number) => [number, number];
-  readonly navigationconfig_new: (a: number, b: number) => number;
   readonly __wbg_themeconfig_free: (a: number, b: number) => void;
   readonly createThemeConfig: () => number;
   readonly getThemeSettings: () => any;
@@ -130,17 +130,17 @@ export interface InitOutput {
   readonly __wbg_jserror_free: (a: number, b: number) => void;
   readonly jserror_message: (a: number) => [number, number];
   readonly jserror_new: (a: number, b: number) => number;
+  readonly wasm_bindgen__convert__closures_____invoke__h1b9f36ac8b9a82ae: (a: number, b: number, c: any) => void;
+  readonly wasm_bindgen__closure__destroy__h43bf22301bbec694: (a: number, b: number) => void;
+  readonly wasm_bindgen__convert__closures_____invoke__h2fa296ab40706d5e: (a: number, b: number, c: any, d: any) => void;
   readonly __wbindgen_exn_store: (a: number) => void;
   readonly __externref_table_alloc: () => number;
-  readonly __wbindgen_export_2: WebAssembly.Table;
-  readonly __wbindgen_export_3: WebAssembly.Table;
+  readonly __wbindgen_externrefs: WebAssembly.Table;
   readonly __wbindgen_free: (a: number, b: number, c: number) => void;
   readonly __externref_table_dealloc: (a: number) => void;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __externref_drop_slice: (a: number, b: number) => void;
-  readonly closure60_externref_shim: (a: number, b: number, c: any) => void;
-  readonly closure72_externref_shim: (a: number, b: number, c: any, d: any) => void;
   readonly __wbindgen_start: () => void;
 }
 
