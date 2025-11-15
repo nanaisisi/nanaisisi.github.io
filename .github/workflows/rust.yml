@@ -15,11 +15,17 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup Rust toolchain
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: stable
+          target: wasm32-unknown-unknown
 
       - name: Cache cargo
         uses: actions/cache@v4
@@ -33,10 +39,14 @@ jobs:
             ${{ runner.os }}-cargo-
 
       - name: Install wasm-pack
-        run: cargo install wasm-pack
+        uses: taiki-e/install-action@v2
+        with:
+          tool: wasm-pack
 
       - name: Install cargo-audit
-        run: cargo install cargo-audit
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-audit
 
       - name: Format check
         run: cd nanai_wasm_rs && cargo fmt -- --check
@@ -55,6 +65,12 @@ jobs:
 
       - name: Security audit (non-blocking)
         run: cd nanai_wasm_rs && cargo audit || echo "Audit found issues (non-blocking)"
+
+      - name: Supply chain security (cargo-deny)
+        uses: EmbarkStudios/cargo-deny-action@v1
+        with:
+          manifest-path: nanai_wasm_rs/Cargo.toml
+          command: check
 
       - name: Upload WASM artifacts
         uses: actions/upload-artifact@v4
