@@ -91,15 +91,36 @@ main {
   z-index: 101;
 }
 
+/* Make YouTube embeds responsive: full width with a 16:9 aspect ratio. */
 .youtube-iframe {
+  display: block;
   width: 100%;
-  height: auto;
+  height: auto; /* let aspect-ratio control the height on modern browsers */
+  aspect-ratio: 16/9; /* modern browsers compute height from width; fallback below */
+  max-width: 1280px; /* optional cap for very large screens */
+  margin: 1em auto; /* center and some spacing */
   border: none;
-  overflow: auto;
-  position: fixed;
+}
+/* Fallback for older browsers that don't support aspect-ratio: keep a 16:9 ratio */
+.youtube-iframe:not([style]) {
+  height: auto;
 }
 
-/* カラーテーマの設定 - @media クエリを保持 */
+/* Fallback for browsers without aspect-ratio support */
+@supports not (aspect-ratio: 1/1) {
+  .youtube-iframe {
+    /* Scale with viewport width but cap to reasonable viewport height */
+    height: min(60vh, calc(100vw * 9 / 16));
+  }
+}
+
+/* Smaller viewport adjustments */
+@media (max-width: 600px) {
+  .youtube-iframe {
+    max-height: 50vh;
+  }
+}
+
 @media (prefers-color-scheme: no-preference) {
   body {
     color-scheme: only dark;
