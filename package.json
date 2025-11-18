@@ -29,6 +29,7 @@
 	},
 >>>>>>> 108aa1f (menu.html の更新)
 	"dependencies": {
+<<<<<<< HEAD
 		"markuplint": "^4.12.0",
 		"prettier": "^3.4.2"
 	},
@@ -38,6 +39,15 @@
 =======
 		"@biomejs/biome": "2.2.6"
 >>>>>>> c0b878e (update deno package)
+=======
+		"biome": "^0.3.3",
+		"markuplint": "^4.14.0",
+		"prettier": "^3.6.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.3.5",
+		"wabt": "^1.0.39"
+>>>>>>> 6405591 (ok)
 	}
 >>>>>>> e4598da (ok)
 }
