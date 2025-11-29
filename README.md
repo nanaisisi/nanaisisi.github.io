@@ -39,6 +39,14 @@ deno run --allow-net --allow-read test\server.ts
 - WASM modules load automatically via wasm-bindgen
 - Theme preferences stored as JSON in localStorage for compatibility
 
+<<<<<<< HEAD
+=======
+## How to Release
+
+1. バージョン決定: セマンティックバージョン (例: `v0.2.0`).
+2. 変更確認: ローカルで `nanai_wasm_rs` をビルド & テスト。
+
+>>>>>>> 35df5f2 (rollback doc)
 ## Dev phase
 
 - Nushell
@@ -48,7 +56,11 @@ deno run --allow-net --allow-read test\server.ts
 ## License
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 All files in the [img](./img) and [pages](./pages), [doc](./doc) folders are licensed with  [Apache License 2.0](./doc/LICENSE-APACHE) + [MIT License](./doc/LICENSE-MIT). The rest of the files in this repository are licensed with [CC0](./LICENSE).
 =======
 All files in the [img](./img) and [pages](./pages), [doc](./doc), [nanai_wasm_rs](./nanai_wasm_rs) folders are licensed with [Apache License 2.0](./doc/LICENSE-APACHE) + [MIT License](./doc/LICENSE-MIT). The rest of the files in this repository are licensed with [CC0](./LICENSE).
 >>>>>>> 6d5778d (index changelog)
+=======
+All files are licensed with [Apache License 2.0](./LICENSE-APACHE) + [MIT License](./doc/LICENSE-MIT).
+>>>>>>> a724e4f (re license)

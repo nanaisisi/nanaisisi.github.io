@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<svg viewBox="0 0 48 48" version="1.1" id="svg1" sodipodi:docname="favicon.svg"
+=======
+<svg viewBox="0 0 40 40" version="1.1" id="svg1" sodipodi:docname="favicon.svg"
+>>>>>>> 85267bd (ok)
+=======
+<svg viewBox="0 0 48 48" version="1.1" id="svg1" sodipodi:docname="favicon.svg"
+>>>>>>> 6cb9274 (yat favicon)
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+   <defs id="defs1" />
+   <sodipodi:namedview id="namedview1" pagecolor="#505050" bordercolor="#eeeeee" borderopacity="1"
+      inkscape:showpageshadow="0" inkscape:pageopacity="0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#505050"
+      inkscape:zoom="20.175" inkscape:cx="20" inkscape:cy="20" inkscape:window-width="1920"
+      inkscape:window-height="1009" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1"
+      inkscape:current-layer="svg1" />
+   <style id="style1" />
+   .small {
+   font: 1.1em &quot;Oooh Baby&quot;;
+   }
+   //背景
+<<<<<<< HEAD
+<<<<<<< HEAD
+   <rect id="rect1" x="0" y="0" width="48" height="48" fill="#99d6ff" />
+   //戦闘機
+   <g id="g1">
+      //カナード上
+      <path id=" path2" d="
+   M 31,21
+   L 29,15
+   L 37,21
+   Z" fill="#cacaca " stroke=" #202020 " stroke-width="0.1px" />
+      //カナード下
+      <path id="path3" d="
+   M 31,27
+   L 37,27
+   L 29,33
+   Z" fill="#cacaca " stroke=" #202020 " stroke-width="0.1px" />
+      <path id="path1" d="M 38,22
+   C 42,22,46,23,46,24
+   C 46,25 42,26 38,26
+   L 32,26
+   L 38,26
+   L 38,27
+   C 38,27,37,28,34,28
+   L 30,28
+   L 15,39
+   L 13,39
+   L 12,28
+   C 11,28,9,27,8,27
+   L 6,27
+   L 6 26
+   L 2,25
+   L 2 23
+   L 6,22
+   L 6,21
+   L 8,21
+   L 9,21
+   C 9,21,11,20,12,20
+   L 13,9
+   L 15,9
+   L 30,20
+   C 37,20,38,21,38,21
+   L 38,21
+   L 38,22
+   L 32,22
+   L 38,22
+   Z" fill="#cacaca " stroke=" #202020 " stroke-width="0.1px" />
+   </g>
+   //一番上にタイトル
+   <text x="3" y="27" class="small" id="text1"
+      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:normal;font-family:'Oooh Baby'">Ararat</text>
+=======
+   <rect id="rect1" x="0" y="0" width="40" height="40" fill="#99d6ff" />
+=======
+   <rect id="rect1" x="0" y="0" width="48" height="48" fill="#99d6ff" />
+>>>>>>> 6cb9274 (yat favicon)
+   //戦闘機
+   <g id="g1">
+      //カナード上
+      <path id=" path2" d="
+   M 31,21
+   L 29,15
+   L 37,21
+   Z" fill="#cacaca " stroke=" #202020 " stroke-width="0.1px" />
+      //カナード下
+      <path id="path3" d="
+   M 31,27
+   L 37,27
+   L 29,33
+   Z" fill="#cacaca " stroke=" #202020 " stroke-width="0.1px" />
+      <path id="path1" d="M 38,22
+   C 42,22,46,23,46,24
+   C 46,25 42,26 38,26
+   L 32,26
+   L 38,26
+   L 38,27
+   C 38,27,37,28,34,28
+   L 30,28
+   L 15,39
+   L 13,39
+   L 12,28
+   C 11,28,9,27,8,27
+   L 6,27
+   L 6 26
+   L 2,25
+   L 2 23
+   L 6,22
+   L 6,21
+   L 8,21
+   L 9,21
+   C 9,21,11,20,12,20
+   L 13,9
+   L 15,9
+   L 30,20
+   C 37,20,38,21,38,21
+   L 38,21
+   L 38,22
+   L 32,22
+   L 38,22
+   Z" fill="#cacaca " stroke=" #202020 " stroke-width="0.1px" />
+   </g>
+   //一番上にタイトル
+<<<<<<< HEAD
+   <text x="3" y="23" class="small" id="text1"
+      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.2px;line-height:normal;font-family:'Oooh Baby'">Ararat</text>
+>>>>>>> 85267bd (ok)
+=======
+   <text x="3" y="27" class="small" id="text1"
+      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:normal;font-family:'Oooh Baby'">Ararat</text>
+>>>>>>> 6cb9274 (yat favicon)
+</svg>
