@@ -2,22 +2,23 @@
 
 <!-- Content-Type: application/xhtml+xml -->
 
-<?xml version="1.1" encoding="UTF-8"?>
+<?xml version="1.1" encoding="UTF-8" ?>
 <html lang="ja-JP">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>使用ソフトウェア紹介</title>
+    <title>応援しているソフトウェア</title>
     <link rel="stylesheet" href="../../style/style.css" />
     <link rel="icon" href="../../img/favicon.png" />
     <script type="module" src="../../script/companion.js"></script>
   </head>
 
   <body class="theme">
+    <!-- メニュー構造の例 -->
     <div id="menu-tab" class="menu">
       <iframe
         loading="lazy"
-        src="tech_menu.html"
+        src="menu.html"
         name="menu"
         title="目次"
         class="menu-iframe"
@@ -33,66 +34,15 @@
     <header>
       <nav>
         <ul class="table-of-contents">
-          <li><a href="#head-1">環境設定イメージ</a></li>
-          <li><a href="#head-2">このページでの応援</a></li>
-          <li><a href="#head-3">気になるやつ</a></li>
+          <li><a href="#head-1">応援しているソフトウェア</a></li>
+          <li><a href="#head-2">気になるソフトウェア</a></li>
         </ul>
       </nav>
     </header>
-    <div>
-      <h1>追加情報</h1>
-      <h2 id="head-1">環境設定イメージ</h2>
-      <h3>アップデートさせるやつ</h3>
-      <h4>Windows</h4>
-      <b>Windows Update<br /></b>
-      毎月第2水曜日または第3水曜日周辺に混乱をもたらす。米国時間毎月第2火曜日<br />
-      <b>Microsoft Store<br /></b>
-      自動更新ではあるけど大事。(自動更新になってなかったが)<br />
-      <a
-        href="https://learn.microsoft.com/ja-jp/windows/package-manager/winget/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Winget<br
-      /></a>
-      標準。アプリケーションのアップデートはすべきではある。対応ソフトウェアが増えに増えたのはいいが、自社製品の更新すら不安なのはなぜだ。そのせいでこいつは一括で扱いたくない。配布サーバーから直接持ってくるから配布サーバーの帯域だって太くないのに何GBものファイルを遅々として進まずに通信してられるかと。<br />
-      <a
-        href="https://chocolatey.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >chocolatey<br
-      /></a>
-      管理者権限で実行。あんまり使わない。<br />
-      <a href="https://scoop.sh/" target="_blank" rel="noopener noreferrer"
-        >Scoop</a
-      >
-      パッケージマネージャで直接管理されてるので使い勝手はいい。互換性は不安。<br />
-      <h4>WSLディストリビューション</h4>
-      <b>Apt<br /></b>
-      Debian系の標準。OSアップデートのレベルなので言うまでもない。<br />
-      <a href="https://snapcraft.io/" target="_blank" rel="noopener noreferrer"
-        >Snap<br
-      /></a>
-      Ubuntu系のLinux。Systemdを要求するのがちょっと面倒くさいかも。近いものにFlatpakとAppImageがある。FlatpakはAblaze
-      Floorpで昔動かなかった気がする、AppImageは一応Alireで使ってみた。<br />
-      <a
-        href="https://brew.sh/index_ja"
-        target="_blank"
-        rel="noopener noreferrer"
-        >LinuxBrew<br
-      /></a>
-      Mac系のやつなのでStandAloneで動こうとして面倒くさいので、あんまり使いたくない。<br />
-      <h3>Rustup</h3>
-      cargo-binstall、cargo-quickinstallとかcargo-updateとかがツール類の管理に楽。
-      <h3>Python</h3>
-      <h4>uv<br /></h4>
-      元はRyeのページでした。以下Ryeネタ情報。
-      全然使ってないけど、Flaskの人が作ったよう。その人のMitsuhikoってなんだよと思ったけど、<a
-        href="http://mitsuhiko.pocoo.org/happiness.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        >名探偵コナンかららしい。</a
-      >もう二重帝国時代のウラル語族のハンガリー語か何かかと。<br />
-      <h2 id="head-2">このページは以下のプロジェクトを雑に応援しています</h2>
+    <main>
+        <div>
+            <h1>応援しているソフトウェア紹介</h1>
+      <h2 id="head-1">このサイトは以下を応援しています</h2>
       #活用できてないです・<br />
       <a
         href="https://starship.rs/ja-jp/"
@@ -116,7 +66,7 @@
         >Nushell<br
       /></a>
       PowerShellみたいなものなので。特筆するところはないかも。いろいろと扱いかねてる。仕様変更が破壊的でStarshipとの設定ファイルが大変。<br />
-      <h2 id="head-3">気になるやつ</h2>
+      <h2 id="head-2">気になるソフトウェア</h2>
       <h3>組版処理システム</h3>
       <h4>Typst</h4>
       Rust製。海外製なので簡体字が混ざったりだとか明らかに日本語が弱いというのがデメリット。
@@ -136,6 +86,7 @@
       プログラミング言語。つまりerg-langといったところ。超最大手有名プログラミング言語Pythonと互換性を持つ言語。Rustで書かれてて、文法もそんな感じらしい。IPA未踏2023採択。
       <h3>lmhex</h3>
       定番バイナリエディタ、後はvscodeのやつか
-    </div>
+    </main>
+    <footer></footer>
   </body>
 </html>
