@@ -1,0 +1,131 @@
+<!doctype html>
+
+<!-- Content-Type: application/xhtml+xml -->
+
+<?xml version="1.1" encoding="UTF-8"?>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>使用ソフトウェア紹介</title>
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="icon" href="../../img/favicon.png" />
+    <script type="module" src="../../script/companion.js"></script>
+  </head>
+
+  <body class="theme">
+    <div id="menu-tab" class="menu">
+      <iframe
+        loading="lazy"
+        src="tech_menu.html"
+        name="menu"
+        title="目次"
+        class="menu-iframe"
+      ></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="theme-toggle-btn" class="theme-toggle-btn">テーマ切替</button>
+      <!-- その他のボタンがあれば追加 -->
+    </div>
+
+    <!-- メニューボタンは別に配置 -->
+    <button id="toggle-menu-btn" class="menu-toggle-btn">メニュー</button>
+    <header>
+      <nav>
+        <ul class="table-of-contents">
+          <li><a href="#head-1">アップデーター</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <h1>追加情報</h1>
+        <h2 id="head-1">環境設定イメージ</h2>
+        <h3>アップデートさせるやつ</h3>
+        <h4>Windows</h4>
+        <b>UniGetUI<br /></b>
+        <br />
+        総合的にソフトウェアを管理できる。GUI。<br />
+        Winget以下を管理できるので便利。<br />
+        <b>Windows Update<br /></b>
+        毎月第2水曜日または第3水曜日周辺に混乱をもたらす。米国時間毎月第2火曜日<br />
+        <b>Microsoft Store<br /></b>
+        自動更新ではあるけど大事。(自動更新になってなかったが)<br />
+        <a
+          href="https://learn.microsoft.com/ja-jp/windows/package-manager/winget/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Winget<br
+        /></a>
+        標準。アプリケーションのアップデートはすべきではある。<br />
+        PCに導入しているソフトウェアと、Winget上のソフトウェアがほぼ誤りなく対応しているので便利。<br />
+        セルフアップデートなどもソフトウェアを壊しづらいので活用したほうがいいので、それは別途行うべきかと思う。<br />
+        対応ソフトウェアが増えに増えたのはいいが、自社製品の更新すら不安なのはなぜだ。そのせいでこいつは一括で扱いたくない。<br />
+        配布サーバーから直接持ってくるから配布サーバーの帯域だって太くないのに何GBものファイルを遅々として進まずに通信してられるかと。<br />
+        <a href="https://scoop.sh/" target="_blank" rel="noopener noreferrer"
+          >Scoop</a
+        >
+        パッケージマネージャで直接管理されてるので使い勝手はいい。互換性は不安。<br />
+        <a
+          href="https://chocolatey.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >chocolatey<br
+        /></a>
+        管理者権限で実行。使ってない。<br />
+
+        <h4>WSLディストリビューション</h4>
+        <b>Apt<br /></b>
+        Debian系の標準。OSアップデートのレベルなので言うまでもない。<br />
+        <a
+          href="https://snapcraft.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Snap<br
+        /></a>
+        Ubuntu系のLinux。Systemdを要求するのがちょっと面倒くさいかも。近いものにFlatpakとAppImageがある。FlatpakはAblaze
+        Floorpで昔動かなかった気がする、AppImageは一応Alireで使ってみた。なお今はapt。<br />
+        <a
+          href="https://brew.sh/index_ja"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinuxBrew<br
+        /></a>
+        Mac系のやつなのでStandAloneで動こうとして面倒くさいので、使ってない。<br />
+        <h4>Android</h4>
+        <b>Android OS アップデート<br /></b>
+        メーカーやキャリアによって提供される。<br />
+        <b>Google Play システム アップデート<br /></b>
+        OS系よりサポートが長そう。<br />
+        <b>Google Playストアアプリ<br /></b>
+        設定の項からアップデートを確認できる。<br />
+        ここがOSよりだと3段目くらい。<br />
+        <b>Google Playストア<br /></b>
+        信用できるというわけではないが安定。<br />
+        <b>F-Droid<br /></b>
+        オープンソースソフトウェアを配布している。別にオープンソースであること以外はこれも信用できるというわけではない。<br />
+        ローカルでのアプリの受け渡し機能は面白い。<br />
+        <h4>Rustup</h4>
+        cargo-binstall、cargo-updateとかがツール類の管理に楽。
+        <b>cargo-binstall<br /></b>
+        バイナリ配布されているものをインストールできる。<br />
+
+        <b>cargo-update<br /></b>
+        cargoでインストールしたものをアップデートできる。<br />
+        cargo install-updateで実行する。<br />
+        --listや--allがある。<br />
+        <b>cargo-quickinstall<br /></b>
+        前者のcargo-binstallと関係があるがこちらは入れなくてもいいはず。<br />
+        <h4>Python</h4>
+        <b>uv<br /></b>
+        元はRyeのページでした。以下Ryeネタ情報。
+        全然使ってないけど、Flaskの人が作ったよう。その人のMitsuhikoってなんだよと思ったけど、<a
+          href="http://mitsuhiko.pocoo.org/happiness.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >名探偵コナンかららしい。</a
+        >もう二重帝国時代のウラル語族のハンガリー語か何かかと。<br />
+      </div>
+    </main>
+  </body>
+</html>

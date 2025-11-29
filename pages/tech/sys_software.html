@@ -1,0 +1,115 @@
+<!doctype html>
+
+<!-- Content-Type: application/xhtml+xml -->
+
+<?xml version="1.1" encoding="UTF-8" ?>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>システム情報・管理ソフトウェア</title>
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="icon" href="../../img/favicon.png" />
+    <script type="module" src="../../script/companion.js"></script>
+  </head>
+
+  <body class="theme">
+    <!-- メニュー構造の例 -->
+    <div id="menu-tab" class="menu">
+      <iframe
+        loading="lazy"
+        src="menu.html"
+        name="menu"
+        title="目次"
+        class="menu-iframe"
+      ></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="theme-toggle-btn" class="theme-toggle-btn">テーマ切替</button>
+      <!-- その他のボタンがあれば追加 -->
+    </div>
+
+    <!-- メニューボタンは別に配置 -->
+    <button id="toggle-menu-btn" class="menu-toggle-btn">メニュー</button>
+    <header>
+      <nav>
+        <ul class="table-of-contents">
+          <li><a href="#head-1">概要</a></li>
+          <li><a href="#head-2">システム情報・管理ソフトウェア</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <h1>システム情報・管理ソフトウェア紹介</h1>
+        <h2 id="head-1">概要</h2>
+        システム情報を取得するためのソフトウェアを紹介する。<br />
+        windows用、またはandroid用のソフトウェアを紹介する。<br />
+        導入はmsstore、scoop、winget、ホームページを推奨。<br />
+        広告などは困るので主にScoop。自動化が捗る。<br />
+        Linuxは知らん。<br />
+        内容としては、システム情報、システムモニタリング、そういう公式ソフトウェア。そういうAndroidアプリといった具合。ごちゃまぜ。<br />
+        <h2 id="head-2">システム情報・管理ソフトウェア</h2>
+        <h3>CPU-Z</h3>
+        CPUやメモリ情報の表示に最適。<br />
+        scoop。 Android版はより全体的な内容だが不安定かも。<br />
+        <h3>CPU Info</h3>
+        Android。CPUやメモリ情報の表示に最適。<br />
+        オープンソースであることやF-droidで提供されていることがよい。<br />
+        <h3>GPU-Z</h3>
+        GPU情報の表示に最適。詳細までくっきり。<br />
+        Scoop。<br />
+        <h3>HWiNFO</h3>
+        詳細なシステム情報を提供するソフトウェアで、細々としたことができる。<br />
+        <h3>タスクマネージャ</h3>
+        デバイスの概要から状況まではわかるし、プロセスを扱えるので便利。<br />
+        <h3>デバイスマネージャ</h3>
+        公式ソフトだが、普通にリストではあるので当然管理用途寄りになる。<br />
+        <h3>コントロールパネル</h3>
+        公式なので普通に使う。管理用途寄り。<br />
+        <h3>ディスクの管理</h3>
+        公式なので、あんまり使いたくはない。管理用途寄り。<br />
+        <h3>Power Toys</h3>
+        これは管理ツールだがあんまり使わん。<br />
+        msstore。<br />
+        <h3>DevToys</h3>
+        サードパーティだが全然使わん。<br />
+        msstore。<br />
+        <h3>sysinternals suite</h3>
+        正直全然使わん。<br />
+        msstore。<br />
+        <h3>CrystalDiskInfo</h3>
+        HDDやSSDの健康状態を監視するためのソフトウェア。ディスクの温度やエラーレートなどの情報を提供する。<br />
+        安定の国内ソフトウェア。<br />
+        いろいろなデザインのパッケージがあるがAoi
+        EditionのAoiDarkAnimalEars~TenmuShinryuusai~派。<br />
+        なので対応しているmsstore版を使用。<br />
+        <h3>HWMonitor</h3>
+        CPUやGPU、HDDなどの温度や電圧、ファンの回転数などを監視できるソフトウェア。<br />
+        <h3>Wi-Fi analyzer</h3>
+        Wi-Fiネットワークの信号強度やチャネルの使用状況を分析するためのソフトウェア。<br />
+        msstoreやf-droidでも使用可能。<br />
+        <h3>Wireshark</h3>
+        ネットワークトラフィックをキャプチャし、詳細な解析を行うためのソフトウェア。<br />
+        強引だがセルフアップデートなのでwinget。<br />
+        <h3>WizTree</h3>
+        ドライブ内の記録の内訳の大きさがわかりやすい。<br />
+        scoop。<br />
+        <h3>GNSS View</h3>
+        NECが提供するGNSS View。<br />
+        準天頂衛星システム株式会社が提供している内閣府宇宙開発戦略推進事務局サイトで紹介されていて、<br />
+        準天頂衛星システム(QZSS)みちびきの情報を表示することができる。<br />
+        衛星軌道に基づくシミュレーションベースで、AR対応が強み。<br />
+        受信しているものかは不安なので後者も良いかも。<br />
+        シミュレーションベースでweb版もある。<br />
+        android、iphoneに対応。<br />
+        <h3>GPSTest</h3>
+        Android。GPSなどの各GNSSや準天頂衛星システム(QZSS)みちびきの情報を表示することができる。<br />
+        オープンソースであることやF-droidで提供されていることがよい。<br />
+        前者より実践的かも。<br />
+        com.android.gpstest.osmdroid<br />
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
