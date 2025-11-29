@@ -60,6 +60,7 @@
             <code>Dism /Online /Cleanup-Image /RestoreHealth</code>（OS修復）
           </li>
           <li><code>chkdsk /f /r /scan /perf</code>（ドライブ修復）</li>
+          <li>ウイルススキャン（ウイルスやマルウェアの検出・除去）</li>
         </ul>
         <h2 id="head-2">各所要時間</h2>
         <ul>
@@ -78,6 +79,7 @@
             <code>chkdsk /f /r /scan /perf</code
             >：数日覚悟。数時間は覚悟、絶望的
           </li>
+          <li>ウイルススキャン：数時間から数日覚悟</li>
         </ul>
         <h2 id="head-3">具体的な手順例</h2>
         <ul>
@@ -95,6 +97,9 @@
               <li><code>chkdsk /f /r /scan /perf</code>（ドライブ修復）</li>
               <li><code>sfc /scannow</code>（システムファイルチェック）</li>
             </ul>
+          </li>
+          <li>
+            ウイルススキャンを実行し、システムやファイルをスキャンしてウイルスやマルウェアを検出・除去する
           </li>
         </ul>
         <h2 id="head-4">解説</h2>
@@ -134,6 +139,9 @@
           <li>
             sfc
             /scannowは、システムファイルをチェックし、修復するためのツールである。コマンド系は一緒に使っておく。
+          </li>
+          <li>
+            ウイルススキャンは、システムやファイルをスキャンし、ウイルスやマルウェアを検出・除去するためのツールである。数時間から数日かかることがある。
           </li>
         </ul>
         <h2 id="head-5">参考</h2>
