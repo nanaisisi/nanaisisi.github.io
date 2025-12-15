@@ -1,38 +1,13 @@
 /* tslint:disable */
 /* eslint-disable */
-export function createNavigationConfig(base_url: string): NavigationConfig;
-export function generateSitemap(base_url: string): string;
-export function get_month_name_async(month_index: number, language_code: string): Promise<any>;
-export function get_lithuanian_month_name(month_index: number): string;
-export function get_ukrainian_alphabet_month_name(month_index: number): string;
-export function get_latvian_month_name(month_index: number): string;
-export function get_current_month(): number;
-export function get_polish_month_name(month_index: number): string;
-export function get_czech_month_name(month_index: number): string;
-export function get_month_names_all(month_index: number): any;
-export function get_suomi_month_name(month_index: number): string;
-export function get_estonian_month_name(month_index: number): string;
-export function get_slovak_month_name(month_index: number): string;
-export function get_month_name(month_index: number, language_code: string): string;
-export function get_english_month_name(month_index: number): string;
-export function get_ukrainian_month_name(month_index: number): string;
-export function get_japanese_month_name(month_index: number): string;
-export function get_swedish_month_name(month_index: number): string;
-export function createThemeConfig(): ThemeConfig;
-export function getThemeSettings(): any;
-export function getSiteInfo(): any;
-export function createSiteConfig(): SiteConfig;
-export enum Theme {
-  Light = 0,
-  Dark = 1,
-  Auto = 2,
-}
+
 export class JsError {
   free(): void;
   [Symbol.dispose](): void;
   constructor(message: string);
   readonly message: string;
 }
+
 export class NavigationConfig {
   free(): void;
   [Symbol.dispose](): void;
@@ -43,6 +18,7 @@ export class NavigationConfig {
   getPagesByCategory(category: string): string[];
   constructor(base_url: string);
 }
+
 export class SiteConfig {
   free(): void;
   [Symbol.dispose](): void;
@@ -61,6 +37,13 @@ export class SiteConfig {
   setShowBreadcrumbs(show: boolean): void;
   constructor();
 }
+
+export enum Theme {
+  Light = 0,
+  Dark = 1,
+  Auto = 2,
+}
+
 export class ThemeConfig {
   free(): void;
   [Symbol.dispose](): void;
@@ -71,6 +54,50 @@ export class ThemeConfig {
   updateSystemPreference(is_dark: boolean): void;
   constructor();
 }
+
+export function createNavigationConfig(base_url: string): NavigationConfig;
+
+export function createSiteConfig(): SiteConfig;
+
+export function createThemeConfig(): ThemeConfig;
+
+export function generateSitemap(base_url: string): string;
+
+export function getSiteInfo(): any;
+
+export function getThemeSettings(): any;
+
+export function get_current_month(): number;
+
+export function get_czech_month_name(month_index: number): string;
+
+export function get_english_month_name(month_index: number): string;
+
+export function get_estonian_month_name(month_index: number): string;
+
+export function get_japanese_month_name(month_index: number): string;
+
+export function get_latvian_month_name(month_index: number): string;
+
+export function get_lithuanian_month_name(month_index: number): string;
+
+export function get_month_name(month_index: number, language_code: string): string;
+
+export function get_month_name_async(month_index: number, language_code: string): Promise<any>;
+
+export function get_month_names_all(month_index: number): any;
+
+export function get_polish_month_name(month_index: number): string;
+
+export function get_slovak_month_name(month_index: number): string;
+
+export function get_suomi_month_name(month_index: number): string;
+
+export function get_swedish_month_name(month_index: number): string;
+
+export function get_ukrainian_alphabet_month_name(month_index: number): string;
+
+export function get_ukrainian_month_name(month_index: number): string;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
@@ -130,21 +157,22 @@ export interface InitOutput {
   readonly navigationconfig_new: (a: number, b: number) => number;
   readonly siteconfig_new: () => number;
   readonly themeconfig_new: () => number;
-  readonly wasm_bindgen__convert__closures_____invoke__hfcdbc79a81c30a16: (a: number, b: number, c: any) => void;
-  readonly wasm_bindgen__closure__destroy__h932492acaa32c993: (a: number, b: number) => void;
-  readonly wasm_bindgen__convert__closures_____invoke__h2dcdf7ff41772175: (a: number, b: number, c: any, d: any) => void;
+  readonly wasm_bindgen_cba787ebaeaa46e3___convert__closures_____invoke___wasm_bindgen_cba787ebaeaa46e3___JsValue_____: (a: number, b: number, c: any) => void;
+  readonly wasm_bindgen_cba787ebaeaa46e3___closure__destroy___dyn_core_bb1c441fd6008630___ops__function__FnMut__wasm_bindgen_cba787ebaeaa46e3___JsValue____Output_______: (a: number, b: number) => void;
+  readonly wasm_bindgen_cba787ebaeaa46e3___convert__closures_____invoke___wasm_bindgen_cba787ebaeaa46e3___JsValue__wasm_bindgen_cba787ebaeaa46e3___JsValue_____: (a: number, b: number, c: any, d: any) => void;
   readonly __wbindgen_exn_store: (a: number) => void;
   readonly __externref_table_alloc: () => number;
   readonly __wbindgen_externrefs: WebAssembly.Table;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_free: (a: number, b: number, c: number) => void;
-  readonly __externref_drop_slice: (a: number, b: number) => void;
   readonly __externref_table_dealloc: (a: number) => void;
+  readonly __externref_drop_slice: (a: number, b: number) => void;
   readonly __wbindgen_start: () => void;
 }
 
 export type SyncInitInput = BufferSource | WebAssembly.Module;
+
 /**
 * Instantiates the given `module`, which can either be bytes or
 * a precompiled `WebAssembly.Module`.
