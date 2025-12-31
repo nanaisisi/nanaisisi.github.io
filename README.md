@@ -15,11 +15,13 @@ cargo update -Z unstable-options --breaking
 #locate root<br />
 cargo audit
 
+#WSL Ubuntu
+
 #locate root<br />
 cargo build
 
 #locate root<br />
-wasm-pack build --target web
+wasm-pack build --release --target web
 
 #locate root<br />
 cd ..

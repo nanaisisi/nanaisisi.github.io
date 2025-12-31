@@ -157,9 +157,9 @@ export interface InitOutput {
   readonly navigationconfig_new: (a: number, b: number) => number;
   readonly siteconfig_new: () => number;
   readonly themeconfig_new: () => number;
-  readonly wasm_bindgen_ff97d0194c7b564___convert__closures_____invoke___wasm_bindgen_ff97d0194c7b564___JsValue_____: (a: number, b: number, c: any) => void;
-  readonly wasm_bindgen_ff97d0194c7b564___closure__destroy___dyn_core_983d8dd20742f5f1___ops__function__FnMut__wasm_bindgen_ff97d0194c7b564___JsValue____Output_______: (a: number, b: number) => void;
-  readonly wasm_bindgen_ff97d0194c7b564___convert__closures_____invoke___wasm_bindgen_ff97d0194c7b564___JsValue__wasm_bindgen_ff97d0194c7b564___JsValue_____: (a: number, b: number, c: any, d: any) => void;
+  readonly wasm_bindgen_61828bd97be92191___convert__closures_____invoke___wasm_bindgen_61828bd97be92191___JsValue_____: (a: number, b: number, c: any) => void;
+  readonly wasm_bindgen_61828bd97be92191___closure__destroy___dyn_core_b28e6cc86dbcede1___ops__function__FnMut__wasm_bindgen_61828bd97be92191___JsValue____Output_______: (a: number, b: number) => void;
+  readonly wasm_bindgen_61828bd97be92191___convert__closures_____invoke___wasm_bindgen_61828bd97be92191___JsValue__wasm_bindgen_61828bd97be92191___JsValue_____: (a: number, b: number, c: any, d: any) => void;
   readonly __wbindgen_exn_store: (a: number) => void;
   readonly __externref_table_alloc: () => number;
   readonly __wbindgen_externrefs: WebAssembly.Table;
