@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>使用ソフトウェア紹介</title>
+    <title>アップデートソフトウェア紹介</title>
     <link rel="stylesheet" href="../../style/style.css" />
     <link rel="icon" href="../../img/favicon.png" />
     <script type="module" src="../../script/companion.js"></script>
@@ -33,25 +33,36 @@
     <header>
       <nav>
         <ul class="table-of-contents">
-          <li><a href="#head-1">アップデーター</a></li>
+          <li><a href="#category-1">Windows</a></li>
+          <li><a href="#category-2">WSLディストリビューション</a></li>
+          <li><a href="#category-3">Android</a></li>
+          <li><a href="#category-4">Rustup</a></li>
+          <li><a href="#category-5">Python</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <div>
-        <h1>追加情報</h1>
-        <h2 id="head-1">環境設定イメージ</h2>
-        <h3>アップデートさせるやつ</h3>
-        <h4>Windows</h4>
-        <b>UniGetUI<br /></b>
-        <br />
+        <h1>アップデートソフトウェア紹介</h1>
+        <h2 id="category-1">Windows</h2>
+        <ul class="table-of-contents">
+          <li><a href="#mini-1-1">UniGetUI</a></li>
+          <li><a href="#mini-1-2">Windows Update</a></li>
+          <li><a href="#mini-1-3">Microsoft Store</a></li>
+          <li><a href="#mini-1-4">Winget</a></li>
+          <li><a href="#mini-1-5">Scoop</a></li>
+          <li><a href="#mini-1-6">Chocolatey</a></li>
+          <li><a href="#mini-1-7">メーカーソフトウェア</a></li>
+        </ul>
+        <h3 id="mini-1-1">UniGetUI</h3>
         総合的にソフトウェアを管理できる。GUI。<br />
         Winget以下を管理できるので便利。<br />
-        <b>Windows Update<br /></b>
+        <h3 id="mini-1-2">Windows Update</h3>
         毎月第2水曜日または第3水曜日周辺に混乱をもたらす。米国時間毎月第2火曜日<br />
-        <b>Microsoft Store<br /></b>
+        <h3 id="mini-1-3">Microsoft Store</h3>
         自動更新ではあるけど大事。(自動更新になってなかったが)<br />
         <a
+        id="mini-1-4"
           href="https://learn.microsoft.com/ja-jp/windows/package-manager/winget/"
           target="_blank"
           rel="noopener noreferrer"
@@ -62,22 +73,46 @@
         セルフアップデートなどもソフトウェアを壊しづらいので活用したほうがいいので、それは別途行うべきかと思う。<br />
         対応ソフトウェアが増えに増えたのはいいが、自社製品の更新すら不安なのはなぜだ。そのせいでこいつは一括で扱いたくない。<br />
         配布サーバーから直接持ってくるから配布サーバーの帯域だって太くないのに何GBものファイルを遅々として進まずに通信してられるかと。<br />
-        <a href="https://scoop.sh/" target="_blank" rel="noopener noreferrer"
+        <a  id="mini-1-5" href="https://scoop.sh/" target="_blank" rel="noopener noreferrer"
           >Scoop</a
         >
         パッケージマネージャで直接管理されてるので使い勝手はいい。互換性は不安。<br />
         <a
+        id="mini-1-6"
           href="https://chocolatey.org/"
           target="_blank"
           rel="noopener noreferrer"
-          >chocolatey<br
+          >Chocolatey<br
         /></a>
         管理者権限で実行。使ってない。<br />
+        <a id="mini-1-7">メーカーソフトウェア</a>
+        各メーカーが提供しているハードウェアに関するアップデートソフトウェア。<br />
+        BIOSの更新やドライバー、ファームウェアの更新などを行う。<br>
+        そのため、大きく分けて3種類、モバイルPCメーカー系、CPUメーカー系、PCパーツ系メーカーに分けられることになる。<br />
+        CPUメーカー系はIntelとAMDがあり、<br>
+        それ以外の部品に関してはモバイルPCメーカー系かPCパーツ系メーカーがそれぞれ有無がある状態で存在する。<br />
+        そこは対立的である。<br />
+        メモリ以外のマザーボード、グラフィックボード、SSDが主。<br />
+        代表例を紹介する。<br />
+        <h4>intel Driver & Support Assistant</h4>
+        CPUメーカー系で関連部品
+        <h4>Kioxia SSD Utility</h4>
+        コンシューマー用のみなのでOEM品は非対応。
+        <h4>ELECOM GAMING Tool</h4>
+        キーボードマウスは非更新型が多いですが、<br />
+        ゲーミングデバイスではファームウェア更新が必要になるものがあります。<br />
+        ELECOM製ゲーミングデバイスにおけるファームウェアアップデートにも活用されます。
 
-        <h4>WSLディストリビューション</h4>
-        <b>Apt<br /></b>
+        <h2 id="category-2">WSLディストリビューション</h2>
+        <ul class="table-of-contents">
+          <li><a href="#mini-2-1">APT</a></li>
+          <li><a href="#mini-2-2">Snap</a></li>
+          <li><a href="#mini-2-3">LinuxBrew</a></li>
+        </ul>
+        <h3 id="mini-2-1">Apt</h3>
         Debian系の標準。OSアップデートのレベルなので言うまでもない。<br />
         <a
+          id="mini-2-2"
           href="https://snapcraft.io/"
           target="_blank"
           rel="noopener noreferrer"
@@ -86,38 +121,57 @@
         Ubuntu系のLinux。Systemdを要求するのがちょっと面倒くさいかも。近いものにFlatpakとAppImageがある。FlatpakはAblaze
         Floorpで昔動かなかった気がする、AppImageは一応Alireで使ってみた。なお今はapt。<br />
         <a
+          id="mini-2-3"
           href="https://brew.sh/index_ja"
           target="_blank"
           rel="noopener noreferrer"
           >LinuxBrew<br
         /></a>
         Mac系のやつなのでStandAloneで動こうとして面倒くさいので、使ってない。<br />
-        <h4>Android</h4>
-        <b>Android OS アップデート<br /></b>
+
+        <h2 id="category-3">Android</h2>
+        <ul class="table-of-contents">
+          <li><a href="#mini-3-1">Android OS アップデート</a></li>
+          <li><a href="#mini-3-2">Google Play システム アップデート</a></li>
+          <li><a href="#mini-3-3">Google Playストアアプリ</a></li>
+          <li><a href="#mini-3-4">Google Playストア</a></li>
+          <li><a href="#mini-3-5">F-Droid</a></li>
+        </ul>
+        <h3 id="mini-3-1">Android OS アップデート</h3>
         メーカーやキャリアによって提供される。<br />
-        <b>Google Play システム アップデート<br /></b>
+        <h3 id="mini-3-2">Google Play システム アップデート</h3>
         OS系よりサポートが長そう。<br />
-        <b>Google Playストアアプリ<br /></b>
+        <h3 id="mini-3-3">Google Playストアアプリ</h3>
         設定の項からアップデートを確認できる。<br />
         ここがOSよりだと3段目くらい。<br />
-        <b>Google Playストア<br /></b>
+        <h3 id="mini-3-4">Google Playストア</h3>
         信用できるというわけではないが安定。<br />
-        <b>F-Droid<br /></b>
+        <h3 id="mini-3-5">F-Droid</h3>
         オープンソースソフトウェアを配布している。別にオープンソースであること以外はこれも信用できるというわけではない。<br />
         ローカルでのアプリの受け渡し機能は面白い。<br />
-        <h4>Rustup</h4>
-        cargo-binstall、cargo-updateとかがツール類の管理に楽。
-        <b>cargo-binstall<br /></b>
-        バイナリ配布されているものをインストールできる。<br />
 
-        <b>cargo-update<br /></b>
+        <h2 id="category-4">Rustup</h2>
+        <ul class="table-of-contents">
+          <li><a href="#mini-4-1">cargo-binstall</a></li>
+          <li><a href="#mini-4-2">cargo-update</a></li>
+          <li><a href="#mini-4-3">cargo-quickinstall</a></li>
+        </ul>
+        cargo-binstall、cargo-updateとかがツール類の管理に楽。
+        <h3 id="mini-4-1">cargo-binstall</h3>
+        バイナリ配布されているものをインストールできる。<br />
+        <h3 id="mini-4-2">cargo-update</h3>
         cargoでインストールしたものをアップデートできる。<br />
         cargo install-updateで実行する。<br />
         --listや--allがある。<br />
-        <b>cargo-quickinstall<br /></b>
+        <h3 id="mini-4-3">cargo-quickinstall</h3>
         前者のcargo-binstallと関係があるがこちらは入れなくてもいいはず。<br />
-        <h4>Python</h4>
-        <b>uv<br /></b>
+        <h2 id="category-5">Python</h2>
+        <ul class="table-of-contents">
+          <li><a href="#mini-5-1">pip</a></li>
+          <li><a href="#mini-5-2">uv</a></li>
+        </ul>
+        <h3 id="mini-5-1">pip</h3>
+        <h3 id="mini-5-2">uv</h3>
         元はRyeのページでした。以下Ryeネタ情報。
         全然使ってないけど、Flaskの人が作ったよう。その人のMitsuhikoってなんだよと思ったけど、<a
           href="http://mitsuhiko.pocoo.org/happiness.pdf"

@@ -18,6 +18,7 @@ export const get_month_names_all: (a: number) => [number, number, number];
 export const get_japanese_month_name: (a: number) => [number, number];
 export const get_english_month_name: (a: number) => [number, number];
 export const get_ukrainian_month_name: (a: number) => [number, number];
+<<<<<<< HEAD
 export const get_ukrainian_alphabet_month_name: (a: number) => [number, number];
 export const get_swedish_month_name: (a: number) => [number, number];
 export const get_suomi_month_name: (a: number) => [number, number];
@@ -30,6 +31,67 @@ export const get_lithuanian_month_name: (a: number) => [number, number];
 export const get_latvian_month_name: (a: number) => [number, number];
 export const get_estonian_month_name: (a: number) => [number, number];
 >>>>>>> 23ec7fa (ok)
+=======
+export const jserror_message: (a: number) => [number, number];
+export const jserror_new: (a: number, b: number) => number;
+export const navigationconfig_buildBreadcrumb: (a: number, b: number, c: number) => [number, number];
+export const navigationconfig_getAllCategories: (a: number) => [number, number];
+export const navigationconfig_getPageTitle: (a: number, b: number, c: number) => [number, number];
+export const navigationconfig_getPageUrl: (a: number, b: number, c: number) => [number, number];
+export const navigationconfig_getPagesByCategory: (a: number, b: number, c: number) => [number, number];
+export const siteconfig_disableFeature: (a: number, b: number, c: number) => void;
+export const siteconfig_enableFeature: (a: number, b: number, c: number) => void;
+export const siteconfig_exportConfig: (a: number) => [number, number, number, number];
+export const siteconfig_getCompactMode: (a: number) => number;
+export const siteconfig_getMenuAutoHide: (a: number) => number;
+export const siteconfig_getShowBreadcrumbs: (a: number) => number;
+export const siteconfig_getSiteName: (a: number) => [number, number];
+export const siteconfig_getVersion: (a: number) => [number, number];
+export const siteconfig_importConfig: (a: number, b: number, c: number) => [number, number];
+export const siteconfig_isFeatureEnabled: (a: number, b: number, c: number) => number;
+export const siteconfig_setCompactMode: (a: number, b: number) => void;
+export const siteconfig_setMenuAutoHide: (a: number, b: number) => void;
+export const siteconfig_setShowBreadcrumbs: (a: number, b: number) => void;
+export const themeconfig_getCurrentTheme: (a: number) => number;
+export const themeconfig_getThemeClassName: (a: number) => [number, number];
+export const themeconfig_setUserPreference: (a: number, b: number) => void;
+export const themeconfig_toggleTheme: (a: number) => number;
+export const themeconfig_updateSystemPreference: (a: number, b: number) => void;
+export const themeconfig_new: () => number;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+export const wasm_bindgen_cba787ebaeaa46e3___convert__closures_____invoke___wasm_bindgen_cba787ebaeaa46e3___JsValue_____: (a: number, b: number, c: any) => void;
+export const wasm_bindgen_cba787ebaeaa46e3___closure__destroy___dyn_core_bb1c441fd6008630___ops__function__FnMut__wasm_bindgen_cba787ebaeaa46e3___JsValue____Output_______: (a: number, b: number) => void;
+export const wasm_bindgen_cba787ebaeaa46e3___convert__closures_____invoke___wasm_bindgen_cba787ebaeaa46e3___JsValue__wasm_bindgen_cba787ebaeaa46e3___JsValue_____: (a: number, b: number, c: any, d: any) => void;
+<<<<<<< HEAD
+=======
+export const wasm_bindgen_ff97d0194c7b564___convert__closures_____invoke___wasm_bindgen_ff97d0194c7b564___JsValue_____: (a: number, b: number, c: any) => void;
+export const wasm_bindgen_ff97d0194c7b564___closure__destroy___dyn_core_983d8dd20742f5f1___ops__function__FnMut__wasm_bindgen_ff97d0194c7b564___JsValue____Output_______: (a: number, b: number) => void;
+export const wasm_bindgen_ff97d0194c7b564___convert__closures_____invoke___wasm_bindgen_ff97d0194c7b564___JsValue__wasm_bindgen_ff97d0194c7b564___JsValue_____: (a: number, b: number, c: any, d: any) => void;
+>>>>>>> d7fa1cb (ok)
+=======
+export const wasm_bindgen_61828bd97be92191___convert__closures_____invoke___wasm_bindgen_61828bd97be92191___JsValue_____: (a: number, b: number, c: any) => void;
+export const wasm_bindgen_61828bd97be92191___closure__destroy___dyn_core_b28e6cc86dbcede1___ops__function__FnMut__wasm_bindgen_61828bd97be92191___JsValue____Output_______: (a: number, b: number) => void;
+export const wasm_bindgen_61828bd97be92191___convert__closures_____invoke___wasm_bindgen_61828bd97be92191___JsValue__wasm_bindgen_61828bd97be92191___JsValue_____: (a: number, b: number, c: any, d: any) => void;
+>>>>>>> ef2b6f2 (cng README and update bin)
+=======
+export const wasm_bindgen_43aa750fdead298___convert__closures_____invoke___wasm_bindgen_43aa750fdead298___JsValue_____: (a: number, b: number, c: any) => void;
+export const wasm_bindgen_43aa750fdead298___closure__destroy___dyn_core_aa36f6357aef5053___ops__function__FnMut__wasm_bindgen_43aa750fdead298___JsValue____Output_______: (a: number, b: number) => void;
+export const wasm_bindgen_43aa750fdead298___convert__closures_____invoke___wasm_bindgen_43aa750fdead298___JsValue__wasm_bindgen_43aa750fdead298___JsValue_____: (a: number, b: number, c: any, d: any) => void;
+>>>>>>> 055d445 (rebuild)
+<<<<<<< HEAD
+>>>>>>> dba6cb2 (readd wasm)
+=======
+=======
+export const siteconfig_new: () => number;
+export const navigationconfig_new: (a: number, b: number) => number;
+export const wasm_bindgen_2e136bf15c19897c___closure__destroy___dyn_core_6d961589691b2eac___ops__function__FnMut__wasm_bindgen_2e136bf15c19897c___JsValue____Output_______: (a: number, b: number) => void;
+export const wasm_bindgen_2e136bf15c19897c___convert__closures_____invoke___wasm_bindgen_2e136bf15c19897c___JsValue__wasm_bindgen_2e136bf15c19897c___JsValue_____: (a: number, b: number, c: any, d: any) => void;
+export const wasm_bindgen_2e136bf15c19897c___convert__closures_____invoke___wasm_bindgen_2e136bf15c19897c___JsValue_____: (a: number, b: number, c: any) => void;
+>>>>>>> 32dfd46 (rebuild wasm)
+>>>>>>> 168ff33 (fiction_book.html の更新)
 export const __wbindgen_exn_store: (a: number) => void;
 export const __externref_table_alloc: () => number;
 export const __wbindgen_export_2: WebAssembly.Table;
