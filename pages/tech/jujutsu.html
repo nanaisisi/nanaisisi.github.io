@@ -1,0 +1,77 @@
+<!doctype html>
+
+<!-- Content-Type: application/xhtml+xml -->
+
+<?xml version="1.1" encoding="UTF-8" ?>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>雑なJujutsuの使い方</title>
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="icon" href="../../img/favicon.png" />
+    <script type="module" src="../../script/companion.js"></script>
+  </head>
+
+  <body class="theme">
+    <!-- メニュー構造の例 -->
+    <div id="menu-tab" class="menu">
+      <iframe
+        loading="lazy"
+        src="../menu.html"
+        name="menu"
+        title="目次"
+        class="menu-iframe"
+      ></iframe>
+    </div>
+    <div class="fixed-bar">
+      <button id="theme-toggle-btn" class="theme-toggle-btn">テーマ切替</button>
+      <!-- その他のボタンがあれば追加 -->
+    </div>
+
+    <!-- メニューボタンは別に配置 -->
+    <button id="toggle-menu-btn" class="menu-toggle-btn">メニュー</button>
+    <header>
+      <nav>
+        <ul class="table-of-contents">
+          <li><a href="#head-1">概要</a></li>
+          <li><a href="#head-2">Git/Githubへ適用する操作方法</a></li>
+          <li><a href="#head-3">使わないやつ</a></li>
+          <li><a href="#head-4">参考</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <h1>雑なJujutsuの使い方</h1>
+        <h2 id="head-1">概要</h2>
+        新しいGit互換型バージョン管理システム<br />
+        その動作を一旦、Git/Githunへの適用を前提として大雑把に説明する。<br />
+        <h2 id="head-2">Git/Githubへ適用する操作方法</h2>
+        自動コミットなのでjj addはなし。<br>
+        併用型ローカルでは、<br />
+        <code>jj git init</code>
+        Githubなどの併用型リモートリポジトリでは、<br />
+        <code>jj git clone &lt;URL&gt; [&lt;destination&gt;]</code><br />
+        <code>jj commit -m "Update tutorial"</code><br />
+        でやや違うらしい。<br />
+        <code>jj bookmark create doc-update -r @-</code><br />
+        <code>jj bookmark track doc-update</code><br />
+        でブックマークする。<br />
+        <code>jj git push</code><br />
+        でリモートリポジトリへ反映。<br />
+        <h2 id="head-3">使わないやつ</h2>
+        <code>jj init</code>
+        で新規jjリポジトリの初期化<br />
+        <code>jj describe -m "message"</code>
+        でコミットに近いが違うらしい。<br />
+        <h2 id="head-4">参考</h2>
+        <a href="https://www.jj-vcs.dev/latest/github/#working-in-a-git-colocated-workspaces">Githubとの連携</a>
+        <a href="https://www.jj-vcs.dev/latest/git-comparison/">Gitとの比較</a>
+        <a href="https://www.jj-vcs.dev/latest/git-command-table/">Gitコマンドテーブル</a>
+        <a href="https://www.jj-vcs.dev/latest/git-compatibility/">Gitの互換性</a>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
