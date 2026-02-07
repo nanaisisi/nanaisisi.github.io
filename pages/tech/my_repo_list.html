@@ -59,6 +59,7 @@
           <li><a href="#mini-2-1">nanai-veintiuna-rs</a></li>
           <li><a href="#mini-2-2">nanai-simple-lang</a></li>
           <li><a href="#mini-2-3">nanai-comp-sim</a></li>
+          <li><a href="#mini-2-4">nanai-process-monitor</a></li>
           <li class="heading"><a href="#category-3">おおよそ動かない</a></li>
           <li><a href="#mini-3-1">android-mascot-nanai</a></li>
           <li><a href="#mini-3-3">nanai-sim</a></li>
@@ -75,7 +76,6 @@
           <li><a href="#mini-5-3">worst_sudoku_cli</a></li>
           <li><a href="#mini-5-4">liars_table</a></li>
           <li><a href="#mini-5-5">nanaix_editor</a></li>
-          <li><a href="#mini-5-6">nanai-part-process-monitor</a></li>
         </ul>
         <h3 id="category-1">動くもの</h3>
         <h4 id="mini-1-1">nanaisisi.github.io</h4>
@@ -122,6 +122,16 @@
         簡易コンピュータシミュレータ。<br />
         よくわからない度が高い。<br />
         Rust製。<br />
+        <h4 id="mini-2-4">nanai-process-monitor</h4>
+        オープンソース型プロセスモニタ。<br />
+        推測だけで動いてるし非機能的。<br />
+        考えてたこと的には以下。<br />
+        部分対応プロセスモニタ。<br />
+        プロセスのCPUコアの割り当てを確認する方法をAIが思いつかなかったのでなし。<br />
+        プロセスのGPUの割り当て自体はタスクマネージャーでできるし。<br />
+        Systeminternal
+        suite的なRammap、Diskviewを再現して、アドレス、モジュールごと、チップごとで読めたら面白いかなと、実現性低いし重いし、推測型にしても重いのは確実だし。<br />
+        Rust製。tauri<br />
         <h3 id="category-3">おおよそ動かない</h3>
         <h4 id="mini-3-1">android-mascot-nanai</h4>
         Androidの伺かが色々と消え気味というかバージョンに伴って消えようとしているので、その代替。<br />
@@ -203,13 +213,6 @@
         xyzzy的な感じで、拡張機能なし、windowsのmingw C言語用エディタ。<br />
         Helix的な感じが好きなのはあるので、そのx。<br />
         Rust製ソフトウェアフレームワークTauriでのものなのは間違いない。<br />
-        <h4 id="mini-5-6">nanai-process-monitor</h4>
-        部分対応プロセスモニタ。<br />
-        プロセスのCPUコアの割り当てを確認する方法をAIが思いつかなかったのでなし。<br />
-        プロセスのGPUの割り当て自体はタスクマネージャーでできるし。<br />
-        Systeminternal
-        suite的なRammap、Diskviewを再現して、アドレス、モジュールごと、チップごとで読めたら面白いかなと、実現性低いし重いし、推測型にしても重いのは確実だし。<br />
-        Rust製。tauri<br />
       </div>
     </main>
     <footer></footer>
