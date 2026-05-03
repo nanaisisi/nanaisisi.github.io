@@ -7,40 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- 0.x.y only because unstable system -->
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## [0.0.4] - 2025-10-17
-
-### Added
-
-- Added Broken AGENT.md.
-- Added politics category pages.
-
-### Changes
-
-- Changed naming conventions for html and etc code to kebab case and file name to snake_case.
-
-## [0.0.3] -2025-9-20
-
-### Added
-
-- Added doc for Ai and etc.
-
-### Changes
-=======
-## [0.0.1] -2025-5-17
-=======
-## [0.0.2] -2025-5-17
->>>>>>> 88b9d3e (CHANGELOG.md の修正)
-=======
-=======
-## [0,0.3] -2025-9-20
-=======
-## [0.0.4] - 2025-10-17
->>>>>>> 43b2ab7 (ok)
 
 ### Added
 
@@ -61,80 +28,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Changed page struct.
 
->>>>>>> 3e6f133 (v0.0.3)
-## [0.0.2] -2025-6-29
->>>>>>> 774bcd0 (CHANGELOG.md の更新)
-
-### Added
-
-- Any language month name.
-
-### Changes
-
-- Changed feature replarce wasm from javascript, mayae.
-
-### Fix
-
-- Fixed imported file was wasm from JavaScript.
-
-## [0.0.1] -2025-5-17
-
-### Added
-
-- New html pages.
-
-### Changes
-
-- Changed version in CHANGELOG.md.
-- Changed pages folder genre divided to folder.
-
-### Fix
-
-- Fixed CHANGELOG.md Reverse order
-
-## [1.3.0] -2025-05-02
-
-### Added
-
-- Added new pages from dev copilot.
-- Added theme change button in contents htmls.
-
-### Changes
-
-- Changed adopt copilot AI
-- Changed index.html menu and content struct structure.
-- Changed script adopt rust wasm.
-
-## [1.2.0] -2025-02-24
-
-### Changes
-
-- Changed index.html menu and content struct structure.
-
-## [1.1.1] - 2024-10-20
-
-### Added
-
-- Added many pages!
-
-### Changes
-
-- Changed main_page iframe at index.html.
-- Changed insert.html divide to software.html.
-
-## [1.1.0] - 2024-09-20
-
-### Added
-
-- Added xyzzy.html.
-- Added menu on xyzzy.html.
-- Intake Jest.
-- Added on insert.html
->>>>>>> 5412b6c (ok)
-
-- Changed page struct.
-
-<<<<<<< HEAD
 ## [0.0.2] -2025-6-29
 
 ### Added
@@ -205,8 +98,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Change
 
-=======
->>>>>>> 5412b6c (ok)
 - Changed External edition, only from now on. Internal edition, discontinued due to end of environment.
 - Changed to BrowserCacheClear on major heading of index.html.
 - Changed menu order on menu.html.
@@ -245,18 +136,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Tauri on insert.html.
 - Added Gripen on joke.html.
 
-<<<<<<< HEAD
-## [1.1.1] - 2024-09-
-
-### Added
-
-<<<<<<< HEAD
-- Added helix.html.
-- Added menu on helix.html.
-- Added todo.md
-=======
-- Added many pages!
-=======
 ## [1.0.6] - 2024-03-11
 
 ### Change
@@ -298,48 +177,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added CHANGELOG.md on menu.php.
 - Added anxious thing on insert.html.
 - Added goals on insert.html, table of contents on all page.
->>>>>>> 044b6fe (ok)
 
 ## [1.0.0] - 2024-02-21
-<<<<<<< HEAD
 
 ### Added
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-### Changes
-- Changed adopt copilot AI
-- Changed index.html menu and content struct structure.
-- Changed script adopt rust wasm.
->>>>>>> c971624 (ok)
-=======
 - Added CHANGELOG.md.
->>>>>>> 044b6fe (ok)
-=======
-- Added CHANGELOG.md.
-=======
-## [1.2.0] -2025-02-24
-
-### Changes
-
-- Changed index.html menu and content struct structure.
-
-## [1.3.0] -2025-05-02
-=======
->>>>>>> 5412b6c (ok)
-
-### Added
-
-<<<<<<< HEAD
-### Changes
-- Changed adopt copilot AI
-- Changed index.html menu and content struct structure.
-- Changed script adopt rust wasm.
->>>>>>> 963ea0e (ok)
-<<<<<<< HEAD
->>>>>>> c9e34f3 (ok)
-=======
-=======
-- Added CHANGELOG.md.
->>>>>>> 5412b6c (ok)
->>>>>>> eeec990 (ok)

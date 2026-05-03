@@ -58,10 +58,6 @@ cargo add serde --features derive  # シリアライゼーション用
 - 大幅なリファクタリングや分割はCHANGELOGに短く理由を記述する。
 
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fea84f8 (code rename)
 
 追記: 本ファイルは短く保ち、詳細なコーディングスタイルや具体例は必要に応じて別ファイルに切り出してください。
 
@@ -88,9 +84,3 @@ cargo add serde --features derive  # シリアライゼーション用
 - `my_repo_list.html` (正しい), `my-repo-list.html` (誤り)
 
 これでサイト全体の命名規則が統一され、保守性が向上する。
-<<<<<<< HEAD
-=======
-追記: 本ファイルは短く保ち、詳細なコーディングスタイルや具体例は必要に応じて別ファイルに切り出してください。
->>>>>>> 56351dc (Added ai_doc Changed comment and decup mil)
-=======
->>>>>>> fea84f8 (code rename)

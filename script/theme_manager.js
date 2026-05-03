@@ -114,21 +114,6 @@ function applyStoredTheme() {
 	}
 
 	const body = document.body;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	const prefersDark = window.matchMedia?.(
-		"(prefers-color-scheme: dark)",
-	).matches;
-<<<<<<< HEAD
->>>>>>> 44eb280 (divide)
-=======
->>>>>>> 743f2af (dark default)
-=======
->>>>>>> fb6f1c2 (divide)
-=======
->>>>>>> 177ef5c (dark default)
->>>>>>> 5a2c1b6 (file rename)
 
 	if (storedTheme) {
 		if (storedTheme === "dark") {
@@ -139,42 +124,10 @@ function applyStoredTheme() {
 			body.classList.add("light-theme");
 		}
 	} else {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 743f2af (dark default)
-=======
->>>>>>> 177ef5c (dark default)
->>>>>>> 5a2c1b6 (file rename)
 		// ユーザーの設定がなければダークテーマをデフォルトとして使用する
 		body.classList.remove("light-theme");
 		body.classList.add("dark-theme");
 		// オプションでローカルストレージにも保存（次回以降のためのデフォルト設定）
-<<<<<<< HEAD
-		localStorage.setItem("theme", "dark");
-<<<<<<< HEAD
-=======
-		// ユーザーの設定がなければシステム設定に合わせる
-		if (prefersDark) {
-			body.classList.add("dark-theme");
-		} else {
-			body.classList.add("light-theme");
-		}
-<<<<<<< HEAD
->>>>>>> 44eb280 (divide)
-=======
->>>>>>> 743f2af (dark default)
-=======
 		localStorage.setItem("theme", JSON.stringify("dark"));
->>>>>>> 17ee032 (fin)
-=======
->>>>>>> fb6f1c2 (divide)
-=======
->>>>>>> 177ef5c (dark default)
-=======
-		localStorage.setItem("theme", JSON.stringify("dark"));
->>>>>>> 7f8fa00 (fin)
->>>>>>> 5a2c1b6 (file rename)
 	}
 }

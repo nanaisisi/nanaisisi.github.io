@@ -66,21 +66,12 @@ print "   ✓ 境界値テスト"
 
 print ""
 print "🔧 WASM buildテストを実行中..."
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f0cbf47 (fin and ignore)
 print "   古い生成ファイルをクリーンアップ中..."
 if (ls pkg | length) > 0 {
     rm -rf pkg
     print "   ✓ 古いpkgディレクトリを削除しました"
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> 058a4ba (nu)
-=======
->>>>>>> f0cbf47 (fin and ignore)
 try {
     wasm-pack build --target web --out-dir pkg
     print "✅ WASM buildが完了しました"
@@ -135,14 +126,6 @@ print "   ✓ 12言語対応: 確認済み"
 print "   ✓ 主要関数: 正常動作"
 print ""
 print "🎯 次のステップ:"
-<<<<<<< HEAD
-<<<<<<< HEAD
 print "   1. ブラウザで http://localhost:8000/test/wasm_test.html をテスト"
-=======
-print "   1. ブラウザで http://localhost:8000/test/wasm-test.html をテスト"
->>>>>>> 058a4ba (nu)
-=======
-print "   1. ブラウザで http://localhost:8000/test/wasm_test.html をテスト"
->>>>>>> 5a2c1b6 (file rename)
 print "   2. 各ページでの月名表示を確認"
 print "   3. mil/tech配下のページでのWASMロードを確認"

@@ -1,32 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 //run 
 //deno run --allow-net --allow-read server.ts --unstable
-=======
-// @deno-types="https://deno.land/std@0.224.0/http/server.ts"
-import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
-=======
-// JSRからHTTPモジュールをインポート
-// @deno-types="jsr:@std/http"
-import { serve } from "jsr:@std/http";
-<<<<<<< HEAD
->>>>>>> ca911df (ok)
-
->>>>>>> e47289a (ok)
-=======
-//run 
-//deno run --allow-net --allow-read server.ts --unstable
->>>>>>> d2a4183 (ok)
-=======
->>>>>>> fc2c88a (ok)
-
->>>>>>> c23af97 (ok)
-=======
-//run 
-//deno run --allow-net --allow-read server.ts --unstable
->>>>>>> 6cd9137 (ok)
->>>>>>> deff914 (for test)
 // MIMEタイプのマッピング
 const mimeTypes: Record<string, string> = {
 	".html": "text/html",
@@ -88,19 +61,4 @@ async function handler(req: Request): Promise<Response> {
 
 console.log("サーバーを起動しています...");
 console.log("http://localhost:8000 でアクセスできます");
-<<<<<<< HEAD
-<<<<<<< HEAD:server.ts
 Deno.serve(handler, { port: 8000 });
-=======
-serve(handler, { port: 8000 });
-<<<<<<< HEAD
->>>>>>> de119b1 (cant_run):server.js
-=======
-Deno.serve(handler, { port: 8000 });
->>>>>>> d2a4183 (ok)
-=======
->>>>>>> 8140f89 (cant_run):server.js
-=======
-Deno.serve(handler, { port: 8000 });
->>>>>>> 6cd9137 (ok)
->>>>>>> deff914 (for test)

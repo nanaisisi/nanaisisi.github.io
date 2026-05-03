@@ -4,18 +4,6 @@ import { loadWasm } from "./wasm_loader.js";
  * 月名表示機能を初期化
  */
 export async function initMonthDisplay() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-	// メニューのiframeを取得
-	const menuFrame = document.querySelector('iframe[name="menu"]');
-=======
-	// 直接要素を取得する場合とiframe内の要素を取得する場合の両方に対応
-	await tryDisplayInMainPage();
-	await tryDisplayInMenuFrame();
-=======
 	try {
 		// 直接要素を取得する場合とiframe内の要素を取得する場合の両方に対応
 		await tryDisplayInMainPage();
@@ -23,11 +11,6 @@ export async function initMonthDisplay() {
 	} catch (error) {
 		console.error("Error in initMonthDisplay:", error);
 	}
-<<<<<<< HEAD
->>>>>>> 3e61169 (auto rollback)
-=======
->>>>>>> 15b638d (auto rollback)
->>>>>>> 5a2c1b6 (file rename)
 }
 
 /**
@@ -68,11 +51,6 @@ async function tryDisplayInMenuFrame() {
 			}
 		}
 	}
-<<<<<<< HEAD
->>>>>>> dcb7a70 (yet)
-=======
->>>>>>> 34f080f (yet)
->>>>>>> 5a2c1b6 (file rename)
 
 	if (!menuFrame) {
 		console.log("Menu iframe not found after multiple attempts");
@@ -145,136 +123,19 @@ async function tryDisplayInMenuFrame() {
 		}
 	} catch (error) {
 		// セキュリティの制限などでiframeにアクセスできない場合
-<<<<<<< HEAD
-		console.error("Cannot access iframe content:", error);
-=======
-	// 月名表示要素があるかチェック
-	const month_names_element = document.getElementById("month_names");
-	if (month_names_element) {
-		try {
-			await displayMonthNamesWasm();
-		} catch (error) {
-			console.error("Error in WASM implementation, falling back to JS:", error);
-			displayMonthNamesJs();
-		}
-	} else {
-		console.log("month_names element not found, skipping month name display");
-<<<<<<< HEAD
->>>>>>> 44eb280 (divide)
-=======
->>>>>>> fb6f1c2 (divide)
->>>>>>> 5a2c1b6 (file rename)
-=======
-	// 月名表示要素がすでにある場合はそれを使用
-	let month_names_element = document.getElementById("month_names");
-=======
-	// メニューのiframeを取得
-	const menuFrame = document.querySelector('iframe[name="menu"]');
-<<<<<<< HEAD
->>>>>>> fb30a47 (err fix)
-=======
->>>>>>> c329f2d (err fix)
->>>>>>> 5a2c1b6 (file rename)
-
-	if (!menuFrame) {
-		console.log("Menu iframe not found, skipping month name display");
-		return;
-	}
-
-	// iframeのロード完了を待つ
-	await new Promise((resolve) => {
-		if (
-			menuFrame.contentDocument &&
-			menuFrame.contentDocument.readyState === "complete"
-		) {
-			resolve();
-		} else {
-			menuFrame.onload = () => resolve();
-		}
-	});
-
-	// iframe内の月名表示要素を取得
-	try {
-		const monthElement =
-			menuFrame.contentDocument.getElementById("month_names");
-
-		if (!monthElement) {
-			console.log("month_names element not found in menu iframe");
-			return;
-		}
-
-		// 月名表示処理を実行
-		try {
-			await displayMonthNamesWasm(monthElement);
-		} catch (error) {
-			console.error("Error in WASM implementation, falling back to JS:", error);
-			displayMonthNamesJs(monthElement);
-		}
-	} catch (error) {
-<<<<<<< HEAD
-		console.error("Error in WASM implementation, falling back to JS:", error);
-		displayMonthNamesJs();
-<<<<<<< HEAD
->>>>>>> 2baa9a3 (fix)
-=======
-		// セキュリティの制限などでiframeにアクセスできない場合
-		console.error("Cannot access iframe content:", error);
->>>>>>> fb30a47 (err fix)
-=======
 		console.error("Cannot access or process iframe content:", error);
->>>>>>> dcb7a70 (yet)
-=======
->>>>>>> f3659f8 (fix)
-=======
-		// セキュリティの制限などでiframeにアクセスできない場合
-		console.error("Cannot access iframe content:", error);
->>>>>>> c329f2d (err fix)
-=======
-		console.error("Cannot access or process iframe content:", error);
->>>>>>> 34f080f (yet)
->>>>>>> 5a2c1b6 (file rename)
 	}
 }
 
 /**
  * WASM版の月名表示関数
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
 async function displayMonthNamesWasm(monthElement) {
-=======
-async function displayMonthNamesWasm() {
-<<<<<<< HEAD
->>>>>>> 44eb280 (divide)
-=======
-async function displayMonthNamesWasm(monthElement) {
->>>>>>> fb30a47 (err fix)
-=======
->>>>>>> fb6f1c2 (divide)
-=======
-async function displayMonthNamesWasm(monthElement) {
->>>>>>> c329f2d (err fix)
->>>>>>> 5a2c1b6 (file rename)
 	const wasmModule = await loadWasm();
 	if (!wasmModule) {
 		// WASmのロードに失敗した場合はJavaScriptバージョンを使用
 		console.log("Falling back to JS implementation");
-<<<<<<< HEAD
-<<<<<<< HEAD
 		displayMonthNamesJs(monthElement);
-=======
-		displayMonthNamesJs();
-<<<<<<< HEAD
->>>>>>> 44eb280 (divide)
-=======
-		displayMonthNamesJs(monthElement);
->>>>>>> fb30a47 (err fix)
-=======
->>>>>>> fb6f1c2 (divide)
-=======
-		displayMonthNamesJs(monthElement);
->>>>>>> c329f2d (err fix)
->>>>>>> 5a2c1b6 (file rename)
 		return;
 	}
 
@@ -304,21 +165,7 @@ async function displayMonthNamesWasm(monthElement) {
 			wasmModule.get_estonian_month_name(current_month);
 
 		updateMonthNamesDisplay(
-<<<<<<< HEAD
-<<<<<<< HEAD
 			monthElement,
-=======
-<<<<<<< HEAD
->>>>>>> 44eb280 (divide)
-=======
-			monthElement,
->>>>>>> fb30a47 (err fix)
-=======
->>>>>>> fb6f1c2 (divide)
-=======
-			monthElement,
->>>>>>> c329f2d (err fix)
->>>>>>> 5a2c1b6 (file rename)
 			japanese_now_month_name,
 			english_now_month_name,
 			ukrainian_now_month_name,
@@ -334,224 +181,35 @@ async function displayMonthNamesWasm(monthElement) {
 		);
 	} catch (error) {
 		console.error("Error calling WASM functions:", error);
-<<<<<<< HEAD
-<<<<<<< HEAD
 		displayMonthNamesJs(monthElement);
-=======
-		displayMonthNamesJs();
-<<<<<<< HEAD
->>>>>>> 44eb280 (divide)
-=======
-		displayMonthNamesJs(monthElement);
->>>>>>> fb30a47 (err fix)
-=======
->>>>>>> fb6f1c2 (divide)
-=======
-		displayMonthNamesJs(monthElement);
->>>>>>> c329f2d (err fix)
->>>>>>> 5a2c1b6 (file rename)
 	}
 }
 
 /**
  * JavaScript版の月名表示関数（WASMが利用できない場合のフォールバック）
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
 function displayMonthNamesJs(monthElement) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-function displayMonthNamesJs() {
-<<<<<<< HEAD
->>>>>>> 44eb280 (divide)
-=======
-function displayMonthNamesJs(monthElement) {
->>>>>>> fb30a47 (err fix)
-=======
->>>>>>> fb6f1c2 (divide)
-=======
-function displayMonthNamesJs(monthElement) {
->>>>>>> c329f2d (err fix)
->>>>>>> 5a2c1b6 (file rename)
-	const english_month_names = [
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-		"August",
-		"September",
-		"October",
-		"November",
-		"December",
-	];
-	const japanese_month_names = [
-		"睦月",
-		"如月",
-		"弥生",
-		"卯月",
-		"皐月",
-		"水無月",
-		"文月",
-		"葉月",
-		"長月",
-		"神無月",
-		"霜月",
-		"師走",
-	];
-	const ukrainian_month_names = [
-		"Січень",
-		"Лютий",
-		"Березень",
-		"Квітень",
-		"Травень",
-		"Червень",
-		"Липень",
-		"Серпень",
-		"Вересень",
-		"Жовтень",
-		"Листопад",
-		"Грудень",
-	];
-	const ukrainian_alphabet_month_names = [
-		"si-chen",
-		"lu-tyi",
-		"be-re-zen",
-		"kvi-ten",
-		"tra-vehn",
-		"cher-vehn",
-		"ly-pehn",
-		"ser-pehn",
-		"ve-re-sehn",
-		"zhov-tehn",
-		"lys-to-pad",
-		"hru-dehn",
-	];
-	const swedish_month_names = [
-		"Januari",
-		"Februari",
-		"Mars",
-		"April",
-		"Maj",
-		"Juni",
-		"Juli",
-		"Augusti",
-		"September",
-		"Oktober",
-		"November",
-		"December",
-	];
-	const suomi_month_names = [
-		"Tammikuu",
-		"Helmikuu",
-		"Maaliskuu",
-		"Huhtikuu",
-		"Toukokuu",
-		"Kesäkuu",
-		"Heinäkuu",
-		"Elokuu",
-		"Syyskuu",
-		"Lokakuu",
-		"Marraskuu",
-		"Joulukuu",
-	];
-
-	const current_month = new Date().getMonth(); // 0から11の値を返す
-
-=======
-	// WAsmが利用できない場合の簡単なエラー表示
-<<<<<<< HEAD
->>>>>>> b3cb272 (ok)
-=======
 	// WASMが利用できない場合の簡単なエラー表示
->>>>>>> 785877d (yet wasm)
-=======
->>>>>>> 6807485 (ok)
-=======
-	// WASMが利用できない場合の簡単なエラー表示
->>>>>>> 188369a (yet wasm)
->>>>>>> 5a2c1b6 (file rename)
 	updateMonthNamesDisplay(
-<<<<<<< HEAD
-<<<<<<< HEAD
 		monthElement,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 44eb280 (divide)
-=======
-		monthElement,
->>>>>>> fb30a47 (err fix)
-=======
->>>>>>> fb6f1c2 (divide)
-=======
-		monthElement,
->>>>>>> c329f2d (err fix)
->>>>>>> 5a2c1b6 (file rename)
-		japanese_month_names[current_month],
-		english_month_names[current_month],
-		ukrainian_month_names[current_month],
-		ukrainian_alphabet_month_names[current_month],
-		swedish_month_names[current_month],
-		suomi_month_names[current_month],
-=======
-		"WAsmエラー",
-		"WAsmエラー",
-		"WAsmエラー",
-		"WAsmエラー",
-		"WAsmエラー",
-		"WAsmエラー",
-<<<<<<< HEAD
->>>>>>> b3cb272 (ok)
-=======
->>>>>>> 6807485 (ok)
->>>>>>> 5a2c1b6 (file rename)
-=======
 		"WASMエラー",
 		"WASMエラー",
 		"WASMエラー",
 		"WASMエラー",
 		"WASMエラー",
 		"WASMエラー",
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 785877d (yet wasm)
-=======
->>>>>>> 188369a (yet wasm)
->>>>>>> 5a2c1b6 (file rename)
-=======
 		"WASMエラー",
 		"WASMエラー",
 		"WASMエラー",
 		"WASMエラー",
 		"WASMエラー",
 		"WASMエラー",
-<<<<<<< HEAD
->>>>>>> 368fb91 (wasm fin)
-=======
->>>>>>> 10a1e1b (wasm fin)
->>>>>>> 5a2c1b6 (file rename)
 	);
 }
 
 /**
  * 月名表示を更新
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> fb30a47 (err fix)
-=======
->>>>>>> c329f2d (err fix)
->>>>>>> 5a2c1b6 (file rename)
-function updateMonthNamesDisplay(element, jp, en, ua, ua_en, se, fi) {
-=======
 function updateMonthNamesDisplay(
 	element,
 	jp,
@@ -567,11 +225,6 @@ function updateMonthNamesDisplay(
 	lv,
 	et,
 ) {
-<<<<<<< HEAD
->>>>>>> 368fb91 (wasm fin)
-=======
->>>>>>> 10a1e1b (wasm fin)
->>>>>>> 5a2c1b6 (file rename)
 	if (element) {
 		element.innerHTML = `
         JP: ${jp}<br>
@@ -587,27 +240,5 @@ function updateMonthNamesDisplay(
         LV: ${lv}<br>
         ET: ${et}
     `;
-<<<<<<< HEAD
-=======
-function updateMonthNamesDisplay(jp, en, ua, ua_en, se, fi) {
-	const month_names_element = document.getElementById("month_names");
-	if (month_names_element) {
-		month_names_element.innerHTML = `
-            JP: ${jp}<br>
-            EN: ${en}<br>
-            UA: ${ua}<br>
-            UA_EN: ${ua_en}<br>
-            SE: ${se}<br>
-            FI: ${fi}
-        `;
-<<<<<<< HEAD
->>>>>>> 44eb280 (divide)
-=======
->>>>>>> fb30a47 (err fix)
-=======
->>>>>>> fb6f1c2 (divide)
-=======
->>>>>>> c329f2d (err fix)
->>>>>>> 5a2c1b6 (file rename)
 	}
 }

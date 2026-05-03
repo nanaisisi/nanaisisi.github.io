@@ -1,33 +1,4 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "devDependencies": {
-    "@biomejs/biome": "1.8.3",
-    "jest": "^29.7.0",
-    "prettier": "^3.3.3"
-  },
-  "dependencies": {
-    "markuplint": "^4.9.2"
-  },
-  "scripts": {
-    "test": "jest"
-  }
-=======
-=======
-=======
->>>>>>> 2e10f48 (ok)
-=======
->>>>>>> 2257c7b (fix 2 str)
-=======
->>>>>>> c9e34f3 (ok)
-=======
-=======
->>>>>>> 11795ac (ok)
->>>>>>> 0923001 (Update menu.html)
 	"name": "nanaisisi-github-io",
 	"version": "1.0.0",
 	"description": "Static website with WASM-powered month name display",
@@ -41,23 +12,7 @@
 		"format": "biome format --write .",
 		"validate:html": "markuplint **/*.html"
 	},
-<<<<<<< HEAD
->>>>>>> 108aa1f (menu.html の更新)
-=======
-<<<<<<< HEAD
->>>>>>> 0923001 (Update menu.html)
 	"dependencies": {
-<<<<<<< HEAD
-		"markuplint": "^4.12.0",
-		"prettier": "^3.4.2"
-	},
-	"devDependencies": {
-<<<<<<< HEAD
-		"@biomejs/biome": "1.9.4"
-=======
-		"@biomejs/biome": "2.2.6"
->>>>>>> c0b878e (update deno package)
-=======
 		"biome": "^0.3.3",
 		"markuplint": "^4.14.0",
 		"prettier": "^3.6.2"
@@ -65,47 +20,5 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.3.5",
 		"wabt": "^1.0.39"
->>>>>>> 6405591 (ok)
 	}
-<<<<<<< HEAD
->>>>>>> e4598da (ok)
-=======
-=======
-  "dependencies": {
-    "markuplint": "^4.12.0",
-    "prettier": "^3.4.2"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.8.3",
-    "jest": "^29.7.0"
-  },
-  "scripts": {
-    "test": "jest"
-  }
->>>>>>> 4bbb08c (longer long)
-<<<<<<< HEAD
->>>>>>> 2e10f48 (ok)
-=======
-=======
-=======
->>>>>>> dc12e7a (ok)
-=======
->>>>>>> 11795ac (ok)
-	"dependencies": {
-		"biome": "^0.3.3",
-		"markuplint": "^4.13.1",
-		"prettier": "^3.6.2"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "2.2.6",
-		"wabt": "^1.0.39"
-	}
-<<<<<<< HEAD
->>>>>>> e65f4e5 (ok)
-<<<<<<< HEAD
->>>>>>> 2257c7b (fix 2 str)
-=======
-=======
->>>>>>> dc12e7a (ok)
->>>>>>> c9e34f3 (ok)
 }
