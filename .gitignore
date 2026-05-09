@@ -7,3 +7,6 @@ target
 
 # Note: WASMファイル（pkg/）はWebサイトの動作に必要なため、.gitignoreしない
 # リンターエラーについては biome.json で除外設定済み
+nanai_wasm_rs/pkg/nanai_wasm_rs_bg.wasm.d.ts
+nanai_wasm_rs/pkg/nanai_wasm_rs.d.ts
+/nanai_wasm_rs/pkg/package.json
