@@ -63,4 +63,4 @@ deno run --allow-net --allow-read test\server.ts
 
 ## License
 
-All files are licensed with [Apache License 2.0](./LICENSE-APACHE) + [MIT License](./doc/LICENSE-MIT).
+All files are licensed with [Apache License 2.0](./LICENSE-APACHE) + [MIT License](./LICENSE-MIT).
