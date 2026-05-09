@@ -151,7 +151,7 @@ pub fn generate_sitemap(base_url: String) -> String {
     let mut sitemap = String::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
     sitemap.push_str("<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n");
 
-    for (_, info) in nav.pages.iter() {
+    for info in nav.pages.values() {
         sitemap.push_str(&format!(
             "  <url>\n    <loc>{}/{}</loc>\n    <changefreq>weekly</changefreq>\n  </url>\n",
             nav.base_url.trim_end_matches('/'),
