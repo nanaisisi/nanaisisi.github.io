@@ -1,9 +1,9 @@
-[build]
-rustc-wrapper = "sccache"
+#[build]
+#rustc-wrapper = "sccache"
 
 [target.x86_64-pc-windows-msvc]
 linker = "rust-lld.exe"
-rustflags =   "-Zshare-generics=y"
+rustflags = "-Zshare-generics=y"
 
 [toolchain]
 channel = "nightly"
