@@ -15,13 +15,13 @@
 
   <body class="theme">
     <div id="menu-tab" class="menu">
-      <iframe
-        loading="lazy"
-        src="tech_menu.html"
+      <object
+        data="tech_menu.html"
+        type="text/html"
         name="menu"
         title="目次"
         class="menu-iframe"
-      ></iframe>
+      ></object>
     </div>
     <div class="fixed-bar">
       <button id="theme-toggle-btn" class="theme-toggle-btn">テーマ切替</button>
@@ -62,7 +62,7 @@
         <h3 id="mini-1-3">Microsoft Store</h3>
         自動更新ではあるけど大事。(自動更新になってなかったが)<br />
         <a
-        id="mini-1-4"
+          id="mini-1-4"
           href="https://learn.microsoft.com/ja-jp/windows/package-manager/winget/"
           target="_blank"
           rel="noopener noreferrer"
@@ -73,12 +73,16 @@
         セルフアップデートなどもソフトウェアを壊しづらいので活用したほうがいいので、それは別途行うべきかと思う。<br />
         対応ソフトウェアが増えに増えたのはいいが、自社製品の更新すら不安なのはなぜだ。そのせいでこいつは一括で扱いたくない。<br />
         配布サーバーから直接持ってくるから配布サーバーの帯域だって太くないのに何GBものファイルを遅々として進まずに通信してられるかと。<br />
-        <a  id="mini-1-5" href="https://scoop.sh/" target="_blank" rel="noopener noreferrer"
+        <a
+          id="mini-1-5"
+          href="https://scoop.sh/"
+          target="_blank"
+          rel="noopener noreferrer"
           >Scoop</a
         >
         パッケージマネージャで直接管理されてるので使い勝手はいい。互換性は不安。<br />
         <a
-        id="mini-1-6"
+          id="mini-1-6"
           href="https://chocolatey.org/"
           target="_blank"
           rel="noopener noreferrer"
@@ -87,9 +91,9 @@
         管理者権限で実行。使ってない。<br />
         <a id="mini-1-7">メーカーソフトウェア</a>
         各メーカーが提供しているハードウェアに関するアップデートソフトウェア。<br />
-        BIOSの更新やドライバー、ファームウェアの更新などを行う。<br>
+        BIOSの更新やドライバー、ファームウェアの更新などを行う。<br />
         そのため、大きく分けて3種類、モバイルPCメーカー系、CPUメーカー系、PCパーツ系メーカーに分けられることになる。<br />
-        CPUメーカー系はIntelとAMDがあり、<br>
+        CPUメーカー系はIntelとAMDがあり、<br />
         それ以外の部品に関してはモバイルPCメーカー系かPCパーツ系メーカーがそれぞれ有無がある状態で存在する。<br />
         そこは対立的である。<br />
         メモリ以外のマザーボード、グラフィックボード、SSDが主。<br />
