@@ -16,13 +16,12 @@
   <body class="theme">
     <!-- メニュー構造の例 -->
     <div id="menu-tab" class="menu">
-      <iframe
-        loading="lazy"
+      <object
         src="../menu.html"
         name="menu"
         title="目次"
         class="menu-iframe"
-      ></iframe>
+      ></object>
     </div>
     <div class="fixed-bar">
       <button id="theme-toggle-btn" class="theme-toggle-btn">テーマ切替</button>
@@ -48,7 +47,7 @@
         新しいGit互換型バージョン管理システム<br />
         その動作を一旦、Git/Githunへの適用を前提として大雑把に説明する。<br />
         <h2 id="head-2">Git/Githubへ適用する操作方法</h2>
-        自動コミットなのでjj addはなし。<br>
+        自動コミットなのでjj addはなし。<br />
         併用型ローカルでは、<br />
         <code>jj git init</code>
         Githubなどの併用型リモートリポジトリでは、<br />
@@ -66,10 +65,17 @@
         <code>jj describe -m "message"</code>
         でコミットに近いが違うらしい。<br />
         <h2 id="head-4">参考</h2>
-        <a href="https://www.jj-vcs.dev/latest/github/#working-in-a-git-colocated-workspaces">Githubとの連携</a>
+        <a
+          href="https://www.jj-vcs.dev/latest/github/#working-in-a-git-colocated-workspaces"
+          >Githubとの連携</a
+        >
         <a href="https://www.jj-vcs.dev/latest/git-comparison/">Gitとの比較</a>
-        <a href="https://www.jj-vcs.dev/latest/git-command-table/">Gitコマンドテーブル</a>
-        <a href="https://www.jj-vcs.dev/latest/git-compatibility/">Gitの互換性</a>
+        <a href="https://www.jj-vcs.dev/latest/git-command-table/"
+          >Gitコマンドテーブル</a
+        >
+        <a href="https://www.jj-vcs.dev/latest/git-compatibility/"
+          >Gitの互換性</a
+        >
       </div>
     </main>
     <footer></footer>
