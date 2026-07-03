@@ -4,82 +4,57 @@
 
 <?xml version="1.1" encoding="UTF-8" ?>
 <html lang="ja-JP">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>応援しているソフトウェア</title>
-    <link rel="stylesheet" href="../../style/style.css" />
-    <link rel="icon" href="../../img/favicon.png" />
-    <script type="module" src="../../script/companion.js"></script>
-  </head>
 
-  <body class="theme">
-    <!-- メニュー構造の例 -->
-    <div id="menu-tab" class="menu">
-      <object
-        data="tech_menu.html"
-type="text/html"
-        name="menu"
-        title="目次"
-        class="menu-iframe"
-      ></object>
-    </div>
-    <div class="fixed-bar">
-      <button id="theme-toggle-btn" class="theme-toggle-btn">テーマ切替</button>
-      <!-- その他のボタンがあれば追加 -->
-    </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>応援しているソフトウェア</title>
+  <link rel="stylesheet" href="../../style/style.css" />
+  <link rel="icon" href="../../img/favicon.png" />
+  <script type="module" src="../../script/companion.js"></script>
+</head>
 
-    <!-- メニューボタンは別に配置 -->
-    <button id="toggle-menu-btn" class="menu-toggle-btn">メニュー</button>
-    <header>
-      <nav>
-        <ul class="table-of-contents">
-          <li class="heading"><a href="#category-1">動くもの</a></li>
-          <li><a href="#mini-1-1">starship</a></li>
-          <li><a href="#mini-1-2">helix-editor</a></li>
-          <li><a href="#mini-1-3">nushell</a></li>
-          <li class="heading"><a href="#category-2">気になるソフトウェア</a></li>
-          <li><a href="#mini-2-1">Typst</a></li>
-          <li><a href="#mini-2-2">SATySFi</a></li>
-          <li><a href="#mini-2-3">Tauri</a></li>
-          <li><a href="#mini-2-4">Axum</a></li>
-          <li><a href="#mini-2-5">Leptos</a></li>
-          <li><a href="#mini-2-6">Shuttle</a></li>
-          <li><a href="#mini-2-7">Bevy</a></li>
-          <li><a href="#mini-2-8">erg</a></li>
-          <li><a href="#mini-2-9">lmhex</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-        <div>
-            <h1>応援しているソフトウェア紹介</h1>
+<body class="theme">
+
+  <div id="menu-tab" class="menu">
+    <object data="tech_menu.html" type="text/html" name="menu" title="目次" class="menu-iframe"></object>
+  </div>
+  <div class="fixed-bar">
+    <button id="theme-toggle-btn" class="theme-toggle-btn">テーマ切替</button>
+  </div>
+
+  <button id="toggle-menu-btn" class="menu-toggle-btn">メニュー</button>
+  <header>
+    <nav>
+      <ul class="table-of-contents">
+        <li class="heading"><a href="#category-1">動くもの</a></li>
+        <li><a href="#mini-1-1">starship</a></li>
+        <li><a href="#mini-1-2">helix-editor</a></li>
+        <li><a href="#mini-1-3">nushell</a></li>
+        <li class="heading"><a href="#category-2">気になるソフトウェア</a></li>
+        <li><a href="#mini-2-1">Typst</a></li>
+        <li><a href="#mini-2-2">SATySFi</a></li>
+        <li><a href="#mini-2-3">Tauri</a></li>
+        <li><a href="#mini-2-4">Axum</a></li>
+        <li><a href="#mini-2-5">Leptos</a></li>
+        <li><a href="#mini-2-6">Shuttle</a></li>
+        <li><a href="#mini-2-7">Bevy</a></li>
+        <li><a href="#mini-2-8">erg</a></li>
+        <li><a href="#mini-2-9">lmhex</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div>
+      <h1>応援しているソフトウェア紹介</h1>
       <h2 id="category-1">このサイトは以下を応援しています</h2>
       #活用できてないです・<br />
-      <a
-      id="mini-1-1"
-        href="https://starship.rs/ja-jp/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Starship<br
-      /></a>
+      <a id="mini-1-1" href="https://starship.rs/ja-jp/" target="_blank" rel="noopener noreferrer">Starship<br /></a>
       コマンドラインシェルに表示に変更を加えることができるシェルプロンプトです。PowerShellやBashなどに対応。<br />
-      <a
-      id="mini-1-2"
-        href="https://helix-editor.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Helix-editor<br
-      /></a>
+      <a id="mini-1-2" href="https://helix-editor.com/" target="_blank" rel="noopener noreferrer">Helix-editor<br /></a>
       vimライク的なtext
       editor、プラグインには力を入れていないみたいなので軽く使う程度で。Lispで作るみたいな雰囲気のことを言ってる気もしますが<br />
-      <a
-      id="mini-1-3"
-        href="https://www.nushell.sh/ja/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Nushell<br
-      /></a>
+      <a id="mini-1-3" href="https://www.nushell.sh/ja/" target="_blank" rel="noopener noreferrer">Nushell<br /></a>
       PowerShellみたいなものなので。特筆するところはないかも。いろいろと扱いかねてる。仕様変更が破壊的でStarshipとの設定ファイルが大変。<br />
       <h2 id="category-2">気になるソフトウェア</h2>
       <h3>組版処理システム</h3>
@@ -101,7 +76,8 @@ type="text/html"
       プログラミング言語。つまりerg-langといったところ。超最大手有名プログラミング言語Pythonと互換性を持つ言語。Rustで書かれてて、文法もそんな感じらしい。IPA未踏2023採択。
       <h3 id="mini-2-9">lmhex</h3>
       定番バイナリエディタ、後はvscodeのやつか
-    </main>
-    <footer></footer>
-  </body>
+  </main>
+  <footer></footer>
+</body>
+
 </html>

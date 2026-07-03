@@ -4,94 +4,88 @@
 
 <?xml version="1.1" encoding="UTF-8" ?>
 <html lang="ja-JP">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>書式例</title>
-    <link rel="stylesheet" href="../style/style.css" />
-    <link rel="icon" href="../img/favicon.png" />
-    <script type="module" src="../script/companion.js"></script>
-  </head>
 
-  <body class="theme">
-    <!-- メニュー構造の例 -->
-    <div id="menu-tab" class="menu">
-      <object
-        data="menu.html"
-        type="text/html"
-        name="menu"
-        title="目次"
-        class="menu-iframe"
-      ></object>
-    </div>
-    <div class="fixed-bar">
-      <button id="theme-toggle-btn" class="theme-toggle-btn">テーマ切替</button>
-      <!-- その他のボタンがあれば追加 -->
-    </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>書式例</title>
+  <link rel="stylesheet" href="../style/style.css" />
+  <link rel="icon" href="../img/favicon.png" />
+  <script type="module" src="../script/companion.js"></script>
+</head>
 
-    <!-- メニューボタンは別に配置 -->
-    <button id="toggle-menu-btn" class="menu-toggle-btn">メニュー</button>
-    <header>
-      <nav>
-        <ul class="table-of-contents">
-          <li><a href="#head-1">概要</a></li>
-          <li><a href="#head-2">本文タイトル</a></li>
-          <li class="heading"><a href="#category-1">カテゴリ1</a></li>
-          <li><a href="#mini-1-1">項目1</a></li>
-          <li><a href="#mini-1-2">項目2</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div>
-        <h1>書式例</h1>
-        <h2 id="head-1">概要</h2>
-        <br />
-        このページはHTMLの書式例です。idの命名規則などを示しています。
-        <h2 id="head-2">本文タイトル</h2>
-        <ul class="table-of-contents">
-          <li class="heading"><a href="#category-1">カテゴリ1</a></li>
-          <li><a href="#mini-1-1">項目1</a></li>
-          <li><a href="#mini-1-2">項目2</a></li>
-        </ul>
-        <h3 id="category-1">カテゴリ1</h3>
-        <h4 id="mini-1-1">項目1</h4>
-        項目1の内容です。<br />
-        説明文をここに書きます。
-        <h4 id="mini-1-2">項目2</h4>
-        項目2の内容です。<br />
-        別の説明文をここに書きます。
-        <table>
-          <caption>
-            表番号タイトル
-          </caption>
-          <thead>
-            <tr>
-              <th>項目</th>
-              <th>内容</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>項目1</th>
-              <td>内容1</td>
-            </tr>
-            <tr>
-              <th>項目2</th>
-              <td>内容2</td>
-            </tr>
-            <tr>
-              <th>項目3</th>
-              <td>内容3</td>
-            </tr>
-            <tr>
-              <th>項目4</th>
-              <td>内容4</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
-    <footer></footer>
-  </body>
+<body class="theme">
+
+  <div id="menu-tab" class="menu">
+    <object data="menu.html" type="text/html" name="menu" title="目次" class="menu-iframe"></object>
+  </div>
+  <div class="fixed-bar">
+    <button id="theme-toggle-btn" class="theme-toggle-btn">テーマ切替</button>
+  </div>
+
+  <button id="toggle-menu-btn" class="menu-toggle-btn">メニュー</button>
+  <header>
+    <nav>
+      <ul class="table-of-contents">
+        <li><a href="#head-1">概要</a></li>
+        <li><a href="#head-2">本文タイトル</a></li>
+        <li class="heading"><a href="#category-1">カテゴリ1</a></li>
+        <li><a href="#mini-1-1">項目1</a></li>
+        <li><a href="#mini-1-2">項目2</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div>
+      <h1>書式例</h1>
+      <h2 id="head-1">概要</h2>
+      <br />
+      このページはHTMLの書式例です。idの命名規則などを示しています。
+      <h2 id="head-2">本文タイトル</h2>
+      <ul class="table-of-contents">
+        <li class="heading"><a href="#category-1">カテゴリ1</a></li>
+        <li><a href="#mini-1-1">項目1</a></li>
+        <li><a href="#mini-1-2">項目2</a></li>
+      </ul>
+      <h3 id="category-1">カテゴリ1</h3>
+      <h4 id="mini-1-1">項目1</h4>
+      項目1の内容です。<br />
+      説明文をここに書きます。
+      <h4 id="mini-1-2">項目2</h4>
+      項目2の内容です。<br />
+      別の説明文をここに書きます。
+      <table>
+        <caption>
+          表番号タイトル
+        </caption>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>項目1</th>
+            <td>内容1</td>
+          </tr>
+          <tr>
+            <th>項目2</th>
+            <td>内容2</td>
+          </tr>
+          <tr>
+            <th>項目3</th>
+            <td>内容3</td>
+          </tr>
+          <tr>
+            <th>項目4</th>
+            <td>内容4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+
 </html>
