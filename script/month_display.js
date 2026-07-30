@@ -53,7 +53,6 @@ async function tryDisplayInMenuFrame() {
 	}
 
 	if (!menuFrame) {
-		console.log("Menu iframe not found after multiple attempts");
 		return;
 	}
 
@@ -86,7 +85,7 @@ async function tryDisplayInMenuFrame() {
 					try {
 						originalOnload.call(menuFrame);
 					} catch (e) {
-						console.warn("Error calling original onload:", e);
+						console.error("Error calling original onload:", e);
 					}
 				}
 				resolve();
@@ -110,7 +109,6 @@ async function tryDisplayInMenuFrame() {
 		const monthElement = frameDocument.getElementById("month-names");
 
 		if (!monthElement) {
-			console.log("month-names element not found in menu iframe");
 			return;
 		}
 
@@ -134,7 +132,6 @@ async function displayMonthNamesWasm(monthElement) {
 	const wasmModule = await loadWasm();
 	if (!wasmModule) {
 		// WASmのロードに失敗した場合はJavaScriptバージョンを使用
-		console.log("Falling back to JS implementation");
 		displayMonthNamesJs(monthElement);
 		return;
 	}

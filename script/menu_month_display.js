@@ -19,7 +19,6 @@ export async function initializeMenu() {
 async function initializeMonthDisplay() {
 	const monthElement = document.getElementById("month-names");
 	if (!monthElement) {
-		console.warn("month-names element not found in menu.html");
 		return;
 	}
 
@@ -29,11 +28,7 @@ async function initializeMonthDisplay() {
 	try {
 		const wasmModule = await loadWasm();
 		if (wasmModule) {
-			console.log("WASM module loaded successfully in menu");
-			console.log("Available WASM functions:", Object.keys(wasmModule));
-
 			const current_month = wasmModule.get_current_month();
-			console.log("Current month index:", current_month);
 
 			// 各関数の存在確認
 			const functionList = [
@@ -51,11 +46,6 @@ async function initializeMonthDisplay() {
 				"get_estonian_month_name",
 			];
 
-			console.log("Function availability check:");
-			for (const funcName of functionList) {
-				console.log(`  ${funcName}: ${typeof wasmModule[funcName]}`);
-			}
-
 			const japanese = wasmModule.get_japanese_month_name(current_month);
 			const english = wasmModule.get_english_month_name(current_month);
 			const ukrainian = wasmModule.get_ukrainian_month_name(current_month);
@@ -69,21 +59,6 @@ async function initializeMonthDisplay() {
 			const lithuanian = wasmModule.get_lithuanian_month_name(current_month);
 			const latvian = wasmModule.get_latvian_month_name(current_month);
 			const estonian = wasmModule.get_estonian_month_name(current_month);
-
-			console.log("All month names loaded:", {
-				japanese,
-				english,
-				ukrainian,
-				ukrAlphabet,
-				swedish,
-				finnish,
-				polish,
-				czech,
-				slovak,
-				lithuanian,
-				latvian,
-				estonian,
-			});
 
 			// 月名を表示
 			monthElement.innerHTML = `

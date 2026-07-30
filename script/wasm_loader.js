@@ -81,14 +81,10 @@ export async function loadWasm() {
 
 	if (!wasmInitPromise) {
 		const wasmPath = getWasmPath();
-		console.log(
-			`Loading WASM via wasm-bindgen init from path: ${wasmPath} (current location: ${window.location.pathname})`,
-		);
 
-		    wasmInitPromise = initWasm({ module_or_path: wasmPath })
+		wasmInitPromise = initWasm({ module_or_path: wasmPath })
 			.then(() => {
 				wasmExports = buildWasmExports();
-				console.log("WASM initialized successfully");
 				return wasmExports;
 			})
 			.catch((error) => {
