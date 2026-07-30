@@ -6,7 +6,7 @@ import { initThemeManager } from "./theme_manager.js";
 // ページのロード時に各機能を初期化
 window.addEventListener("load", async () => {
 	// テーマ関連の初期化
-	initThemeManager();
+	await initThemeManager();
 
 	// メニューボタンの初期化
 	initMenuButton();

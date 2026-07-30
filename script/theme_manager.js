@@ -1,7 +1,36 @@
+import { loadWasm } from "./wasm_loader.js";
+
+let themeConfigInstance = null;
+
 /**
  * テーマ関連の初期化を行う
  */
-export function initThemeManager() {
+export async function initThemeManager() {
+	try {
+		const wasmModule = await loadWasm();
+		if (wasmModule && typeof wasmModule.createThemeConfig === "function") {
+			themeConfigInstance = wasmModule.createThemeConfig();
+			
+			// 保存されたテーマがある場合はWASMインスタンスに設定
+			const storedItem = localStorage.getItem("theme");
+			let storedTheme = null;
+			if (storedItem) {
+				try {
+					storedTheme = JSON.parse(storedItem);
+				} catch (e) {
+					storedTheme = storedItem;
+				}
+			}
+			if (storedTheme === "light" && typeof wasmModule.Theme !== "undefined") {
+				themeConfigInstance.setUserPreference(wasmModule.Theme.Light);
+			} else if (storedTheme === "dark" && typeof wasmModule.Theme !== "undefined") {
+				themeConfigInstance.setUserPreference(wasmModule.Theme.Dark);
+			}
+		}
+	} catch (e) {
+		console.warn("WASM theme module load failed, using JS fallback", e);
+	}
+
 	// テーマ設定の適用
 	applyStoredTheme();
 
@@ -20,14 +49,28 @@ export function initThemeManager() {
  */
 export function toggleTheme() {
 	const body = document.body;
-	if (body.classList.contains("light-theme")) {
-		body.classList.remove("light-theme");
-		body.classList.add("dark-theme");
-		localStorage.setItem("theme", JSON.stringify("dark"));
+	if (themeConfigInstance && typeof themeConfigInstance.toggleTheme === "function") {
+		themeConfigInstance.toggleTheme();
+		const className = themeConfigInstance.getThemeClassName();
+		if (className === "dark-theme") {
+			body.classList.remove("light-theme");
+			body.classList.add("dark-theme");
+			localStorage.setItem("theme", JSON.stringify("dark"));
+		} else {
+			body.classList.remove("dark-theme");
+			body.classList.add("light-theme");
+			localStorage.setItem("theme", JSON.stringify("light"));
+		}
 	} else {
-		body.classList.remove("dark-theme");
-		body.classList.add("light-theme");
-		localStorage.setItem("theme", JSON.stringify("light"));
+		if (body.classList.contains("light-theme")) {
+			body.classList.remove("light-theme");
+			body.classList.add("dark-theme");
+			localStorage.setItem("theme", JSON.stringify("dark"));
+		} else {
+			body.classList.remove("dark-theme");
+			body.classList.add("light-theme");
+			localStorage.setItem("theme", JSON.stringify("light"));
+		}
 	}
 
 	// テーマ変更を他のページに通知
@@ -47,10 +90,10 @@ export function toggleTheme() {
 			"*",
 		);
 	} else {
-		// 親ページからiframeへの通知
-		const iframes = document.querySelectorAll("iframe");
+		// 親ページからiframe/objectへの通知
+		const targets = document.querySelectorAll("iframe, object");
 		// biome-ignore lint/complexity/noForEach: <explanation>
-		iframes.forEach((iframe) => {
+		targets.forEach((target) => {
 			try {
 				const themeItem = localStorage.getItem("theme");
 				let theme = null;
@@ -61,12 +104,15 @@ export function toggleTheme() {
 						theme = themeItem;
 					}
 				}
-				iframe.contentWindow.postMessage(
-					{ type: "theme-change", theme: theme },
-					"*",
-				);
+				const win = target.contentWindow || target.contentDocument?.defaultView;
+				if (win) {
+					win.postMessage(
+						{ type: "theme-change", theme: theme },
+						"*",
+					);
+				}
 			} catch (e) {
-				console.error("Failed to send theme to iframe:", e);
+				console.error("Failed to send theme to embedded element:", e);
 			}
 		});
 	}
