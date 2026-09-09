@@ -1,5 +1,5 @@
 [package]
-name = "nanai_wasm_rs"
+name = "nanai_wasm"
 version = "0.1.0"
 edition = "2024"
 description = "For my web page, Rust lib for WASM"
