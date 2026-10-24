@@ -46,28 +46,33 @@
         <h2 id="head-2">紹介</h2>
         <ul class="table-of-contents">
           <li class="heading"><a href="#category-1">動くもの</a></li>
-          <li><a href="#mini-1-1">nanaisisi.github.io</a></li>
-          <li><a href="#mini-1-2">nanai-aut-nu</a></li>
-          <li><a href="#mini-1-3">nanai-spotify-overlay</a></li>
-          <li>
-            <a href="#mini-1-4">nanai-spotify-popularity</a>
-          </li>
-          <li><a href="#mini-1-5">nanai-hos-rs</a></li>
+          <li><a href="#mini-1-1">nanai-basic-concept</a></li>
+          <li><a href="#mini-1-2">nanaisisi.github.io</a></li>
+          <li><a href="#mini-1-3">nanai-aut-nu</a></li>
+          <li><a href="#mini-1-4">nanai-sudoku</a></li>
+          <li><a href="#mini-1-5">nanai-auto-multi-fall</a></li>
+          <li><a href="#mini-1-6">nanai-hos-rs</a></li>
+          <li><a href="#mini-1-7">nanai-lite-rammap</a></li>
+          <li><a href="#mini-1-8">nanai-gna-dll-load</a></li>
+          <li><a href="#mini-1-9">nanai-burn-gna</a></li>
           <li class="heading"><a href="#category-2">ある程度動く</a></li>
+          <li><a href="#mini-2-0">nanai-shiftjis-notepad</a></li>
           <li><a href="#mini-2-1">nanai-veintiuna-rs</a></li>
           <li><a href="#mini-2-2">nanai-simple-lang</a></li>
-          <li><a href="#mini-2-3">nanai-comp-sim</a></li>
-          <li><a href="#mini-2-4">nanai-process-monitor</a></li>
+          <li><a href="#mini-2-3">nanai-process-monitor</a></li>
           <li class="heading"><a href="#category-3">おおよそ動かない</a></li>
           <li><a href="#mini-3-1">android-mascot-nanai</a></li>
+          <li><a href="#mini-3-2">nanai-alien-com-game</a></li>
           <li><a href="#mini-3-3">nanai-sim</a></li>
           <li><a href="#mini-3-4">nanai-joke-machine</a></li>
           <li><a href="#mini-3-5">nanai-bool-logic</a></li>
           <li class="heading"><a href="#category-4">動かない</a></li>
-          <li><a href="#mini-4-1">nanai-loneboth-ai</a></li>
-          <li><a href="#mini-4-2">nanai-consys</a></li>
-          <li><a href="#mini-4-3">nanai-web-ui-set</a></li>
-          <li><a href="#mini-4-4">nanai-code-is-game-rs</a></li>
+          <li><a href="#mini-4-1">nanai-gna-monitor</a></li>
+          <li><a href="#mini-4-2">nanai-spotify-overlay</a></li>
+          <li><a href="#mini-4-3">nanai-spotify-popularity</a></li>
+          <li><a href="#mini-4-4">nanai-consys</a></li>
+          <li><a href="#mini-4-5">nanai-web-ui-set</a></li>
+          <li><a href="#mini-4-6">nanai-code-is-game-rs</a></li>
           <li class="heading"><a href="#category-5">その他</a></li>
           <li><a href="#mini-5-1">weapon_system</a></li>
           <li><a href="#mini-5-2">hetero_gravity</a></li>
@@ -106,16 +111,18 @@
         Rust製。<br />
         <h4 id="mini-1-7">nanai-lite-rammap</h4>
         メインメモリ版wiztreeとかdisktreeとかみたいなやつ。GPUのVRAMは非対応。
-        RustのGPUI。windows-reactorにしたいなどと。
+        RustのGPUI。windows-reactor-rsにしたいなどと。
         <h4 id="mini-1-8">nanai-gna-dll-load</h4>
         intel gnaのコンパイルした所定のdllをロードする。LGPLに負けない。
         Rustライブラリ。
         <h4 id="mini-1-9">nanai-burn-gna</h4>
-        intel gnaのburnバックエンド（実行基板）。<br />
+        intel gnaのburnバックエンド（実行基盤）。<br />
         Rustライブラリ。
         <h3 id="category-2">ある程度動く</h3>
-        <h4 id="mini-2-0">nanai-shiftjis-reader</h4>
+        <h4 id="mini-2-0">nanai-shiftjis-notepad</h4>
         utf-8環境からshiftjisエンコードのファイルを読む用
+        devブランチでいろいろと放置してるので。クロスプラットフォームはしてないしする予定もあんまり。
+        RustのGPUIだったような。
         <h4 id="mini-2-1">nanai-veintiuna-rs</h4>
         お一人様ブラックジャックとしては成立できてる。ブラックジャックテンプレ用自動化がまだ。<br />
         Rust製。<br />
@@ -141,6 +148,7 @@
         Rust製。tauri<br />
         <h3 id="category-3">ほぼ動かない</h3>
         <h4 id="mini-3-1">nanai-android-mascot</h4>
+        一応既存のアプリも新規にできたんだけど。
         Androidの伺かが色々と消え気味というかバージョンに伴って消えようとしているので、その代替。<br />
         SHIORI内蔵のssp互換アプリとして作ってるはずだが、デザインなどもうまくいかないまま放置。<br />
         Rust製のtauriによるWEB型かつアプリサイドにRustのロジックを採用している。<br />
@@ -165,8 +173,9 @@
         論理回路をファイル内に半分ソースコード状に書式してシミュレートするソフトウェア。<br />
         微妙にあんまり動かない。 Rust製。<br />
         <h3 id="category-4">動かない</h3>
-        nanai-gna-monitor nanai-lite-rammapの動かない
-        <h4 id="mini-4-1">nani-spotify-overlay</h4>
+        <h4 id="mini-4-1">nanai-gna-monitor</h4>
+        nanai-lite-rammapベースだったような。<br />
+        <h4 id="mini-4-2">nani-spotify-overlay</h4>
         SpotifyとVLCで再生中の楽曲をOBSのオーバーレイで表示するようのやつ。<br />
         録画上には音声を乗せないものの、その裏で何を聞いているかを表示する、自己顕示欲的な。<br />
         著作権的に考えてアルバムの画像は隠す。<br />
@@ -174,12 +183,12 @@
         サーバーホストさせるのをいつものRustじゃなくて、DenoとTypeScriptでAIに作らせたのは面白かった。<br />
         spotify apiの有料限定化とDenoがサービス終了するらしいので。
         Deno用のHTML+JS&TS。<br />
-        <h4 id="mini-4-2">nanai-spotify-popularity</h4>
+        <h4 id="mini-4-3">nanai-spotify-popularity</h4>
         Spotifyの楽曲の人気度を取得して表示するだけのCLI。<br />
         上記の改変。<br />
         同、spotify apiの有料限定化とDenoがサービス終了するらしいので。
         Deno用のHTML+JS&TS。<br />
-        <h4 id="mini-4-3">nani-loneboth-ai</h4>
+        <h4 id="mini-4-4">nani-loneboth-ai</h4>
         基幹システムとして構想。全ての自端末上で連接して、最小限で動作するもののフレームワーク。<br />
         自己保存性を高める指針による独立性とマルチエージェント性からこの名前。<br />
         独自のシステムによるAI。<br />
@@ -187,12 +196,12 @@
         runtimeなどの上で動くもの。<br />
         burnを使用する方針のまま放置。<br />
         Rust製。<br />
-        <h4 id="mini-4-4">nanai-consys</h4>
+        <h4 id="mini-4-5">nanai-consys</h4>
         他のリポジトリ上のソフトウェアを実行時に管理するデスクトップ管理ソフトウェア。<br />
         Nushell Scriptなのだろうか。<br />
         リソース管理のための状態取得で詰まって放置。<br />
         Rustでスタートアップ アプリにするはずだが。<br />
-        <h4 id="mini-4-5">nanai-web-ui-set</h4>
+        <h4 id="mini-4-6">nanai-web-ui-set</h4>
         Tauriを活用したいので、それ用のUIセット。<br />
         コマンドパレットとか、ログ出力とか、ターミナルとか。<br />
         ターミナルはない気もするが。<br />
@@ -200,7 +209,7 @@
         ライブラリの形で存在し、実装テストが付属。<br />
         ありそうかも？<br />
         Rust製。<br />
-        <h4 id="mini-4-6">nanai-code-is-game-rs</h4>
+        <h4 id="mini-4-7">nanai-code-is-game-rs</h4>
         コードを書式することでサプライチェーン上にシミュレーションゲームを記述する予定。<br />
         Rust製。<br />
         <h3 id="category-5">その他</h3>
@@ -236,7 +245,7 @@
         これでナナイックスと読む。<br />
         xyzzy的な感じで、拡張機能なし、windowsのmingw C言語用エディタ。<br />
         Helix的な感じが好きなのはあるので、そのx。<br />
-        Rust製ソフトウェアフレームワークTauriでのものなのは間違いない。<br />
+        Rust<br />
       </div>
     </main>
     <footer></footer>
